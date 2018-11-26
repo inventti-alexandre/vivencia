@@ -32,10 +32,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -49,6 +53,10 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="APIs\Clima\CidadeResponse.cs" />
+    <Compile Include="APIs\Clima\ClimaModel.cs" />
+    <Compile Include="APIs\Clima\ClimaResponse.cs" />
+    <Compile Include="APIs\Clima\TempoResponse.cs" />
     <Compile Include="Criptografia\DESCripto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -126,6 +134,7 @@
     <EmbeddedResource Include="Telas\SubTelas\frmTema.resx">
       <DependentUpon>frmTema.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -197,6 +206,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\201612-01T170829.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cloud64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cloud641.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,5 @@
-﻿using Software.Basico.Telas.SubTelas;
+﻿using Blibioteca.Developers.APIs.Clima;
+using Software.Basico.Telas.SubTelas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,17 @@ namespace Software.Basico.Telas
             InitializeComponent();
             TemaTela();
             ScreenFrmHome();
+            Clima();
+        }
+
+        private void Clima()
+        {
+            ClimaModel clima = new ClimaModel();
+            TempoResponse tempo = clima.AdivisorTempo("São Paulo");
+
+
+            Umidade.Text = $"Umidade: {tempo.data.humidity}";
+            Temperatura.Text = $"{tempo.data.temperature} Cº";
         }
 
         private void btnHome_Click(object sender, EventArgs e)

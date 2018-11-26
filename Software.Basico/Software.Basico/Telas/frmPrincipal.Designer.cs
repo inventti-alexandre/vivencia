@@ -29,34 +29,46 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.logo2 = new System.Windows.Forms.PictureBox();
             this.pnBtnSel = new System.Windows.Forms.Panel();
-            this.btnUsuarios = new System.Windows.Forms.Button();
-            this.btnOpcoes = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.btnRecursos = new System.Windows.Forms.Button();
-            this.btnHome = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.pnPrincipal = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Temperatura = new System.Windows.Forms.Label();
             this.logo1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.logo2 = new System.Windows.Forms.PictureBox();
+            this.btnUsuarios = new System.Windows.Forms.Button();
+            this.btnOpcoes = new System.Windows.Forms.Button();
+            this.btnRecursos = new System.Windows.Forms.Button();
+            this.btnHome = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.Umidade = new System.Windows.Forms.Label();
+            this.Cidade = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logo2)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logo2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(58)))), ((int)(((byte)(86)))));
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.Cidade);
+            this.panel1.Controls.Add(this.Umidade);
+            this.panel1.Controls.Add(this.Temperatura);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.logo2);
             this.panel1.Controls.Add(this.pnBtnSel);
             this.panel1.Controls.Add(this.btnUsuarios);
@@ -71,18 +83,6 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // logo2
-            // 
-            this.logo2.Image = global::Software.Basico.Properties.Resources.fgh;
-            this.logo2.Location = new System.Drawing.Point(45, 12);
-            this.logo2.Name = "logo2";
-            this.logo2.Size = new System.Drawing.Size(125, 100);
-            this.logo2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.logo2.TabIndex = 0;
-            this.logo2.TabStop = false;
-            this.logo2.Visible = false;
-            this.logo2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
             // pnBtnSel
             // 
             this.pnBtnSel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(101)))), ((int)(((byte)(143)))));
@@ -91,42 +91,6 @@
             this.pnBtnSel.Size = new System.Drawing.Size(13, 60);
             this.pnBtnSel.TabIndex = 3;
             this.pnBtnSel.Paint += new System.Windows.Forms.PaintEventHandler(this.pnBtnSel_Paint);
-            // 
-            // btnUsuarios
-            // 
-            this.btnUsuarios.FlatAppearance.BorderSize = 0;
-            this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsuarios.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuarios.ForeColor = System.Drawing.Color.White;
-            this.btnUsuarios.Image = global::Software.Basico.Properties.Resources.users32;
-            this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuarios.Location = new System.Drawing.Point(11, 351);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(216, 60);
-            this.btnUsuarios.TabIndex = 3;
-            this.btnUsuarios.Text = "          Usuários";
-            this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuarios.UseVisualStyleBackColor = true;
-            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
-            this.btnUsuarios.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnUsuarios_MouseMove);
-            // 
-            // btnOpcoes
-            // 
-            this.btnOpcoes.FlatAppearance.BorderSize = 0;
-            this.btnOpcoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOpcoes.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOpcoes.ForeColor = System.Drawing.Color.White;
-            this.btnOpcoes.Image = global::Software.Basico.Properties.Resources.settings32;
-            this.btnOpcoes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOpcoes.Location = new System.Drawing.Point(11, 291);
-            this.btnOpcoes.Name = "btnOpcoes";
-            this.btnOpcoes.Size = new System.Drawing.Size(216, 60);
-            this.btnOpcoes.TabIndex = 3;
-            this.btnOpcoes.Text = "          Opções";
-            this.btnOpcoes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOpcoes.UseVisualStyleBackColor = true;
-            this.btnOpcoes.Click += new System.EventHandler(this.btnOpcoes_Click);
-            this.btnOpcoes.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnOpcoes_MouseMove);
             // 
             // button4
             // 
@@ -143,42 +107,6 @@
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // btnRecursos
-            // 
-            this.btnRecursos.FlatAppearance.BorderSize = 0;
-            this.btnRecursos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecursos.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecursos.ForeColor = System.Drawing.Color.White;
-            this.btnRecursos.Image = global::Software.Basico.Properties.Resources.options32;
-            this.btnRecursos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRecursos.Location = new System.Drawing.Point(11, 231);
-            this.btnRecursos.Name = "btnRecursos";
-            this.btnRecursos.Size = new System.Drawing.Size(216, 60);
-            this.btnRecursos.TabIndex = 3;
-            this.btnRecursos.Text = "          Temas";
-            this.btnRecursos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRecursos.UseVisualStyleBackColor = true;
-            this.btnRecursos.Click += new System.EventHandler(this.btnRecursos_Click);
-            this.btnRecursos.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnRecursos_MouseMove);
-            // 
-            // btnHome
-            // 
-            this.btnHome.FlatAppearance.BorderSize = 0;
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHome.ForeColor = System.Drawing.Color.White;
-            this.btnHome.Image = global::Software.Basico.Properties.Resources.computer32;
-            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.Location = new System.Drawing.Point(11, 171);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(216, 60);
-            this.btnHome.TabIndex = 3;
-            this.btnHome.Text = "          Home";
-            this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.UseVisualStyleBackColor = true;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-            this.btnHome.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnHome_MouseMove);
             // 
             // flowLayoutPanel1
             // 
@@ -229,6 +157,22 @@
             this.panel3.Size = new System.Drawing.Size(166, 10);
             this.panel3.TabIndex = 6;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // Temperatura
+            // 
+            this.Temperatura.AutoSize = true;
+            this.Temperatura.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Temperatura.ForeColor = System.Drawing.Color.White;
+            this.Temperatura.Location = new System.Drawing.Point(87, 584);
+            this.Temperatura.Name = "Temperatura";
+            this.Temperatura.Size = new System.Drawing.Size(42, 17);
+            this.Temperatura.TabIndex = 4;
+            this.Temperatura.Text = "22 Cº";
+            // 
             // logo1
             // 
             this.logo1.Image = global::Software.Basico.Properties.Resources.fgh;
@@ -240,6 +184,101 @@
             this.logo1.TabStop = false;
             this.logo1.Visible = false;
             this.logo1.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(22, 550);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 52);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // logo2
+            // 
+            this.logo2.Image = global::Software.Basico.Properties.Resources.fgh;
+            this.logo2.Location = new System.Drawing.Point(45, 12);
+            this.logo2.Name = "logo2";
+            this.logo2.Size = new System.Drawing.Size(125, 100);
+            this.logo2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logo2.TabIndex = 0;
+            this.logo2.TabStop = false;
+            this.logo2.Visible = false;
+            this.logo2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.FlatAppearance.BorderSize = 0;
+            this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUsuarios.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuarios.ForeColor = System.Drawing.Color.White;
+            this.btnUsuarios.Image = global::Software.Basico.Properties.Resources.users32;
+            this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUsuarios.Location = new System.Drawing.Point(11, 351);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(216, 60);
+            this.btnUsuarios.TabIndex = 3;
+            this.btnUsuarios.Text = "          Usuários";
+            this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            this.btnUsuarios.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnUsuarios_MouseMove);
+            // 
+            // btnOpcoes
+            // 
+            this.btnOpcoes.FlatAppearance.BorderSize = 0;
+            this.btnOpcoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpcoes.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOpcoes.ForeColor = System.Drawing.Color.White;
+            this.btnOpcoes.Image = global::Software.Basico.Properties.Resources.settings32;
+            this.btnOpcoes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOpcoes.Location = new System.Drawing.Point(11, 291);
+            this.btnOpcoes.Name = "btnOpcoes";
+            this.btnOpcoes.Size = new System.Drawing.Size(216, 60);
+            this.btnOpcoes.TabIndex = 3;
+            this.btnOpcoes.Text = "          Opções";
+            this.btnOpcoes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOpcoes.UseVisualStyleBackColor = true;
+            this.btnOpcoes.Click += new System.EventHandler(this.btnOpcoes_Click);
+            this.btnOpcoes.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnOpcoes_MouseMove);
+            // 
+            // btnRecursos
+            // 
+            this.btnRecursos.FlatAppearance.BorderSize = 0;
+            this.btnRecursos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecursos.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecursos.ForeColor = System.Drawing.Color.White;
+            this.btnRecursos.Image = global::Software.Basico.Properties.Resources.options32;
+            this.btnRecursos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRecursos.Location = new System.Drawing.Point(11, 231);
+            this.btnRecursos.Name = "btnRecursos";
+            this.btnRecursos.Size = new System.Drawing.Size(216, 60);
+            this.btnRecursos.TabIndex = 3;
+            this.btnRecursos.Text = "          Temas";
+            this.btnRecursos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRecursos.UseVisualStyleBackColor = true;
+            this.btnRecursos.Click += new System.EventHandler(this.btnRecursos_Click);
+            this.btnRecursos.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnRecursos_MouseMove);
+            // 
+            // btnHome
+            // 
+            this.btnHome.FlatAppearance.BorderSize = 0;
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.ForeColor = System.Drawing.Color.White;
+            this.btnHome.Image = global::Software.Basico.Properties.Resources.computer32;
+            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHome.Location = new System.Drawing.Point(11, 171);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(216, 60);
+            this.btnHome.TabIndex = 3;
+            this.btnHome.Text = "          Home";
+            this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            this.btnHome.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnHome_MouseMove);
             // 
             // button3
             // 
@@ -298,10 +337,35 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // timer1
+            // panel4
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.panel4.BackColor = System.Drawing.Color.Gray;
+            this.panel4.Location = new System.Drawing.Point(78, 550);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(3, 50);
+            this.panel4.TabIndex = 0;
+            // 
+            // Umidade
+            // 
+            this.Umidade.AutoSize = true;
+            this.Umidade.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Umidade.ForeColor = System.Drawing.Color.White;
+            this.Umidade.Location = new System.Drawing.Point(87, 566);
+            this.Umidade.Name = "Umidade";
+            this.Umidade.Size = new System.Drawing.Size(96, 17);
+            this.Umidade.TabIndex = 4;
+            this.Umidade.Text = "Umidade: 100";
+            // 
+            // Cidade
+            // 
+            this.Cidade.AutoSize = true;
+            this.Cidade.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cidade.ForeColor = System.Drawing.Color.White;
+            this.Cidade.Location = new System.Drawing.Point(87, 548);
+            this.Cidade.Name = "Cidade";
+            this.Cidade.Size = new System.Drawing.Size(95, 17);
+            this.Cidade.TabIndex = 4;
+            this.Cidade.Text = "São Paulo, SP";
             // 
             // frmPrincipal
             // 
@@ -324,9 +388,11 @@
             this.Text = "frmPrincipal";
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.logo2)).EndInit();
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logo1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logo2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -353,5 +419,10 @@
         private System.Windows.Forms.PictureBox logo2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label Temperatura;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label Cidade;
+        private System.Windows.Forms.Label Umidade;
     }
 }
