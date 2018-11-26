@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 
 namespace Software.Basico.Telas
@@ -42,75 +43,70 @@ namespace Software.Basico.Telas
             pnBtnSel.Location = new Point(0, btnHome.Location.Y);
         }
 
-        private void btnRecursos_Click(object sender, EventArgs e)
-        {
-            ScreenFrmRecursos();
-
-            telaSel = 2;
-
-            //Mudar posição do Panel esquerdo
-            pnBtnSel.Location = new Point(0, btnRecursos.Location.Y);
-        }
-
-        private void btnOpcoes_Click(object sender, EventArgs e)
-        {
-            ScreenFrmOpcoes();
-
-            telaSel = 3;
-
-            //Mudar posição do Panel esquerdo
-            pnBtnSel.Location = new Point(0, btnOpcoes.Location.Y);
-        }
-
-        private void btnUsuarios_Click(object sender, EventArgs e)
-        {
-            ScreenFrmUsuarios();
-
-            telaSel = 4;
-
-            //Mudar posição do Panel esquerdo
-            pnBtnSel.Location = new Point(0, btnUsuarios.Location.Y);
-        }
-
-        private void ScreenFrmHome()
-        {
-            frmHome frm = new frmHome();
-
-            if (pnPrincipal.Controls.Count == 1)
-                pnPrincipal.Controls.RemoveAt(0);
-            pnPrincipal.Controls.Add(frm);            
-        }
-
-        private void ScreenFrmRecursos()
+        private void btnTemas_Click(object sender, EventArgs e)
         {
             frmTema frm = new frmTema();
 
             if (pnPrincipal.Controls.Count == 1)
                 pnPrincipal.Controls.RemoveAt(0);
             pnPrincipal.Controls.Add(frm);
+
+            telaSel = 2;
+
+            //Mudar posição do Panel esquerdo
+            pnBtnSel.Location = new Point(0, btnTemas.Location.Y);
         }
 
-        private void ScreenFrmOpcoes()
+        private void btnLivros_Click(object sender, EventArgs e)
         {
-            //frmHome frm = new frmHome();
+            telaSel = 3;
 
-            //if (pnPrincipal.Controls.Count == 1)
-            //    pnPrincipal.Controls.RemoveAt(0);
-            //pnPrincipal.Controls.Add(frm);
+            //Mudar posição do Panel esquerdo
+            pnBtnSel.Location = new Point(0, btnLivros.Location.Y);
         }
 
-        private void ScreenFrmUsuarios()
+        private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            //frmHome frm = new frmHome();
+            telaSel = 4;
 
-            //if (pnPrincipal.Controls.Count == 1)
-            //    pnPrincipal.Controls.RemoveAt(0);
-            //pnPrincipal.Controls.Add(frm);
+            //Mudar posição do Panel esquerdo
+            pnBtnSel.Location = new Point(0, btnUsuarios.Location.Y);
         }
-        
-        public void Fechar()
+
+        private void btnEmprestimo_Click(object sender, EventArgs e)
         {
-            Close();
+            telaSel = 5;
+
+            //Mudar posição do Panel esquerdo
+            pnBtnSel.Location = new Point(0, btnEmprestimo.Location.Y);
+        }
+
+        private void btnReservas_Click(object sender, EventArgs e)
+        {
+            telaSel = 6;
+
+            //Mudar posição do Panel esquerdo
+            pnBtnSel.Location = new Point(0, btnReservas.Location.Y);
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            telaSel = 7;
+
+            //Mudar posição do Panel esquerdo
+            pnBtnSel.Location = new Point(0, btnClientes.Location.Y);
+        }
+
+        /// <summary>
+        /// Este método é separado do botão pois o Form também utiliza ele.
+        /// </summary>
+        private void ScreenFrmHome()
+        {
+            frmHome frm = new frmHome();
+
+            if (pnPrincipal.Controls.Count == 1)
+                pnPrincipal.Controls.RemoveAt(0);
+            pnPrincipal.Controls.Add(frm);
         }
 
         private void Close_Click(object sender, EventArgs e)
@@ -118,8 +114,15 @@ namespace Software.Basico.Telas
             Fechar();
         }
 
+        public void Fechar()
+        {
+            //Evento ocorrido após clicar em fechar tela.
+            Close();
+        }
+
         private void TemaTela()
         {
+            //Muda posição da logo dependendo do tema.
             if (Tema.tema == "1")
             {
                 panel2.Visible = true;
@@ -128,69 +131,26 @@ namespace Software.Basico.Telas
             else
                 logo2.Visible = true;
 
+            //Cores dos Panels segundo o tema
             ActiveForm.BackColor = Tema.Principal;
             panel1.BackColor = Tema.Primaria;
             panel3.BackColor = Tema.Primaria;
             panel2.BackColor = Tema.Segundaria;
             pnBtnSel.BackColor = Tema.Segundaria;
             flowLayoutPanel1.BackColor = Tema.Segundaria;
-
-            //label2.ForeColor = Tema.Texto;
+            
+            //Cores dos textos segundo o tema
             btnHome.ForeColor = Tema.Texto;
-            btnRecursos.ForeColor = Tema.Texto;
-            btnOpcoes.ForeColor = Tema.Texto;
+            btnTemas.ForeColor = Tema.Texto;
+            btnLivros.ForeColor = Tema.Texto;
             btnUsuarios.ForeColor = Tema.Texto;
-            button4.ForeColor = Tema.Texto;
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pnPrincipal_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pnBtnSel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void frmPrincipal_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            frmSobreNos frm = new frmSobreNos();
-
-            if (pnPrincipal.Controls.Count == 1)
-                pnPrincipal.Controls.RemoveAt(0);
-            pnPrincipal.Controls.Add(frm);
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
+            Question.ForeColor = Tema.Texto;
         }
 
         private void btnRecursos_MouseMove(object sender, MouseEventArgs e)
         {
             //Mudar posição do Panel esquerdo
-            pnBtnSel.Location = new Point(0, btnRecursos.Location.Y);
+            pnBtnSel.Location = new Point(0, btnTemas.Location.Y);
         }
 
         private void btnHome_MouseMove(object sender, MouseEventArgs e)
@@ -202,7 +162,7 @@ namespace Software.Basico.Telas
         private void btnOpcoes_MouseMove(object sender, MouseEventArgs e)
         {
             //Mudar posição do Panel esquerdo
-            pnBtnSel.Location = new Point(0, btnOpcoes.Location.Y);
+            pnBtnSel.Location = new Point(0, btnLivros.Location.Y);
         }
 
         private void btnUsuarios_MouseMove(object sender, MouseEventArgs e)
@@ -211,21 +171,64 @@ namespace Software.Basico.Telas
             pnBtnSel.Location = new Point(0, btnUsuarios.Location.Y);
         }
 
-        int telaSel = 1;
-        
-
-        private void timer1_Tick(object sender, EventArgs e)
+        private void btnEmprestimo_MouseMove(object sender, MouseEventArgs e)
         {
+            //Mudar posição do Panel esquerdo
+            pnBtnSel.Location = new Point(0, btnEmprestimo.Location.Y);
+        }
 
-            timer1.Interval = 1000;
+        private void btnReservas_MouseMove(object sender, MouseEventArgs e)
+        {
+            //Mudar posição do Panel esquerdo
+            pnBtnSel.Location = new Point(0, btnReservas.Location.Y);
+        }
+
+        private void btnClientes_MouseMove(object sender, MouseEventArgs e)
+        {
+            //Mudar posição do Panel esquerdo
+            pnBtnSel.Location = new Point(0, btnClientes.Location.Y);
+        }
+
+        private void Question_Click(object sender, EventArgs e)
+        {
+            //Botão "?"
+            frmSobreNos frm = new frmSobreNos();
+
+            if (pnPrincipal.Controls.Count == 1)
+                pnPrincipal.Controls.RemoveAt(0);
+            pnPrincipal.Controls.Add(frm);
+        }
+
+        //Váriavel de botão do menu que foi clicado por último.
+        int telaSel = 1;
+
+        private void timerPanel_Tick(object sender, EventArgs e)
+        {
+            //Volta do panel para o lado do botão que está atualmente ativo.
             if (telaSel == 1)
                 pnBtnSel.Location = new Point(0, btnHome.Location.Y);
             else if (telaSel == 2)
-                pnBtnSel.Location = new Point(0, btnRecursos.Location.Y);
+                pnBtnSel.Location = new Point(0, btnTemas.Location.Y);
             else if (telaSel == 3)
-                pnBtnSel.Location = new Point(0, btnOpcoes.Location.Y);
+                pnBtnSel.Location = new Point(0, btnLivros.Location.Y);
             else if (telaSel == 4)
                 pnBtnSel.Location = new Point(0, btnUsuarios.Location.Y);
+            else if (telaSel == 5)
+                pnBtnSel.Location = new Point(0, btnEmprestimo.Location.Y);
+            else if (telaSel == 6)
+                pnBtnSel.Location = new Point(0, btnReservas.Location.Y);
+            else if (telaSel == 7)
+                pnBtnSel.Location = new Point(0, btnClientes.Location.Y);
+        }
+
+        private void btnSite_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://acaonsfatima.org.br/");
+        }
+
+        private void btnFace_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.facebook.com/Instituto-Social-Nossa-Senhora-de-F%C3%A1tima-230903353703049/");
         }
     }
 }

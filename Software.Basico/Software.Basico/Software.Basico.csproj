@@ -213,5 +213,29 @@
   <ItemGroup>
     <None Include="Resources\cloud641.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\client32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loan32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calenda-time32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\www32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\facebook321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\011.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

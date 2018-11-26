@@ -63,6 +63,26 @@ namespace Software.Basico.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _01 {
+            get {
+                object obj = ResourceManager.GetObject("01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _011 {
+            get {
+                object obj = ResourceManager.GetObject("011", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _201612_01T170829 {
             get {
                 object obj = ResourceManager.GetObject("201612-01T170829", resourceCulture);
@@ -76,6 +96,36 @@ namespace Software.Basico.Properties {
         internal static System.Drawing.Bitmap BarraCinza {
             get {
                 object obj = ResourceManager.GetObject("BarraCinza", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap book32 {
+            get {
+                object obj = ResourceManager.GetObject("book32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap calenda_time32 {
+            get {
+                object obj = ResourceManager.GetObject("calenda-time32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap client32 {
+            get {
+                object obj = ResourceManager.GetObject("client32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,6 +193,16 @@ namespace Software.Basico.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap facebook321 {
+            get {
+                object obj = ResourceManager.GetObject("facebook321", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fgh {
             get {
                 object obj = ResourceManager.GetObject("fgh", resourceCulture);
@@ -176,6 +236,16 @@ namespace Software.Basico.Properties {
         internal static System.Drawing.Bitmap light {
             get {
                 object obj = ResourceManager.GetObject("light", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap loan32 {
+            get {
+                object obj = ResourceManager.GetObject("loan32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -266,6 +336,16 @@ namespace Software.Basico.Properties {
         internal static System.Drawing.Bitmap users32 {
             get {
                 object obj = ResourceManager.GetObject("users32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap www32 {
+            get {
+                object obj = ResourceManager.GetObject("www32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
