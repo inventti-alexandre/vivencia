@@ -35,9 +35,17 @@
             this.Cidade = new System.Windows.Forms.Label();
             this.Umidade = new System.Windows.Forms.Label();
             this.Temperatura = new System.Windows.Forms.Label();
+            this.pnBtnSel = new System.Windows.Forms.Panel();
+            this.Question = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pnPrincipal = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.timerPanel = new System.Windows.Forms.Timer(this.components);
+            this.logo1 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.logo2 = new System.Windows.Forms.PictureBox();
-            this.pnBtnSel = new System.Windows.Forms.Panel();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnReservas = new System.Windows.Forms.Button();
             this.btnEmprestimo = new System.Windows.Forms.Button();
@@ -45,22 +53,16 @@
             this.btnLivros = new System.Windows.Forms.Button();
             this.btnFace = new System.Windows.Forms.Button();
             this.btnSite = new System.Windows.Forms.Button();
-            this.Question = new System.Windows.Forms.Button();
             this.btnTemas = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pnPrincipal = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.logo1 = new System.Windows.Forms.PictureBox();
-            this.timerPanel = new System.Windows.Forms.Timer(this.components);
             this.button5 = new System.Windows.Forms.Button();
+            this.lblHorario = new System.Windows.Forms.Label();
+            this.timerHora = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logo2)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logo2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -130,6 +132,94 @@
             this.Temperatura.TabIndex = 4;
             this.Temperatura.Text = "22 Cº";
             // 
+            // pnBtnSel
+            // 
+            this.pnBtnSel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(101)))), ((int)(((byte)(143)))));
+            this.pnBtnSel.Location = new System.Drawing.Point(-1, 149);
+            this.pnBtnSel.Name = "pnBtnSel";
+            this.pnBtnSel.Size = new System.Drawing.Size(13, 50);
+            this.pnBtnSel.TabIndex = 3;
+            // 
+            // Question
+            // 
+            this.Question.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Question.FlatAppearance.BorderSize = 0;
+            this.Question.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Question.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Question.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(243)))), ((int)(((byte)(227)))));
+            this.Question.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Question.Location = new System.Drawing.Point(12, 617);
+            this.Question.Name = "Question";
+            this.Question.Size = new System.Drawing.Size(27, 31);
+            this.Question.TabIndex = 3;
+            this.Question.Text = "?";
+            this.Question.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Question.UseVisualStyleBackColor = true;
+            this.Question.Click += new System.EventHandler(this.Question_Click);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(101)))), ((int)(((byte)(143)))));
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(228, 0);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(917, 10);
+            this.flowLayoutPanel1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(435, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(609, 36);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Sistema de Gerenciamento da Biblioteca";
+            // 
+            // pnPrincipal
+            // 
+            this.pnPrincipal.Location = new System.Drawing.Point(229, 148);
+            this.pnPrincipal.Name = "pnPrincipal";
+            this.pnPrincipal.Size = new System.Drawing.Size(915, 500);
+            this.pnPrincipal.TabIndex = 5;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(101)))), ((int)(((byte)(143)))));
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.logo1);
+            this.panel2.Location = new System.Drawing.Point(265, -1);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(166, 125);
+            this.panel2.TabIndex = 2;
+            this.panel2.Visible = false;
+            // 
+            // panel3
+            // 
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 115);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(166, 10);
+            this.panel3.TabIndex = 6;
+            // 
+            // timerPanel
+            // 
+            this.timerPanel.Enabled = true;
+            this.timerPanel.Interval = 500;
+            this.timerPanel.Tick += new System.EventHandler(this.timerPanel_Tick);
+            // 
+            // logo1
+            // 
+            this.logo1.Image = global::Software.Basico.Properties.Resources._01;
+            this.logo1.Location = new System.Drawing.Point(22, 13);
+            this.logo1.Name = "logo1";
+            this.logo1.Size = new System.Drawing.Size(125, 100);
+            this.logo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logo1.TabIndex = 0;
+            this.logo1.TabStop = false;
+            this.logo1.Visible = false;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -150,14 +240,6 @@
             this.logo2.TabIndex = 0;
             this.logo2.TabStop = false;
             this.logo2.Visible = false;
-            // 
-            // pnBtnSel
-            // 
-            this.pnBtnSel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(101)))), ((int)(((byte)(143)))));
-            this.pnBtnSel.Location = new System.Drawing.Point(-1, 149);
-            this.pnBtnSel.Name = "pnBtnSel";
-            this.pnBtnSel.Size = new System.Drawing.Size(13, 50);
-            this.pnBtnSel.TabIndex = 3;
             // 
             // btnClientes
             // 
@@ -201,7 +283,7 @@
             this.btnEmprestimo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmprestimo.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmprestimo.ForeColor = System.Drawing.Color.White;
-            this.btnEmprestimo.Image = global::Software.Basico.Properties.Resources.loan32;
+            this.btnEmprestimo.Image = global::Software.Basico.Properties.Resources.mao;
             this.btnEmprestimo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEmprestimo.Location = new System.Drawing.Point(12, 349);
             this.btnEmprestimo.Name = "btnEmprestimo";
@@ -281,23 +363,6 @@
             this.btnSite.UseVisualStyleBackColor = true;
             this.btnSite.Click += new System.EventHandler(this.btnSite_Click);
             // 
-            // Question
-            // 
-            this.Question.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Question.FlatAppearance.BorderSize = 0;
-            this.Question.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Question.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Question.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(243)))), ((int)(((byte)(227)))));
-            this.Question.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Question.Location = new System.Drawing.Point(12, 617);
-            this.Question.Name = "Question";
-            this.Question.Size = new System.Drawing.Size(27, 31);
-            this.Question.TabIndex = 3;
-            this.Question.Text = "?";
-            this.Question.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Question.UseVisualStyleBackColor = true;
-            this.Question.Click += new System.EventHandler(this.Question_Click);
-            // 
             // btnTemas
             // 
             this.btnTemas.FlatAppearance.BorderSize = 0;
@@ -334,69 +399,6 @@
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             this.btnHome.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnHome_MouseMove);
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(101)))), ((int)(((byte)(143)))));
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(228, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(917, 10);
-            this.flowLayoutPanel1.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(437, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(609, 36);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Sistema de Gerenciamento da Biblioteca";
-            // 
-            // pnPrincipal
-            // 
-            this.pnPrincipal.Location = new System.Drawing.Point(229, 148);
-            this.pnPrincipal.Name = "pnPrincipal";
-            this.pnPrincipal.Size = new System.Drawing.Size(915, 500);
-            this.pnPrincipal.TabIndex = 5;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(101)))), ((int)(((byte)(143)))));
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.logo1);
-            this.panel2.Location = new System.Drawing.Point(265, -1);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(166, 125);
-            this.panel2.TabIndex = 2;
-            this.panel2.Visible = false;
-            // 
-            // panel3
-            // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 115);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(166, 10);
-            this.panel3.TabIndex = 6;
-            // 
-            // logo1
-            // 
-            this.logo1.Image = global::Software.Basico.Properties.Resources._01;
-            this.logo1.Location = new System.Drawing.Point(22, 13);
-            this.logo1.Name = "logo1";
-            this.logo1.Size = new System.Drawing.Size(125, 100);
-            this.logo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.logo1.TabIndex = 0;
-            this.logo1.TabStop = false;
-            this.logo1.Visible = false;
-            // 
-            // timerPanel
-            // 
-            this.timerPanel.Enabled = true;
-            this.timerPanel.Interval = 500;
-            this.timerPanel.Tick += new System.EventHandler(this.timerPanel_Tick);
-            // 
             // button5
             // 
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -413,6 +415,22 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.Close_Click);
             // 
+            // lblHorario
+            // 
+            this.lblHorario.AutoSize = true;
+            this.lblHorario.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHorario.Location = new System.Drawing.Point(677, 76);
+            this.lblHorario.Name = "lblHorario";
+            this.lblHorario.Size = new System.Drawing.Size(125, 36);
+            this.lblHorario.TabIndex = 4;
+            this.lblHorario.Text = "00:00:00";
+            // 
+            // timerHora
+            // 
+            this.timerHora.Enabled = true;
+            this.timerHora.Interval = 1000;
+            this.timerHora.Tick += new System.EventHandler(this.timerHora_Tick);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -424,6 +442,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button5);
+            this.Controls.Add(this.lblHorario);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPrincipal";
@@ -431,10 +450,10 @@
             this.Text = "frmPrincipal";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logo2)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logo1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logo2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -468,5 +487,7 @@
         private System.Windows.Forms.Button btnEmprestimo;
         private System.Windows.Forms.Button btnSite;
         private System.Windows.Forms.Button btnFace;
+        private System.Windows.Forms.Label lblHorario;
+        private System.Windows.Forms.Timer timerHora;
     }
 }
