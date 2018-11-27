@@ -20,7 +20,20 @@ namespace Software.Basico.Telas.Modulos.Usuarios
 
         private void TemaTela()
         {
+            //Mudar cor dos Panel.
             panel1.BackColor = Tema.Primaria;
+
+            //Mudar cor dos Botões.
+            btnAlterar.BackColor = Tema.Segundaria;
+            btnCadastrar.BackColor = Tema.Segundaria;
+            btnAlterar.ForeColor = Tema.Texto;
+            btnCadastrar.ForeColor = Tema.Texto;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            frmConsultar frm = new frmConsultar();
+            ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
         }
     }
 }

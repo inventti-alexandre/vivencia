@@ -8,13 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Software.Basico.Telas.Modulos.Cliente
+namespace Software.Basico.Telas.Modulos.Emprestimo
 {
-    public partial class frmConsultarCliente : UserControl
+    public partial class frmConsultar : UserControl
     {
-        public frmConsultarCliente()
+        public frmConsultar()
         {
             InitializeComponent();
+            TemaTela();
+        }
+
+        private void TemaTela()
+        {
+            panel1.BackColor = Tema.Primaria;
         }
     }
 }

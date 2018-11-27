@@ -53,12 +53,7 @@ namespace Software.Basico.Telas
         private void btnTemas_Click(object sender, EventArgs e)
         {
             frmTema frm = new frmTema();
-
-            if (pnPrincipal.Controls.Count == 1)
-                pnPrincipal.Controls.RemoveAt(0);
-            pnPrincipal.Controls.Add(frm);
-
-            telaSel = 2;
+            CarregarPanel(frm);
 
             //Mudar posição do Panel esquerdo
             pnBtnSel.Location = new Point(0, btnTemas.Location.Y);
@@ -66,6 +61,9 @@ namespace Software.Basico.Telas
 
         private void btnLivros_Click(object sender, EventArgs e)
         {
+            Modulos.Livros.frmConsultar frm = new Modulos.Livros.frmConsultar();
+            CarregarPanel(frm);
+
             telaSel = 3;
 
             //Mudar posição do Panel esquerdo
@@ -75,10 +73,7 @@ namespace Software.Basico.Telas
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             Modulos.Usuarios.frmConsultar frm = new Modulos.Usuarios.frmConsultar();
-
-            if (pnPrincipal.Controls.Count == 1)
-                pnPrincipal.Controls.RemoveAt(0);
-            pnPrincipal.Controls.Add(frm);
+            CarregarPanel(frm);
 
             telaSel = 4;
 
@@ -88,6 +83,9 @@ namespace Software.Basico.Telas
 
         private void btnEmprestimo_Click(object sender, EventArgs e)
         {
+            Modulos.Emprestimo.frmConsultar frm = new Modulos.Emprestimo.frmConsultar();
+            CarregarPanel(frm);
+
             telaSel = 5;
 
             //Mudar posição do Panel esquerdo
@@ -96,18 +94,13 @@ namespace Software.Basico.Telas
 
         private void btnReservas_Click(object sender, EventArgs e)
         {
+            Modulos.Reservas.frmConsultar frm = new Modulos.Reservas.frmConsultar();
+            CarregarPanel(frm);
+
             telaSel = 6;
 
             //Mudar posição do Panel esquerdo
             pnBtnSel.Location = new Point(0, btnReservas.Location.Y);
-        }
-
-        private void btnClientes_Click(object sender, EventArgs e)
-        {
-            telaSel = 7;
-
-            //Mudar posição do Panel esquerdo
-            pnBtnSel.Location = new Point(0, btnClientes.Location.Y);
         }
 
         /// <summary>
@@ -116,10 +109,7 @@ namespace Software.Basico.Telas
         private void ScreenFrmHome()
         {
             frmHome frm = new frmHome();
-
-            if (pnPrincipal.Controls.Count == 1)
-                pnPrincipal.Controls.RemoveAt(0);
-            pnPrincipal.Controls.Add(frm);
+            CarregarPanel(frm);
         }
 
         private void Close_Click(object sender, EventArgs e)
@@ -196,12 +186,6 @@ namespace Software.Basico.Telas
             pnBtnSel.Location = new Point(0, btnReservas.Location.Y);
         }
 
-        private void btnClientes_MouseMove(object sender, MouseEventArgs e)
-        {
-            //Mudar posição do Panel esquerdo
-            pnBtnSel.Location = new Point(0, btnClientes.Location.Y);
-        }
-
         private void Question_Click(object sender, EventArgs e)
         {
             //Botão "?"
@@ -230,8 +214,6 @@ namespace Software.Basico.Telas
                 pnBtnSel.Location = new Point(0, btnEmprestimo.Location.Y);
             else if (telaSel == 6)
                 pnBtnSel.Location = new Point(0, btnReservas.Location.Y);
-            else if (telaSel == 7)
-                pnBtnSel.Location = new Point(0, btnClientes.Location.Y);
         }
 
         private void btnSite_Click(object sender, EventArgs e)
