@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
+            this.btnEmail = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -41,11 +42,22 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Bem Vindo ao Software!!!";
             // 
+            // btnEmail
+            // 
+            this.btnEmail.Location = new System.Drawing.Point(837, 474);
+            this.btnEmail.Name = "btnEmail";
+            this.btnEmail.Size = new System.Drawing.Size(75, 23);
+            this.btnEmail.TabIndex = 1;
+            this.btnEmail.Text = "Enviar";
+            this.btnEmail.UseVisualStyleBackColor = true;
+            this.btnEmail.Click += new System.EventHandler(this.btnEmail_Click);
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.btnEmail);
             this.Controls.Add(this.label1);
             this.Name = "frmHome";
             this.Size = new System.Drawing.Size(915, 500);
@@ -57,5 +69,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnEmail;
     }
 }

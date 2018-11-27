@@ -73,6 +73,8 @@
     <Compile Include="APIs\Clima\ClimaModel.cs" />
     <Compile Include="APIs\Clima\ClimaResponse.cs" />
     <Compile Include="APIs\Clima\TempoResponse.cs" />
+    <Compile Include="APIs\Email\EmailDTO.cs" />
+    <Compile Include="APIs\Email\EmailSend.cs" />
     <Compile Include="Criptografia\DESCripto.cs" />
     <Compile Include="DB\Base\Connection.cs" />
     <Compile Include="DB\Base\Database.cs" />
@@ -327,6 +329,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DB\Script.txt" />
+    <None Include="Resources\htmlEmail.txt" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">

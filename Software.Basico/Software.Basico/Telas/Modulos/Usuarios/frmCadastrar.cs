@@ -35,5 +35,10 @@ namespace Software.Basico.Telas.Modulos.Usuarios
             frmConsultar frm = new frmConsultar();
             ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
         }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
