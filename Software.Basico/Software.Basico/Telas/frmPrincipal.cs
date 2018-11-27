@@ -223,11 +223,13 @@ namespace Software.Basico.Telas
 
         private void btnSite_Click(object sender, EventArgs e)
         {
+            //Abre o navegador padrão com o site do instituto.
             System.Diagnostics.Process.Start("http://acaonsfatima.org.br/");
         }
 
         private void btnFace_Click(object sender, EventArgs e)
         {
+            //Abre o navegador padrão com o facebook do instituto.
             System.Diagnostics.Process.Start("https://www.facebook.com/Instituto-Social-Nossa-Senhora-de-F%C3%A1tima-230903353703049/");
         }
     }
