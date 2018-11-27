@@ -72,11 +72,77 @@
     <Compile Include="Telas\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\Modulos\Cliente\frmAlterarCliente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Modulos\Cliente\frmAlterarCliente.Designer.cs">
+      <DependentUpon>frmAlterarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\Modulos\Cliente\frmCadastrarCliente.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Telas\Modulos\Cliente\frmCadastrarCliente.Designer.cs">
       <DependentUpon>frmCadastrarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Modulos\Cliente\frmConsultarCliente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Modulos\Cliente\frmConsultarCliente.Designer.cs">
+      <DependentUpon>frmConsultarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Modulos\Emprestimo\frmAlterarEmprestimo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Modulos\Emprestimo\frmAlterarEmprestimo.Designer.cs">
+      <DependentUpon>frmAlterarEmprestimo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Modulos\Emprestimo\frmCadastrarEmprestimo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Modulos\Emprestimo\frmCadastrarEmprestimo.Designer.cs">
+      <DependentUpon>frmCadastrarEmprestimo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Modulos\Emprestimo\frmConsultarEmprestimo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Modulos\Emprestimo\frmConsultarEmprestimo.Designer.cs">
+      <DependentUpon>frmConsultarEmprestimo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Modulos\Livros\frmAlterarLivro.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Modulos\Livros\frmAlterarLivro.Designer.cs">
+      <DependentUpon>frmAlterarLivro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Modulos\Livros\frmCadastrarLivro.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Modulos\Livros\frmCadastrarLivro.Designer.cs">
+      <DependentUpon>frmCadastrarLivro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Modulos\Livros\frmConsultarLivro.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Modulos\Livros\frmConsultarLivro.Designer.cs">
+      <DependentUpon>frmConsultarLivro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Modulos\Reservas\frmAlterarReserva.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Modulos\Reservas\frmAlterarReserva.Designer.cs">
+      <DependentUpon>frmAlterarReserva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Modulos\Reservas\frmCadastrarReserva.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Modulos\Reservas\frmCadastrarReserva.Designer.cs">
+      <DependentUpon>frmCadastrarReserva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Modulos\Reservas\frmConsultarReserva.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Modulos\Reservas\frmConsultarReserva.Designer.cs">
+      <DependentUpon>frmConsultarReserva.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\Splash.cs">
       <SubType>Form</SubType>
@@ -119,8 +185,41 @@
     <EmbeddedResource Include="Telas\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Modulos\Cliente\frmAlterarCliente.resx">
+      <DependentUpon>frmAlterarCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas\Modulos\Cliente\frmCadastrarCliente.resx">
       <DependentUpon>frmCadastrarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Modulos\Cliente\frmConsultarCliente.resx">
+      <DependentUpon>frmConsultarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Modulos\Emprestimo\frmAlterarEmprestimo.resx">
+      <DependentUpon>frmAlterarEmprestimo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Modulos\Emprestimo\frmCadastrarEmprestimo.resx">
+      <DependentUpon>frmCadastrarEmprestimo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Modulos\Emprestimo\frmConsultarEmprestimo.resx">
+      <DependentUpon>frmConsultarEmprestimo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Modulos\Livros\frmAlterarLivro.resx">
+      <DependentUpon>frmAlterarLivro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Modulos\Livros\frmCadastrarLivro.resx">
+      <DependentUpon>frmCadastrarLivro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Modulos\Livros\frmConsultarLivro.resx">
+      <DependentUpon>frmConsultarLivro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Modulos\Reservas\frmAlterarReserva.resx">
+      <DependentUpon>frmAlterarReserva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Modulos\Reservas\frmCadastrarReserva.resx">
+      <DependentUpon>frmCadastrarReserva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Modulos\Reservas\frmConsultarReserva.resx">
+      <DependentUpon>frmConsultarReserva.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
@@ -150,9 +249,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DB\Base\" />
-    <Folder Include="Telas\Modulos\Emprestimo\" />
-    <Folder Include="Telas\Modulos\Livros\" />
-    <Folder Include="Telas\Modulos\Reservas\" />
     <Folder Include="Telas\Modulos\Usuarios\" />
   </ItemGroup>
   <ItemGroup>
