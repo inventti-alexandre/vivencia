@@ -78,6 +78,18 @@
     <Compile Include="Telas\Modulos\Cliente\frmCadastrarCliente.Designer.cs">
       <DependentUpon>frmCadastrarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\Modulos\Usuarios\frmCadastrar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Modulos\Usuarios\frmCadastrar.Designer.cs">
+      <DependentUpon>frmCadastrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Modulos\Usuarios\frmConsultar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Modulos\Usuarios\frmConsultar.Designer.cs">
+      <DependentUpon>frmConsultar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\Splash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +134,12 @@
     <EmbeddedResource Include="Telas\Modulos\Cliente\frmCadastrarCliente.resx">
       <DependentUpon>frmCadastrarCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Modulos\Usuarios\frmCadastrar.resx">
+      <DependentUpon>frmCadastrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Modulos\Usuarios\frmConsultar.resx">
+      <DependentUpon>frmConsultar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas\Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,7 +171,6 @@
     <Folder Include="Telas\Modulos\Emprestimo\" />
     <Folder Include="Telas\Modulos\Livros\" />
     <Folder Include="Telas\Modulos\Reservas\" />
-    <Folder Include="Telas\Modulos\Usuarios\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\users32.png" />
@@ -236,6 +253,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\011.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DB\Script.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

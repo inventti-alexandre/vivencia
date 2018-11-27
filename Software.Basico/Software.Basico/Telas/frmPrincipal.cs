@@ -23,6 +23,13 @@ namespace Software.Basico.Telas
             Clima();
         }
 
+        public void CarregarPanel(System.Windows.Forms.UserControl frm)
+        {
+            if (pnPrincipal.Controls.Count == 1)
+                pnPrincipal.Controls.RemoveAt(0);
+            pnPrincipal.Controls.Add(frm);
+        }
+
         private void Clima()
         {
             ClimaModel clima = new ClimaModel();
@@ -67,6 +74,12 @@ namespace Software.Basico.Telas
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
+            Modulos.Usuarios.frmConsultar frm = new Modulos.Usuarios.frmConsultar();
+
+            if (pnPrincipal.Controls.Count == 1)
+                pnPrincipal.Controls.RemoveAt(0);
+            pnPrincipal.Controls.Add(frm);
+
             telaSel = 4;
 
             //Mudar posição do Panel esquerdo
@@ -231,6 +244,12 @@ namespace Software.Basico.Telas
         {
             //Abre o navegador padrão com o facebook do instituto.
             System.Diagnostics.Process.Start("https://www.facebook.com/Instituto-Social-Nossa-Senhora-de-F%C3%A1tima-230903353703049/");
+        }
+
+        private void timerHora_Tick(object sender, EventArgs e)
+        {
+            //Horário atual.
+            lblHorario.Text = DateTime.Now.ToLongTimeString();
         }
     }
 }
