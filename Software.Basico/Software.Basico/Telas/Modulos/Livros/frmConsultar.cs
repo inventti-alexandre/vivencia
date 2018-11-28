@@ -22,5 +22,10 @@ namespace Software.Basico.Telas.Modulos.Livros
         {
             panel1.BackColor = Tema.Primaria;
         }
+
+        private void frmConsultar_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -63,6 +63,7 @@
             this.btnRemover.TabIndex = 23;
             this.btnRemover.Text = "Remover";
             this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
             // dataGridView1
             // 

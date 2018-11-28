@@ -92,6 +92,18 @@
     <Compile Include="Telas\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\Modulos\Autor\frmCadastroAutor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Modulos\Autor\frmCadastroAutor.Designer.cs">
+      <DependentUpon>frmCadastroAutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Modulos\Editora\frmCadastrar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Modulos\Editora\frmCadastrar.Designer.cs">
+      <DependentUpon>frmCadastrar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\Modulos\Emprestimo\frmCadastrar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -103,6 +115,12 @@
     </Compile>
     <Compile Include="Telas\Modulos\Emprestimo\frmConsultar.Designer.cs">
       <DependentUpon>frmConsultar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Modulos\Genero\frmCadastrar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Modulos\Genero\frmCadastrar.Designer.cs">
+      <DependentUpon>frmCadastrar.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\Modulos\Livros\frmCadastrar.cs">
       <SubType>UserControl</SubType>
@@ -181,11 +199,20 @@
     <EmbeddedResource Include="Telas\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Modulos\Autor\frmCadastroAutor.resx">
+      <DependentUpon>frmCadastroAutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Modulos\Editora\frmCadastrar.resx">
+      <DependentUpon>frmCadastrar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas\Modulos\Emprestimo\frmCadastrar.resx">
       <DependentUpon>frmCadastrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Modulos\Emprestimo\frmConsultar.resx">
       <DependentUpon>frmConsultar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Modulos\Genero\frmCadastrar.resx">
+      <DependentUpon>frmCadastrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Modulos\Livros\frmCadastrar.resx">
       <DependentUpon>frmCadastrar.cs</DependentUpon>
@@ -329,6 +356,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DB\Script.txt" />
+    <None Include="Resources\06a7db4db4ec8491ba1b1443d4f8c15a.png" />
+    <None Include="Resources\Escritor-300.png" />
+    <None Include="Resources\cuentos.png" />
+    <None Include="Resources\book.png" />
+    <None Include="Resources\8c1b1aeaa47f60548eb0e5c3ddf4ff17.png" />
     <None Include="Resources\htmlEmail.txt" />
   </ItemGroup>
   <ItemGroup>

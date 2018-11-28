@@ -83,6 +83,16 @@ namespace Software.Basico.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _06a7db4db4ec8491ba1b1443d4f8c15a {
+            get {
+                object obj = ResourceManager.GetObject("06a7db4db4ec8491ba1b1443d4f8c15a", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _201612_01T170829 {
             get {
                 object obj = ResourceManager.GetObject("201612-01T170829", resourceCulture);
@@ -93,9 +103,29 @@ namespace Software.Basico.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _8c1b1aeaa47f60548eb0e5c3ddf4ff17 {
+            get {
+                object obj = ResourceManager.GetObject("8c1b1aeaa47f60548eb0e5c3ddf4ff17", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BarraCinza {
             get {
                 object obj = ResourceManager.GetObject("BarraCinza", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap book {
+            get {
+                object obj = ResourceManager.GetObject("book", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +193,29 @@ namespace Software.Basico.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cuentos {
+            get {
+                object obj = ResourceManager.GetObject("cuentos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dark {
             get {
                 object obj = ResourceManager.GetObject("dark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Escritor_300 {
+            get {
+                object obj = ResourceManager.GetObject("Escritor-300", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

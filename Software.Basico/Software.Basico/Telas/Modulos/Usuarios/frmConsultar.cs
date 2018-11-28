@@ -40,5 +40,10 @@ namespace Software.Basico.Telas.Modulos.Usuarios
 
             ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
         }
+
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

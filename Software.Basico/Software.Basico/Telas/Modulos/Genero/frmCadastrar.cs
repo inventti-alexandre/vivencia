@@ -8,24 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Software.Basico.Telas.Modulos.Livros
+namespace Software.Basico.Telas.Modulos.Genero
 {
     public partial class frmCadastrar : UserControl
     {
         public frmCadastrar()
         {
             InitializeComponent();
-            TemaTela();
-        }
-
-        private void TemaTela()
-        {
-            panel1.BackColor = Tema.Primaria;
-        }
-
-        private void frmCadastrar_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
