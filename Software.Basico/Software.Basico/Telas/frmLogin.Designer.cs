@@ -34,7 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.btnLogar = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.lblRecuperarSenha = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -87,24 +86,16 @@
             // 
             // btnLogar
             // 
+            this.btnLogar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnLogar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnLogar.Location = new System.Drawing.Point(220, 156);
+            this.btnLogar.Location = new System.Drawing.Point(46, 156);
             this.btnLogar.Name = "btnLogar";
-            this.btnLogar.Size = new System.Drawing.Size(75, 32);
+            this.btnLogar.Size = new System.Drawing.Size(249, 32);
             this.btnLogar.TabIndex = 2;
             this.btnLogar.Text = "Logar";
-            this.btnLogar.UseVisualStyleBackColor = true;
+            this.btnLogar.UseVisualStyleBackColor = false;
             this.btnLogar.Click += new System.EventHandler(this.btnLogar_Click);
-            // 
-            // button2
-            // 
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.button2.Location = new System.Drawing.Point(110, 156);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(104, 32);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Registrar-se";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // lblRecuperarSenha
             // 
@@ -124,7 +115,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(182)))), ((int)(((byte)(183)))));
             this.ClientSize = new System.Drawing.Size(307, 200);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnLogar);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtLogin);
@@ -149,7 +139,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Button btnLogar;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label lblRecuperarSenha;
     }
 }
