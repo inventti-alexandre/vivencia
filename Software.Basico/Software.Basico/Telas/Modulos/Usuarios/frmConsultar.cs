@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Software.Basico.DB;
+using System.Data.Entity;
 
 namespace Software.Basico.Telas.Modulos.Usuarios
 {
@@ -43,7 +45,31 @@ namespace Software.Basico.Telas.Modulos.Usuarios
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
+            Funcionario funcionario = dgvUsuarios.CurrentRow.DataBoundItem as Funcionario;
+            BibliotecaDB db = new BibliotecaDB();
 
+            var func = new Funcionario { id_funcionario = funcionario.id_funcionario };
+            db.Entry(func).State = EntityState.Deleted;
+            db.SaveChanges();
+
+            MessageBox.Show("Funcionario Removido com sucesso!");
+        }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+            BibliotecaDB db = new BibliotecaDB();
+            List<Funcionario> funcList = db.Funcionario.ToList();
+
+            dgvUsuarios.DataSource = funcList;
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            Funcionario funcionario = dgvUsuarios.CurrentRow.DataBoundItem as Funcionario;
+
+            frmCadastrar frm = new frmCadastrar();
+            frm.PreencherCampos(funcionario.id_funcionario);
+            ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
         }
     }
 }
