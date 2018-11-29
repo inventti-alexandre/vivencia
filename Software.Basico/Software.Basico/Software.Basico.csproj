@@ -47,7 +47,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=8.0.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.10.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -134,6 +134,12 @@
     <Compile Include="Telas\Modulos\Livros\frmConsultar.Designer.cs">
       <DependentUpon>frmConsultar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\Modulos\Livros\frmEscolhe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Modulos\Livros\frmEscolhe.Designer.cs">
+      <DependentUpon>frmEscolhe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\Modulos\Reservas\frmCadastrar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -219,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Modulos\Livros\frmConsultar.resx">
       <DependentUpon>frmConsultar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Modulos\Livros\frmEscolhe.resx">
+      <DependentUpon>frmEscolhe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Modulos\Reservas\frmCadastrar.resx">
       <DependentUpon>frmCadastrar.cs</DependentUpon>
