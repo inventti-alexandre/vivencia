@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ee03f35fda1a4db69fc25296447404c1" Name="Diagram1">
+        <EntityTypeShape EntityType="FreiBibliotecaDB.tb_Autor" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FreiBibliotecaDB.tb_Curso" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FreiBibliotecaDB.tb_Editora" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FreiBibliotecaDB.tb_Emprestimo" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FreiBibliotecaDB.tb_Estoque" Width="1.5" PointX="5.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FreiBibliotecaDB.tb_Funcionario" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FreiBibliotecaDB.tb_Genero" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FreiBibliotecaDB.tb_Livro" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FreiBibliotecaDB.tb_Locatario" Width="1.5" PointX="3" PointY="14.25" IsExpanded="true" />
+        <AssociationConnector Association="FreiBibliotecaDB.FK__tb_Livro__autor___3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="FreiBibliotecaDB.FK__tb_Empres__curso__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="FreiBibliotecaDB.FK__tb_Livro__editor__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="FreiBibliotecaDB.FK__tb_Empres__aluno__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="FreiBibliotecaDB.FK__tb_Empres__funci__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="FreiBibliotecaDB.FK__tb_Empres__livro__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="FreiBibliotecaDB.FK__tb_Estoqu__qtd_l__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="FreiBibliotecaDB.FK__tb_Livro__genero__3D5E1FD2" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

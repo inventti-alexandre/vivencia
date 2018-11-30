@@ -101,34 +101,49 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BibliotecaDB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="DB\Frei.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Frei.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Frei.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Frei.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Frei.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Frei.edmx</DependentUpon>
+    </Compile>
     <Compile Include="DB\Funcionario\FuncionarioBusiness.cs" />
     <Compile Include="DB\Funcionario\FuncionarioDatabase.cs" />
     <Compile Include="DB\tb_Autor.cs">
-      <DependentUpon>BibliotecaDB.tt</DependentUpon>
+      <DependentUpon>Frei.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\tb_Curso.cs">
-      <DependentUpon>BibliotecaDB.tt</DependentUpon>
+      <DependentUpon>Frei.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\tb_Editora.cs">
-      <DependentUpon>BibliotecaDB.tt</DependentUpon>
+      <DependentUpon>Frei.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\tb_Emprestimo.cs">
-      <DependentUpon>BibliotecaDB.tt</DependentUpon>
+      <DependentUpon>Frei.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\tb_Estoque.cs">
-      <DependentUpon>BibliotecaDB.tt</DependentUpon>
+      <DependentUpon>Frei.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\tb_Funcionario.cs">
-      <DependentUpon>BibliotecaDB.tt</DependentUpon>
+      <DependentUpon>Frei.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\tb_Genero.cs">
-      <DependentUpon>BibliotecaDB.tt</DependentUpon>
+      <DependentUpon>Frei.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\tb_Livro.cs">
-      <DependentUpon>BibliotecaDB.tt</DependentUpon>
+      <DependentUpon>Frei.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\tb_Locatario.cs">
-      <DependentUpon>BibliotecaDB.tt</DependentUpon>
+      <DependentUpon>Frei.tt</DependentUpon>
     </Compile>
     <Compile Include="Gp.cs" />
     <Compile Include="Program.cs" />
@@ -304,6 +319,13 @@
     <None Include="DB\BibliotecaDB.edmx.diagram">
       <DependentUpon>BibliotecaDB.edmx</DependentUpon>
     </None>
+    <EntityDeploy Include="DB\Frei.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Frei.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DB\Frei.edmx.diagram">
+      <DependentUpon>Frei.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -422,6 +444,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>BibliotecaDB.edmx</DependentUpon>
       <LastGenOutput>BibliotecaDB.cs</LastGenOutput>
+    </Content>
+    <Content Include="DB\Frei.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Frei.edmx</DependentUpon>
+      <LastGenOutput>Frei.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DB\Frei.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Frei.edmx</DependentUpon>
+      <LastGenOutput>Frei.cs</LastGenOutput>
     </Content>
     <Content Include="DB\Script_MySql.txt" />
     <Content Include="DB\Script_SQLServer.txt" />

@@ -40,6 +40,12 @@ namespace Software.Basico.Telas
         private void TemaTela()
         {
             panel1.BackColor = Tema.Primaria;
+            btnLogar.BackColor = Tema.Primaria;
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

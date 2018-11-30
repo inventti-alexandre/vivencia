@@ -19,7 +19,6 @@ namespace Software.Basico.Telas.Modulos.Funcionario
         {
             InitializeComponent();
             TemaTela();
-            CarregarGrid();
         }
 
         private void TemaTela()

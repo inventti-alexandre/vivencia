@@ -129,5 +129,10 @@ namespace Software.Basico.Telas.Modulos.Funcionario
             txtSexo.Text = funcionario.ds_sexo;
             lblId.Text = funcionario.id_funcionario.ToString();
         }
+
+        private void frmCadastrar_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
