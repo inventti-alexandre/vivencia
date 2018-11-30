@@ -22,5 +22,30 @@ namespace Software.Basico.Telas.Modulos.Emprestimo
         {
             panel1.BackColor = Tema.Primaria;
         }
+
+        private void frmConsultar_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
