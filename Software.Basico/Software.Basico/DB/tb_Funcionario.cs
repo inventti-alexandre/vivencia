@@ -12,18 +12,22 @@ namespace Software.Basico.DB
     using System;
     using System.Collections.Generic;
     
-    public partial class Editora
+    public partial class tb_Funcionario
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Editora()
+        public tb_Funcionario()
         {
-            this.Livro = new HashSet<Livro>();
+            this.tb_Emprestimo = new HashSet<tb_Emprestimo>();
         }
     
-        public int id_editora { get; set; }
-        public string nm_editora { get; set; }
+        public int id_funcionario { get; set; }
+        public string nm_funcionario { get; set; }
+        public string ds_email { get; set; }
+        public string nu_senha { get; set; }
+        public string ds_sexo { get; set; }
+        public string nu_cpf { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Livro> Livro { get; set; }
+        public virtual ICollection<tb_Emprestimo> tb_Emprestimo { get; set; }
     }
 }

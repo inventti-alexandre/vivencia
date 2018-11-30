@@ -85,12 +85,6 @@
     <Compile Include="APIs\Email\EmailDTO.cs" />
     <Compile Include="APIs\Email\EmailSend.cs" />
     <Compile Include="Criptografia\DESCripto.cs" />
-    <Compile Include="DB\Aluno.cs">
-      <DependentUpon>BibliotecaDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\Autor.cs">
-      <DependentUpon>BibliotecaDB.tt</DependentUpon>
-    </Compile>
     <Compile Include="DB\Base\Connection.cs" />
     <Compile Include="DB\Base\Database.cs" />
     <Compile Include="DB\BibliotecaDB.Context.cs">
@@ -108,27 +102,36 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BibliotecaDB.edmx</DependentUpon>
     </Compile>
-    <Compile Include="DB\Curso.cs">
+    <Compile Include="DB\Funcionario\FuncionarioBusiness.cs" />
+    <Compile Include="DB\Funcionario\FuncionarioDatabase.cs" />
+    <Compile Include="DB\tb_Autor.cs">
       <DependentUpon>BibliotecaDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\Editora.cs">
+    <Compile Include="DB\tb_Curso.cs">
       <DependentUpon>BibliotecaDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\Emprestimo.cs">
+    <Compile Include="DB\tb_Editora.cs">
       <DependentUpon>BibliotecaDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\Estoque.cs">
+    <Compile Include="DB\tb_Emprestimo.cs">
       <DependentUpon>BibliotecaDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\Funcionario.cs">
+    <Compile Include="DB\tb_Estoque.cs">
       <DependentUpon>BibliotecaDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\Genero.cs">
+    <Compile Include="DB\tb_Funcionario.cs">
       <DependentUpon>BibliotecaDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\Livro.cs">
+    <Compile Include="DB\tb_Genero.cs">
       <DependentUpon>BibliotecaDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="DB\tb_Livro.cs">
+      <DependentUpon>BibliotecaDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\tb_Locatario.cs">
+      <DependentUpon>BibliotecaDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Gp.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Telas\frmLogin.cs">
@@ -167,6 +170,18 @@
     <Compile Include="Telas\Modulos\Emprestimo\frmConsultar.Designer.cs">
       <DependentUpon>frmConsultar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\Modulos\Funcionario\frmCadastrar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Modulos\Funcionario\frmCadastrar.Designer.cs">
+      <DependentUpon>frmCadastrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Modulos\Funcionario\frmConsultar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Modulos\Funcionario\frmConsultar.Designer.cs">
+      <DependentUpon>frmConsultar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\Modulos\Genero\frmCadastrar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -195,18 +210,6 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Telas\Modulos\Reservas\frmConsultar.Designer.cs">
-      <DependentUpon>frmConsultar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Telas\Modulos\Usuarios\frmCadastrar.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Telas\Modulos\Usuarios\frmCadastrar.Designer.cs">
-      <DependentUpon>frmCadastrar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Telas\Modulos\Usuarios\frmConsultar.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Telas\Modulos\Usuarios\frmConsultar.Designer.cs">
       <DependentUpon>frmConsultar.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\Splash.cs">
@@ -262,6 +265,12 @@
     <EmbeddedResource Include="Telas\Modulos\Emprestimo\frmConsultar.resx">
       <DependentUpon>frmConsultar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Modulos\Funcionario\frmCadastrar.resx">
+      <DependentUpon>frmCadastrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Modulos\Funcionario\frmConsultar.resx">
+      <DependentUpon>frmConsultar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas\Modulos\Genero\frmCadastrar.resx">
       <DependentUpon>frmCadastrar.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,12 +284,6 @@
       <DependentUpon>frmCadastrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Modulos\Reservas\frmConsultar.resx">
-      <DependentUpon>frmConsultar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Telas\Modulos\Usuarios\frmCadastrar.resx">
-      <DependentUpon>frmCadastrar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Telas\Modulos\Usuarios\frmConsultar.resx">
       <DependentUpon>frmConsultar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Splash.resx">
@@ -323,7 +326,6 @@
     <Folder Include="DB\Editora\" />
     <Folder Include="DB\Emprestimo\" />
     <Folder Include="DB\Estoque\" />
-    <Folder Include="DB\Funcionario\" />
     <Folder Include="DB\Genero\" />
     <Folder Include="DB\Livro\" />
   </ItemGroup>
@@ -415,15 +417,16 @@
   <ItemGroup>
     <Content Include="DB\BibliotecaDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BibliotecaDB.Context.cs</LastGenOutput>
       <DependentUpon>BibliotecaDB.edmx</DependentUpon>
+      <LastGenOutput>BibliotecaDB.Context.cs</LastGenOutput>
     </Content>
     <Content Include="DB\BibliotecaDB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>BibliotecaDB.edmx</DependentUpon>
       <LastGenOutput>BibliotecaDB.cs</LastGenOutput>
     </Content>
-    <Content Include="DB\Script.txt" />
+    <Content Include="DB\Script_MySql.txt" />
+    <Content Include="DB\Script_SQLServer.txt" />
     <None Include="Resources\06a7db4db4ec8491ba1b1443d4f8c15a.png" />
     <None Include="Resources\Escritor-300.png" />
     <None Include="Resources\cuentos.png" />

@@ -12,19 +12,19 @@ namespace Software.Basico.DB
     using System;
     using System.Collections.Generic;
     
-    public partial class Emprestimo
+    public partial class tb_Emprestimo
     {
         public int id_emprestimo { get; set; }
         public System.DateTime dt_emprestimo { get; set; }
         public System.DateTime dt_devolucao { get; set; }
         public int livro_id_livro { get; set; }
-        public int Curso_id_curso { get; set; }
-        public int Aluno_id_aluno { get; set; }
-        public int Funcionario_id_funcionario { get; set; }
+        public int curso_id_curso { get; set; }
+        public int aluno_id_aluno { get; set; }
+        public int funcionario_id_funcionario { get; set; }
     
-        public virtual Aluno Aluno { get; set; }
-        public virtual Curso Curso { get; set; }
-        public virtual Funcionario Funcionario { get; set; }
-        public virtual Livro Livro { get; set; }
+        public virtual tb_Curso tb_Curso { get; set; }
+        public virtual tb_Locatario tb_Locatario { get; set; }
+        public virtual tb_Funcionario tb_Funcionario { get; set; }
+        public virtual tb_Livro tb_Livro { get; set; }
     }
 }

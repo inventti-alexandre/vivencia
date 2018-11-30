@@ -13,10 +13,10 @@ namespace Software.Basico.DB
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BibliotecaDB : DbContext
+    public partial class BibliotecaDBAzure : DbContext
     {
-        public BibliotecaDB()
-            : base("name=BibliotecaDB")
+        public BibliotecaDBAzure()
+            : base("name=BibliotecaDBAzure")
         {
         }
     
@@ -25,14 +25,14 @@ namespace Software.Basico.DB
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Aluno> Aluno { get; set; }
-        public virtual DbSet<Autor> Autor { get; set; }
-        public virtual DbSet<Curso> Curso { get; set; }
-        public virtual DbSet<Editora> Editora { get; set; }
-        public virtual DbSet<Emprestimo> Emprestimo { get; set; }
-        public virtual DbSet<Estoque> Estoque { get; set; }
-        public virtual DbSet<Funcionario> Funcionario { get; set; }
-        public virtual DbSet<Genero> Genero { get; set; }
-        public virtual DbSet<Livro> Livro { get; set; }
+        public virtual DbSet<tb_Autor> tb_Autor { get; set; }
+        public virtual DbSet<tb_Curso> tb_Curso { get; set; }
+        public virtual DbSet<tb_Editora> tb_Editora { get; set; }
+        public virtual DbSet<tb_Emprestimo> tb_Emprestimo { get; set; }
+        public virtual DbSet<tb_Estoque> tb_Estoque { get; set; }
+        public virtual DbSet<tb_Funcionario> tb_Funcionario { get; set; }
+        public virtual DbSet<tb_Genero> tb_Genero { get; set; }
+        public virtual DbSet<tb_Livro> tb_Livro { get; set; }
+        public virtual DbSet<tb_Locatario> tb_Locatario { get; set; }
     }
 }

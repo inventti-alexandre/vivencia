@@ -9,8 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Software.Basico.DB;
 using System.Data.Entity;
+using Software.Basico.DB.Funcionario;
 
-namespace Software.Basico.Telas.Modulos.Usuarios
+namespace Software.Basico.Telas.Modulos.Funcionario
 {
     public partial class frmConsultar : UserControl
     {
@@ -18,6 +19,7 @@ namespace Software.Basico.Telas.Modulos.Usuarios
         {
             InitializeComponent();
             TemaTela();
+            CarregarGrid();
         }
 
         private void TemaTela()
@@ -36,36 +38,60 @@ namespace Software.Basico.Telas.Modulos.Usuarios
             btnRemover.ForeColor = Tema.Texto;
         }
 
+        private void CarregarGrid()
+        {
+            FuncionarioBusiness business = new FuncionarioBusiness();
+            List<tb_Funcionario> funcList = business.ListarFuncionarios();
+
+            dgvUsuarios.AutoGenerateColumns = false;
+            dgvUsuarios.DataSource = funcList;
+        }
+
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             frmCadastrar frm = new frmCadastrar();
-
             ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
         }
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
-            Funcionario funcionario = dgvUsuarios.CurrentRow.DataBoundItem as Funcionario;
-            BibliotecaDB db = new BibliotecaDB();
+            RemoverFuncionario();
+        }
 
-            var func = new Funcionario { id_funcionario = funcionario.id_funcionario };
-            db.Entry(func).State = EntityState.Deleted;
-            db.SaveChanges();
+        private void RemoverFuncionario()
+        {
+            try
+            {
+                tb_Funcionario funcionario = dgvUsuarios.CurrentRow.DataBoundItem as tb_Funcionario;
 
-            MessageBox.Show("Funcionario Removido com sucesso!");
+                FuncionarioBusiness business = new FuncionarioBusiness();
+                business.RemoverFuncionario(funcionario.id_funcionario);
+
+                MessageBox.Show("Funcionário Removido com sucesso!", "Biblioteca",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                CarregarGrid();
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Biblioteca",
+                   MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro não identificado: {ex.Message}", "Biblioteca",
+                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnListar_Click(object sender, EventArgs e)
         {
-            BibliotecaDB db = new BibliotecaDB();
-            List<Funcionario> funcList = db.Funcionario.ToList();
-
-            dgvUsuarios.DataSource = funcList;
+            CarregarGrid();
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            Funcionario funcionario = dgvUsuarios.CurrentRow.DataBoundItem as Funcionario;
+            tb_Funcionario funcionario = dgvUsuarios.CurrentRow.DataBoundItem as tb_Funcionario;
 
             frmCadastrar frm = new frmCadastrar();
             frm.PreencherCampos(funcionario.id_funcionario);

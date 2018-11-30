@@ -12,18 +12,18 @@ namespace Software.Basico.DB
     using System;
     using System.Collections.Generic;
     
-    public partial class Autor
+    public partial class tb_Autor
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Autor()
+        public tb_Autor()
         {
-            this.Livro = new HashSet<Livro>();
+            this.tb_Livro = new HashSet<tb_Livro>();
         }
     
         public int id_autor { get; set; }
         public string nm_autor { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Livro> Livro { get; set; }
+        public virtual ICollection<tb_Livro> tb_Livro { get; set; }
     }
 }

@@ -12,18 +12,20 @@ namespace Software.Basico.DB
     using System;
     using System.Collections.Generic;
     
-    public partial class Genero
+    public partial class tb_Curso
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Genero()
+        public tb_Curso()
         {
-            this.Livro = new HashSet<Livro>();
+            this.tb_Emprestimo = new HashSet<tb_Emprestimo>();
         }
     
-        public int id_genero { get; set; }
-        public string nm_genero { get; set; }
+        public int id_curso { get; set; }
+        public string nm_curso { get; set; }
+        public string ds_periodo { get; set; }
+        public string nm_turma { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Livro> Livro { get; set; }
+        public virtual ICollection<tb_Emprestimo> tb_Emprestimo { get; set; }
     }
 }

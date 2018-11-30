@@ -12,13 +12,13 @@ namespace Software.Basico.DB
     using System;
     using System.Collections.Generic;
     
-    public partial class Livro
+    public partial class tb_Livro
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Livro()
+        public tb_Livro()
         {
-            this.Emprestimo = new HashSet<Emprestimo>();
-            this.Estoque = new HashSet<Estoque>();
+            this.tb_Emprestimo = new HashSet<tb_Emprestimo>();
+            this.tb_Estoque = new HashSet<tb_Estoque>();
         }
     
         public int id_livro { get; set; }
@@ -30,16 +30,16 @@ namespace Software.Basico.DB
         public string ds_subtitulo { get; set; }
         public string ds_palavraschaves { get; set; }
         public Nullable<int> nu_volume { get; set; }
-        public int Genero_id_genero { get; set; }
-        public int Autor_id_autor { get; set; }
-        public int Editora_id_editora { get; set; }
+        public int genero_id_genero { get; set; }
+        public int autor_id_autor { get; set; }
+        public int editora_id_editora { get; set; }
     
-        public virtual Autor Autor { get; set; }
-        public virtual Editora Editora { get; set; }
+        public virtual tb_Autor tb_Autor { get; set; }
+        public virtual tb_Editora tb_Editora { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Emprestimo> Emprestimo { get; set; }
+        public virtual ICollection<tb_Emprestimo> tb_Emprestimo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Estoque> Estoque { get; set; }
-        public virtual Genero Genero { get; set; }
+        public virtual ICollection<tb_Estoque> tb_Estoque { get; set; }
+        public virtual tb_Genero tb_Genero { get; set; }
     }
 }

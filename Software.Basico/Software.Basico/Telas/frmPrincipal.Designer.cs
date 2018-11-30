@@ -207,10 +207,10 @@
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(216, 50);
             this.btnUsuarios.TabIndex = 3;
-            this.btnUsuarios.Text = "          Usuários";
+            this.btnUsuarios.Text = "          Funcionarios";
             this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUsuarios.UseVisualStyleBackColor = true;
-            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            this.btnUsuarios.Click += new System.EventHandler(this.btnFuncionarios_Click);
             this.btnUsuarios.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnUsuarios_MouseMove);
             // 
             // btnLivros

@@ -70,9 +70,9 @@ namespace Software.Basico.Telas
             pnBtnSel.Location = new Point(0, btnLivros.Location.Y);
         }
 
-        private void btnUsuarios_Click(object sender, EventArgs e)
+        private void btnFuncionarios_Click(object sender, EventArgs e)
         {
-            Modulos.Usuarios.frmConsultar frm = new Modulos.Usuarios.frmConsultar();
+            Modulos.Funcionario.frmConsultar frm = new Modulos.Funcionario.frmConsultar();
             CarregarPanel(frm);
 
             telaSel = 4;

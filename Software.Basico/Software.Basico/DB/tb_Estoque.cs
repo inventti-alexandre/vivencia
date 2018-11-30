@@ -12,12 +12,12 @@ namespace Software.Basico.DB
     using System;
     using System.Collections.Generic;
     
-    public partial class Estoque
+    public partial class tb_Estoque
     {
         public int id_estoque { get; set; }
         public int livro_id_livro { get; set; }
         public int qtd_livro { get; set; }
     
-        public virtual Livro Livro { get; set; }
+        public virtual tb_Livro tb_Livro { get; set; }
     }
 }

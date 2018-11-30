@@ -12,20 +12,22 @@ namespace Software.Basico.DB
     using System;
     using System.Collections.Generic;
     
-    public partial class Curso
+    public partial class tb_Locatario
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Curso()
+        public tb_Locatario()
         {
-            this.Emprestimo = new HashSet<Emprestimo>();
+            this.tb_Emprestimo = new HashSet<tb_Emprestimo>();
         }
     
-        public int id_curso { get; set; }
-        public string nm_curso { get; set; }
-        public string ds_periodo { get; set; }
-        public string nm_turma { get; set; }
+        public int id_locatario { get; set; }
+        public string nm_locatario { get; set; }
+        public string ds_email { get; set; }
+        public string tel_fixo { get; set; }
+        public string nu_cpf { get; set; }
+        public string tel_celular { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Emprestimo> Emprestimo { get; set; }
+        public virtual ICollection<tb_Emprestimo> tb_Emprestimo { get; set; }
     }
 }
