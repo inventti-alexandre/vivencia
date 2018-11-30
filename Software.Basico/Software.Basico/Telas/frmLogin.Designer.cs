@@ -117,9 +117,9 @@
             this.btnLogar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogar.ForeColor = System.Drawing.Color.White;
-            this.btnLogar.Location = new System.Drawing.Point(43, 388);
+            this.btnLogar.Location = new System.Drawing.Point(34, 388);
             this.btnLogar.Name = "btnLogar";
-            this.btnLogar.Size = new System.Drawing.Size(250, 39);
+            this.btnLogar.Size = new System.Drawing.Size(269, 39);
             this.btnLogar.TabIndex = 2;
             this.btnLogar.Text = "Logar";
             this.btnLogar.UseVisualStyleBackColor = false;
@@ -129,7 +129,7 @@
             // 
             this.lblRecuperarSenha.AutoSize = true;
             this.lblRecuperarSenha.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblRecuperarSenha.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecuperarSenha.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRecuperarSenha.Location = new System.Drawing.Point(194, 348);
             this.lblRecuperarSenha.Margin = new System.Windows.Forms.Padding(0);
             this.lblRecuperarSenha.Name = "lblRecuperarSenha";
@@ -180,7 +180,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(182)))), ((int)(((byte)(183)))));
-            this.ClientSize = new System.Drawing.Size(333, 500);
+            this.ClientSize = new System.Drawing.Size(333, 448);
             this.Controls.Add(this.pnSenha);
             this.Controls.Add(this.pnLogin);
             this.Controls.Add(this.pictureBox1);

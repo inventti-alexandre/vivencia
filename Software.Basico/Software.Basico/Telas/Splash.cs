@@ -28,7 +28,7 @@ namespace Software.Basico.Telas
                 Invoke(new Action(() =>
                 {
                     // Abre a tela Inicial
-                    frmLogin frm = new frmLogin();
+                    frmPrincipal frm = new frmPrincipal();
                     frm.Show();
                     Hide();
                 }));

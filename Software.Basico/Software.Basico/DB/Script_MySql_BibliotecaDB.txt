@@ -1,0 +1,89 @@
+﻿DROP DATABASE IF EXISTS BibliotecaDB;
+CREATE DATABASE BibliotecaDB;
+USE BibliotecaDB;
+
+CREATE TABLE `tb_autor` (
+  `id_autor` INT(11) NOT NULL AUTO_INCREMENT,
+  `nm_autor` VARCHAR(90) NOT NULL,
+  `nm_nomeCompleto` VARCHAR(150) NULL,
+  `ds_nacionalidade` VARCHAR(90) NULL,
+  PRIMARY KEY (`id_autor`));
+
+
+CREATE TABLE `tb_genero` (
+  `id_genero` INT NOT NULL AUTO_INCREMENT,
+  `nm_genero` VARCHAR(100) NOT NULL,
+  PRIMARY KEY (`id_genero`));
+
+CREATE TABLE `tb_livro` (
+  `id_livro` INT(11) NOT NULL AUTO_INCREMENT,
+  `ds_titulo` VARCHAR(90) NOT NULL,
+  `ds_tipo` VARCHAR(45) NOT NULL,
+  `ds_condicoes` VARCHAR(40) NOT NULL,
+  `ds_idioma` VARCHAR(30) NOT NULL,
+  `nm_editora` VARCHAR(100) NOT NULL,
+  `nu_volume` INT(11) NOT NULL,
+  `nu_isbn` VARCHAR(20) NULL DEFAULT NULL,
+  `ds_subtitulo` VARCHAR(150) NULL DEFAULT NULL,
+  `ds_palavrasChaves` VARCHAR(300) NULL DEFAULT NULL,
+  `img_Capa` LONGBLOB NULL,
+  `autor_id_autor` INT NOT NULL,
+  `tb_genero_id_genero` INT NOT NULL,
+  PRIMARY KEY (`id_livro`),
+    FOREIGN KEY (`autor_id_autor`)
+    REFERENCES `biblioteca_a`.`tb_autor` (`id_autor`),
+    FOREIGN KEY (`tb_genero_id_genero`)
+    REFERENCES `biblioteca_a`.`tb_genero` (`id_genero`));
+
+CREATE TABLE `tb_aluno` (
+  `id_aluno` INT NOT NULL AUTO_INCREMENT,
+  `nm_aluno` VARCHAR(150) NOT NULL,
+  PRIMARY KEY (`id_aluno`));
+
+CREATE TABLE `tb_curso` (
+  `id_curso` INT NOT NULL,
+  `nm_curso` VARCHAR(50) NOT NULL,
+  PRIMARY KEY (`id_curso`));
+
+CREATE TABLE `tb_turma` (
+  `id_turma` INT NOT NULL AUTO_INCREMENT,
+  `nm_turma` VARCHAR(45) NOT NULL,
+  `ds_periodo` VARCHAR(45) NOT NULL,
+  `curso_id_curso` INT NOT NULL,
+  PRIMARY KEY (`id_turma`),
+    FOREIGN KEY (`curso_id_curso`)
+    REFERENCES `biblioteca_a`.`tb_curso` (`id_curso`));
+
+CREATE TABLE `tb_turma_aluno` (
+  `id_turma_aluno` INT NOT NULL AUTO_INCREMENT,
+  `nr_chamada` INT NOT NULL,
+  `cd_ra` INT NOT NULL,
+  `aluno_id_aluno` INT NOT NULL,
+  `turma_id_turma` INT NOT NULL,
+  PRIMARY KEY (`id_turma_aluno`),
+  UNIQUE INDEX `cd_ra_UNIQUE` (`cd_ra` ASC),
+    FOREIGN KEY (`aluno_id_aluno`)
+    REFERENCES `biblioteca_a`.`tb_aluno` (`id_aluno`),
+    FOREIGN KEY (`turma_id_turma`)
+    REFERENCES `biblioteca_a`.`tb_turma` (`id_turma`));
+
+CREATE TABLE `tb_emprestimo` (
+  `id_emprestimo` INT(11) NOT NULL AUTO_INCREMENT,
+  `dt_emprestimo` DATE NOT NULL,
+  `dt_devolucao` DATE NOT NULL,
+  `nm_funcionario` VARCHAR(100) NOT NULL,
+  `livro_id_livro` INT(11) NOT NULL,
+  `tb_turma_aluno_id_turma_aluno` INT NOT NULL,
+  PRIMARY KEY (`id_emprestimo`),
+    FOREIGN KEY (`livro_id_livro`)
+    REFERENCES `biblioteca_a`.`tb_livro` (`id_livro`),
+    FOREIGN KEY (`tb_turma_aluno_id_turma_aluno`)
+    REFERENCES `biblioteca_a`.`tb_turma_aluno` (`id_turma_aluno`));
+
+CREATE TABLE `tb_estoque` (
+  `id_estoque` INT(11) NOT NULL AUTO_INCREMENT,
+  `livro_id_livro` INT(11) NOT NULL,
+  `qtd_livro` INT(11) NOT NULL,
+  PRIMARY KEY (`id_estoque`),
+    FOREIGN KEY (`livro_id_livro`)
+    REFERENCES `biblioteca_a`.`tb_livro` (`id_livro`));
