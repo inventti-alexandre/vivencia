@@ -1,0 +1,603 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BibliotecaDBAzure.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tb_aluno">
+          <Key>
+            <PropertyRef Name="id_aluno" />
+          </Key>
+          <Property Name="id_aluno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nm_aluno" Type="varchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_autor">
+          <Key>
+            <PropertyRef Name="id_autor" />
+          </Key>
+          <Property Name="id_autor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nm_autor" Type="varchar" MaxLength="90" Nullable="false" />
+          <Property Name="nm_nomeCompleto" Type="varchar" MaxLength="150" />
+          <Property Name="ds_nacionalidade" Type="varchar" MaxLength="90" />
+        </EntityType>
+        <EntityType Name="tb_curso">
+          <Key>
+            <PropertyRef Name="id_curso" />
+          </Key>
+          <Property Name="id_curso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nm_curso" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_emprestimo">
+          <Key>
+            <PropertyRef Name="id_emprestimo" />
+          </Key>
+          <Property Name="id_emprestimo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dt_emprestimo" Type="date" Nullable="false" />
+          <Property Name="dt_devolucao" Type="date" Nullable="false" />
+          <Property Name="nm_funcionario" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="livro_id_livro" Type="int" Nullable="false" />
+          <Property Name="tb_turma_aluno_id_turma_aluno" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_estoque">
+          <Key>
+            <PropertyRef Name="id_estoque" />
+          </Key>
+          <Property Name="id_estoque" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="livro_id_livro" Type="int" Nullable="false" />
+          <Property Name="qtd_livro" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_genero">
+          <Key>
+            <PropertyRef Name="id_genero" />
+          </Key>
+          <Property Name="id_genero" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nm_genero" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_livro">
+          <Key>
+            <PropertyRef Name="id_livro" />
+          </Key>
+          <Property Name="id_livro" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ds_titulo" Type="varchar" MaxLength="90" Nullable="false" />
+          <Property Name="ds_tipo" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="ds_condicoes" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="ds_idioma" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="nm_editora" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="nu_volume" Type="int" Nullable="false" />
+          <Property Name="nu_isbn" Type="varchar" MaxLength="20" />
+          <Property Name="ds_subtitulo" Type="varchar" MaxLength="150" />
+          <Property Name="ds_palavrasChaves" Type="varchar" MaxLength="300" />
+          <Property Name="img_Capa" Type="varbinary(max)" />
+          <Property Name="autor_id_autor" Type="int" Nullable="false" />
+          <Property Name="tb_genero_id_genero" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_turma">
+          <Key>
+            <PropertyRef Name="id_turma" />
+          </Key>
+          <Property Name="id_turma" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nm_turma" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="ds_periodo" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="curso_id_curso" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_turma_aluno">
+          <Key>
+            <PropertyRef Name="id_turma_aluno" />
+          </Key>
+          <Property Name="id_turma_aluno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nr_chamada" Type="int" Nullable="false" />
+          <Property Name="cd_ra" Type="int" Nullable="false" />
+          <Property Name="aluno_id_aluno" Type="int" Nullable="false" />
+          <Property Name="turma_id_turma" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__tb_empres__livro__5EBF139D">
+          <End Role="tb_livro" Type="Self.tb_livro" Multiplicity="1" />
+          <End Role="tb_emprestimo" Type="Self.tb_emprestimo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_livro">
+              <PropertyRef Name="id_livro" />
+            </Principal>
+            <Dependent Role="tb_emprestimo">
+              <PropertyRef Name="livro_id_livro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_empres__tb_tu__5FB337D6">
+          <End Role="tb_turma_aluno" Type="Self.tb_turma_aluno" Multiplicity="1" />
+          <End Role="tb_emprestimo" Type="Self.tb_emprestimo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_turma_aluno">
+              <PropertyRef Name="id_turma_aluno" />
+            </Principal>
+            <Dependent Role="tb_emprestimo">
+              <PropertyRef Name="tb_turma_aluno_id_turma_aluno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_estoqu__livro__628FA481">
+          <End Role="tb_livro" Type="Self.tb_livro" Multiplicity="1" />
+          <End Role="tb_estoque" Type="Self.tb_estoque" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_livro">
+              <PropertyRef Name="id_livro" />
+            </Principal>
+            <Dependent Role="tb_estoque">
+              <PropertyRef Name="livro_id_livro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_livro__autor___5070F446">
+          <End Role="tb_autor" Type="Self.tb_autor" Multiplicity="1" />
+          <End Role="tb_livro" Type="Self.tb_livro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_autor">
+              <PropertyRef Name="id_autor" />
+            </Principal>
+            <Dependent Role="tb_livro">
+              <PropertyRef Name="autor_id_autor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_livro__tb_gen__5165187F">
+          <End Role="tb_genero" Type="Self.tb_genero" Multiplicity="1" />
+          <End Role="tb_livro" Type="Self.tb_livro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_genero">
+              <PropertyRef Name="id_genero" />
+            </Principal>
+            <Dependent Role="tb_livro">
+              <PropertyRef Name="tb_genero_id_genero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_turma___aluno__5AEE82B9">
+          <End Role="tb_aluno" Type="Self.tb_aluno" Multiplicity="1" />
+          <End Role="tb_turma_aluno" Type="Self.tb_turma_aluno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_aluno">
+              <PropertyRef Name="id_aluno" />
+            </Principal>
+            <Dependent Role="tb_turma_aluno">
+              <PropertyRef Name="aluno_id_aluno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_turma___turma__5BE2A6F2">
+          <End Role="tb_turma" Type="Self.tb_turma" Multiplicity="1" />
+          <End Role="tb_turma_aluno" Type="Self.tb_turma_aluno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_turma">
+              <PropertyRef Name="id_turma" />
+            </Principal>
+            <Dependent Role="tb_turma_aluno">
+              <PropertyRef Name="turma_id_turma" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_turma__curso___5812160E">
+          <End Role="tb_curso" Type="Self.tb_curso" Multiplicity="1" />
+          <End Role="tb_turma" Type="Self.tb_turma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_curso">
+              <PropertyRef Name="id_curso" />
+            </Principal>
+            <Dependent Role="tb_turma">
+              <PropertyRef Name="curso_id_curso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BibliotecaDBAzureStoreContainer">
+          <EntitySet Name="tb_aluno" EntityType="Self.tb_aluno" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_autor" EntityType="Self.tb_autor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_curso" EntityType="Self.tb_curso" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_emprestimo" EntityType="Self.tb_emprestimo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_estoque" EntityType="Self.tb_estoque" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_genero" EntityType="Self.tb_genero" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_livro" EntityType="Self.tb_livro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_turma" EntityType="Self.tb_turma" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_turma_aluno" EntityType="Self.tb_turma_aluno" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__tb_empres__livro__5EBF139D" Association="Self.FK__tb_empres__livro__5EBF139D">
+            <End Role="tb_livro" EntitySet="tb_livro" />
+            <End Role="tb_emprestimo" EntitySet="tb_emprestimo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_empres__tb_tu__5FB337D6" Association="Self.FK__tb_empres__tb_tu__5FB337D6">
+            <End Role="tb_turma_aluno" EntitySet="tb_turma_aluno" />
+            <End Role="tb_emprestimo" EntitySet="tb_emprestimo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_estoqu__livro__628FA481" Association="Self.FK__tb_estoqu__livro__628FA481">
+            <End Role="tb_livro" EntitySet="tb_livro" />
+            <End Role="tb_estoque" EntitySet="tb_estoque" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_livro__autor___5070F446" Association="Self.FK__tb_livro__autor___5070F446">
+            <End Role="tb_autor" EntitySet="tb_autor" />
+            <End Role="tb_livro" EntitySet="tb_livro" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_livro__tb_gen__5165187F" Association="Self.FK__tb_livro__tb_gen__5165187F">
+            <End Role="tb_genero" EntitySet="tb_genero" />
+            <End Role="tb_livro" EntitySet="tb_livro" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_turma___aluno__5AEE82B9" Association="Self.FK__tb_turma___aluno__5AEE82B9">
+            <End Role="tb_aluno" EntitySet="tb_aluno" />
+            <End Role="tb_turma_aluno" EntitySet="tb_turma_aluno" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_turma___turma__5BE2A6F2" Association="Self.FK__tb_turma___turma__5BE2A6F2">
+            <End Role="tb_turma" EntitySet="tb_turma" />
+            <End Role="tb_turma_aluno" EntitySet="tb_turma_aluno" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_turma__curso___5812160E" Association="Self.FK__tb_turma__curso___5812160E">
+            <End Role="tb_curso" EntitySet="tb_curso" />
+            <End Role="tb_turma" EntitySet="tb_turma" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BibliotecaDBAzure" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tb_aluno">
+          <Key>
+            <PropertyRef Name="id_aluno" />
+          </Key>
+          <Property Name="id_aluno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nm_aluno" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="tb_turma_aluno" Relationship="Self.FK__tb_turma___aluno__5AEE82B9" FromRole="tb_aluno" ToRole="tb_turma_aluno" />
+        </EntityType>
+        <EntityType Name="tb_autor">
+          <Key>
+            <PropertyRef Name="id_autor" />
+          </Key>
+          <Property Name="id_autor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nm_autor" Type="String" MaxLength="90" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nm_nomeCompleto" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ds_nacionalidade" Type="String" MaxLength="90" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tb_livro" Relationship="Self.FK__tb_livro__autor___5070F446" FromRole="tb_autor" ToRole="tb_livro" />
+        </EntityType>
+        <EntityType Name="tb_curso">
+          <Key>
+            <PropertyRef Name="id_curso" />
+          </Key>
+          <Property Name="id_curso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nm_curso" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="tb_turma" Relationship="Self.FK__tb_turma__curso___5812160E" FromRole="tb_curso" ToRole="tb_turma" />
+        </EntityType>
+        <EntityType Name="tb_emprestimo">
+          <Key>
+            <PropertyRef Name="id_emprestimo" />
+          </Key>
+          <Property Name="id_emprestimo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dt_emprestimo" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="dt_devolucao" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="nm_funcionario" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="livro_id_livro" Type="Int32" Nullable="false" />
+          <Property Name="tb_turma_aluno_id_turma_aluno" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tb_livro" Relationship="Self.FK__tb_empres__livro__5EBF139D" FromRole="tb_emprestimo" ToRole="tb_livro" />
+          <NavigationProperty Name="tb_turma_aluno" Relationship="Self.FK__tb_empres__tb_tu__5FB337D6" FromRole="tb_emprestimo" ToRole="tb_turma_aluno" />
+        </EntityType>
+        <EntityType Name="tb_estoque">
+          <Key>
+            <PropertyRef Name="id_estoque" />
+          </Key>
+          <Property Name="id_estoque" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="livro_id_livro" Type="Int32" Nullable="false" />
+          <Property Name="qtd_livro" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tb_livro" Relationship="Self.FK__tb_estoqu__livro__628FA481" FromRole="tb_estoque" ToRole="tb_livro" />
+        </EntityType>
+        <EntityType Name="tb_genero">
+          <Key>
+            <PropertyRef Name="id_genero" />
+          </Key>
+          <Property Name="id_genero" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nm_genero" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="tb_livro" Relationship="Self.FK__tb_livro__tb_gen__5165187F" FromRole="tb_genero" ToRole="tb_livro" />
+        </EntityType>
+        <EntityType Name="tb_livro">
+          <Key>
+            <PropertyRef Name="id_livro" />
+          </Key>
+          <Property Name="id_livro" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ds_titulo" Type="String" MaxLength="90" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ds_tipo" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ds_condicoes" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ds_idioma" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nm_editora" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nu_volume" Type="Int32" Nullable="false" />
+          <Property Name="nu_isbn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ds_subtitulo" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ds_palavrasChaves" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="img_Capa" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="autor_id_autor" Type="Int32" Nullable="false" />
+          <Property Name="tb_genero_id_genero" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tb_autor" Relationship="Self.FK__tb_livro__autor___5070F446" FromRole="tb_livro" ToRole="tb_autor" />
+          <NavigationProperty Name="tb_emprestimo" Relationship="Self.FK__tb_empres__livro__5EBF139D" FromRole="tb_livro" ToRole="tb_emprestimo" />
+          <NavigationProperty Name="tb_estoque" Relationship="Self.FK__tb_estoqu__livro__628FA481" FromRole="tb_livro" ToRole="tb_estoque" />
+          <NavigationProperty Name="tb_genero" Relationship="Self.FK__tb_livro__tb_gen__5165187F" FromRole="tb_livro" ToRole="tb_genero" />
+        </EntityType>
+        <EntityType Name="tb_turma">
+          <Key>
+            <PropertyRef Name="id_turma" />
+          </Key>
+          <Property Name="id_turma" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nm_turma" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ds_periodo" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="curso_id_curso" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tb_curso" Relationship="Self.FK__tb_turma__curso___5812160E" FromRole="tb_turma" ToRole="tb_curso" />
+          <NavigationProperty Name="tb_turma_aluno" Relationship="Self.FK__tb_turma___turma__5BE2A6F2" FromRole="tb_turma" ToRole="tb_turma_aluno" />
+        </EntityType>
+        <EntityType Name="tb_turma_aluno">
+          <Key>
+            <PropertyRef Name="id_turma_aluno" />
+          </Key>
+          <Property Name="id_turma_aluno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nr_chamada" Type="Int32" Nullable="false" />
+          <Property Name="cd_ra" Type="Int32" Nullable="false" />
+          <Property Name="aluno_id_aluno" Type="Int32" Nullable="false" />
+          <Property Name="turma_id_turma" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tb_aluno" Relationship="Self.FK__tb_turma___aluno__5AEE82B9" FromRole="tb_turma_aluno" ToRole="tb_aluno" />
+          <NavigationProperty Name="tb_emprestimo" Relationship="Self.FK__tb_empres__tb_tu__5FB337D6" FromRole="tb_turma_aluno" ToRole="tb_emprestimo" />
+          <NavigationProperty Name="tb_turma" Relationship="Self.FK__tb_turma___turma__5BE2A6F2" FromRole="tb_turma_aluno" ToRole="tb_turma" />
+        </EntityType>
+        <Association Name="FK__tb_turma___aluno__5AEE82B9">
+          <End Role="tb_aluno" Type="Self.tb_aluno" Multiplicity="1" />
+          <End Role="tb_turma_aluno" Type="Self.tb_turma_aluno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_aluno">
+              <PropertyRef Name="id_aluno" />
+            </Principal>
+            <Dependent Role="tb_turma_aluno">
+              <PropertyRef Name="aluno_id_aluno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_livro__autor___5070F446">
+          <End Role="tb_autor" Type="Self.tb_autor" Multiplicity="1" />
+          <End Role="tb_livro" Type="Self.tb_livro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_autor">
+              <PropertyRef Name="id_autor" />
+            </Principal>
+            <Dependent Role="tb_livro">
+              <PropertyRef Name="autor_id_autor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_turma__curso___5812160E">
+          <End Role="tb_curso" Type="Self.tb_curso" Multiplicity="1" />
+          <End Role="tb_turma" Type="Self.tb_turma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_curso">
+              <PropertyRef Name="id_curso" />
+            </Principal>
+            <Dependent Role="tb_turma">
+              <PropertyRef Name="curso_id_curso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_empres__livro__5EBF139D">
+          <End Role="tb_livro" Type="Self.tb_livro" Multiplicity="1" />
+          <End Role="tb_emprestimo" Type="Self.tb_emprestimo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_livro">
+              <PropertyRef Name="id_livro" />
+            </Principal>
+            <Dependent Role="tb_emprestimo">
+              <PropertyRef Name="livro_id_livro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_empres__tb_tu__5FB337D6">
+          <End Role="tb_turma_aluno" Type="Self.tb_turma_aluno" Multiplicity="1" />
+          <End Role="tb_emprestimo" Type="Self.tb_emprestimo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_turma_aluno">
+              <PropertyRef Name="id_turma_aluno" />
+            </Principal>
+            <Dependent Role="tb_emprestimo">
+              <PropertyRef Name="tb_turma_aluno_id_turma_aluno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_estoqu__livro__628FA481">
+          <End Role="tb_livro" Type="Self.tb_livro" Multiplicity="1" />
+          <End Role="tb_estoque" Type="Self.tb_estoque" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_livro">
+              <PropertyRef Name="id_livro" />
+            </Principal>
+            <Dependent Role="tb_estoque">
+              <PropertyRef Name="livro_id_livro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_livro__tb_gen__5165187F">
+          <End Role="tb_genero" Type="Self.tb_genero" Multiplicity="1" />
+          <End Role="tb_livro" Type="Self.tb_livro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_genero">
+              <PropertyRef Name="id_genero" />
+            </Principal>
+            <Dependent Role="tb_livro">
+              <PropertyRef Name="tb_genero_id_genero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_turma___turma__5BE2A6F2">
+          <End Role="tb_turma" Type="Self.tb_turma" Multiplicity="1" />
+          <End Role="tb_turma_aluno" Type="Self.tb_turma_aluno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_turma">
+              <PropertyRef Name="id_turma" />
+            </Principal>
+            <Dependent Role="tb_turma_aluno">
+              <PropertyRef Name="turma_id_turma" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AzureBiblioteca" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tb_aluno" EntityType="Self.tb_aluno" />
+          <EntitySet Name="tb_autor" EntityType="Self.tb_autor" />
+          <EntitySet Name="tb_curso" EntityType="Self.tb_curso" />
+          <EntitySet Name="tb_emprestimo" EntityType="Self.tb_emprestimo" />
+          <EntitySet Name="tb_estoque" EntityType="Self.tb_estoque" />
+          <EntitySet Name="tb_genero" EntityType="Self.tb_genero" />
+          <EntitySet Name="tb_livro" EntityType="Self.tb_livro" />
+          <EntitySet Name="tb_turma" EntityType="Self.tb_turma" />
+          <EntitySet Name="tb_turma_aluno" EntityType="Self.tb_turma_aluno" />
+          <AssociationSet Name="FK__tb_turma___aluno__5AEE82B9" Association="Self.FK__tb_turma___aluno__5AEE82B9">
+            <End Role="tb_aluno" EntitySet="tb_aluno" />
+            <End Role="tb_turma_aluno" EntitySet="tb_turma_aluno" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_livro__autor___5070F446" Association="Self.FK__tb_livro__autor___5070F446">
+            <End Role="tb_autor" EntitySet="tb_autor" />
+            <End Role="tb_livro" EntitySet="tb_livro" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_turma__curso___5812160E" Association="Self.FK__tb_turma__curso___5812160E">
+            <End Role="tb_curso" EntitySet="tb_curso" />
+            <End Role="tb_turma" EntitySet="tb_turma" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_empres__livro__5EBF139D" Association="Self.FK__tb_empres__livro__5EBF139D">
+            <End Role="tb_livro" EntitySet="tb_livro" />
+            <End Role="tb_emprestimo" EntitySet="tb_emprestimo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_empres__tb_tu__5FB337D6" Association="Self.FK__tb_empres__tb_tu__5FB337D6">
+            <End Role="tb_turma_aluno" EntitySet="tb_turma_aluno" />
+            <End Role="tb_emprestimo" EntitySet="tb_emprestimo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_estoqu__livro__628FA481" Association="Self.FK__tb_estoqu__livro__628FA481">
+            <End Role="tb_livro" EntitySet="tb_livro" />
+            <End Role="tb_estoque" EntitySet="tb_estoque" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_livro__tb_gen__5165187F" Association="Self.FK__tb_livro__tb_gen__5165187F">
+            <End Role="tb_genero" EntitySet="tb_genero" />
+            <End Role="tb_livro" EntitySet="tb_livro" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_turma___turma__5BE2A6F2" Association="Self.FK__tb_turma___turma__5BE2A6F2">
+            <End Role="tb_turma" EntitySet="tb_turma" />
+            <End Role="tb_turma_aluno" EntitySet="tb_turma_aluno" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BibliotecaDBAzureStoreContainer" CdmEntityContainer="AzureBiblioteca">
+          <EntitySetMapping Name="tb_aluno">
+            <EntityTypeMapping TypeName="BibliotecaDBAzure.tb_aluno">
+              <MappingFragment StoreEntitySet="tb_aluno">
+                <ScalarProperty Name="id_aluno" ColumnName="id_aluno" />
+                <ScalarProperty Name="nm_aluno" ColumnName="nm_aluno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_autor">
+            <EntityTypeMapping TypeName="BibliotecaDBAzure.tb_autor">
+              <MappingFragment StoreEntitySet="tb_autor">
+                <ScalarProperty Name="id_autor" ColumnName="id_autor" />
+                <ScalarProperty Name="nm_autor" ColumnName="nm_autor" />
+                <ScalarProperty Name="nm_nomeCompleto" ColumnName="nm_nomeCompleto" />
+                <ScalarProperty Name="ds_nacionalidade" ColumnName="ds_nacionalidade" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_curso">
+            <EntityTypeMapping TypeName="BibliotecaDBAzure.tb_curso">
+              <MappingFragment StoreEntitySet="tb_curso">
+                <ScalarProperty Name="id_curso" ColumnName="id_curso" />
+                <ScalarProperty Name="nm_curso" ColumnName="nm_curso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_emprestimo">
+            <EntityTypeMapping TypeName="BibliotecaDBAzure.tb_emprestimo">
+              <MappingFragment StoreEntitySet="tb_emprestimo">
+                <ScalarProperty Name="id_emprestimo" ColumnName="id_emprestimo" />
+                <ScalarProperty Name="dt_emprestimo" ColumnName="dt_emprestimo" />
+                <ScalarProperty Name="dt_devolucao" ColumnName="dt_devolucao" />
+                <ScalarProperty Name="nm_funcionario" ColumnName="nm_funcionario" />
+                <ScalarProperty Name="livro_id_livro" ColumnName="livro_id_livro" />
+                <ScalarProperty Name="tb_turma_aluno_id_turma_aluno" ColumnName="tb_turma_aluno_id_turma_aluno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_estoque">
+            <EntityTypeMapping TypeName="BibliotecaDBAzure.tb_estoque">
+              <MappingFragment StoreEntitySet="tb_estoque">
+                <ScalarProperty Name="id_estoque" ColumnName="id_estoque" />
+                <ScalarProperty Name="livro_id_livro" ColumnName="livro_id_livro" />
+                <ScalarProperty Name="qtd_livro" ColumnName="qtd_livro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_genero">
+            <EntityTypeMapping TypeName="BibliotecaDBAzure.tb_genero">
+              <MappingFragment StoreEntitySet="tb_genero">
+                <ScalarProperty Name="id_genero" ColumnName="id_genero" />
+                <ScalarProperty Name="nm_genero" ColumnName="nm_genero" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_livro">
+            <EntityTypeMapping TypeName="BibliotecaDBAzure.tb_livro">
+              <MappingFragment StoreEntitySet="tb_livro">
+                <ScalarProperty Name="id_livro" ColumnName="id_livro" />
+                <ScalarProperty Name="ds_titulo" ColumnName="ds_titulo" />
+                <ScalarProperty Name="ds_tipo" ColumnName="ds_tipo" />
+                <ScalarProperty Name="ds_condicoes" ColumnName="ds_condicoes" />
+                <ScalarProperty Name="ds_idioma" ColumnName="ds_idioma" />
+                <ScalarProperty Name="nm_editora" ColumnName="nm_editora" />
+                <ScalarProperty Name="nu_volume" ColumnName="nu_volume" />
+                <ScalarProperty Name="nu_isbn" ColumnName="nu_isbn" />
+                <ScalarProperty Name="ds_subtitulo" ColumnName="ds_subtitulo" />
+                <ScalarProperty Name="ds_palavrasChaves" ColumnName="ds_palavrasChaves" />
+                <ScalarProperty Name="img_Capa" ColumnName="img_Capa" />
+                <ScalarProperty Name="autor_id_autor" ColumnName="autor_id_autor" />
+                <ScalarProperty Name="tb_genero_id_genero" ColumnName="tb_genero_id_genero" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_turma">
+            <EntityTypeMapping TypeName="BibliotecaDBAzure.tb_turma">
+              <MappingFragment StoreEntitySet="tb_turma">
+                <ScalarProperty Name="id_turma" ColumnName="id_turma" />
+                <ScalarProperty Name="nm_turma" ColumnName="nm_turma" />
+                <ScalarProperty Name="ds_periodo" ColumnName="ds_periodo" />
+                <ScalarProperty Name="curso_id_curso" ColumnName="curso_id_curso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_turma_aluno">
+            <EntityTypeMapping TypeName="BibliotecaDBAzure.tb_turma_aluno">
+              <MappingFragment StoreEntitySet="tb_turma_aluno">
+                <ScalarProperty Name="id_turma_aluno" ColumnName="id_turma_aluno" />
+                <ScalarProperty Name="nr_chamada" ColumnName="nr_chamada" />
+                <ScalarProperty Name="cd_ra" ColumnName="cd_ra" />
+                <ScalarProperty Name="aluno_id_aluno" ColumnName="aluno_id_aluno" />
+                <ScalarProperty Name="turma_id_turma" ColumnName="turma_id_turma" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

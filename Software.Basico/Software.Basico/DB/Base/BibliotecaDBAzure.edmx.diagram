@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2383849c238345bd8c5dd51c56b88ff6" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="BibliotecaDBAzure.tb_aluno" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BibliotecaDBAzure.tb_autor" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BibliotecaDBAzure.tb_curso" Width="1.5" PointX="1.5" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BibliotecaDBAzure.tb_emprestimo" Width="1.5" PointX="5.25" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BibliotecaDBAzure.tb_estoque" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="BibliotecaDBAzure.tb_genero" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BibliotecaDBAzure.tb_livro" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BibliotecaDBAzure.tb_turma" Width="1.5" PointX="0.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BibliotecaDBAzure.tb_turma_aluno" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <AssociationConnector Association="BibliotecaDBAzure.FK__tb_turma___aluno__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="BibliotecaDBAzure.FK__tb_livro__autor___5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="BibliotecaDBAzure.FK__tb_turma__curso___5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="BibliotecaDBAzure.FK__tb_empres__livro__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="BibliotecaDBAzure.FK__tb_empres__tb_tu__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="BibliotecaDBAzure.FK__tb_estoqu__livro__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="BibliotecaDBAzure.FK__tb_livro__tb_gen__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="BibliotecaDBAzure.FK__tb_turma___turma__5BE2A6F2" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

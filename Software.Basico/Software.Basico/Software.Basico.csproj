@@ -84,8 +84,50 @@
     <Compile Include="APIs\Email\EmailDTO.cs" />
     <Compile Include="APIs\Email\EmailSend.cs" />
     <Compile Include="Criptografia\DESCripto.cs" />
-    <Compile Include="DB\Funcionario\FuncionarioBusiness.cs" />
-    <Compile Include="DB\Funcionario\FuncionarioDatabase.cs" />
+    <Compile Include="DB\Base\BibliotecaDBAzure.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BibliotecaDBAzure.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Base\BibliotecaDBAzure.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Base\BibliotecaDBAzure.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BibliotecaDBAzure.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Base\tb_aluno.cs">
+      <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Base\tb_autor.cs">
+      <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Base\tb_curso.cs">
+      <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Base\tb_emprestimo.cs">
+      <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Base\tb_estoque.cs">
+      <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Base\tb_genero.cs">
+      <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Base\tb_livro.cs">
+      <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Base\tb_turma.cs">
+      <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Base\tb_turma_aluno.cs">
+      <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Livros\LivroBusiness.cs" />
+    <Compile Include="DB\Livros\LivroDatabase.cs" />
     <Compile Include="Gp.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -253,6 +295,13 @@
     <EmbeddedResource Include="Telas\SubTelas\frmTema.resx">
       <DependentUpon>frmTema.cs</DependentUpon>
     </EmbeddedResource>
+    <EntityDeploy Include="DB\Base\BibliotecaDBAzure.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BibliotecaDBAzure.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DB\Base\BibliotecaDBAzure.edmx.diagram">
+      <DependentUpon>BibliotecaDBAzure.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -268,7 +317,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DB\Base\BibliotecaDBAzure.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BibliotecaDBAzure.edmx</DependentUpon>
+      <LastGenOutput>BibliotecaDBAzure.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DB\Base\BibliotecaDBAzure.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BibliotecaDBAzure.edmx</DependentUpon>
+      <LastGenOutput>BibliotecaDBAzure.cs</LastGenOutput>
+    </Content>
     <Content Include="DB\Script_MySql_BibliotecaDB.txt" />
+    <Content Include="DB\Script_Sql_BibliotecaDB.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\users32.png" />
@@ -378,5 +438,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
