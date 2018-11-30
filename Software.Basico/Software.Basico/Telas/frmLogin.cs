@@ -33,8 +33,9 @@ namespace Software.Basico.Telas
             Gp gp = new Gp();
 
             btnLogar.Region = new Region(gp.graphicsPath(btnLogar));
-            txtLogin.Region = new Region(gp.graphicsPath(txtLogin));
-            txtSenha.Region = new Region(gp.graphicsPath(txtSenha));
+            pnLogin.Region = new Region(gp.graphicsPath(pnLogin));
+            pnSenha.Region = new Region(gp.graphicsPath(pnSenha));
+           
         }
 
         private void TemaTela()
@@ -46,6 +47,15 @@ namespace Software.Basico.Telas
         private void frmLogin_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void txtLogin_KeyPress(object sender, KeyPressEventArgs e)
+        {
         }
     }
 }

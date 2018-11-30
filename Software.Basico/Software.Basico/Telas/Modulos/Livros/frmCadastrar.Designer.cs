@@ -63,7 +63,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(915, 12);
+            this.panel1.Size = new System.Drawing.Size(913, 12);
             this.panel1.TabIndex = 46;
             // 
             // label1
@@ -79,6 +79,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.lblTitulo);
             this.panel2.Controls.Add(this.textBox7);
@@ -171,6 +172,18 @@
             // 
             this.comboBox3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Romance",
+            "Ação",
+            "Comédia",
+            "Infanto-Juvenil",
+            "Biblíco",
+            "Filosofia",
+            "Sociologia",
+            "Matemática",
+            "Português",
+            "Programação",
+            "Inglês"});
             this.comboBox3.Location = new System.Drawing.Point(373, 272);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(224, 25);
@@ -303,9 +316,9 @@
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrar.Font = new System.Drawing.Font("Century Gothic", 14.75F);
             this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnCadastrar.Location = new System.Drawing.Point(377, 336);
+            this.btnCadastrar.Location = new System.Drawing.Point(373, 363);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(462, 32);
+            this.btnCadastrar.Size = new System.Drawing.Size(227, 32);
             this.btnCadastrar.TabIndex = 12;
             this.btnCadastrar.Text = "Salvar Dados";
             this.btnCadastrar.UseVisualStyleBackColor = true;
@@ -316,9 +329,9 @@
             this.btnRemover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemover.Font = new System.Drawing.Font("Century Gothic", 14.75F);
             this.btnRemover.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnRemover.Location = new System.Drawing.Point(377, 385);
+            this.btnRemover.Location = new System.Drawing.Point(615, 363);
             this.btnRemover.Name = "btnRemover";
-            this.btnRemover.Size = new System.Drawing.Size(462, 32);
+            this.btnRemover.Size = new System.Drawing.Size(227, 32);
             this.btnRemover.TabIndex = 13;
             this.btnRemover.Text = "Cancelar";
             this.btnRemover.UseVisualStyleBackColor = true;
@@ -328,6 +341,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.btnRemover);
             this.Controls.Add(this.comboBox4);
@@ -352,7 +366,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Name = "frmCadastrar";
-            this.Size = new System.Drawing.Size(915, 500);
+            this.Size = new System.Drawing.Size(913, 498);
             this.Load += new System.EventHandler(this.frmCadastrar_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

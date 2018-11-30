@@ -21,6 +21,11 @@ namespace Software.Basico.Telas.Modulos.Livros
         private void TemaTela()
         {
             panel1.BackColor = Tema.Primaria;
+          
+            btnCadastrar.BackColor = Tema.Segundaria;
+            btnRemover.BackColor = Tema.Segundaria;
+               
+
         }
 
         private void frmCadastrar_Load(object sender, EventArgs e)

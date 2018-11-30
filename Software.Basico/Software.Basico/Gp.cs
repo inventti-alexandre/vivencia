@@ -36,6 +36,32 @@ namespace Software.Basico
             return gp;
         }
 
+        public GraphicsPath graphicsPath(Panel form)
+        {
+            GraphicsPath gp = new GraphicsPath();
+            gp.AddRectangle(new System.Drawing.Rectangle(1, 1, form.Size.Width, form.Size.Height));
+
+            //Arredondar canto superior esquerdo        
+            gp.AddRectangle(new System.Drawing.Rectangle(1, 1, 10, 10));
+            gp.AddPie(1, 1, 20, 20, 180, 90);
+
+            //Arredondar canto superior direito
+            gp.AddRectangle(new System.Drawing.Rectangle(form.Width - 12, 1, 12, 13));
+            gp.AddPie(form.Width - 24, 1, 24, 26, 270, 90);
+
+            //Arredondar canto inferior esquerdo
+            gp.AddRectangle(new System.Drawing.Rectangle(1, form.Height - 10, 10, 10));
+            gp.AddPie(1, form.Height - 20, 20, 20, 90, 90);
+
+            //Arredondar canto inferior direito
+            gp.AddRectangle(new System.Drawing.Rectangle(form.Width - 12, form.Height - 13, 13, 13));
+            gp.AddPie(form.Width - 24, form.Height - 26, 24, 26, 0, 90);
+
+            gp.SetMarkers();
+
+            return gp;
+        }
+
         public GraphicsPath graphicsPath(Button btn)
         {
             GraphicsPath gp = new GraphicsPath();
