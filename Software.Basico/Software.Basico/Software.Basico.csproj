@@ -84,6 +84,8 @@
     <Compile Include="APIs\Email\EmailDTO.cs" />
     <Compile Include="APIs\Email\EmailSend.cs" />
     <Compile Include="Criptografia\DESCripto.cs" />
+    <Compile Include="DB\Autor\AutorBusiness.cs" />
+    <Compile Include="DB\Autor\AutorDatabase.cs" />
     <Compile Include="DB\BibliotecaDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -340,7 +342,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DB\Aluno\" />
-    <Folder Include="DB\Autor\" />
     <Folder Include="DB\Curso\" />
     <Folder Include="DB\Editora\" />
     <Folder Include="DB\Emprestimo\" />
