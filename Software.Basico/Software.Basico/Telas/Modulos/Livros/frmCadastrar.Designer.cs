@@ -31,30 +31,30 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTitulo = new System.Windows.Forms.TextBox();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtSubtitulo = new System.Windows.Forms.TextBox();
             this.lblsubtitulo = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.cboCondicao = new System.Windows.Forms.ComboBox();
             this.lblAutor = new System.Windows.Forms.Label();
             this.lbleditora = new System.Windows.Forms.Label();
             this.lblgenero = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboGenero = new System.Windows.Forms.ComboBox();
+            this.cboAutor = new System.Windows.Forms.ComboBox();
             this.lblpalavraschave = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtPalavrasChaves = new System.Windows.Forms.TextBox();
             this.lblvolume = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtVolume = new System.Windows.Forms.TextBox();
             this.lblCondicoes = new System.Windows.Forms.Label();
             this.lblidioma = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtIdioma = new System.Windows.Forms.TextBox();
             this.lblisbn = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtISBN = new System.Windows.Forms.TextBox();
             this.lblTipo = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtTipo = new System.Windows.Forms.TextBox();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnRemover = new System.Windows.Forms.Button();
+            this.txtEditora = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,22 +80,22 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtTitulo);
             this.panel2.Controls.Add(this.lblTitulo);
-            this.panel2.Controls.Add(this.textBox7);
+            this.panel2.Controls.Add(this.txtSubtitulo);
             this.panel2.Controls.Add(this.lblsubtitulo);
             this.panel2.Location = new System.Drawing.Point(54, 86);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(295, 347);
             this.panel2.TabIndex = 71;
             // 
-            // textBox1
+            // txtTitulo
             // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(26, 116);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(242, 23);
-            this.textBox1.TabIndex = 1;
+            this.txtTitulo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitulo.Location = new System.Drawing.Point(26, 116);
+            this.txtTitulo.Name = "txtTitulo";
+            this.txtTitulo.Size = new System.Drawing.Size(242, 23);
+            this.txtTitulo.TabIndex = 1;
             // 
             // lblTitulo
             // 
@@ -107,13 +107,13 @@
             this.lblTitulo.TabIndex = 73;
             this.lblTitulo.Text = "Titulo";
             // 
-            // textBox7
+            // txtSubtitulo
             // 
-            this.textBox7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(26, 217);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(242, 23);
-            this.textBox7.TabIndex = 2;
+            this.txtSubtitulo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSubtitulo.Location = new System.Drawing.Point(26, 217);
+            this.txtSubtitulo.Name = "txtSubtitulo";
+            this.txtSubtitulo.Size = new System.Drawing.Size(242, 23);
+            this.txtSubtitulo.TabIndex = 2;
             // 
             // lblsubtitulo
             // 
@@ -125,18 +125,18 @@
             this.lblsubtitulo.TabIndex = 82;
             this.lblsubtitulo.Text = "Subtitulo";
             // 
-            // comboBox4
+            // cboCondicao
             // 
-            this.comboBox4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.cboCondicao.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboCondicao.FormattingEnabled = true;
+            this.cboCondicao.Items.AddRange(new object[] {
             "Bom",
             "Ruim"});
-            this.comboBox4.Location = new System.Drawing.Point(615, 272);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(224, 25);
-            this.comboBox4.TabIndex = 11;
-            this.comboBox4.Text = "  Selecione";
+            this.cboCondicao.Location = new System.Drawing.Point(615, 272);
+            this.cboCondicao.Name = "cboCondicao";
+            this.cboCondicao.Size = new System.Drawing.Size(224, 25);
+            this.cboCondicao.TabIndex = 11;
+            this.cboCondicao.Text = "  Selecione";
             // 
             // lblAutor
             // 
@@ -168,11 +168,11 @@
             this.lblgenero.TabIndex = 90;
             this.lblgenero.Text = "Gênero";
             // 
-            // comboBox3
+            // cboGenero
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.cboGenero.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboGenero.FormattingEnabled = true;
+            this.cboGenero.Items.AddRange(new object[] {
             "Romance",
             "Ação",
             "Comédia",
@@ -184,31 +184,23 @@
             "Português",
             "Programação",
             "Inglês"});
-            this.comboBox3.Location = new System.Drawing.Point(373, 272);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(224, 25);
-            this.comboBox3.TabIndex = 10;
-            this.comboBox3.Text = "  Selecione";
+            this.cboGenero.Location = new System.Drawing.Point(373, 272);
+            this.cboGenero.Name = "cboGenero";
+            this.cboGenero.Size = new System.Drawing.Size(224, 25);
+            this.cboGenero.TabIndex = 10;
+            this.cboGenero.Text = "  Selecione";
             // 
-            // comboBox2
+            // cboAutor
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(373, 222);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(224, 25);
-            this.comboBox2.TabIndex = 8;
-            this.comboBox2.Text = "  Selecione";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(615, 222);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(224, 25);
-            this.comboBox1.TabIndex = 9;
-            this.comboBox1.Text = "  Selecione";
+            this.cboAutor.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboAutor.FormattingEnabled = true;
+            this.cboAutor.Items.AddRange(new object[] {
+            "Clarice Lispector"});
+            this.cboAutor.Location = new System.Drawing.Point(373, 222);
+            this.cboAutor.Name = "cboAutor";
+            this.cboAutor.Size = new System.Drawing.Size(224, 25);
+            this.cboAutor.TabIndex = 8;
+            this.cboAutor.Text = "  Selecione";
             // 
             // lblpalavraschave
             // 
@@ -220,13 +212,13 @@
             this.lblpalavraschave.TabIndex = 86;
             this.lblpalavraschave.Text = "Palavras Chave";
             // 
-            // textBox5
+            // txtPalavrasChaves
             // 
-            this.textBox5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(373, 174);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(220, 23);
-            this.textBox5.TabIndex = 6;
+            this.txtPalavrasChaves.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPalavrasChaves.Location = new System.Drawing.Point(373, 174);
+            this.txtPalavrasChaves.Name = "txtPalavrasChaves";
+            this.txtPalavrasChaves.Size = new System.Drawing.Size(220, 23);
+            this.txtPalavrasChaves.TabIndex = 6;
             // 
             // lblvolume
             // 
@@ -238,13 +230,13 @@
             this.lblvolume.TabIndex = 84;
             this.lblvolume.Text = "Volume";
             // 
-            // textBox6
+            // txtVolume
             // 
-            this.textBox6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(551, 126);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(137, 23);
-            this.textBox6.TabIndex = 4;
+            this.txtVolume.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVolume.Location = new System.Drawing.Point(551, 126);
+            this.txtVolume.Name = "txtVolume";
+            this.txtVolume.Size = new System.Drawing.Size(137, 23);
+            this.txtVolume.TabIndex = 4;
             // 
             // lblCondicoes
             // 
@@ -266,13 +258,13 @@
             this.lblidioma.TabIndex = 79;
             this.lblidioma.Text = "Idioma";
             // 
-            // textBox3
+            // txtIdioma
             // 
-            this.textBox3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(698, 126);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(141, 23);
-            this.textBox3.TabIndex = 5;
+            this.txtIdioma.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdioma.Location = new System.Drawing.Point(698, 126);
+            this.txtIdioma.Name = "txtIdioma";
+            this.txtIdioma.Size = new System.Drawing.Size(141, 23);
+            this.txtIdioma.TabIndex = 5;
             // 
             // lblisbn
             // 
@@ -284,13 +276,13 @@
             this.lblisbn.TabIndex = 77;
             this.lblisbn.Text = "ISBN";
             // 
-            // textBox4
+            // txtISBN
             // 
-            this.textBox4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(615, 174);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(224, 23);
-            this.textBox4.TabIndex = 7;
+            this.txtISBN.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtISBN.Location = new System.Drawing.Point(615, 174);
+            this.txtISBN.Name = "txtISBN";
+            this.txtISBN.Size = new System.Drawing.Size(224, 23);
+            this.txtISBN.TabIndex = 7;
             // 
             // lblTipo
             // 
@@ -302,13 +294,13 @@
             this.lblTipo.TabIndex = 75;
             this.lblTipo.Text = "Tipo";
             // 
-            // textBox2
+            // txtTipo
             // 
-            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(373, 126);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(172, 23);
-            this.textBox2.TabIndex = 3;
+            this.txtTipo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTipo.Location = new System.Drawing.Point(373, 126);
+            this.txtTipo.Name = "txtTipo";
+            this.txtTipo.Size = new System.Drawing.Size(172, 23);
+            this.txtTipo.TabIndex = 3;
             // 
             // btnCadastrar
             // 
@@ -322,6 +314,7 @@
             this.btnCadastrar.TabIndex = 12;
             this.btnCadastrar.Text = "Salvar Dados";
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // btnRemover
             // 
@@ -336,6 +329,14 @@
             this.btnRemover.Text = "Cancelar";
             this.btnRemover.UseVisualStyleBackColor = true;
             // 
+            // txtEditora
+            // 
+            this.txtEditora.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEditora.Location = new System.Drawing.Point(615, 224);
+            this.txtEditora.Name = "txtEditora";
+            this.txtEditora.Size = new System.Drawing.Size(224, 23);
+            this.txtEditora.TabIndex = 7;
+            // 
             // frmCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -344,24 +345,24 @@
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.btnRemover);
-            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.cboCondicao);
             this.Controls.Add(this.lblAutor);
             this.Controls.Add(this.lbleditora);
             this.Controls.Add(this.lblgenero);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cboGenero);
+            this.Controls.Add(this.cboAutor);
             this.Controls.Add(this.lblpalavraschave);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtPalavrasChaves);
             this.Controls.Add(this.lblvolume);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txtVolume);
             this.Controls.Add(this.lblCondicoes);
             this.Controls.Add(this.lblidioma);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtIdioma);
             this.Controls.Add(this.lblisbn);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtEditora);
+            this.Controls.Add(this.txtISBN);
             this.Controls.Add(this.lblTipo);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtTipo);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
@@ -380,29 +381,29 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTitulo;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtSubtitulo;
         private System.Windows.Forms.Label lblsubtitulo;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cboCondicao;
         private System.Windows.Forms.Label lblAutor;
         private System.Windows.Forms.Label lbleditora;
         private System.Windows.Forms.Label lblgenero;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboGenero;
+        private System.Windows.Forms.ComboBox cboAutor;
         private System.Windows.Forms.Label lblpalavraschave;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtPalavrasChaves;
         private System.Windows.Forms.Label lblvolume;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtVolume;
         private System.Windows.Forms.Label lblCondicoes;
         private System.Windows.Forms.Label lblidioma;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtIdioma;
         private System.Windows.Forms.Label lblisbn;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtISBN;
         private System.Windows.Forms.Label lblTipo;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtTipo;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Button btnRemover;
+        private System.Windows.Forms.TextBox txtEditora;
     }
 }
