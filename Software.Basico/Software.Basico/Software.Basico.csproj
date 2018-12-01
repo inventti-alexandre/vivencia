@@ -101,9 +101,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BibliotecaDBAzure.edmx</DependentUpon>
     </Compile>
-    <Compile Include="DB\Base\database_firewall_rules.cs">
-      <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
-    </Compile>
     <Compile Include="DB\Base\tb_aluno.cs">
       <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
     </Compile>
@@ -131,15 +128,13 @@
     <Compile Include="DB\Base\tb_turma_aluno.cs">
       <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\Base\vw_Livro_Autor_Genero.cs">
-      <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
-    </Compile>
+    <Compile Include="DB\Estoque\EstoqueBusiness.cs" />
+    <Compile Include="DB\Estoque\EstoqueDatabase.cs" />
     <Compile Include="DB\Genero\GeneroBusiness.cs" />
     <Compile Include="DB\Genero\GeneroDatabase.cs" />
     <Compile Include="DB\Livros\LivroBusiness.cs" />
     <Compile Include="DB\Livros\LivroDatabase.cs" />
     <Compile Include="Gp.cs" />
-    <Compile Include="Plugin\ImagemPlugin.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Telas\frmLogin.cs">
@@ -322,8 +317,6 @@
     </Content>
     <Content Include="DB\Script_MySql_BibliotecaDB.txt" />
     <Content Include="DB\Script_Sql_BibliotecaDB.txt" />
-    <None Include="Resources\photo_picture_4894.png" />
-    <None Include="Resources\1491254405-plusaddmoredetail_82972.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\users32.png" />
@@ -436,7 +429,6 @@
   <ItemGroup>
     <Folder Include="DB\Aluno\" />
     <Folder Include="DB\Emprestimo\" />
-    <Folder Include="DB\Estoque\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

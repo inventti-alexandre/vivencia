@@ -69,9 +69,11 @@
             // 
             this.txtNomeCompleto.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomeCompleto.Location = new System.Drawing.Point(389, 139);
+            this.txtNomeCompleto.MaxLength = 90;
             this.txtNomeCompleto.Name = "txtNomeCompleto";
             this.txtNomeCompleto.Size = new System.Drawing.Size(433, 33);
             this.txtNomeCompleto.TabIndex = 23;
+            this.txtNomeCompleto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomeCompleto_KeyPress);
             // 
             // btnRemover
             // 
@@ -101,9 +103,11 @@
             // 
             this.txtAutor.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAutor.Location = new System.Drawing.Point(389, 236);
+            this.txtAutor.MaxLength = 150;
             this.txtAutor.Name = "txtAutor";
             this.txtAutor.Size = new System.Drawing.Size(433, 33);
             this.txtAutor.TabIndex = 28;
+            this.txtAutor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAutor_KeyPress);
             // 
             // label2
             // 
@@ -119,9 +123,11 @@
             // 
             this.txtNascionalidade.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNascionalidade.Location = new System.Drawing.Point(389, 333);
+            this.txtNascionalidade.MaxLength = 90;
             this.txtNascionalidade.Name = "txtNascionalidade";
             this.txtNascionalidade.Size = new System.Drawing.Size(433, 33);
             this.txtNascionalidade.TabIndex = 30;
+            this.txtNascionalidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNascionalidade_KeyPress);
             // 
             // label3
             // 
