@@ -70,16 +70,16 @@ namespace Software.Basico.Telas
             //Mudar posição do Panel esquerdo
             pnBtnSel.Location = new Point(0, btnLivros.Location.Y);
         }
-
-        private void btnFuncionarios_Click(object sender, EventArgs e)
+        
+        private void btnAutores_Click(object sender, EventArgs e)
         {
-            Modulos.Funcionario.frmConsultar frm = new Modulos.Funcionario.frmConsultar();
+            Modulos.Autor.frmCadastroAutor frm = new Modulos.Autor.frmCadastroAutor();
             CarregarPanel(frm);
 
             telaSel = 4;
 
             //Mudar posição do Panel esquerdo
-            pnBtnSel.Location = new Point(0, btnUsuarios.Location.Y);
+            pnBtnSel.Location = new Point(0, btnAutores.Location.Y);
         }
 
         private void btnEmprestimo_Click(object sender, EventArgs e)
@@ -121,11 +121,31 @@ namespace Software.Basico.Telas
         public void Fechar()
         {
             //Evento ocorrido após clicar em fechar tela.
-            Close();
+            Tema.btnTema = false;
+            this.Close();
+        }
+
+        public void TrocarTema()
+        {
+            Tema.btnTema = true;
+            this.Close();
+
+            frmPrincipal frm = new frmPrincipal();
+            frm.Show();
         }
 
         private void TemaTela()
         {
+            string corTema = Tema.tema;
+
+            Tema cor = new Tema();
+            if (corTema == "0" || corTema == null)
+                cor.CarregarTema0();
+            else if (corTema == "1")
+                cor.CarregarTema1();
+            else if (corTema == "2")
+                cor.CarregarTema2();
+
             //Muda posição da logo dependendo do tema.
             if (Tema.tema == "1")
             {
@@ -136,7 +156,7 @@ namespace Software.Basico.Telas
                 logo2.Visible = true;
 
             //Cores dos Panels segundo o tema
-            ActiveForm.BackColor = Tema.Principal;
+            this.BackColor = Tema.Principal;
             panel1.BackColor = Tema.Primaria;
             panel3.BackColor = Tema.Primaria;
             panel2.BackColor = Tema.Segundaria;
@@ -147,7 +167,7 @@ namespace Software.Basico.Telas
             btnHome.ForeColor = Tema.Texto;
             btnTemas.ForeColor = Tema.Texto;
             btnLivros.ForeColor = Tema.Texto;
-            btnUsuarios.ForeColor = Tema.Texto;
+            btnAutores.ForeColor = Tema.Texto;
             Question.ForeColor = Tema.Texto;
         }
 
@@ -172,7 +192,7 @@ namespace Software.Basico.Telas
         private void btnUsuarios_MouseMove(object sender, MouseEventArgs e)
         {
             //Mudar posição do Panel esquerdo
-            pnBtnSel.Location = new Point(0, btnUsuarios.Location.Y);
+            pnBtnSel.Location = new Point(0, btnAutores.Location.Y);
         }
 
         private void btnEmprestimo_MouseMove(object sender, MouseEventArgs e)
@@ -210,7 +230,7 @@ namespace Software.Basico.Telas
             else if (telaSel == 3)
                 pnBtnSel.Location = new Point(0, btnLivros.Location.Y);
             else if (telaSel == 4)
-                pnBtnSel.Location = new Point(0, btnUsuarios.Location.Y);
+                pnBtnSel.Location = new Point(0, btnAutores.Location.Y);
             else if (telaSel == 5)
                 pnBtnSel.Location = new Point(0, btnEmprestimo.Location.Y);
             else if (telaSel == 6)

@@ -16,9 +16,6 @@ namespace Software.Basico.Telas
         {
             InitializeComponent();
 
-            Tema cor = new Tema();
-            cor.CarregarTema0();
-
             // Inicia contagem para término da Splash Screen
             Task.Factory.StartNew(() =>
             {
@@ -29,8 +26,10 @@ namespace Software.Basico.Telas
                 {
                     // Abre a tela Inicial
                     frmPrincipal frm = new frmPrincipal();
-                    frm.Show();
                     Hide();
+                    frm.ShowDialog();
+                    if (Tema.btnTema == false)
+                     this.Close();
                 }));
             });
         }

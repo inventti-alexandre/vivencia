@@ -167,18 +167,6 @@
     <Compile Include="Telas\Modulos\Emprestimo\frmConsultar.Designer.cs">
       <DependentUpon>frmConsultar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\Modulos\Funcionario\frmCadastrar.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Telas\Modulos\Funcionario\frmCadastrar.Designer.cs">
-      <DependentUpon>frmCadastrar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Telas\Modulos\Funcionario\frmConsultar.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Telas\Modulos\Funcionario\frmConsultar.Designer.cs">
-      <DependentUpon>frmConsultar.cs</DependentUpon>
-    </Compile>
     <Compile Include="Telas\Modulos\Genero\frmCadastrar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -260,12 +248,6 @@
       <DependentUpon>frmCadastrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Modulos\Emprestimo\frmConsultar.resx">
-      <DependentUpon>frmConsultar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Telas\Modulos\Funcionario\frmCadastrar.resx">
-      <DependentUpon>frmCadastrar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Telas\Modulos\Funcionario\frmConsultar.resx">
       <DependentUpon>frmConsultar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Modulos\Genero\frmCadastrar.resx">
@@ -438,6 +420,12 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="DB\Aluno\" />
+    <Folder Include="DB\Autor\" />
+    <Folder Include="DB\Emprestimo\" />
+    <Folder Include="DB\Estoque\" />
+    <Folder Include="DB\Genero\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

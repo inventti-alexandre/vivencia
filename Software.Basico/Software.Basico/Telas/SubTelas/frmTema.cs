@@ -22,7 +22,7 @@ namespace Software.Basico.Telas.SubTelas
             Tema cor = new Tema();
             cor.CarregarTema1();
 
-            ((frmPrincipal)this.ParentForm).Fechar();
+            ((frmPrincipal)this.ParentForm).TrocarTema();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -30,7 +30,7 @@ namespace Software.Basico.Telas.SubTelas
             Tema cor = new Tema();
             cor.CarregarTema2();
 
-            ((frmPrincipal)this.ParentForm).Fechar();
+            ((frmPrincipal)this.ParentForm).TrocarTema();
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)

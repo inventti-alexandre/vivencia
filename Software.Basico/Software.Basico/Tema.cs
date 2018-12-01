@@ -10,6 +10,7 @@ namespace Software.Basico
     class Tema
     {
         public static string tema { get; set; }
+        public static bool btnTema { get; set; }
 
         public static Color Principal { get; set; }
         public static Color Primaria { get; set; }
@@ -25,7 +26,8 @@ namespace Software.Basico
             Terciaria = Color.FromArgb(101, 100, 219);
             Texto = Color.FromArgb(232, 232, 232);
 
-            tema = "2";
+            btnTema = false;
+            tema = "0";
         }
 
         public void CarregarTema1()

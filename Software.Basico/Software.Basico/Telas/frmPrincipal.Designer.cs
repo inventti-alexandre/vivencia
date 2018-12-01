@@ -40,7 +40,7 @@
             this.pnBtnSel = new System.Windows.Forms.Panel();
             this.btnReservas = new System.Windows.Forms.Button();
             this.btnEmprestimo = new System.Windows.Forms.Button();
-            this.btnUsuarios = new System.Windows.Forms.Button();
+            this.btnAutores = new System.Windows.Forms.Button();
             this.btnLivros = new System.Windows.Forms.Button();
             this.btnFace = new System.Windows.Forms.Button();
             this.btnSite = new System.Windows.Forms.Button();
@@ -76,7 +76,7 @@
             this.panel1.Controls.Add(this.pnBtnSel);
             this.panel1.Controls.Add(this.btnReservas);
             this.panel1.Controls.Add(this.btnEmprestimo);
-            this.panel1.Controls.Add(this.btnUsuarios);
+            this.panel1.Controls.Add(this.btnAutores);
             this.panel1.Controls.Add(this.btnLivros);
             this.panel1.Controls.Add(this.btnFace);
             this.panel1.Controls.Add(this.btnSite);
@@ -195,23 +195,23 @@
             this.btnEmprestimo.Click += new System.EventHandler(this.btnEmprestimo_Click);
             this.btnEmprestimo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnEmprestimo_MouseMove);
             // 
-            // btnUsuarios
+            // btnAutores
             // 
-            this.btnUsuarios.FlatAppearance.BorderSize = 0;
-            this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsuarios.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuarios.ForeColor = System.Drawing.Color.White;
-            this.btnUsuarios.Image = global::Software.Basico.Properties.Resources.users32;
-            this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuarios.Location = new System.Drawing.Point(12, 299);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(216, 50);
-            this.btnUsuarios.TabIndex = 3;
-            this.btnUsuarios.Text = "          Funcionarios";
-            this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuarios.UseVisualStyleBackColor = true;
-            this.btnUsuarios.Click += new System.EventHandler(this.btnFuncionarios_Click);
-            this.btnUsuarios.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnUsuarios_MouseMove);
+            this.btnAutores.FlatAppearance.BorderSize = 0;
+            this.btnAutores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAutores.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAutores.ForeColor = System.Drawing.Color.White;
+            this.btnAutores.Image = global::Software.Basico.Properties.Resources.users32;
+            this.btnAutores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAutores.Location = new System.Drawing.Point(12, 299);
+            this.btnAutores.Name = "btnAutores";
+            this.btnAutores.Size = new System.Drawing.Size(216, 50);
+            this.btnAutores.TabIndex = 3;
+            this.btnAutores.Text = "          Autores";
+            this.btnAutores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAutores.UseVisualStyleBackColor = true;
+            this.btnAutores.Click += new System.EventHandler(this.btnAutores_Click);
+            this.btnAutores.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnUsuarios_MouseMove);
             // 
             // btnLivros
             // 
@@ -445,7 +445,7 @@
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel pnBtnSel;
-        private System.Windows.Forms.Button btnUsuarios;
+        private System.Windows.Forms.Button btnAutores;
         private System.Windows.Forms.Button btnLivros;
         private System.Windows.Forms.Button btnTemas;
         private System.Windows.Forms.Button Question;
