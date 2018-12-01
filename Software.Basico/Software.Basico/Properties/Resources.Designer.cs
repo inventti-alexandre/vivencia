@@ -387,6 +387,16 @@ namespace Software.Basico.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap photo_picture_4894 {
+            get {
+                object obj = ResourceManager.GetObject("photo_picture_4894", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Search32 {
             get {
                 object obj = ResourceManager.GetObject("Search32", resourceCulture);

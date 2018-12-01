@@ -42,7 +42,7 @@ namespace Software.Basico.Telas.Modulos.Livros
 
         private void btnListar_Click(object sender, EventArgs e)
         {
-
+            CarregarGrid();
         }
 
         private void CarregarGrid()
@@ -52,6 +52,15 @@ namespace Software.Basico.Telas.Modulos.Livros
 
             dgvLivros.AutoGenerateColumns = false;
             dgvLivros.DataSource = livros;
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            tb_livro livro = dgvLivros.CurrentRow.DataBoundItem as tb_livro;
+
+            frmCadastrar frm = new frmCadastrar();
+            frm.PreencherCampos(livro.id_livro);
+            ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
         }
     }
 }
