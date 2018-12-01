@@ -20,48 +20,48 @@ namespace Software.Basico.DB.Livros
 
         public void AlterarLivro(tb_livro dto, int idLivro)
         {
-            tb_livro func = db.tb_livro.Where(x => x.id_livro == idLivro).ToList().Single();
+            tb_livro liv = db.tb_livro.Where(x => x.id_livro == idLivro).ToList().Single();
             
-            func.ds_condicoes = dto.ds_condicoes;
-            func.ds_idioma = dto.ds_idioma;
-            func.ds_palavrasChaves = dto.ds_palavrasChaves;
-            func.ds_subtitulo = dto.ds_subtitulo;
-            func.ds_tipo = dto.ds_tipo;
-            func.ds_titulo = dto.ds_titulo;
-            func.id_livro = dto.id_livro;
-            func.img_Capa = dto.img_Capa;
-            func.nm_editora = dto.nm_editora;
-            func.nu_isbn = dto.nu_isbn;
-            func.nu_volume = dto.nu_volume;
-            func.autor_id_autor = dto.autor_id_autor;
-            func.tb_genero_id_genero = dto.tb_genero_id_genero;
+            liv.ds_condicoes = dto.ds_condicoes;
+            liv.ds_idioma = dto.ds_idioma;
+            liv.ds_palavrasChaves = dto.ds_palavrasChaves;
+            liv.ds_subtitulo = dto.ds_subtitulo;
+            liv.ds_tipo = dto.ds_tipo;
+            liv.ds_titulo = dto.ds_titulo;
+            liv.id_livro = dto.id_livro;
+            liv.img_Capa = dto.img_Capa;
+            liv.nm_editora = dto.nm_editora;
+            liv.nu_isbn = dto.nu_isbn;
+            liv.nu_volume = dto.nu_volume;
+            liv.autor_id_autor = dto.autor_id_autor;
+            liv.tb_genero_id_genero = dto.tb_genero_id_genero;
 
             db.SaveChanges();
         }
 
         public void RemoverLivro(int idLivro)
         {
-            var func = new tb_livro { id_livro = idLivro };
-            db.Entry(func).State = EntityState.Deleted;
+            var liv = new tb_livro { id_livro = idLivro };
+            db.Entry(liv).State = EntityState.Deleted;
             db.SaveChanges();
         }
 
         public List<tb_livro> ListarLivros()
         {
-            List<tb_livro> funcList = db.tb_livro.ToList();
-            return funcList;
+            List<tb_livro> livList = db.tb_livro.ToList();
+            return livList;
         }
 
-        public tb_livro ListarLivroPorId(int idLivro)
+        public List<vw_Livro_Autor_Genero> ListarViewLivros()
         {
-            tb_livro func = db.tb_livro.Where(x => x.id_livro == idLivro).ToList().Single();
-            return func;
+            List<vw_Livro_Autor_Genero> livList = db.vw_Livro_Autor_Genero.ToList();
+            return livList;
         }
 
-        public tb_livro ListarLivroPorTituloAutor(string titulo, int autor)
+        public vw_Livro_Autor_Genero ListarLivroPorId(int idLivro)
         {
-            tb_livro func = db.tb_livro.Where(x => x.ds_titulo == titulo && x.autor_id_autor == autor).ToList().Single();
-            return func;
+            vw_Livro_Autor_Genero liv = db.vw_Livro_Autor_Genero.Where(x => x.id_livro == idLivro).ToList().Single();
+            return liv;
         }
     }
 }

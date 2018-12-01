@@ -166,6 +166,7 @@
             // 
             // cboCondicao
             // 
+            this.cboCondicao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCondicao.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCondicao.FormattingEnabled = true;
             this.cboCondicao.Items.AddRange(new object[] {
@@ -178,7 +179,6 @@
             this.cboCondicao.Name = "cboCondicao";
             this.cboCondicao.Size = new System.Drawing.Size(224, 25);
             this.cboCondicao.TabIndex = 11;
-            this.cboCondicao.Text = "  Selecione";
             // 
             // lblAutor
             // 
@@ -212,6 +212,7 @@
             // 
             // cboGenero
             // 
+            this.cboGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboGenero.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboGenero.FormattingEnabled = true;
             this.cboGenero.Items.AddRange(new object[] {
@@ -230,17 +231,16 @@
             this.cboGenero.Name = "cboGenero";
             this.cboGenero.Size = new System.Drawing.Size(189, 25);
             this.cboGenero.TabIndex = 10;
-            this.cboGenero.Text = "  Selecione";
             // 
             // cboAutor
             // 
+            this.cboAutor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboAutor.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboAutor.FormattingEnabled = true;
             this.cboAutor.Location = new System.Drawing.Point(373, 222);
             this.cboAutor.Name = "cboAutor";
             this.cboAutor.Size = new System.Drawing.Size(189, 25);
             this.cboAutor.TabIndex = 8;
-            this.cboAutor.Text = "  Selecione";
             // 
             // lblpalavraschave
             // 
@@ -407,6 +407,7 @@
             // 
             // cboTipo
             // 
+            this.cboTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTipo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTipo.FormattingEnabled = true;
             this.cboTipo.Items.AddRange(new object[] {
@@ -417,7 +418,6 @@
             this.cboTipo.Name = "cboTipo";
             this.cboTipo.Size = new System.Drawing.Size(170, 25);
             this.cboTipo.TabIndex = 11;
-            this.cboTipo.Text = "  Selecione";
             // 
             // btnAlterar
             // 

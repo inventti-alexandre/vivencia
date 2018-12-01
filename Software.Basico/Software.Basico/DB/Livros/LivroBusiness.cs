@@ -27,7 +27,12 @@ namespace Software.Basico.DB.Livros
             return db.ListarLivros();
         }
 
-        public tb_livro ListarLivroPorId(int idLivro)
+        public List<vw_Livro_Autor_Genero> ListarViewLivros()
+        {
+            return db.ListarViewLivros();
+        }
+
+        public vw_Livro_Autor_Genero ListarLivroPorId(int idLivro)
         {
             return db.ListarLivroPorId(idLivro);
         }

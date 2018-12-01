@@ -101,6 +101,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BibliotecaDBAzure.edmx</DependentUpon>
     </Compile>
+    <Compile Include="DB\Base\database_firewall_rules.cs">
+      <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
+    </Compile>
     <Compile Include="DB\Base\tb_aluno.cs">
       <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
     </Compile>
@@ -126,6 +129,9 @@
       <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Base\tb_turma_aluno.cs">
+      <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Base\vw_Livro_Autor_Genero.cs">
       <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Genero\GeneroBusiness.cs" />

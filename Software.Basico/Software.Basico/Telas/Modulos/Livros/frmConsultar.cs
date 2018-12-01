@@ -48,7 +48,7 @@ namespace Software.Basico.Telas.Modulos.Livros
         private void CarregarGrid()
         {
             LivroBusiness business = new LivroBusiness();
-            List<tb_livro> livros = business.ListarLivros();
+            List<vw_Livro_Autor_Genero> livros = business.ListarViewLivros();
 
             dgvLivros.AutoGenerateColumns = false;
             dgvLivros.DataSource = livros;
@@ -56,7 +56,7 @@ namespace Software.Basico.Telas.Modulos.Livros
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            tb_livro livro = dgvLivros.CurrentRow.DataBoundItem as tb_livro;
+            vw_Livro_Autor_Genero livro = dgvLivros.CurrentRow.DataBoundItem as vw_Livro_Autor_Genero;
 
             frmCadastrar frm = new frmCadastrar();
             frm.PreencherCampos(livro.id_livro);
