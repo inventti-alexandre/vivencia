@@ -31,7 +31,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnRemover = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCadastroDeGenero = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -58,6 +58,7 @@
             this.btnRemover.TabIndex = 35;
             this.btnRemover.Text = "Cancelar";
             this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
             // btnCadastrar
             // 
@@ -71,14 +72,16 @@
             this.btnCadastrar.TabIndex = 34;
             this.btnCadastrar.Text = "Salvar Dados";
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
-            // textBox1
+            // txtCadastroDeGenero
             // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(423, 211);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(433, 33);
-            this.textBox1.TabIndex = 33;
+            this.txtCadastroDeGenero.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCadastroDeGenero.Location = new System.Drawing.Point(423, 211);
+            this.txtCadastroDeGenero.Name = "txtCadastroDeGenero";
+            this.txtCadastroDeGenero.Size = new System.Drawing.Size(433, 33);
+            this.txtCadastroDeGenero.TabIndex = 33;
+            this.txtCadastroDeGenero.TextChanged += new System.EventHandler(this.txtCadastroDeGenero_TextChanged);
             // 
             // label1
             // 
@@ -97,7 +100,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnRemover);
             this.Controls.Add(this.btnCadastrar);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtCadastroDeGenero);
             this.Controls.Add(this.label1);
             this.Name = "frmCadastrar";
             this.Size = new System.Drawing.Size(915, 500);
@@ -112,7 +115,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnRemover;
         private System.Windows.Forms.Button btnCadastrar;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCadastroDeGenero;
         private System.Windows.Forms.Label label1;
     }
 }
