@@ -32,12 +32,77 @@ namespace Software.Basico.Telas.Modulos.Autor
                 Autor.nm_autor = txtAutor.Text.Trim();
                 Autor.nm_nomeCompleto = txtNomeCompleto.Text.Trim();
                 Autor.ds_nacionalidade = txtNascionalidade.Text.Trim();
-               
+
+                if (Autor.nm_autor == string.Empty)
+                {
+                    MessageBox.Show("Por favor digite o nome do Autor");
+                    return;
+                }
+
                 AutorBusiness business = new AutorBusiness();
                 business.CadastrarAutor(Autor);
 
                 MessageBox.Show("Autor cadastrado com sucesso!", "Biblioteca",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Biblioteca",
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro não identificado: {ex.Message}", "Biblioteca",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtNomeCompleto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) == true || char.IsControl(e.KeyChar) || char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtAutor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) == true || char.IsControl(e.KeyChar) || char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtNascionalidade_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) == true || char.IsControl(e.KeyChar) || char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                txtAutor.Clear();
+                txtNomeCompleto.Clear();
+                txtNascionalidade.Clear();
             }
             catch (ArgumentException ex)
             {
