@@ -85,6 +85,7 @@
             this.btnRemover.TabIndex = 25;
             this.btnRemover.Text = "Cancelar";
             this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
             // pictureBox1
             // 

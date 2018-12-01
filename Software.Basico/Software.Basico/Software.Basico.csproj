@@ -128,6 +128,8 @@
     <Compile Include="DB\Base\tb_turma_aluno.cs">
       <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
     </Compile>
+    <Compile Include="DB\Genero\GeneroBusiness.cs" />
+    <Compile Include="DB\Genero\GeneroDatabase.cs" />
     <Compile Include="DB\Livros\LivroBusiness.cs" />
     <Compile Include="DB\Livros\LivroDatabase.cs" />
     <Compile Include="Gp.cs" />
@@ -426,7 +428,6 @@
     <Folder Include="DB\Aluno\" />
     <Folder Include="DB\Emprestimo\" />
     <Folder Include="DB\Estoque\" />
-    <Folder Include="DB\Genero\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

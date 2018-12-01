@@ -50,5 +50,10 @@ namespace Software.Basico.Telas.Modulos.Autor
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
