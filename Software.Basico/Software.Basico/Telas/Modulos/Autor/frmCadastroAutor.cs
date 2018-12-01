@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Software.Basico.DB.Base;
+using Software.Basico.DB.Autor;
 
 namespace Software.Basico.Telas.Modulos.Autor
 {
@@ -15,6 +17,38 @@ namespace Software.Basico.Telas.Modulos.Autor
         public frmCadastroAutor()
         {
             InitializeComponent();
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            CadastrarAutor();
+        }
+        private void CadastrarAutor()
+        {
+            try
+            {
+                tb_autor Autor = new tb_autor();
+               
+                Autor.nm_autor = txtAutor.Text.Trim();
+                Autor.nm_nomeCompleto = txtNomeCompleto.Text.Trim();
+                Autor.ds_nacionalidade = txtNascionalidade.Text.Trim();
+               
+                AutorBusiness business = new AutorBusiness();
+                business.CadastrarAutor(Autor);
+
+                MessageBox.Show("Autor cadastrado com sucesso!", "Biblioteca",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Biblioteca",
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro não identificado: {ex.Message}", "Biblioteca",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

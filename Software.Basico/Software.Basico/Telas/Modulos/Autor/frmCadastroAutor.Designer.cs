@@ -30,12 +30,12 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.btnCadastrar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNomeCompleto = new System.Windows.Forms.TextBox();
             this.btnRemover = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtAutor = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtNascionalidade = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -63,14 +63,15 @@
             this.btnCadastrar.TabIndex = 24;
             this.btnCadastrar.Text = "Salvar Dados";
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
-            // textBox1
+            // txtNomeCompleto
             // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(389, 139);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(433, 33);
-            this.textBox1.TabIndex = 23;
+            this.txtNomeCompleto.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeCompleto.Location = new System.Drawing.Point(389, 139);
+            this.txtNomeCompleto.Name = "txtNomeCompleto";
+            this.txtNomeCompleto.Size = new System.Drawing.Size(433, 33);
+            this.txtNomeCompleto.TabIndex = 23;
             // 
             // btnRemover
             // 
@@ -95,13 +96,13 @@
             this.pictureBox1.TabIndex = 26;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox2
+            // txtAutor
             // 
-            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(389, 236);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(433, 33);
-            this.textBox2.TabIndex = 28;
+            this.txtAutor.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAutor.Location = new System.Drawing.Point(389, 236);
+            this.txtAutor.Name = "txtAutor";
+            this.txtAutor.Size = new System.Drawing.Size(433, 33);
+            this.txtAutor.TabIndex = 28;
             // 
             // label2
             // 
@@ -113,13 +114,13 @@
             this.label2.TabIndex = 27;
             this.label2.Text = "Nome Autor(a) ";
             // 
-            // textBox3
+            // txtNascionalidade
             // 
-            this.textBox3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(389, 333);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(433, 33);
-            this.textBox3.TabIndex = 30;
+            this.txtNascionalidade.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNascionalidade.Location = new System.Drawing.Point(389, 333);
+            this.txtNascionalidade.Name = "txtNascionalidade";
+            this.txtNascionalidade.Size = new System.Drawing.Size(433, 33);
+            this.txtNascionalidade.TabIndex = 30;
             // 
             // label3
             // 
@@ -147,14 +148,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtNascionalidade);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtAutor);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnRemover);
             this.Controls.Add(this.btnCadastrar);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNomeCompleto);
             this.Controls.Add(this.label1);
             this.Name = "frmCadastroAutor";
             this.Size = new System.Drawing.Size(915, 500);
@@ -168,12 +169,12 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCadastrar;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNomeCompleto;
         private System.Windows.Forms.Button btnRemover;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtAutor;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtNascionalidade;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
     }
