@@ -93,6 +93,16 @@ namespace Software.Basico.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1491254405_plusaddmoredetail_82972 {
+            get {
+                object obj = ResourceManager.GetObject("1491254405-plusaddmoredetail_82972", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _201612_01T170829 {
             get {
                 object obj = ResourceManager.GetObject("201612-01T170829", resourceCulture);

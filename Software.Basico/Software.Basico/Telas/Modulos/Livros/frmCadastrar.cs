@@ -75,5 +75,11 @@ namespace Software.Basico.Telas.Modulos.Livros
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnAddAutor_Click(object sender, EventArgs e)
+        {
+            Autor.frmCadastroAutor frm = new Autor.frmCadastroAutor();
+            ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
+        }
     }
 }

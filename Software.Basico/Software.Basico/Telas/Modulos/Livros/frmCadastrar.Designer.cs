@@ -55,6 +55,8 @@
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnRemover = new System.Windows.Forms.Button();
             this.txtEditora = new System.Windows.Forms.TextBox();
+            this.btnAddGenero = new System.Windows.Forms.Button();
+            this.btnAddAutor = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -186,7 +188,7 @@
             "Inglês"});
             this.cboGenero.Location = new System.Drawing.Point(373, 272);
             this.cboGenero.Name = "cboGenero";
-            this.cboGenero.Size = new System.Drawing.Size(224, 25);
+            this.cboGenero.Size = new System.Drawing.Size(189, 25);
             this.cboGenero.TabIndex = 10;
             this.cboGenero.Text = "  Selecione";
             // 
@@ -198,7 +200,7 @@
             "Clarice Lispector"});
             this.cboAutor.Location = new System.Drawing.Point(373, 222);
             this.cboAutor.Name = "cboAutor";
-            this.cboAutor.Size = new System.Drawing.Size(224, 25);
+            this.cboAutor.Size = new System.Drawing.Size(189, 25);
             this.cboAutor.TabIndex = 8;
             this.cboAutor.Text = "  Selecione";
             // 
@@ -337,6 +339,41 @@
             this.txtEditora.Size = new System.Drawing.Size(224, 23);
             this.txtEditora.TabIndex = 7;
             // 
+            // btnAddGenero
+            // 
+            this.btnAddGenero.BackgroundImage = global::Software.Basico.Properties.Resources._1491254405_plusaddmoredetail_82972;
+            this.btnAddGenero.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddGenero.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddGenero.FlatAppearance.BorderSize = 0;
+            this.btnAddGenero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddGenero.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddGenero.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddGenero.Location = new System.Drawing.Point(565, 270);
+            this.btnAddGenero.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAddGenero.Name = "btnAddGenero";
+            this.btnAddGenero.Size = new System.Drawing.Size(28, 28);
+            this.btnAddGenero.TabIndex = 93;
+            this.btnAddGenero.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddGenero.UseVisualStyleBackColor = true;
+            // 
+            // btnAddAutor
+            // 
+            this.btnAddAutor.BackgroundImage = global::Software.Basico.Properties.Resources._1491254405_plusaddmoredetail_82972;
+            this.btnAddAutor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddAutor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddAutor.FlatAppearance.BorderSize = 0;
+            this.btnAddAutor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddAutor.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddAutor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddAutor.Location = new System.Drawing.Point(565, 220);
+            this.btnAddAutor.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAddAutor.Name = "btnAddAutor";
+            this.btnAddAutor.Size = new System.Drawing.Size(28, 28);
+            this.btnAddAutor.TabIndex = 93;
+            this.btnAddAutor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddAutor.UseVisualStyleBackColor = true;
+            this.btnAddAutor.Click += new System.EventHandler(this.btnAddAutor_Click);
+            // 
             // frmCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -366,6 +403,8 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnAddAutor);
+            this.Controls.Add(this.btnAddGenero);
             this.Name = "frmCadastrar";
             this.Size = new System.Drawing.Size(913, 498);
             this.Load += new System.EventHandler(this.frmCadastrar_Load);
@@ -405,5 +444,7 @@
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Button btnRemover;
         private System.Windows.Forms.TextBox txtEditora;
+        private System.Windows.Forms.Button btnAddGenero;
+        private System.Windows.Forms.Button btnAddAutor;
     }
 }

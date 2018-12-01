@@ -315,6 +315,7 @@
     </Content>
     <Content Include="DB\Script_MySql_BibliotecaDB.txt" />
     <Content Include="DB\Script_Sql_BibliotecaDB.txt" />
+    <None Include="Resources\1491254405-plusaddmoredetail_82972.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\users32.png" />
