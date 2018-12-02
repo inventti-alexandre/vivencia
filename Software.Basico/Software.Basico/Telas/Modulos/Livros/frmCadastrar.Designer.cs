@@ -33,6 +33,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.imgLivro = new System.Windows.Forms.PictureBox();
             this.txtTitulo = new System.Windows.Forms.TextBox();
+            this.lblid = new System.Windows.Forms.Label();
+            this.lblidTxt = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.txtSubtitulo = new System.Windows.Forms.TextBox();
             this.lblsubtitulo = new System.Windows.Forms.Label();
@@ -60,8 +62,6 @@
             this.btnAddAutor = new System.Windows.Forms.Button();
             this.cboTipo = new System.Windows.Forms.ComboBox();
             this.btnAlterar = new System.Windows.Forms.Button();
-            this.lblidTxt = new System.Windows.Forms.Label();
-            this.lblid = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLivro)).BeginInit();
             this.SuspendLayout();
@@ -117,6 +117,28 @@
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(242, 23);
             this.txtTitulo.TabIndex = 1;
+            // 
+            // lblid
+            // 
+            this.lblid.AutoSize = true;
+            this.lblid.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblid.Location = new System.Drawing.Point(225, 13);
+            this.lblid.Name = "lblid";
+            this.lblid.Size = new System.Drawing.Size(52, 30);
+            this.lblid.TabIndex = 73;
+            this.lblid.Text = "100";
+            this.lblid.Visible = false;
+            // 
+            // lblidTxt
+            // 
+            this.lblidTxt.AutoSize = true;
+            this.lblidTxt.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblidTxt.Location = new System.Drawing.Point(176, 13);
+            this.lblidTxt.Name = "lblidTxt";
+            this.lblidTxt.Size = new System.Drawing.Size(42, 30);
+            this.lblidTxt.TabIndex = 73;
+            this.lblidTxt.Text = "id:";
+            this.lblidTxt.Visible = false;
             // 
             // lblTitulo
             // 
@@ -360,6 +382,7 @@
             this.btnRemover.TabIndex = 13;
             this.btnRemover.Text = "Cancelar";
             this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
             // txtEditora
             // 
@@ -432,28 +455,6 @@
             this.btnAlterar.Text = "Salvar Dados";
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
-            // 
-            // lblidTxt
-            // 
-            this.lblidTxt.AutoSize = true;
-            this.lblidTxt.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblidTxt.Location = new System.Drawing.Point(176, 13);
-            this.lblidTxt.Name = "lblidTxt";
-            this.lblidTxt.Size = new System.Drawing.Size(42, 30);
-            this.lblidTxt.TabIndex = 73;
-            this.lblidTxt.Text = "id:";
-            this.lblidTxt.Visible = false;
-            // 
-            // lblid
-            // 
-            this.lblid.AutoSize = true;
-            this.lblid.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblid.Location = new System.Drawing.Point(225, 13);
-            this.lblid.Name = "lblid";
-            this.lblid.Size = new System.Drawing.Size(52, 30);
-            this.lblid.TabIndex = 73;
-            this.lblid.Text = "100";
-            this.lblid.Visible = false;
             // 
             // frmCadastrar
             // 

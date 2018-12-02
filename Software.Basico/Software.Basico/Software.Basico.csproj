@@ -178,6 +178,18 @@
     <Compile Include="Telas\Modulos\Emprestimo\frmConsultar.Designer.cs">
       <DependentUpon>frmConsultar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\Modulos\Estoque\EstoqueCadastrar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Modulos\Estoque\EstoqueCadastrar.Designer.cs">
+      <DependentUpon>EstoqueCadastrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Modulos\Estoque\EstoqueConsultar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Modulos\Estoque\EstoqueConsultar.Designer.cs">
+      <DependentUpon>EstoqueConsultar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\Modulos\Genero\frmCadastrar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -260,6 +272,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Modulos\Emprestimo\frmConsultar.resx">
       <DependentUpon>frmConsultar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Modulos\Estoque\EstoqueCadastrar.resx">
+      <DependentUpon>EstoqueCadastrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Modulos\Estoque\EstoqueConsultar.resx">
+      <DependentUpon>EstoqueConsultar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Modulos\Genero\frmCadastrar.resx">
       <DependentUpon>frmCadastrar.cs</DependentUpon>

@@ -179,5 +179,10 @@ namespace Software.Basico.Telas.Modulos.Livros
         {
             CarregarImagem();
         }
+
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
