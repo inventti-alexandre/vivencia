@@ -84,6 +84,7 @@ namespace Software.Basico.Telas.Modulos.Livros
 
                 LivroBusiness business = new LivroBusiness();
                 business.RemoverLivro(livro.id_livro);
+                CarregarGrid();
             }
             catch (Exception ex)
             {

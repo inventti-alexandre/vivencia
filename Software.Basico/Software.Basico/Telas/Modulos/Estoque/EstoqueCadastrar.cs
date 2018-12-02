@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Software.Basico.DB.Base;
 using Software.Basico.DB.Estoque;
+using Software.Basico.DB.Livros;
 
 namespace Software.Basico.Telas.Modulos.Estoque
 {
@@ -21,8 +22,8 @@ namespace Software.Basico.Telas.Modulos.Estoque
         }
         private void CarregarCombos()
         {
-            EstoqueBusiness asbusiness = new EstoqueBusiness();
-            List<tb_livro> livros = asbusiness.ConsultarLivroPorid();
+            LivroBusiness asbusiness = new LivroBusiness();
+            List<tb_livro> livros = asbusiness.ListarLivros();
 
             cboxlivro.ValueMember = nameof(tb_livro.id_livro);
             cboxlivro.DataSource = asbusiness;
