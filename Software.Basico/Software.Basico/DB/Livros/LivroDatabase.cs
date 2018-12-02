@@ -12,10 +12,10 @@ namespace Software.Basico.DB.Livros
     {
         AzureBiblioteca db = new AzureBiblioteca();
 
-        public void CadastrarLivro(tb_livro dto)
+        public int CadastrarLivro(tb_livro dto)
         {
             db.tb_livro.Add(dto);
-            db.SaveChanges();
+            return db.SaveChanges();
         }
 
         public void AlterarLivro(tb_livro dto, int idLivro)
@@ -61,6 +61,48 @@ namespace Software.Basico.DB.Livros
         public vw_Livro_Autor_Genero ListarLivroPorId(int idLivro)
         {
             vw_Livro_Autor_Genero liv = db.vw_Livro_Autor_Genero.Where(x => x.id_livro == idLivro).ToList().Single();
+            return liv;
+        }
+
+        public List<vw_Livro_Autor_Genero> ListarFiltroTitulo(string titulo)
+        {
+            List<vw_Livro_Autor_Genero> liv = db.vw_Livro_Autor_Genero.Where(x => x.ds_titulo == titulo).ToList();
+            return liv;
+        }
+
+        public List<vw_Livro_Autor_Genero> ListarFiltroAutor(string autor)
+        {
+            List<vw_Livro_Autor_Genero> liv = db.vw_Livro_Autor_Genero.Where(x => x.nm_autor == autor).ToList();
+            return liv;
+        }
+
+        public List<vw_Livro_Autor_Genero> ListarFiltroPalavraChaves(string palavraChave)
+        {
+            List<vw_Livro_Autor_Genero> liv = db.vw_Livro_Autor_Genero.Where(x => x.ds_palavrasChaves == palavraChave).ToList();
+            return liv;
+        }
+
+        public List<vw_Livro_Autor_Genero> ListarFiltroTituloAutor(string titulo, string autor)
+        {
+            List<vw_Livro_Autor_Genero> liv = db.vw_Livro_Autor_Genero.Where(x => x.ds_titulo == titulo && x.nm_autor == autor).ToList();
+            return liv;
+        }
+
+        public List<vw_Livro_Autor_Genero> ListarFiltroTituloPalavra(string titulo, string palavraChave)
+        {
+            List<vw_Livro_Autor_Genero> liv = db.vw_Livro_Autor_Genero.Where(x => x.ds_titulo == titulo && x.ds_palavrasChaves == palavraChave).ToList();
+            return liv;
+        }
+
+        public List<vw_Livro_Autor_Genero> ListarFiltroAutorPalavra(string autor, string palavraChave)
+        {
+            List<vw_Livro_Autor_Genero> liv = db.vw_Livro_Autor_Genero.Where(x => x.nm_autor == autor && x.ds_palavrasChaves == palavraChave).ToList();
+            return liv;
+        }
+
+        public List<vw_Livro_Autor_Genero> ListarFiltroTituloAutorPalavra(string titulo, string autor, string palavraChave)
+        {
+            List<vw_Livro_Autor_Genero> liv = db.vw_Livro_Autor_Genero.Where(x => x.ds_titulo == titulo && x.nm_autor == autor && x.ds_palavrasChaves == palavraChave).ToList();
             return liv;
         }
     }

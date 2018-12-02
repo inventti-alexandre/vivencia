@@ -140,6 +140,7 @@
     <Compile Include="DB\Livros\LivroBusiness.cs" />
     <Compile Include="DB\Livros\LivroDatabase.cs" />
     <Compile Include="Gp.cs" />
+    <Compile Include="Plugins\ImagemPlugin.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Telas\frmLogin.cs">
