@@ -230,6 +230,7 @@
             this.btnCadastrar.TabIndex = 82;
             this.btnCadastrar.Text = "Salvar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // btnRemover
             // 
@@ -243,6 +244,7 @@
             this.btnRemover.TabIndex = 83;
             this.btnRemover.Text = "Cancelar";
             this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
             // frmCadastrar
             // 

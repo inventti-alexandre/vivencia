@@ -128,6 +128,11 @@
     <Compile Include="DB\Base\tb_turma_aluno.cs">
       <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
     </Compile>
+    <Compile Include="DB\Base\vw_Livro_Autor_Genero.cs">
+      <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Emprestimo\EmprestimoBusiness.cs" />
+    <Compile Include="DB\Emprestimo\EmprestimoDatabase.cs" />
     <Compile Include="DB\Estoque\EstoqueBusiness.cs" />
     <Compile Include="DB\Estoque\EstoqueDatabase.cs" />
     <Compile Include="DB\Genero\GeneroBusiness.cs" />
@@ -426,9 +431,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DB\Aluno\" />
-    <Folder Include="DB\Emprestimo\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

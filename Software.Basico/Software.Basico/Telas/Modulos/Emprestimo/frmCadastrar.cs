@@ -29,5 +29,15 @@ namespace Software.Basico.Telas.Modulos.Emprestimo
         {
 
         }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,17 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Software.Basico.DB.Base;
 using Software.Basico.DB.Livros;
 using Software.Basico.DB.Autor;
 using Software.Basico.DB.Genero;
-using Nsf._2018.Modulo3.App.Plugin;
 
 namespace Software.Basico.Telas.Modulos.Livros
 {

@@ -35,6 +35,5 @@ namespace Software.Basico.DB.Base
         public virtual DbSet<tb_turma> tb_turma { get; set; }
         public virtual DbSet<tb_turma_aluno> tb_turma_aluno { get; set; }
         public virtual DbSet<vw_Livro_Autor_Genero> vw_Livro_Autor_Genero { get; set; }
-        public virtual DbSet<database_firewall_rules> database_firewall_rules { get; set; }
     }
 }
