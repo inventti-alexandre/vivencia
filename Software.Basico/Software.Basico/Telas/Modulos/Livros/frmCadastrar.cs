@@ -177,7 +177,7 @@ namespace Software.Basico.Telas.Modulos.Livros
 
         private void btnAddAutor_Click(object sender, EventArgs e)
         {
-            Autor.frmCadastroAutor frm = new Autor.frmCadastroAutor();
+            Autor.frmConsultar frm = new Autor.frmConsultar();
             ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
         }
 
