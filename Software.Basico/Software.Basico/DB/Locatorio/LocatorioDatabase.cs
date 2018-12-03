@@ -17,7 +17,7 @@ namespace Software.Basico.DB.Locatorio
             db.SaveChanges();
         }
 
-        public void AlterarLocatorio(tb_locatario dto, int idlocatario)
+        public void AlterarLocatorio(tb_locatorio dto, int idlocatario)
         {
             tb_locatario nha = db.id_locatario.Where(x => x.id_locatario == idlocatario).ToList().Single();
 
