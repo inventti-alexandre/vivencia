@@ -56,7 +56,7 @@
             this.lblisbn = new System.Windows.Forms.Label();
             this.txtISBN = new System.Windows.Forms.TextBox();
             this.lblTipo = new System.Windows.Forms.Label();
-            this.btnCadastrar_Controle_de_Livros = new System.Windows.Forms.Button();
+            this.btnCadastrar = new System.Windows.Forms.Button();
             this.txtEditora_Contrle_de_Estoque = new System.Windows.Forms.TextBox();
             this.btnAddGenero = new System.Windows.Forms.Button();
             this.btnAddAutor = new System.Windows.Forms.Button();
@@ -390,19 +390,19 @@
             this.lblTipo.TabIndex = 75;
             this.lblTipo.Text = "Tipo";
             // 
-            // btnCadastrar_Controle_de_Livros
+            // btnCadastrar
             // 
-            this.btnCadastrar_Controle_de_Livros.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnCadastrar_Controle_de_Livros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrar_Controle_de_Livros.Font = new System.Drawing.Font("Century Gothic", 14.75F);
-            this.btnCadastrar_Controle_de_Livros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnCadastrar_Controle_de_Livros.Location = new System.Drawing.Point(612, 401);
-            this.btnCadastrar_Controle_de_Livros.Name = "btnCadastrar_Controle_de_Livros";
-            this.btnCadastrar_Controle_de_Livros.Size = new System.Drawing.Size(227, 32);
-            this.btnCadastrar_Controle_de_Livros.TabIndex = 12;
-            this.btnCadastrar_Controle_de_Livros.Text = "Salvar Dados";
-            this.btnCadastrar_Controle_de_Livros.UseVisualStyleBackColor = true;
-            this.btnCadastrar_Controle_de_Livros.Click += new System.EventHandler(this.btnCadastrar_Click);
+            this.btnCadastrar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrar.Font = new System.Drawing.Font("Century Gothic", 14.75F);
+            this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
+            this.btnCadastrar.Location = new System.Drawing.Point(612, 401);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(227, 32);
+            this.btnCadastrar.TabIndex = 12;
+            this.btnCadastrar.Text = "Salvar Dados";
+            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // txtEditora_Contrle_de_Estoque
             // 
@@ -462,7 +462,6 @@
             this.cboTipo.Name = "cboTipo";
             this.cboTipo.Size = new System.Drawing.Size(170, 25);
             this.cboTipo.TabIndex = 11;
-            //this.cboTipo.SelectedIndexChanged += new System.EventHandler(this.cboTipo_SelectedIndexChanged);
             // 
             // btnAlterar
             // 
@@ -625,7 +624,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.nudQnt);
-            this.Controls.Add(this.btnCadastrar_Controle_de_Livros);
+            this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.cboTipo);
             this.Controls.Add(this.cboCondicao);
             this.Controls.Add(this.lblAutor);
@@ -697,7 +696,7 @@
         private System.Windows.Forms.Label lblisbn;
         private System.Windows.Forms.TextBox txtISBN;
         private System.Windows.Forms.Label lblTipo;
-        private System.Windows.Forms.Button btnCadastrar_Controle_de_Livros;
+        private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.TextBox txtEditora_Contrle_de_Estoque;
         private System.Windows.Forms.Button btnAddGenero;
         private System.Windows.Forms.Button btnAddAutor;

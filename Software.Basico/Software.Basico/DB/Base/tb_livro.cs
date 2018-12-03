@@ -32,7 +32,7 @@ namespace Software.Basico.DB.Base
         public string nu_isbn { get; set; }
         public string ds_subtitulo { get; set; }
         public string ds_palavrasChaves { get; set; }
-        public string img_Capa { get; set; }
+        public byte[] img_Capa { get; set; }
         public int tb_genero_id_genero { get; set; }
         public int tb_autor_id_autor { get; set; }
     

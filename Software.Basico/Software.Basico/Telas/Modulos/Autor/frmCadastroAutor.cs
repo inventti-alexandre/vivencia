@@ -20,7 +20,7 @@ namespace Software.Basico.Telas.Modulos.Autor
         }
         private void TemaTela()
         {
-            panel1.BackColor = Tema.Primaria;
+            pnTop.BackColor = Tema.Primaria;
 
             btnCadastrar.BackColor = Tema.Segundaria;
             btnRemover.BackColor = Tema.Segundaria;

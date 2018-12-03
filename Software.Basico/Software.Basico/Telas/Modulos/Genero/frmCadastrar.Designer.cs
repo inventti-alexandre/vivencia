@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnCadastrar_Genero = new System.Windows.Forms.Button();
-            this.txtCadastrodegenero = new System.Windows.Forms.TextBox();
+            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.txtCadastrode = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pnTop = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -48,28 +49,28 @@
             this.pictureBox1.TabIndex = 36;
             this.pictureBox1.TabStop = false;
             // 
-            // btnCadastrar_Genero
+            // btnCadastrar
             // 
-            this.btnCadastrar_Genero.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnCadastrar_Genero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrar_Genero.Font = new System.Drawing.Font("Century Gothic", 14.75F);
-            this.btnCadastrar_Genero.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnCadastrar_Genero.Location = new System.Drawing.Point(652, 284);
-            this.btnCadastrar_Genero.Name = "btnCadastrar_Genero";
-            this.btnCadastrar_Genero.Size = new System.Drawing.Size(204, 32);
-            this.btnCadastrar_Genero.TabIndex = 2;
-            this.btnCadastrar_Genero.Text = "Salvar Dados";
-            this.btnCadastrar_Genero.UseVisualStyleBackColor = true;
-            this.btnCadastrar_Genero.Click += new System.EventHandler(this.btnCadastrar_Click);
+            this.btnCadastrar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrar.Font = new System.Drawing.Font("Century Gothic", 14.75F);
+            this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
+            this.btnCadastrar.Location = new System.Drawing.Point(652, 284);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(204, 32);
+            this.btnCadastrar.TabIndex = 2;
+            this.btnCadastrar.Text = "Salvar Dados";
+            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
-            // txtCadastrodegenero
+            // txtCadastrode
             // 
-            this.txtCadastrodegenero.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCadastrodegenero.Location = new System.Drawing.Point(423, 234);
-            this.txtCadastrodegenero.Name = "txtCadastrodegenero";
-            this.txtCadastrodegenero.Size = new System.Drawing.Size(433, 33);
-            this.txtCadastrodegenero.TabIndex = 1;
-            this.txtCadastrodegenero.TextChanged += new System.EventHandler(this.txtCadastroDeGenero_TextChanged);
+            this.txtCadastrode.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCadastrode.Location = new System.Drawing.Point(423, 234);
+            this.txtCadastrode.Name = "txtCadastrode";
+            this.txtCadastrode.Size = new System.Drawing.Size(433, 33);
+            this.txtCadastrode.TabIndex = 1;
+            this.txtCadastrode.TextChanged += new System.EventHandler(this.txtCadastroDeGenero_TextChanged);
             // 
             // label1
             // 
@@ -101,15 +102,24 @@
             this.pictureBox2.TabIndex = 38;
             this.pictureBox2.TabStop = false;
             // 
+            // pnTop
+            // 
+            this.pnTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnTop.Location = new System.Drawing.Point(0, 0);
+            this.pnTop.Name = "pnTop";
+            this.pnTop.Size = new System.Drawing.Size(915, 12);
+            this.pnTop.TabIndex = 48;
+            // 
             // frmCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pnTop);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnCadastrar_Genero);
-            this.Controls.Add(this.txtCadastrodegenero);
+            this.Controls.Add(this.btnCadastrar);
+            this.Controls.Add(this.txtCadastrode);
             this.Controls.Add(this.label1);
             this.Name = "frmCadastrar";
             this.Size = new System.Drawing.Size(915, 500);
@@ -124,10 +134,11 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnCadastrar_Genero;
-        private System.Windows.Forms.TextBox txtCadastrodegenero;
+        private System.Windows.Forms.Button btnCadastrar;
+        private System.Windows.Forms.TextBox txtCadastrode;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel pnTop;
     }
 }

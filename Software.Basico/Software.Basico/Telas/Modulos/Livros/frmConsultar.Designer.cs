@@ -35,7 +35,7 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnAlterar_Visualizar = new System.Windows.Forms.Button();
+            this.btnAlterar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnListar = new System.Windows.Forms.Button();
             this.btnRemover = new System.Windows.Forms.Button();
@@ -120,19 +120,19 @@
             this.Column3.HeaderText = "Palavras-Chave";
             this.Column3.Name = "Column3";
             // 
-            // btnAlterar_Visualizar
+            // btnAlterar
             // 
-            this.btnAlterar_Visualizar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnAlterar_Visualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlterar_Visualizar.Font = new System.Drawing.Font("Century Gothic", 14.75F);
-            this.btnAlterar_Visualizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnAlterar_Visualizar.Location = new System.Drawing.Point(327, 425);
-            this.btnAlterar_Visualizar.Name = "btnAlterar_Visualizar";
-            this.btnAlterar_Visualizar.Size = new System.Drawing.Size(120, 32);
-            this.btnAlterar_Visualizar.TabIndex = 5;
-            this.btnAlterar_Visualizar.Text = "Visualizar";
-            this.btnAlterar_Visualizar.UseVisualStyleBackColor = true;
-            this.btnAlterar_Visualizar.Click += new System.EventHandler(this.btnAlterar_Click);
+            this.btnAlterar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlterar.Font = new System.Drawing.Font("Century Gothic", 14.75F);
+            this.btnAlterar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
+            this.btnAlterar.Location = new System.Drawing.Point(327, 425);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(120, 32);
+            this.btnAlterar.TabIndex = 5;
+            this.btnAlterar.Text = "Visualizar";
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnCadastrar
             // 
@@ -193,7 +193,6 @@
             this.txtPalavraChave.Name = "txtPalavraChave";
             this.txtPalavraChave.Size = new System.Drawing.Size(261, 23);
             this.txtPalavraChave.TabIndex = 3;
-            this.txtPalavraChave.TextChanged += new System.EventHandler(this.txtPalavraChave_TextChanged);
             // 
             // label2
             // 
@@ -264,7 +263,7 @@
             this.Controls.Add(this.txtPalavraChave);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnAlterar_Visualizar);
+            this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.btnRemover);
@@ -284,7 +283,7 @@
 
         private System.Windows.Forms.Panel pnTop;
         private System.Windows.Forms.DataGridView dgvLivros;
-        private System.Windows.Forms.Button btnAlterar_Visualizar;
+        private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Button btnListar;
         private System.Windows.Forms.Button btnRemover;

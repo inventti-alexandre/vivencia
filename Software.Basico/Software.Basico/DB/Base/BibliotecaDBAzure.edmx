@@ -70,7 +70,7 @@
           <Property Name="nu_isbn" Type="varchar" MaxLength="20" />
           <Property Name="ds_subtitulo" Type="varchar" MaxLength="150" />
           <Property Name="ds_palavrasChaves" Type="varchar" MaxLength="300" />
-          <Property Name="img_Capa" Type="varchar(max)" />
+          <Property Name="img_Capa" Type="varbinary(max)" />
           <Property Name="tb_genero_id_genero" Type="int" Nullable="false" />
           <Property Name="tb_autor_id_autor" Type="int" Nullable="false" />
         </EntityType>
@@ -127,7 +127,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
           <Property Name="nm_autor" Type="varchar" MaxLength="90" Nullable="false" />
           <Property Name="nm_genero" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
-        <Association Name="FK__tb_empres__tb_li__693CA210">
+        <Association Name="FK__tb_empres__tb_li__68487DD7">
           <End Role="tb_livro" Type="Self.tb_livro" Multiplicity="1" />
           <End Role="tb_emprestimo" Type="Self.tb_emprestimo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -139,7 +139,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_empres__tb_lo__6A30C649">
+        <Association Name="FK__tb_empres__tb_lo__693CA210">
           <End Role="tb_locatario" Type="Self.tb_locatario" Multiplicity="0..1" />
           <End Role="tb_emprestimo" Type="Self.tb_emprestimo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -151,7 +151,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_empres__tb_tu__68487DD7">
+        <Association Name="FK__tb_empres__tb_tu__6A30C649">
           <End Role="tb_turma_aluno" Type="Self.tb_turma_aluno" Multiplicity="0..1" />
           <End Role="tb_emprestimo" Type="Self.tb_emprestimo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -163,7 +163,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_estoqu__tb_li__6D0D32F4">
+        <Association Name="FK__tb_estoqu__tb_li__6B24EA82">
           <End Role="tb_livro" Type="Self.tb_livro" Multiplicity="1" />
           <End Role="tb_estoque" Type="Self.tb_estoque" Multiplicity="*" />
           <ReferentialConstraint>
@@ -175,7 +175,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_livro__tb_aut__571DF1D5">
+        <Association Name="FK__tb_livro__tb_aut__6C190EBB">
           <End Role="tb_autor" Type="Self.tb_autor" Multiplicity="1" />
           <End Role="tb_livro" Type="Self.tb_livro" Multiplicity="*" />
           <ReferentialConstraint>
@@ -187,7 +187,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_livro__tb_gen__5629CD9C">
+        <Association Name="FK__tb_livro__tb_gen__6D0D32F4">
           <End Role="tb_genero" Type="Self.tb_genero" Multiplicity="1" />
           <End Role="tb_livro" Type="Self.tb_livro" Multiplicity="*" />
           <ReferentialConstraint>
@@ -199,7 +199,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_reserv__tb_li__6FE99F9F">
+        <Association Name="FK__tb_reserv__tb_li__6E01572D">
           <End Role="tb_livro" Type="Self.tb_livro" Multiplicity="1" />
           <End Role="tb_reserva" Type="Self.tb_reserva" Multiplicity="*" />
           <ReferentialConstraint>
@@ -211,7 +211,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_reserv__tb_lo__71D1E811">
+        <Association Name="FK__tb_reserv__tb_lo__6EF57B66">
           <End Role="tb_locatario" Type="Self.tb_locatario" Multiplicity="0..1" />
           <End Role="tb_reserva" Type="Self.tb_reserva" Multiplicity="*" />
           <ReferentialConstraint>
@@ -223,7 +223,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_reserv__tb_tu__70DDC3D8">
+        <Association Name="FK__tb_reserv__tb_tu__6FE99F9F">
           <End Role="tb_turma_aluno" Type="Self.tb_turma_aluno" Multiplicity="0..1" />
           <End Role="tb_reserva" Type="Self.tb_reserva" Multiplicity="*" />
           <ReferentialConstraint>
@@ -235,7 +235,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_turma___tb_al__619B8048">
+        <Association Name="FK__tb_turma___tb_al__71D1E811">
           <End Role="tb_aluno" Type="Self.tb_aluno" Multiplicity="1" />
           <End Role="tb_turma_aluno" Type="Self.tb_turma_aluno" Multiplicity="*" />
           <ReferentialConstraint>
@@ -247,7 +247,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_turma___tb_tu__628FA481">
+        <Association Name="FK__tb_turma___tb_tu__72C60C4A">
           <End Role="tb_turma" Type="Self.tb_turma" Multiplicity="1" />
           <End Role="tb_turma_aluno" Type="Self.tb_turma_aluno" Multiplicity="*" />
           <ReferentialConstraint>
@@ -259,7 +259,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_turma__tb_cur__5DCAEF64">
+        <Association Name="FK__tb_turma__tb_cur__70DDC3D8">
           <End Role="tb_curso" Type="Self.tb_curso" Multiplicity="1" />
           <End Role="tb_turma" Type="Self.tb_turma" Multiplicity="*" />
           <ReferentialConstraint>
@@ -292,51 +292,51 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
     [vw_Livro_Autor_Genero].[nm_genero] AS [nm_genero]
     FROM [dbo].[vw_Livro_Autor_Genero] AS [vw_Livro_Autor_Genero]</DefiningQuery>
           </EntitySet>
-          <AssociationSet Name="FK__tb_empres__tb_li__693CA210" Association="Self.FK__tb_empres__tb_li__693CA210">
+          <AssociationSet Name="FK__tb_empres__tb_li__68487DD7" Association="Self.FK__tb_empres__tb_li__68487DD7">
             <End Role="tb_livro" EntitySet="tb_livro" />
             <End Role="tb_emprestimo" EntitySet="tb_emprestimo" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_empres__tb_lo__6A30C649" Association="Self.FK__tb_empres__tb_lo__6A30C649">
+          <AssociationSet Name="FK__tb_empres__tb_lo__693CA210" Association="Self.FK__tb_empres__tb_lo__693CA210">
             <End Role="tb_locatario" EntitySet="tb_locatario" />
             <End Role="tb_emprestimo" EntitySet="tb_emprestimo" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_empres__tb_tu__68487DD7" Association="Self.FK__tb_empres__tb_tu__68487DD7">
+          <AssociationSet Name="FK__tb_empres__tb_tu__6A30C649" Association="Self.FK__tb_empres__tb_tu__6A30C649">
             <End Role="tb_turma_aluno" EntitySet="tb_turma_aluno" />
             <End Role="tb_emprestimo" EntitySet="tb_emprestimo" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_estoqu__tb_li__6D0D32F4" Association="Self.FK__tb_estoqu__tb_li__6D0D32F4">
+          <AssociationSet Name="FK__tb_estoqu__tb_li__6B24EA82" Association="Self.FK__tb_estoqu__tb_li__6B24EA82">
             <End Role="tb_livro" EntitySet="tb_livro" />
             <End Role="tb_estoque" EntitySet="tb_estoque" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_livro__tb_aut__571DF1D5" Association="Self.FK__tb_livro__tb_aut__571DF1D5">
+          <AssociationSet Name="FK__tb_livro__tb_aut__6C190EBB" Association="Self.FK__tb_livro__tb_aut__6C190EBB">
             <End Role="tb_autor" EntitySet="tb_autor" />
             <End Role="tb_livro" EntitySet="tb_livro" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_livro__tb_gen__5629CD9C" Association="Self.FK__tb_livro__tb_gen__5629CD9C">
+          <AssociationSet Name="FK__tb_livro__tb_gen__6D0D32F4" Association="Self.FK__tb_livro__tb_gen__6D0D32F4">
             <End Role="tb_genero" EntitySet="tb_genero" />
             <End Role="tb_livro" EntitySet="tb_livro" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_reserv__tb_li__6FE99F9F" Association="Self.FK__tb_reserv__tb_li__6FE99F9F">
+          <AssociationSet Name="FK__tb_reserv__tb_li__6E01572D" Association="Self.FK__tb_reserv__tb_li__6E01572D">
             <End Role="tb_livro" EntitySet="tb_livro" />
             <End Role="tb_reserva" EntitySet="tb_reserva" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_reserv__tb_lo__71D1E811" Association="Self.FK__tb_reserv__tb_lo__71D1E811">
+          <AssociationSet Name="FK__tb_reserv__tb_lo__6EF57B66" Association="Self.FK__tb_reserv__tb_lo__6EF57B66">
             <End Role="tb_locatario" EntitySet="tb_locatario" />
             <End Role="tb_reserva" EntitySet="tb_reserva" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_reserv__tb_tu__70DDC3D8" Association="Self.FK__tb_reserv__tb_tu__70DDC3D8">
+          <AssociationSet Name="FK__tb_reserv__tb_tu__6FE99F9F" Association="Self.FK__tb_reserv__tb_tu__6FE99F9F">
             <End Role="tb_turma_aluno" EntitySet="tb_turma_aluno" />
             <End Role="tb_reserva" EntitySet="tb_reserva" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_turma___tb_al__619B8048" Association="Self.FK__tb_turma___tb_al__619B8048">
+          <AssociationSet Name="FK__tb_turma___tb_al__71D1E811" Association="Self.FK__tb_turma___tb_al__71D1E811">
             <End Role="tb_aluno" EntitySet="tb_aluno" />
             <End Role="tb_turma_aluno" EntitySet="tb_turma_aluno" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_turma___tb_tu__628FA481" Association="Self.FK__tb_turma___tb_tu__628FA481">
+          <AssociationSet Name="FK__tb_turma___tb_tu__72C60C4A" Association="Self.FK__tb_turma___tb_tu__72C60C4A">
             <End Role="tb_turma" EntitySet="tb_turma" />
             <End Role="tb_turma_aluno" EntitySet="tb_turma_aluno" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_turma__tb_cur__5DCAEF64" Association="Self.FK__tb_turma__tb_cur__5DCAEF64">
+          <AssociationSet Name="FK__tb_turma__tb_cur__70DDC3D8" Association="Self.FK__tb_turma__tb_cur__70DDC3D8">
             <End Role="tb_curso" EntitySet="tb_curso" />
             <End Role="tb_turma" EntitySet="tb_turma" />
           </AssociationSet>
@@ -358,51 +358,51 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
           <EntitySet Name="tb_turma" EntityType="BibliotecaDBAzure.tb_turma" />
           <EntitySet Name="tb_turma_aluno" EntityType="BibliotecaDBAzure.tb_turma_aluno" />
           <EntitySet Name="vw_Livro_Autor_Genero" EntityType="BibliotecaDBAzure.vw_Livro_Autor_Genero" />
-          <AssociationSet Name="FK__tb_turma___tb_al__619B8048" Association="BibliotecaDBAzure.FK__tb_turma___tb_al__619B8048">
+          <AssociationSet Name="FK__tb_turma___tb_al__71D1E811" Association="BibliotecaDBAzure.FK__tb_turma___tb_al__71D1E811">
             <End Role="tb_aluno" EntitySet="tb_aluno" />
             <End Role="tb_turma_aluno" EntitySet="tb_turma_aluno" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_livro__tb_aut__571DF1D5" Association="BibliotecaDBAzure.FK__tb_livro__tb_aut__571DF1D5">
+          <AssociationSet Name="FK__tb_livro__tb_aut__6C190EBB" Association="BibliotecaDBAzure.FK__tb_livro__tb_aut__6C190EBB">
             <End Role="tb_autor" EntitySet="tb_autor" />
             <End Role="tb_livro" EntitySet="tb_livro" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_turma__tb_cur__5DCAEF64" Association="BibliotecaDBAzure.FK__tb_turma__tb_cur__5DCAEF64">
+          <AssociationSet Name="FK__tb_turma__tb_cur__70DDC3D8" Association="BibliotecaDBAzure.FK__tb_turma__tb_cur__70DDC3D8">
             <End Role="tb_curso" EntitySet="tb_curso" />
             <End Role="tb_turma" EntitySet="tb_turma" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_empres__tb_li__693CA210" Association="BibliotecaDBAzure.FK__tb_empres__tb_li__693CA210">
+          <AssociationSet Name="FK__tb_empres__tb_li__68487DD7" Association="BibliotecaDBAzure.FK__tb_empres__tb_li__68487DD7">
             <End Role="tb_livro" EntitySet="tb_livro" />
             <End Role="tb_emprestimo" EntitySet="tb_emprestimo" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_empres__tb_lo__6A30C649" Association="BibliotecaDBAzure.FK__tb_empres__tb_lo__6A30C649">
+          <AssociationSet Name="FK__tb_empres__tb_lo__693CA210" Association="BibliotecaDBAzure.FK__tb_empres__tb_lo__693CA210">
             <End Role="tb_locatario" EntitySet="tb_locatario" />
             <End Role="tb_emprestimo" EntitySet="tb_emprestimo" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_empres__tb_tu__68487DD7" Association="BibliotecaDBAzure.FK__tb_empres__tb_tu__68487DD7">
+          <AssociationSet Name="FK__tb_empres__tb_tu__6A30C649" Association="BibliotecaDBAzure.FK__tb_empres__tb_tu__6A30C649">
             <End Role="tb_turma_aluno" EntitySet="tb_turma_aluno" />
             <End Role="tb_emprestimo" EntitySet="tb_emprestimo" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_estoqu__tb_li__6D0D32F4" Association="BibliotecaDBAzure.FK__tb_estoqu__tb_li__6D0D32F4">
+          <AssociationSet Name="FK__tb_estoqu__tb_li__6B24EA82" Association="BibliotecaDBAzure.FK__tb_estoqu__tb_li__6B24EA82">
             <End Role="tb_livro" EntitySet="tb_livro" />
             <End Role="tb_estoque" EntitySet="tb_estoque" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_livro__tb_gen__5629CD9C" Association="BibliotecaDBAzure.FK__tb_livro__tb_gen__5629CD9C">
+          <AssociationSet Name="FK__tb_livro__tb_gen__6D0D32F4" Association="BibliotecaDBAzure.FK__tb_livro__tb_gen__6D0D32F4">
             <End Role="tb_genero" EntitySet="tb_genero" />
             <End Role="tb_livro" EntitySet="tb_livro" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_reserv__tb_li__6FE99F9F" Association="BibliotecaDBAzure.FK__tb_reserv__tb_li__6FE99F9F">
+          <AssociationSet Name="FK__tb_reserv__tb_li__6E01572D" Association="BibliotecaDBAzure.FK__tb_reserv__tb_li__6E01572D">
             <End Role="tb_livro" EntitySet="tb_livro" />
             <End Role="tb_reserva" EntitySet="tb_reserva" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_reserv__tb_lo__71D1E811" Association="BibliotecaDBAzure.FK__tb_reserv__tb_lo__71D1E811">
+          <AssociationSet Name="FK__tb_reserv__tb_lo__6EF57B66" Association="BibliotecaDBAzure.FK__tb_reserv__tb_lo__6EF57B66">
             <End Role="tb_locatario" EntitySet="tb_locatario" />
             <End Role="tb_reserva" EntitySet="tb_reserva" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_reserv__tb_tu__70DDC3D8" Association="BibliotecaDBAzure.FK__tb_reserv__tb_tu__70DDC3D8">
+          <AssociationSet Name="FK__tb_reserv__tb_tu__6FE99F9F" Association="BibliotecaDBAzure.FK__tb_reserv__tb_tu__6FE99F9F">
             <End Role="tb_turma_aluno" EntitySet="tb_turma_aluno" />
             <End Role="tb_reserva" EntitySet="tb_reserva" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_turma___tb_tu__628FA481" Association="BibliotecaDBAzure.FK__tb_turma___tb_tu__628FA481">
+          <AssociationSet Name="FK__tb_turma___tb_tu__72C60C4A" Association="BibliotecaDBAzure.FK__tb_turma___tb_tu__72C60C4A">
             <End Role="tb_turma" EntitySet="tb_turma" />
             <End Role="tb_turma_aluno" EntitySet="tb_turma_aluno" />
           </AssociationSet>
@@ -413,7 +413,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
           </Key>
           <Property Name="id_aluno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nm_aluno" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tb_turma_aluno" Relationship="BibliotecaDBAzure.FK__tb_turma___tb_al__619B8048" FromRole="tb_aluno" ToRole="tb_turma_aluno" />
+          <NavigationProperty Name="tb_turma_aluno" Relationship="BibliotecaDBAzure.FK__tb_turma___tb_al__71D1E811" FromRole="tb_aluno" ToRole="tb_turma_aluno" />
         </EntityType>
         <EntityType Name="tb_autor">
           <Key>
@@ -423,7 +423,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
           <Property Name="nm_autor" Type="String" Nullable="false" MaxLength="90" FixedLength="false" Unicode="false" />
           <Property Name="nm_nomeCompleto" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="ds_nacionalidade" Type="String" MaxLength="90" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tb_livro" Relationship="BibliotecaDBAzure.FK__tb_livro__tb_aut__571DF1D5" FromRole="tb_autor" ToRole="tb_livro" />
+          <NavigationProperty Name="tb_livro" Relationship="BibliotecaDBAzure.FK__tb_livro__tb_aut__6C190EBB" FromRole="tb_autor" ToRole="tb_livro" />
         </EntityType>
         <EntityType Name="tb_curso">
           <Key>
@@ -431,7 +431,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
           </Key>
           <Property Name="id_curso" Type="Int32" Nullable="false" />
           <Property Name="nm_curso" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tb_turma" Relationship="BibliotecaDBAzure.FK__tb_turma__tb_cur__5DCAEF64" FromRole="tb_curso" ToRole="tb_turma" />
+          <NavigationProperty Name="tb_turma" Relationship="BibliotecaDBAzure.FK__tb_turma__tb_cur__70DDC3D8" FromRole="tb_curso" ToRole="tb_turma" />
         </EntityType>
         <EntityType Name="tb_emprestimo">
           <Key>
@@ -445,9 +445,9 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
           <Property Name="tb_livro_id_livro" Type="Int32" Nullable="false" />
           <Property Name="tb_turma_aluno_id_turma_aluno" Type="Int32" />
           <Property Name="tb_locatario_id_locatario" Type="Int32" />
-          <NavigationProperty Name="tb_livro" Relationship="BibliotecaDBAzure.FK__tb_empres__tb_li__693CA210" FromRole="tb_emprestimo" ToRole="tb_livro" />
-          <NavigationProperty Name="tb_locatario" Relationship="BibliotecaDBAzure.FK__tb_empres__tb_lo__6A30C649" FromRole="tb_emprestimo" ToRole="tb_locatario" />
-          <NavigationProperty Name="tb_turma_aluno" Relationship="BibliotecaDBAzure.FK__tb_empres__tb_tu__68487DD7" FromRole="tb_emprestimo" ToRole="tb_turma_aluno" />
+          <NavigationProperty Name="tb_livro" Relationship="BibliotecaDBAzure.FK__tb_empres__tb_li__68487DD7" FromRole="tb_emprestimo" ToRole="tb_livro" />
+          <NavigationProperty Name="tb_locatario" Relationship="BibliotecaDBAzure.FK__tb_empres__tb_lo__693CA210" FromRole="tb_emprestimo" ToRole="tb_locatario" />
+          <NavigationProperty Name="tb_turma_aluno" Relationship="BibliotecaDBAzure.FK__tb_empres__tb_tu__6A30C649" FromRole="tb_emprestimo" ToRole="tb_turma_aluno" />
         </EntityType>
         <EntityType Name="tb_estoque">
           <Key>
@@ -456,7 +456,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
           <Property Name="id_estoque" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="qtd_livro" Type="Int32" Nullable="false" />
           <Property Name="tb_livro_id_livro" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tb_livro" Relationship="BibliotecaDBAzure.FK__tb_estoqu__tb_li__6D0D32F4" FromRole="tb_estoque" ToRole="tb_livro" />
+          <NavigationProperty Name="tb_livro" Relationship="BibliotecaDBAzure.FK__tb_estoqu__tb_li__6B24EA82" FromRole="tb_estoque" ToRole="tb_livro" />
         </EntityType>
         <EntityType Name="tb_genero">
           <Key>
@@ -464,7 +464,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
           </Key>
           <Property Name="id_genero" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nm_genero" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tb_livro" Relationship="BibliotecaDBAzure.FK__tb_livro__tb_gen__5629CD9C" FromRole="tb_genero" ToRole="tb_livro" />
+          <NavigationProperty Name="tb_livro" Relationship="BibliotecaDBAzure.FK__tb_livro__tb_gen__6D0D32F4" FromRole="tb_genero" ToRole="tb_livro" />
         </EntityType>
         <EntityType Name="tb_livro">
           <Key>
@@ -480,14 +480,14 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
           <Property Name="nu_isbn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="ds_subtitulo" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="ds_palavrasChaves" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
-          <Property Name="img_Capa" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="img_Capa" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="tb_genero_id_genero" Type="Int32" Nullable="false" />
           <Property Name="tb_autor_id_autor" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tb_autor" Relationship="BibliotecaDBAzure.FK__tb_livro__tb_aut__571DF1D5" FromRole="tb_livro" ToRole="tb_autor" />
-          <NavigationProperty Name="tb_emprestimo" Relationship="BibliotecaDBAzure.FK__tb_empres__tb_li__693CA210" FromRole="tb_livro" ToRole="tb_emprestimo" />
-          <NavigationProperty Name="tb_estoque" Relationship="BibliotecaDBAzure.FK__tb_estoqu__tb_li__6D0D32F4" FromRole="tb_livro" ToRole="tb_estoque" />
-          <NavigationProperty Name="tb_genero" Relationship="BibliotecaDBAzure.FK__tb_livro__tb_gen__5629CD9C" FromRole="tb_livro" ToRole="tb_genero" />
-          <NavigationProperty Name="tb_reserva" Relationship="BibliotecaDBAzure.FK__tb_reserv__tb_li__6FE99F9F" FromRole="tb_livro" ToRole="tb_reserva" />
+          <NavigationProperty Name="tb_autor" Relationship="BibliotecaDBAzure.FK__tb_livro__tb_aut__6C190EBB" FromRole="tb_livro" ToRole="tb_autor" />
+          <NavigationProperty Name="tb_emprestimo" Relationship="BibliotecaDBAzure.FK__tb_empres__tb_li__68487DD7" FromRole="tb_livro" ToRole="tb_emprestimo" />
+          <NavigationProperty Name="tb_estoque" Relationship="BibliotecaDBAzure.FK__tb_estoqu__tb_li__6B24EA82" FromRole="tb_livro" ToRole="tb_estoque" />
+          <NavigationProperty Name="tb_genero" Relationship="BibliotecaDBAzure.FK__tb_livro__tb_gen__6D0D32F4" FromRole="tb_livro" ToRole="tb_genero" />
+          <NavigationProperty Name="tb_reserva" Relationship="BibliotecaDBAzure.FK__tb_reserv__tb_li__6E01572D" FromRole="tb_livro" ToRole="tb_reserva" />
         </EntityType>
         <EntityType Name="tb_locatario">
           <Key>
@@ -497,8 +497,8 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
           <Property Name="nu_cpf" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="nm_locatario" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="nu_celular" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tb_emprestimo" Relationship="BibliotecaDBAzure.FK__tb_empres__tb_lo__6A30C649" FromRole="tb_locatario" ToRole="tb_emprestimo" />
-          <NavigationProperty Name="tb_reserva" Relationship="BibliotecaDBAzure.FK__tb_reserv__tb_lo__71D1E811" FromRole="tb_locatario" ToRole="tb_reserva" />
+          <NavigationProperty Name="tb_emprestimo" Relationship="BibliotecaDBAzure.FK__tb_empres__tb_lo__693CA210" FromRole="tb_locatario" ToRole="tb_emprestimo" />
+          <NavigationProperty Name="tb_reserva" Relationship="BibliotecaDBAzure.FK__tb_reserv__tb_lo__6EF57B66" FromRole="tb_locatario" ToRole="tb_reserva" />
         </EntityType>
         <EntityType Name="tb_reserva">
           <Key>
@@ -509,9 +509,9 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
           <Property Name="tb_livro_id_livro" Type="Int32" Nullable="false" />
           <Property Name="tb_turma_aluno_id_turma_aluno" Type="Int32" />
           <Property Name="tb_locatario_id_locatario" Type="Int32" />
-          <NavigationProperty Name="tb_livro" Relationship="BibliotecaDBAzure.FK__tb_reserv__tb_li__6FE99F9F" FromRole="tb_reserva" ToRole="tb_livro" />
-          <NavigationProperty Name="tb_locatario" Relationship="BibliotecaDBAzure.FK__tb_reserv__tb_lo__71D1E811" FromRole="tb_reserva" ToRole="tb_locatario" />
-          <NavigationProperty Name="tb_turma_aluno" Relationship="BibliotecaDBAzure.FK__tb_reserv__tb_tu__70DDC3D8" FromRole="tb_reserva" ToRole="tb_turma_aluno" />
+          <NavigationProperty Name="tb_livro" Relationship="BibliotecaDBAzure.FK__tb_reserv__tb_li__6E01572D" FromRole="tb_reserva" ToRole="tb_livro" />
+          <NavigationProperty Name="tb_locatario" Relationship="BibliotecaDBAzure.FK__tb_reserv__tb_lo__6EF57B66" FromRole="tb_reserva" ToRole="tb_locatario" />
+          <NavigationProperty Name="tb_turma_aluno" Relationship="BibliotecaDBAzure.FK__tb_reserv__tb_tu__6FE99F9F" FromRole="tb_reserva" ToRole="tb_turma_aluno" />
         </EntityType>
         <EntityType Name="tb_turma">
           <Key>
@@ -521,8 +521,8 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
           <Property Name="nm_turma" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="ds_periodo" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="tb_curso_id_curso" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tb_curso" Relationship="BibliotecaDBAzure.FK__tb_turma__tb_cur__5DCAEF64" FromRole="tb_turma" ToRole="tb_curso" />
-          <NavigationProperty Name="tb_turma_aluno" Relationship="BibliotecaDBAzure.FK__tb_turma___tb_tu__628FA481" FromRole="tb_turma" ToRole="tb_turma_aluno" />
+          <NavigationProperty Name="tb_curso" Relationship="BibliotecaDBAzure.FK__tb_turma__tb_cur__70DDC3D8" FromRole="tb_turma" ToRole="tb_curso" />
+          <NavigationProperty Name="tb_turma_aluno" Relationship="BibliotecaDBAzure.FK__tb_turma___tb_tu__72C60C4A" FromRole="tb_turma" ToRole="tb_turma_aluno" />
         </EntityType>
         <EntityType Name="tb_turma_aluno">
           <Key>
@@ -533,10 +533,10 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
           <Property Name="cd_ra" Type="Int32" Nullable="false" />
           <Property Name="tb_aluno_id_aluno" Type="Int32" Nullable="false" />
           <Property Name="tb_turma_id_turma" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tb_aluno" Relationship="BibliotecaDBAzure.FK__tb_turma___tb_al__619B8048" FromRole="tb_turma_aluno" ToRole="tb_aluno" />
-          <NavigationProperty Name="tb_emprestimo" Relationship="BibliotecaDBAzure.FK__tb_empres__tb_tu__68487DD7" FromRole="tb_turma_aluno" ToRole="tb_emprestimo" />
-          <NavigationProperty Name="tb_reserva" Relationship="BibliotecaDBAzure.FK__tb_reserv__tb_tu__70DDC3D8" FromRole="tb_turma_aluno" ToRole="tb_reserva" />
-          <NavigationProperty Name="tb_turma" Relationship="BibliotecaDBAzure.FK__tb_turma___tb_tu__628FA481" FromRole="tb_turma_aluno" ToRole="tb_turma" />
+          <NavigationProperty Name="tb_aluno" Relationship="BibliotecaDBAzure.FK__tb_turma___tb_al__71D1E811" FromRole="tb_turma_aluno" ToRole="tb_aluno" />
+          <NavigationProperty Name="tb_emprestimo" Relationship="BibliotecaDBAzure.FK__tb_empres__tb_tu__6A30C649" FromRole="tb_turma_aluno" ToRole="tb_emprestimo" />
+          <NavigationProperty Name="tb_reserva" Relationship="BibliotecaDBAzure.FK__tb_reserv__tb_tu__6FE99F9F" FromRole="tb_turma_aluno" ToRole="tb_reserva" />
+          <NavigationProperty Name="tb_turma" Relationship="BibliotecaDBAzure.FK__tb_turma___tb_tu__72C60C4A" FromRole="tb_turma_aluno" ToRole="tb_turma" />
         </EntityType>
         <EntityType Name="vw_Livro_Autor_Genero">
           <Key>
@@ -551,7 +551,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
           <Property Name="nm_autor" Type="String" Nullable="false" MaxLength="90" FixedLength="false" Unicode="false" />
           <Property Name="nm_genero" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
-        <Association Name="FK__tb_turma___tb_al__619B8048">
+        <Association Name="FK__tb_turma___tb_al__71D1E811">
           <End Type="BibliotecaDBAzure.tb_aluno" Role="tb_aluno" Multiplicity="1" />
           <End Type="BibliotecaDBAzure.tb_turma_aluno" Role="tb_turma_aluno" Multiplicity="*" />
           <ReferentialConstraint>
@@ -563,7 +563,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_livro__tb_aut__571DF1D5">
+        <Association Name="FK__tb_livro__tb_aut__6C190EBB">
           <End Type="BibliotecaDBAzure.tb_autor" Role="tb_autor" Multiplicity="1" />
           <End Type="BibliotecaDBAzure.tb_livro" Role="tb_livro" Multiplicity="*" />
           <ReferentialConstraint>
@@ -575,7 +575,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_turma__tb_cur__5DCAEF64">
+        <Association Name="FK__tb_turma__tb_cur__70DDC3D8">
           <End Type="BibliotecaDBAzure.tb_curso" Role="tb_curso" Multiplicity="1" />
           <End Type="BibliotecaDBAzure.tb_turma" Role="tb_turma" Multiplicity="*" />
           <ReferentialConstraint>
@@ -587,7 +587,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_empres__tb_li__693CA210">
+        <Association Name="FK__tb_empres__tb_li__68487DD7">
           <End Type="BibliotecaDBAzure.tb_livro" Role="tb_livro" Multiplicity="1" />
           <End Type="BibliotecaDBAzure.tb_emprestimo" Role="tb_emprestimo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -599,7 +599,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_empres__tb_lo__6A30C649">
+        <Association Name="FK__tb_empres__tb_lo__693CA210">
           <End Type="BibliotecaDBAzure.tb_locatario" Role="tb_locatario" Multiplicity="0..1" />
           <End Type="BibliotecaDBAzure.tb_emprestimo" Role="tb_emprestimo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -611,7 +611,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_empres__tb_tu__68487DD7">
+        <Association Name="FK__tb_empres__tb_tu__6A30C649">
           <End Type="BibliotecaDBAzure.tb_turma_aluno" Role="tb_turma_aluno" Multiplicity="0..1" />
           <End Type="BibliotecaDBAzure.tb_emprestimo" Role="tb_emprestimo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -623,7 +623,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_estoqu__tb_li__6D0D32F4">
+        <Association Name="FK__tb_estoqu__tb_li__6B24EA82">
           <End Type="BibliotecaDBAzure.tb_livro" Role="tb_livro" Multiplicity="1" />
           <End Type="BibliotecaDBAzure.tb_estoque" Role="tb_estoque" Multiplicity="*" />
           <ReferentialConstraint>
@@ -635,7 +635,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_livro__tb_gen__5629CD9C">
+        <Association Name="FK__tb_livro__tb_gen__6D0D32F4">
           <End Type="BibliotecaDBAzure.tb_genero" Role="tb_genero" Multiplicity="1" />
           <End Type="BibliotecaDBAzure.tb_livro" Role="tb_livro" Multiplicity="*" />
           <ReferentialConstraint>
@@ -647,7 +647,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_reserv__tb_li__6FE99F9F">
+        <Association Name="FK__tb_reserv__tb_li__6E01572D">
           <End Type="BibliotecaDBAzure.tb_livro" Role="tb_livro" Multiplicity="1" />
           <End Type="BibliotecaDBAzure.tb_reserva" Role="tb_reserva" Multiplicity="*" />
           <ReferentialConstraint>
@@ -659,7 +659,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_reserv__tb_lo__71D1E811">
+        <Association Name="FK__tb_reserv__tb_lo__6EF57B66">
           <End Type="BibliotecaDBAzure.tb_locatario" Role="tb_locatario" Multiplicity="0..1" />
           <End Type="BibliotecaDBAzure.tb_reserva" Role="tb_reserva" Multiplicity="*" />
           <ReferentialConstraint>
@@ -671,7 +671,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_reserv__tb_tu__70DDC3D8">
+        <Association Name="FK__tb_reserv__tb_tu__6FE99F9F">
           <End Type="BibliotecaDBAzure.tb_turma_aluno" Role="tb_turma_aluno" Multiplicity="0..1" />
           <End Type="BibliotecaDBAzure.tb_reserva" Role="tb_reserva" Multiplicity="*" />
           <ReferentialConstraint>
@@ -683,7 +683,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_turma___tb_tu__628FA481">
+        <Association Name="FK__tb_turma___tb_tu__72C60C4A">
           <End Type="BibliotecaDBAzure.tb_turma" Role="tb_turma" Multiplicity="1" />
           <End Type="BibliotecaDBAzure.tb_turma_aluno" Role="tb_turma_aluno" Multiplicity="*" />
           <ReferentialConstraint>

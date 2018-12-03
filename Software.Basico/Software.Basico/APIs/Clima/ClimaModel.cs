@@ -18,7 +18,7 @@ namespace Blibioteca.Developers.APIs.Clima
                 TempoResponse tempo = BuscarApiAdivisorTempo(city.id.ToString());
                 return tempo;
             }
-            catch (System.Exception ex)
+            catch (System.Exception)
             {
                 return null;
             }

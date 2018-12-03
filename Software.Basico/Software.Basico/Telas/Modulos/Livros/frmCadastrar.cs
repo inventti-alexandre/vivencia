@@ -27,7 +27,7 @@ namespace Software.Basico.Telas.Modulos.Livros
         {
             panel1.BackColor = Tema.Primaria;
           
-            btnCadastrar_Controle_de_Livros.BackColor = Tema.Segundaria;
+            btnCadastrar.BackColor = Tema.Segundaria;
             btnAlterar.BackColor = Tema.Segundaria;
             //btnRemover.BackColor = Tema.Segundaria;
 
@@ -111,7 +111,7 @@ namespace Software.Basico.Telas.Modulos.Livros
             txtVolume_controle_de_livros.Text = livro.nu_volume.ToString();
             lblid.Text = livro.id_livro.ToString();
 
-            btnCadastrar_Controle_de_Livros.Visible = false;
+            btnCadastrar.Visible = false;
             lblid.Visible = true;
             lblidTxt.Visible = true;
             lblQNT.Visible = false;

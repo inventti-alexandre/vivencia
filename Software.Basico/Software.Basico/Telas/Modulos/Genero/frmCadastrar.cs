@@ -23,16 +23,10 @@ namespace Software.Basico.Telas.Modulos.Genero
             btnCadastrar.BackColor = Tema.Segundaria;
 
             pnTop.BackColor = Tema.Primaria;
-
-            btnAlterar.BackColor = Tema.Segundaria;
+            
             btnCadastrar.BackColor = Tema.Segundaria;
-            btnRemover.BackColor = Tema.Segundaria;
-            btnListar.BackColor = Tema.Segundaria;
-
-            btnAlterar.ForeColor = Tema.Texto;
+            
             btnCadastrar.ForeColor = Tema.Texto;
-            btnRemover.ForeColor = Tema.Texto;
-            btnListar.ForeColor = Tema.Texto;
         
 
     }
@@ -46,7 +40,7 @@ namespace Software.Basico.Telas.Modulos.Genero
             { 
                    tb_genero genero = new tb_genero ();
 
-                genero.nm_genero = txtCadastrodegenero.Text.Trim();
+                genero.nm_genero = txtCadastrode.Text.Trim();
                 
 
                 GeneroBusiness business = new GeneroBusiness();
