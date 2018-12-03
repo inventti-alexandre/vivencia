@@ -75,6 +75,18 @@ namespace Software.Basico.Telas.Modulos.Autor
             ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
         }
 
+        public void PreencherCampos(int idAutor)
+        {
+            AzureBiblioteca db = new AzureBiblioteca();
+            tb_autor autor = db.tb_autor.Where(x => x.id_autor == idAutor).ToList().Single();
+
+            txtAutor.Text = autor.nm_autor;
+            txtNomeCompleto.Text = autor.nm_nomeCompleto;
+            txtNascionalidade.Text = autor.ds_nacionalidade;  
+
+            btnCadastrar.Visible = false;
+        }
+
         private void txtNomeCompleto_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsLetter(e.KeyChar) == true || char.IsControl(e.KeyChar) || char.IsSeparator(e.KeyChar))
