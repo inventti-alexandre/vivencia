@@ -38,7 +38,7 @@ namespace Software.Basico.Telas.Modulos.Genero
                 MessageBox.Show("Genero do livro cadastrado com sucesso!", "Biblioteca",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                txtCadastroDeGenero.Text.DefaultIfEmpty();
+                
             }
             catch (ArgumentException ex)
             {
@@ -60,7 +60,7 @@ namespace Software.Basico.Telas.Modulos.Genero
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
-
+          
         }
     }
 }

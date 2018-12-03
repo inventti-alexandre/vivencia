@@ -16,11 +16,27 @@ namespace Software.Basico.Telas.Modulos.Estoque
         {
             InitializeComponent();
         }
+        private void TemaTela()
+        {
+            panel1.BackColor = Tema.Primaria;
+
+            btnCadastrar.BackColor = Tema.Segundaria;
+            btnAlterar.BackColor = Tema.Segundaria;
+           
+                btnRemover.BackColor = Tema.Segundaria;
+        }
+
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             EstoqueCadastrar frm = new EstoqueCadastrar();
             ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
+           
+        }
+
+        private void EstoqueConsultar_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

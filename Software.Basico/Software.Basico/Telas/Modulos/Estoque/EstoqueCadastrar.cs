@@ -25,7 +25,8 @@ namespace Software.Basico.Telas.Modulos.Estoque
             LivroBusiness asbusiness = new LivroBusiness();
             List<tb_livro> livros = asbusiness.ListarLivros();
 
-            cboxlivro.ValueMember = nameof(tb_livro.id_livro);
+            cboxlivro.ValueMember = nameof(tb_livro.ds_titulo);
+            cboxlivro.SelectedItem = nameof(tb_livro.id_livro);
             cboxlivro.DataSource = asbusiness;
         }
 
@@ -40,13 +41,13 @@ namespace Software.Basico.Telas.Modulos.Estoque
             {
                 tb_estoque reserva = new tb_estoque();
 
-                reserva.qtd_livro = Convert.ToInt32(txtquantidade.Text.Trim());
+                reserva.qtd_livro = Convert.ToInt32(numericUpDown1.Text.Trim());
 
                 EstoqueBusiness business = new EstoqueBusiness();
                 business.CadastrarnoEstoque(reserva);
 
                 MessageBox.Show("Produto Cadastrado com sucesso", "Biblioteca", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtquantidade.Text.DefaultIfEmpty();
+                numericUpDown1.Text.DefaultIfEmpty();
             }
             catch(ArgumentException ex)
             {
@@ -59,6 +60,21 @@ namespace Software.Basico.Telas.Modulos.Estoque
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
            
+
+        }
+
+        private void txtquantidade_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtlivro_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EstoqueCadastrar_Load(object sender, EventArgs e)
+        {
 
         }
     }

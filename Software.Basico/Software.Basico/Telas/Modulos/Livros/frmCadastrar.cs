@@ -239,5 +239,10 @@ namespace Software.Basico.Telas.Modulos.Livros
             else
                 e.Handled = true;
         }
+
+        private void frmCadastrar_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
