@@ -352,6 +352,7 @@
     </Content>
     <Content Include="DB\Script_MySql_BibliotecaDB.txt" />
     <Content Include="DB\Script_Sql_BibliotecaDB.txt" />
+    <None Include="Resources\setas-preta-png--256x200.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\users32.png" />
