@@ -11,41 +11,41 @@ namespace Software.Basico.DB.Locatorio
     {
         AzureBiblioteca db = new AzureBiblioteca();
 
-        public void CadastrarLocatorio(tb_locatario dto)
-        {
-            db.tb_locatario.Add(dto);
-            db.SaveChanges();
-        }
+        //public void CadastrarLocatorio(tb_locatario dto)
+        //{
+        //    db.tb_locatario.Add(dto);
+        //    db.SaveChanges();
+        //}
 
-        public void AlterarLocatorio(tb_locatorio dto, int idlocatario)
-        {
-            tb_locatario nha = db.id_locatario.Where(x => x.id_locatario == idlocatario).ToList().Single();
+        //public void AlterarLocatorio(tb_locatorio dto, int idlocatario)
+        //{
+        //    tb_locatario nha = db.id_locatario.Where(x => x.id_locatario == idlocatario).ToList().Single();
 
-            nha.nu_cpf = dto.nu_cpf;
-            nha.nm_locatario = dto.nm_locatario;
-            nha.nu_celular = dto.nu_celular;
+        //    nha.nu_cpf = dto.nu_cpf;
+        //    nha.nm_locatario = dto.nm_locatario;
+        //    nha.nu_celular = dto.nu_celular;
 
-            db.SaveChanges();
-        }
+        //    db.SaveChanges();
+        //}
 
-        public void RemoverLocatorio(int idlocatorio)
-        {
-            var func = new tb_autor { id_locatario = idlocatorio };
-            db.Entry(func).State = EntityState.Deleted;
-            db.SaveChanges();
-        }
+        //public void RemoverLocatorio(int idlocatorio)
+        //{
+        //    var func = new tb_autor { id_locatario = idlocatorio };
+        //    db.Entry(func).State = EntityState.Deleted;
+        //    db.SaveChanges();
+        //}
 
-        public List<tb_locatariot> ListarLocatario()
-        {
-            List<tb_autor> funcList = db.tb_locatario.ToList();
-            return funcList;
-        }
+        //public List<tb_locatariot> ListarLocatario()
+        //{
+        //    List<tb_autor> funcList = db.tb_locatario.ToList();
+        //    return funcList;
+        //}
 
-        public tb_autor ListarAutorPorId(int idAutor)
-        {
-            tb_autor func = db.tb_autor.Where(x => x.id_autor == idAutor).ToList().Single();
-            return func;
-        }
+        //public tb_autor ListarAutorPorId(int idAutor)
+        //{
+        //    tb_autor func = db.tb_autor.Where(x => x.id_autor == idAutor).ToList().Single();
+        //    return func;
+        //}
     }
 }
-}
+

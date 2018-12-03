@@ -69,7 +69,7 @@ namespace Software.Basico.Telas.Modulos.Livros
                 frm.PreencherCampos(livro.id_livro);
                 ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show($"Você deve selecionar um livro para visualizar!", "Biblioteca",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -86,7 +86,7 @@ namespace Software.Basico.Telas.Modulos.Livros
                 business.RemoverLivro(livro.id_livro);
                 CarregarGrid();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show($"Você deve selecionar um livro para remover!", "Biblioteca",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);

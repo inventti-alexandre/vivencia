@@ -37,8 +37,8 @@ namespace Software.Basico.Telas.Modulos.Emprestimo
             try
             {
                 tb_emprestimo emprestimo = new tb_emprestimo();
-                emprestimo.livro_id_livro = Convert.ToInt32(cbolivro.SelectedValue);
-                emprestimo.tb_turma_aluno_id_turma_aluno = Convert.ToInt32(cbocurso.SelectedValue);
+                emprestimo.livro_id_livro = Convert.ToInt32(cboLivro.SelectedValue);
+                emprestimo.tb_turma_aluno_id_turma_aluno = Convert.ToInt32(cboCurso.SelectedValue);
                 
 
                 EmprestimoBusiness business = new EmprestimoBusiness();
