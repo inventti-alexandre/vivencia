@@ -32,19 +32,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.cbolivro = new System.Windows.Forms.ComboBox();
+            this.txtautor = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cbocurso = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtcliente = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txteditoria = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtgenero = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnRemover = new System.Windows.Forms.Button();
@@ -86,23 +86,23 @@
             this.label3.TabIndex = 69;
             this.label3.Text = "Livro";
             // 
-            // comboBox1
+            // cbolivro
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(123, 249);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(261, 25);
-            this.comboBox1.TabIndex = 68;
+            this.cbolivro.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbolivro.FormattingEnabled = true;
+            this.cbolivro.Location = new System.Drawing.Point(123, 249);
+            this.cbolivro.Name = "cbolivro";
+            this.cbolivro.Size = new System.Drawing.Size(261, 25);
+            this.cbolivro.TabIndex = 68;
             // 
-            // textBox2
+            // txtautor
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(400, 250);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(131, 23);
-            this.textBox2.TabIndex = 67;
+            this.txtautor.Enabled = false;
+            this.txtautor.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtautor.Location = new System.Drawing.Point(400, 250);
+            this.txtautor.Name = "txtautor";
+            this.txtautor.Size = new System.Drawing.Size(131, 23);
+            this.txtautor.TabIndex = 67;
             // 
             // label2
             // 
@@ -124,14 +124,14 @@
             this.label4.TabIndex = 65;
             this.label4.Text = "Autor";
             // 
-            // comboBox3
+            // cbocurso
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(554, 168);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(272, 25);
-            this.comboBox3.TabIndex = 72;
+            this.cbocurso.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbocurso.FormattingEnabled = true;
+            this.cbocurso.Location = new System.Drawing.Point(554, 168);
+            this.cbocurso.Name = "cbocurso";
+            this.cbocurso.Size = new System.Drawing.Size(272, 25);
+            this.cbocurso.TabIndex = 72;
             // 
             // label5
             // 
@@ -143,13 +143,13 @@
             this.label5.TabIndex = 73;
             this.label5.Text = "Curso";
             // 
-            // textBox1
+            // txtcliente
             // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(252, 169);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(293, 23);
-            this.textBox1.TabIndex = 75;
+            this.txtcliente.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcliente.Location = new System.Drawing.Point(252, 169);
+            this.txtcliente.Name = "txtcliente";
+            this.txtcliente.Size = new System.Drawing.Size(293, 23);
+            this.txtcliente.TabIndex = 75;
             // 
             // label6
             // 
@@ -170,14 +170,14 @@
             this.maskedTextBox1.Size = new System.Drawing.Size(116, 23);
             this.maskedTextBox1.TabIndex = 76;
             // 
-            // textBox3
+            // txteditoria
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(547, 250);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(131, 23);
-            this.textBox3.TabIndex = 78;
+            this.txteditoria.Enabled = false;
+            this.txteditoria.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txteditoria.Location = new System.Drawing.Point(547, 250);
+            this.txteditoria.Name = "txteditoria";
+            this.txteditoria.Size = new System.Drawing.Size(131, 23);
+            this.txteditoria.TabIndex = 78;
             // 
             // label7
             // 
@@ -199,14 +199,14 @@
             this.label8.TabIndex = 79;
             this.label8.Text = "Data Para Devolução";
             // 
-            // textBox4
+            // txtgenero
             // 
-            this.textBox4.Enabled = false;
-            this.textBox4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(694, 250);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(131, 23);
-            this.textBox4.TabIndex = 81;
+            this.txtgenero.Enabled = false;
+            this.txtgenero.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtgenero.Location = new System.Drawing.Point(694, 250);
+            this.txtgenero.Name = "txtgenero";
+            this.txtgenero.Size = new System.Drawing.Size(131, 23);
+            this.txtgenero.TabIndex = 81;
             // 
             // label9
             // 
@@ -252,19 +252,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.btnRemover);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtgenero);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txteditoria);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtcliente);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.cbocurso);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.cbolivro);
+            this.Controls.Add(this.txtautor);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dateTimePicker1);
@@ -284,19 +284,19 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ComboBox cbolivro;
+        private System.Windows.Forms.TextBox txtautor;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cbocurso;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtcliente;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txteditoria;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtgenero;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Button btnRemover;

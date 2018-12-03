@@ -39,9 +39,9 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAlterar = new System.Windows.Forms.Button();
-            this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnListar = new System.Windows.Forms.Button();
             this.btnRemover = new System.Windows.Forms.Button();
+            this.btnCadastrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -151,20 +151,6 @@
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
-            // btnCadastrar
-            // 
-            this.btnCadastrar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrar.Font = new System.Drawing.Font("Century Gothic", 14.75F);
-            this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnCadastrar.Location = new System.Drawing.Point(329, 454);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(141, 32);
-            this.btnCadastrar.TabIndex = 52;
-            this.btnCadastrar.Text = "Cadastrar";
-            this.btnCadastrar.UseVisualStyleBackColor = true;
-            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
-            // 
             // btnListar
             // 
             this.btnListar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -192,6 +178,20 @@
             this.btnRemover.Text = "Remover";
             this.btnRemover.UseVisualStyleBackColor = true;
             this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
+            // 
+            // btnCadastrar
+            // 
+            this.btnCadastrar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrar.Font = new System.Drawing.Font("Century Gothic", 14.75F);
+            this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
+            this.btnCadastrar.Location = new System.Drawing.Point(329, 454);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(141, 32);
+            this.btnCadastrar.TabIndex = 52;
+            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // frmConsultar
             // 
@@ -226,8 +226,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.Button btnAlterar;
-        private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Button btnListar;
         private System.Windows.Forms.Button btnRemover;
+        private System.Windows.Forms.Button btnCadastrar;
     }
 }
