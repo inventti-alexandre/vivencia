@@ -139,6 +139,8 @@
     <Compile Include="DB\Genero\GeneroDatabase.cs" />
     <Compile Include="DB\Livros\LivroBusiness.cs" />
     <Compile Include="DB\Livros\LivroDatabase.cs" />
+    <Compile Include="DB\Locatorio\LocatorioBusiness.cs" />
+    <Compile Include="DB\Locatorio\LocatorioDatabase.cs" />
     <Compile Include="Gp.cs" />
     <Compile Include="Plugins\ImagemPlugin.cs" />
     <Compile Include="Program.cs" />
