@@ -660,6 +660,7 @@
             this.Controls.Add(this.btnAlterar);
             this.Name = "frmCadastrar";
             this.Size = new System.Drawing.Size(913, 498);
+            this.Load += new System.EventHandler(this.frmCadastrar_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLivro)).EndInit();

@@ -1,0 +1,116 @@
+﻿DROP DATABASE IF EXISTS `Biblioteca_A` ;
+CREATE DATABASE `Biblioteca_A`;
+USE `Biblioteca_A` ;
+
+-- -----------------------------------------------------
+-- Table `Biblioteca_A`.`Genero`
+-- -----------------------------------------------------
+CREATE TABLE `Genero` (
+  `id_genero` INT NOT NULL AUTO_INCREMENT,
+  `nm_genero` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id_genero`));
+
+-- -----------------------------------------------------
+-- Table `Biblioteca_A`.`Autor`
+-- -----------------------------------------------------
+CREATE TABLE `Autor` (
+  `id_autor` INT NOT NULL,
+  `nm_autor` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id_autor`));
+
+-- -----------------------------------------------------
+-- Table `Biblioteca_A`.`Editora`
+-- -----------------------------------------------------
+CREATE TABLE `Editora` (
+  `id_editora` INT NOT NULL,
+  `nm_editora` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id_editora`));
+
+-- -----------------------------------------------------
+-- Table `Biblioteca_A`.`Livro`
+-- -----------------------------------------------------
+CREATE TABLE `Livro` (
+  `id_livro` INT NOT NULL AUTO_INCREMENT,
+  `ds_titulo` VARCHAR(45) NOT NULL,
+  `ds_tipo` VARCHAR(45) NOT NULL,
+  `ds_condicoes` VARCHAR(20) NULL,
+  `nu_isbn` VARCHAR(20) NULL,
+  `ds_idioma` VARCHAR(30) NULL,
+  `ds_subtitulo` VARCHAR(150) NULL,
+  `ds_palavraschaves` VARCHAR(300) NULL,
+  `nu_volume` INT NULL,
+  `Genero_id_genero` INT NOT NULL,
+  `Autor_id_autor` INT NOT NULL,
+  `Editora_id_editora` INT NOT NULL,
+  PRIMARY KEY (`id_livro`),
+    FOREIGN KEY (`Genero_id_genero`)
+    REFERENCES `Biblioteca_A`.`Genero` (`id_genero`),
+    FOREIGN KEY (`Autor_id_autor`)
+    REFERENCES `Biblioteca_A`.`Autor` (`id_autor`),
+    FOREIGN KEY (`Editora_id_editora`)
+    REFERENCES `Biblioteca_A`.`Editora` (`id_editora`));
+
+-- -----------------------------------------------------
+-- Table `Biblioteca_A`.`Aluno`
+-- -----------------------------------------------------
+CREATE TABLE `Aluno` (
+  `id_aluno` INT NOT NULL AUTO_INCREMENT,
+  `nm_aluno` VARCHAR(50) NOT NULL,
+  `ds_email` VARCHAR(45) NOT NULL,
+  `tel_fixo` VARCHAR(11) NULL,
+  `tel_celular` VARCHAR(12) NOT NULL,
+  PRIMARY KEY (`id_aluno`));
+
+-- -----------------------------------------------------
+-- Table `Biblioteca_A`.`Curso`
+-- -----------------------------------------------------
+CREATE TABLE `Curso` (
+  `id_curso` INT NOT NULL AUTO_INCREMENT,
+  `nm_curso` VARCHAR(30) NOT NULL,
+  `ds_periodo` VARCHAR(25) NOT NULL,
+  `nm_turma` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id_curso`));
+
+-- -----------------------------------------------------
+-- Table `Biblioteca_A`.`Funcionario`
+-- -----------------------------------------------------
+CREATE TABLE `Funcionario` (
+  `id_funcionario` INT NOT NULL AUTO_INCREMENT,
+  `nm_funcionario` VARCHAR(45) NOT NULL,
+  `ds_email` VARCHAR(45) NOT NULL,
+  `nu_senha` VARCHAR(45) NOT NULL,
+  `ds_sexo` VARCHAR(45) NULL,
+  `nu_cpf` VARCHAR(15) NULL,
+  PRIMARY KEY (`id_funcionario`));
+
+-- -----------------------------------------------------
+-- Table `Biblioteca_A`.`Emprestimo`
+-- -----------------------------------------------------
+CREATE TABLE `Emprestimo` (
+  `id_emprestimo` INT NOT NULL AUTO_INCREMENT,
+  `dt_emprestimo` DATE NOT NULL,
+  `dt_devolucao` DATE NOT NULL,
+  `livro_id_livro` INT NOT NULL,
+  `Curso_id_curso` INT NOT NULL,
+  `Aluno_id_aluno` INT NOT NULL,
+  `Funcionario_id_funcionario` INT NOT NULL,
+  PRIMARY KEY (`id_emprestimo`),
+    FOREIGN KEY (`livro_id_livro`)
+    REFERENCES `Biblioteca_A`.`Livro` (`id_livro`),
+    FOREIGN KEY (`Curso_id_curso`)
+    REFERENCES `Biblioteca_A`.`Curso` (`id_curso`),
+    FOREIGN KEY (`Aluno_id_aluno`)
+    REFERENCES `Biblioteca_A`.`Aluno` (`id_aluno`),
+    FOREIGN KEY (`Funcionario_id_funcionario`)
+    REFERENCES `Biblioteca_A`.`Funcionario` (`id_funcionario`));
+
+-- -----------------------------------------------------
+-- Table `Biblioteca_A`.`Estoque`
+-- -----------------------------------------------------
+CREATE TABLE `Estoque` (
+  `id_estoque` INT NOT NULL AUTO_INCREMENT,
+  `livro_id_livro` INT NOT NULL,
+  `qtd_livro` INT NOT NULL,
+  PRIMARY KEY (`id_estoque`),
+    FOREIGN KEY (`livro_id_livro`)
+    REFERENCES `Biblioteca_A`.`Livro` (`id_livro`));

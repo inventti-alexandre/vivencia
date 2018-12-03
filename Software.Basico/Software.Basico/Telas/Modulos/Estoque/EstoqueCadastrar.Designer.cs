@@ -31,13 +31,14 @@
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnRemover = new System.Windows.Forms.Button();
             this.cboxlivro = new System.Windows.Forms.ComboBox();
-            this.txtlivro = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtquantidade = new System.Windows.Forms.TextBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCadastrar
@@ -46,9 +47,9 @@
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrar.Font = new System.Drawing.Font("Century Gothic", 14.75F);
             this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnCadastrar.Location = new System.Drawing.Point(204, 408);
+            this.btnCadastrar.Location = new System.Drawing.Point(403, 332);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(227, 32);
+            this.btnCadastrar.Size = new System.Drawing.Size(168, 32);
             this.btnCadastrar.TabIndex = 91;
             this.btnCadastrar.Text = "Salvar Dados";
             this.btnCadastrar.UseVisualStyleBackColor = true;
@@ -60,70 +61,51 @@
             this.btnRemover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemover.Font = new System.Drawing.Font("Century Gothic", 14.75F);
             this.btnRemover.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnRemover.Location = new System.Drawing.Point(446, 408);
+            this.btnRemover.Location = new System.Drawing.Point(636, 332);
             this.btnRemover.Name = "btnRemover";
-            this.btnRemover.Size = new System.Drawing.Size(227, 32);
+            this.btnRemover.Size = new System.Drawing.Size(173, 32);
             this.btnRemover.TabIndex = 92;
             this.btnRemover.Text = "Cancelar";
             this.btnRemover.UseVisualStyleBackColor = true;
             // 
             // cboxlivro
             // 
-            this.cboxlivro.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboxlivro.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxlivro.FormattingEnabled = true;
-            this.cboxlivro.Location = new System.Drawing.Point(204, 218);
+            this.cboxlivro.Location = new System.Drawing.Point(399, 213);
             this.cboxlivro.Name = "cboxlivro";
-            this.cboxlivro.Size = new System.Drawing.Size(80, 25);
-            this.cboxlivro.TabIndex = 89;
-            // 
-            // txtlivro
-            // 
-            this.txtlivro.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtlivro.Location = new System.Drawing.Point(418, 218);
-            this.txtlivro.Multiline = true;
-            this.txtlivro.Name = "txtlivro";
-            this.txtlivro.Size = new System.Drawing.Size(293, 25);
-            this.txtlivro.TabIndex = 88;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(132, 222);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 21);
-            this.label2.TabIndex = 85;
-            this.label2.Text = "ID Livro :";
+            this.cboxlivro.Size = new System.Drawing.Size(410, 30);
+            this.cboxlivro.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(82, 300);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(399, 247);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 21);
+            this.label3.Size = new System.Drawing.Size(125, 22);
             this.label3.TabIndex = 86;
-            this.label3.Text = "Quantidade :";
+            this.label3.Text = "Quantidade";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(359, 222);
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(399, 184);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 21);
+            this.label6.Size = new System.Drawing.Size(53, 22);
             this.label6.TabIndex = 87;
-            this.label6.Text = "Livro :";
+            this.label6.Text = "Livro";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(357, 119);
+            this.label1.Location = new System.Drawing.Point(19, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(212, 36);
+            this.label1.Size = new System.Drawing.Size(307, 36);
             this.label1.TabIndex = 84;
-            this.label1.Text = "Novo Estoque";
+            this.label1.Text = "Controle de Estoque";
             // 
             // panel1
             // 
@@ -133,31 +115,43 @@
             this.panel1.Size = new System.Drawing.Size(915, 12);
             this.panel1.TabIndex = 83;
             // 
-            // txtquantidade
+            // numericUpDown1
             // 
-            this.txtquantidade.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtquantidade.Location = new System.Drawing.Point(204, 296);
-            this.txtquantidade.Multiline = true;
-            this.txtquantidade.Name = "txtquantidade";
-            this.txtquantidade.Size = new System.Drawing.Size(120, 25);
-            this.txtquantidade.TabIndex = 88;
+            this.numericUpDown1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numericUpDown1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown1.Location = new System.Drawing.Point(530, 247);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(61, 27);
+            this.numericUpDown1.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Software.Basico.Properties.Resources._06a7db4db4ec8491ba1b1443d4f8c15a;
+            this.pictureBox1.Location = new System.Drawing.Point(64, 153);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(278, 248);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 94;
+            this.pictureBox1.TabStop = false;
             // 
             // EstoqueCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.btnRemover);
             this.Controls.Add(this.cboxlivro);
-            this.Controls.Add(this.txtquantidade);
-            this.Controls.Add(this.txtlivro);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Name = "EstoqueCadastrar";
             this.Size = new System.Drawing.Size(915, 500);
+            this.Load += new System.EventHandler(this.EstoqueCadastrar_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,12 +162,11 @@
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Button btnRemover;
         private System.Windows.Forms.ComboBox cboxlivro;
-        private System.Windows.Forms.TextBox txtlivro;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtquantidade;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
