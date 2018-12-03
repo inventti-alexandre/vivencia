@@ -35,6 +35,8 @@ namespace Software.Basico.Telas
             ClimaModel clima = new ClimaModel();
             TempoResponse tempo = clima.AdivisorTempo("São Paulo");
 
+            if (tempo == null)
+                return;
 
             Umidade.Text = $"Umidade: {tempo.data.humidity}";
             Temperatura.Text = $"{tempo.data.temperature} Cº";

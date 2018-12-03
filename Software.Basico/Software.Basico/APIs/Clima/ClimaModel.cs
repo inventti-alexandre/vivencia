@@ -12,10 +12,17 @@ namespace Blibioteca.Developers.APIs.Clima
 
         public TempoResponse AdivisorTempo(string cidade)
         {
-            CidadeResponse city = BuscarApiAdvisorCidade(cidade);
-            TempoResponse tempo = BuscarApiAdivisorTempo(city.id.ToString());
-
-            return tempo;
+            try
+            {
+                CidadeResponse city = BuscarApiAdvisorCidade(cidade);
+                TempoResponse tempo = BuscarApiAdivisorTempo(city.id.ToString());
+                return tempo;
+            }
+            catch (System.Exception ex)
+            {
+                return null;
+            }
+            
         }
 
         private CidadeResponse BuscarApiAdvisorCidade(string cidade)
@@ -35,13 +42,18 @@ namespace Blibioteca.Developers.APIs.Clima
 
                 // Transforma a resposta do correio em lista de DTO
                 cidades = JsonConvert.DeserializeObject<List<CidadeResponse>>(resposta);
-                
+
+                if (cidade.Length == 0)
+                    return null;
+
+                return cidades[0];
             }
             catch (System.Exception ex)
             {
                 MessageBox.Show("Ocorreu um erro: " + ex.Message);
+                return null;
             }
-            return cidades[0];
+            
         }
 
         private TempoResponse BuscarApiAdivisorTempo(string id)

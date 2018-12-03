@@ -20,7 +20,7 @@ namespace Software.Basico.Telas.Modulos.Genero
         }
         private void Tema()
         {
-            btnCadastrar.BackColor = Tema
+            //btnCadastrar.BackColor = Tema;
         }
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
