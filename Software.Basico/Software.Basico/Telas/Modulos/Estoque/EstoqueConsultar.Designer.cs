@@ -30,11 +30,11 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnAlterar_consulta_Estoque = new System.Windows.Forms.Button();
-            this.btnCadastrar_consultar_Estoque = new System.Windows.Forms.Button();
-            this.btnListar_consulta_Estoque = new System.Windows.Forms.Button();
-            this.btnRemover_Estoque = new System.Windows.Forms.Button();
-            this.txt_buscar_Consulta_Estoque = new System.Windows.Forms.TextBox();
+            this.btnAlterar = new System.Windows.Forms.Button();
+            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.btnListar = new System.Windows.Forms.Button();
+            this.btnRemover = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dgvLivros = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,66 +45,68 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvLivros)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnAlterar_consulta_Estoque
+            // btnAlterar
             // 
-            this.btnAlterar_consulta_Estoque.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnAlterar_consulta_Estoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlterar_consulta_Estoque.Font = new System.Drawing.Font("Century Gothic", 14.75F);
-            this.btnAlterar_consulta_Estoque.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnAlterar_consulta_Estoque.Location = new System.Drawing.Point(294, 419);
-            this.btnAlterar_consulta_Estoque.Name = "btnAlterar_consulta_Estoque";
-            this.btnAlterar_consulta_Estoque.Size = new System.Drawing.Size(120, 32);
-            this.btnAlterar_consulta_Estoque.TabIndex = 2;
-            this.btnAlterar_consulta_Estoque.Text = "Alterar";
-            this.btnAlterar_consulta_Estoque.UseVisualStyleBackColor = true;
+            this.btnAlterar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlterar.Font = new System.Drawing.Font("Century Gothic", 14.75F);
+            this.btnAlterar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
+            this.btnAlterar.Location = new System.Drawing.Point(294, 419);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(120, 32);
+            this.btnAlterar.TabIndex = 90;
+            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.UseVisualStyleBackColor = true;
             // 
-            // btnCadastrar_consultar_Estoque
+            // btnCadastrar
             // 
-            this.btnCadastrar_consultar_Estoque.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnCadastrar_consultar_Estoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrar_consultar_Estoque.Font = new System.Drawing.Font("Century Gothic", 14.75F);
-            this.btnCadastrar_consultar_Estoque.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnCadastrar_consultar_Estoque.Location = new System.Drawing.Point(462, 419);
-            this.btnCadastrar_consultar_Estoque.Name = "btnCadastrar_consultar_Estoque";
-            this.btnCadastrar_consultar_Estoque.Size = new System.Drawing.Size(120, 32);
-            this.btnCadastrar_consultar_Estoque.TabIndex = 3;
-            this.btnCadastrar_consultar_Estoque.Text = "Cadastrar";
-            this.btnCadastrar_consultar_Estoque.UseVisualStyleBackColor = true;
-            this.btnCadastrar_consultar_Estoque.Click += new System.EventHandler(this.btnCadastrar_Click);
+            this.btnCadastrar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrar.Font = new System.Drawing.Font("Century Gothic", 14.75F);
+            this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
+            this.btnCadastrar.Location = new System.Drawing.Point(462, 419);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(120, 32);
+            this.btnCadastrar.TabIndex = 91;
+            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
-            // btnListar_consulta_Estoque
+            // btnListar
             // 
-            this.btnListar_consulta_Estoque.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnListar_consulta_Estoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnListar_consulta_Estoque.Font = new System.Drawing.Font("Century Gothic", 14.75F);
-            this.btnListar_consulta_Estoque.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnListar_consulta_Estoque.Location = new System.Drawing.Point(126, 419);
-            this.btnListar_consulta_Estoque.Name = "btnListar_consulta_Estoque";
-            this.btnListar_consulta_Estoque.Size = new System.Drawing.Size(120, 32);
-            this.btnListar_consulta_Estoque.TabIndex = 1;
-            this.btnListar_consulta_Estoque.Text = "Listar";
-            this.btnListar_consulta_Estoque.UseVisualStyleBackColor = true;
+            this.btnListar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnListar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListar.Font = new System.Drawing.Font("Century Gothic", 14.75F);
+            this.btnListar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
+            this.btnListar.Location = new System.Drawing.Point(126, 419);
+            this.btnListar.Name = "btnListar";
+            this.btnListar.Size = new System.Drawing.Size(120, 32);
+            this.btnListar.TabIndex = 92;
+            this.btnListar.Text = "Listar";
+            this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
-            // btnRemover_Estoque
+            // btnRemover
             // 
-            this.btnRemover_Estoque.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnRemover_Estoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemover_Estoque.Font = new System.Drawing.Font("Century Gothic", 14.75F);
-            this.btnRemover_Estoque.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnRemover_Estoque.Location = new System.Drawing.Point(630, 419);
-            this.btnRemover_Estoque.Name = "btnRemover_Estoque";
-            this.btnRemover_Estoque.Size = new System.Drawing.Size(120, 32);
-            this.btnRemover_Estoque.TabIndex = 4;
-            this.btnRemover_Estoque.Text = "Remover";
-            this.btnRemover_Estoque.UseVisualStyleBackColor = true;
+            this.btnRemover.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnRemover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemover.Font = new System.Drawing.Font("Century Gothic", 14.75F);
+            this.btnRemover.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
+            this.btnRemover.Location = new System.Drawing.Point(630, 419);
+            this.btnRemover.Name = "btnRemover";
+            this.btnRemover.Size = new System.Drawing.Size(120, 32);
+            this.btnRemover.TabIndex = 89;
+            this.btnRemover.Text = "Remover";
+            this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
-            // txt_buscar_Consulta_Estoque
+            // textBox1
             // 
-            this.txt_buscar_Consulta_Estoque.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_buscar_Consulta_Estoque.Location = new System.Drawing.Point(340, 88);
-            this.txt_buscar_Consulta_Estoque.Name = "txt_buscar_Consulta_Estoque";
-            this.txt_buscar_Consulta_Estoque.Size = new System.Drawing.Size(301, 23);
-            this.txt_buscar_Consulta_Estoque.TabIndex = 88;
+            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(340, 88);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(301, 23);
+            this.textBox1.TabIndex = 88;
             // 
             // label6
             // 
@@ -155,7 +157,6 @@
             this.dgvLivros.RowHeadersVisible = false;
             this.dgvLivros.Size = new System.Drawing.Size(624, 285);
             this.dgvLivros.TabIndex = 86;
-            this.dgvLivros.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLivros_CellContentClick);
             // 
             // Column1
             // 
@@ -203,11 +204,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.Controls.Add(this.btnAlterar_consulta_Estoque);
-            this.Controls.Add(this.btnCadastrar_consultar_Estoque);
-            this.Controls.Add(this.btnListar_consulta_Estoque);
-            this.Controls.Add(this.btnRemover_Estoque);
-            this.Controls.Add(this.txt_buscar_Consulta_Estoque);
+            this.Controls.Add(this.btnAlterar);
+            this.Controls.Add(this.btnCadastrar);
+            this.Controls.Add(this.btnListar);
+            this.Controls.Add(this.btnRemover);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dgvLivros);
             this.Controls.Add(this.label1);
@@ -223,11 +224,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnAlterar_consulta_Estoque;
-        private System.Windows.Forms.Button btnCadastrar_consultar_Estoque;
-        private System.Windows.Forms.Button btnListar_consulta_Estoque;
-        private System.Windows.Forms.Button btnRemover_Estoque;
-        private System.Windows.Forms.TextBox txt_buscar_Consulta_Estoque;
+        private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.Button btnCadastrar;
+        private System.Windows.Forms.Button btnListar;
+        private System.Windows.Forms.Button btnRemover;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dgvLivros;
         private System.Windows.Forms.Label label1;

@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnRemover_editora = new System.Windows.Forms.Button();
-            this.btnCadastrar_Editora = new System.Windows.Forms.Button();
-            this.txteditora_Editora = new System.Windows.Forms.TextBox();
+            this.btnRemover = new System.Windows.Forms.Button();
+            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,40 +48,39 @@
             this.pictureBox1.TabIndex = 31;
             this.pictureBox1.TabStop = false;
             // 
-            // btnRemover_editora
+            // btnRemover
             // 
-            this.btnRemover_editora.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnRemover_editora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemover_editora.Font = new System.Drawing.Font("Century Gothic", 14.75F);
-            this.btnRemover_editora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnRemover_editora.Location = new System.Drawing.Point(632, 255);
-            this.btnRemover_editora.Name = "btnRemover_editora";
-            this.btnRemover_editora.Size = new System.Drawing.Size(204, 32);
-            this.btnRemover_editora.TabIndex = 3;
-            this.btnRemover_editora.Text = "Cancelar";
-            this.btnRemover_editora.UseVisualStyleBackColor = true;
+            this.btnRemover.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnRemover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemover.Font = new System.Drawing.Font("Century Gothic", 14.75F);
+            this.btnRemover.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
+            this.btnRemover.Location = new System.Drawing.Point(632, 255);
+            this.btnRemover.Name = "btnRemover";
+            this.btnRemover.Size = new System.Drawing.Size(204, 32);
+            this.btnRemover.TabIndex = 30;
+            this.btnRemover.Text = "Limpar";
+            this.btnRemover.UseVisualStyleBackColor = true;
             // 
-            // btnCadastrar_Editora
+            // btnCadastrar
             // 
-            this.btnCadastrar_Editora.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnCadastrar_Editora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrar_Editora.Font = new System.Drawing.Font("Century Gothic", 14.75F);
-            this.btnCadastrar_Editora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnCadastrar_Editora.Location = new System.Drawing.Point(403, 255);
-            this.btnCadastrar_Editora.Name = "btnCadastrar_Editora";
-            this.btnCadastrar_Editora.Size = new System.Drawing.Size(204, 32);
-            this.btnCadastrar_Editora.TabIndex = 2;
-            this.btnCadastrar_Editora.Text = "Salvar Dados";
-            this.btnCadastrar_Editora.UseVisualStyleBackColor = true;
+            this.btnCadastrar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrar.Font = new System.Drawing.Font("Century Gothic", 14.75F);
+            this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
+            this.btnCadastrar.Location = new System.Drawing.Point(403, 255);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(204, 32);
+            this.btnCadastrar.TabIndex = 29;
+            this.btnCadastrar.Text = "Salvar Dados";
+            this.btnCadastrar.UseVisualStyleBackColor = true;
             // 
-            // txteditora_Editora
+            // textBox1
             // 
-            this.txteditora_Editora.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txteditora_Editora.Location = new System.Drawing.Point(403, 203);
-            this.txteditora_Editora.Name = "txteditora_Editora";
-            this.txteditora_Editora.Size = new System.Drawing.Size(433, 33);
-            this.txteditora_Editora.TabIndex = 1;
-            this.txteditora_Editora.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(403, 203);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(433, 33);
+            this.textBox1.TabIndex = 28;
             // 
             // label1
             // 
@@ -102,18 +102,28 @@
             this.label2.TabIndex = 38;
             this.label2.Text = "Cadastre uma nova editora de livros";
             // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(915, 12);
+            this.panel1.TabIndex = 47;
+            // 
             // frmCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnRemover_editora);
-            this.Controls.Add(this.btnCadastrar_Editora);
-            this.Controls.Add(this.txteditora_Editora);
+            this.Controls.Add(this.btnRemover);
+            this.Controls.Add(this.btnCadastrar);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "frmCadastrar";
             this.Size = new System.Drawing.Size(915, 500);
+            this.Load += new System.EventHandler(this.frmCadastrar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -123,10 +133,11 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnRemover_editora;
-        private System.Windows.Forms.Button btnCadastrar_Editora;
-        private System.Windows.Forms.TextBox txteditora_Editora;
+        private System.Windows.Forms.Button btnRemover;
+        private System.Windows.Forms.Button btnCadastrar;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

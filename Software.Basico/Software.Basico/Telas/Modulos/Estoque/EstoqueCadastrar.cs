@@ -18,6 +18,7 @@ namespace Software.Basico.Telas.Modulos.Estoque
         public EstoqueCadastrar()
         {
             InitializeComponent();
+            CarregarCombos();
            
         }
         private void CarregarCombos()

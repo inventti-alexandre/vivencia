@@ -24,12 +24,12 @@ namespace Software.Basico.Telas.Modulos.Livros
         private void TemaTela()
         {
             pnTop.BackColor = Tema.Primaria;
-            btnAlterar_Visualizar.BackColor = Tema.Segundaria;
+            btnAlterar.BackColor = Tema.Segundaria;
             btnCadastrar.BackColor = Tema.Segundaria;
             btnRemover.BackColor = Tema.Segundaria;
             btnListar.BackColor = Tema.Segundaria;
 
-            btnAlterar_Visualizar.ForeColor = Tema.Texto;
+            btnAlterar.ForeColor = Tema.Texto;
             btnCadastrar.ForeColor = Tema.Texto;
             btnRemover.ForeColor = Tema.Texto;
             btnListar.ForeColor = Tema.Texto;
@@ -93,7 +93,7 @@ namespace Software.Basico.Telas.Modulos.Livros
             }
         }
 
-        private void txtPalavraChave_TextChanged(object sender, EventArgs e)
+        private void frmConsultar_Load(object sender, EventArgs e)
         {
 
         }

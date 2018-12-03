@@ -16,8 +16,15 @@ namespace Software.Basico.Telas.Modulos.Editora
         {
             InitializeComponent();
         }
+        private void TemaTela()
+        {
+            panel1.BackColor = Tema.Primaria;
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+            btnCadastrar.BackColor = Tema.Segundaria;
+            btnRemover.BackColor = Tema.Segundaria;
+            //btnRemover.BackColor = Tema.Segundaria;
+        }
+        private void frmCadastrar_Load(object sender, EventArgs e)
         {
 
         }

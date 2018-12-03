@@ -147,6 +147,8 @@
     <Compile Include="DB\Livros\LivroDatabase.cs" />
     <Compile Include="DB\Locatorio\LocatorioBusiness.cs" />
     <Compile Include="DB\Locatorio\LocatorioDatabase.cs" />
+    <Compile Include="DB\Reserva\ReservaBusiness.cs" />
+    <Compile Include="DB\Reserva\ReservaDatabase.cs" />
     <Compile Include="Gp.cs" />
     <Compile Include="Plugins\ImagemPlugin.cs" />
     <Compile Include="Program.cs" />

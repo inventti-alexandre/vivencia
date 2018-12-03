@@ -42,9 +42,9 @@ namespace Software.Basico.DB.Locatorio
             return funcList;
         }
 
-        public tb_autor ListarAutorPorId(int idAutor)
+        public tb_locatario ListarporIdLocatario(int idlocatario)
         {
-            tb_autor func = db.tb_autor.Where(x => x.id_autor == idAutor).ToList().Single();
+            tb_locatario func = db.tb_locatario.Where(x => x.id_locatario == idlocatario).ToList().Single();
             return func;
         }
     }

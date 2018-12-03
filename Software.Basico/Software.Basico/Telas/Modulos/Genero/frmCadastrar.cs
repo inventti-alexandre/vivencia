@@ -18,7 +18,10 @@ namespace Software.Basico.Telas.Modulos.Genero
         {
             InitializeComponent();
         }
-
+        private void Tema()
+        {
+            //btnCadastrar.BackColor = Tema;
+        }
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             CadastrarGenero();
@@ -61,6 +64,11 @@ namespace Software.Basico.Telas.Modulos.Genero
         private void btnRemover_Click(object sender, EventArgs e)
         {
           
+        }
+
+        private void frmCadastrar_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

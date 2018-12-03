@@ -38,8 +38,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.btnClose = new System.Windows.Forms.Button();
-            this.txtLocatario_Nova_Reserva = new System.Windows.Forms.TextBox();
-            this.btnCadastrar_Nova_Reserva = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnCadastrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panel1
@@ -66,7 +66,7 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(529, 259);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(214, 20);
-            this.dateTimePicker1.TabIndex = 4;
+            this.dateTimePicker1.TabIndex = 45;
             // 
             // lblpalavraschave
             // 
@@ -105,7 +105,8 @@
             this.comboBox1.Location = new System.Drawing.Point(81, 259);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(180, 21);
-            this.comboBox1.TabIndex = 2;
+            this.comboBox1.TabIndex = 91;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
             // label4
             // 
@@ -124,7 +125,7 @@
             this.comboBox2.Location = new System.Drawing.Point(529, 150);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(214, 21);
-            this.comboBox2.TabIndex = 3;
+            this.comboBox2.TabIndex = 94;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // btnClose
@@ -144,32 +145,32 @@
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.UseVisualStyleBackColor = true;
             // 
-            // txtLocatario_Nova_Reserva
+            // textBox1
             // 
-            this.txtLocatario_Nova_Reserva.Location = new System.Drawing.Point(81, 150);
-            this.txtLocatario_Nova_Reserva.Name = "txtLocatario_Nova_Reserva";
-            this.txtLocatario_Nova_Reserva.Size = new System.Drawing.Size(180, 20);
-            this.txtLocatario_Nova_Reserva.TabIndex = 1;
+            this.textBox1.Location = new System.Drawing.Point(81, 150);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(180, 20);
+            this.textBox1.TabIndex = 99;
             // 
-            // btnCadastrar_Nova_Reserva
+            // btnCadastrar
             // 
-            this.btnCadastrar_Nova_Reserva.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnCadastrar_Nova_Reserva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrar_Nova_Reserva.Font = new System.Drawing.Font("Century Gothic", 14.75F);
-            this.btnCadastrar_Nova_Reserva.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnCadastrar_Nova_Reserva.Location = new System.Drawing.Point(516, 364);
-            this.btnCadastrar_Nova_Reserva.Name = "btnCadastrar_Nova_Reserva";
-            this.btnCadastrar_Nova_Reserva.Size = new System.Drawing.Size(227, 32);
-            this.btnCadastrar_Nova_Reserva.TabIndex = 5;
-            this.btnCadastrar_Nova_Reserva.Text = "Salvar Dados";
-            this.btnCadastrar_Nova_Reserva.UseVisualStyleBackColor = true;
+            this.btnCadastrar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrar.Font = new System.Drawing.Font("Century Gothic", 14.75F);
+            this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
+            this.btnCadastrar.Location = new System.Drawing.Point(516, 364);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(227, 32);
+            this.btnCadastrar.TabIndex = 100;
+            this.btnCadastrar.Text = "Salvar Dados";
+            this.btnCadastrar.UseVisualStyleBackColor = true;
             // 
             // frmCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnCadastrar_Nova_Reserva);
-            this.Controls.Add(this.txtLocatario_Nova_Reserva);
+            this.Controls.Add(this.btnCadastrar);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.comboBox2);
@@ -200,7 +201,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.TextBox txtLocatario_Nova_Reserva;
-        private System.Windows.Forms.Button btnCadastrar_Nova_Reserva;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnCadastrar;
     }
 }

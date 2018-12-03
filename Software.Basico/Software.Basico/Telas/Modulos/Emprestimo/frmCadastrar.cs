@@ -25,6 +25,11 @@ namespace Software.Basico.Telas.Modulos.Emprestimo
             panel1.BackColor = Tema.Primaria;
             btnCadastrar.BackColor = Tema.Segundaria;
             btnRemover.BackColor = Tema.Segundaria;
+
+        
+            btnCadastrar.ForeColor = Tema.Texto;
+            btnRemover.ForeColor = Tema.Texto;
+          
         }
 
         private void frmCadastrar_Load(object sender, EventArgs e)
