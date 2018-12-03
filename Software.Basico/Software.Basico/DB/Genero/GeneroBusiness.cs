@@ -25,12 +25,12 @@ namespace Software.Basico.DB.Genero
 
         }
 
-        public void AlterarAutor(tb_genero dto, int idgenero)
+        public void AlterarGenenero(tb_genero dto, int idgenero)
         {
             db.AlterarGenero(dto, idgenero);
         }
 
-        public void RemoverAutor(int idgenero)
+        public void RemoverGenero(int idgenero)
         {
             db.RemoverGenero(idgenero);
         }

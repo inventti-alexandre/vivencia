@@ -95,6 +95,7 @@
             this.label1.Size = new System.Drawing.Size(270, 36);
             this.label1.TabIndex = 45;
             this.label1.Text = "Controle de Livros";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel2
             // 
