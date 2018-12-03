@@ -18,7 +18,19 @@ namespace Software.Basico.Telas.Modulos.Genero
         {
             InitializeComponent();
             TemaTela();
+            CarregarGrid();
+            
         }
+        public void CarregarGrid()
+        {
+            GeneroBusiness nha = new GeneroBusiness();
+
+            dgvLivros.AutoGenerateColumns = false;
+            dgvLivros.DataSource = nha.ListarGeneros();
+
+
+        }
+    
         private void Tematela()
         {
             btnCadastrar.BackColor = Tema.Segundaria;
@@ -64,7 +76,9 @@ namespace Software.Basico.Telas.Modulos.Genero
                 MessageBox.Show("Genero do livro cadastrado com sucesso!", "Biblioteca",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                
+                CarregarGrid();
+
+
             }
             catch (ArgumentException ex)
             {
