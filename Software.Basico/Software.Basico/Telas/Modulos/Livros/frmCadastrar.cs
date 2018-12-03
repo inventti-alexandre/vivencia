@@ -29,7 +29,6 @@ namespace Software.Basico.Telas.Modulos.Livros
           
             btnCadastrar.BackColor = Tema.Segundaria;
             btnAlterar.BackColor = Tema.Segundaria;
-            //btnRemover.BackColor = Tema.Segundaria;
 
             btnAlterar.ForeColor = Tema.Texto;
             btnCadastrar.ForeColor = Tema.Texto;
@@ -73,7 +72,7 @@ namespace Software.Basico.Telas.Modulos.Livros
                 livro.ds_subtitulo = txtSubtitulo_Controle_de_Livros.Text.Trim();
                 livro.ds_tipo = cboTipo.SelectedItem.ToString().Trim();
                 livro.ds_titulo = txtTitulo_contole_de_livros.Text.Trim();
-                //livro.img_Capa = imgLivro.Image == null ? null : ImagemPlugin.ConverterParaString(imgLivro.Image);
+                livro.img_Capa = imgLivro.Image == null ? null : ImagemPlugin.ConverterParaString(imgLivro.Image);
                 livro.nm_editora = txtEditora_Contrle_de_Estoque.Text.Trim();
                 livro.nu_isbn = txtISBN.Text.Trim();
                 livro.nu_volume = txtVolume_controle_de_livros.Text == string.Empty ? 0 : Convert.ToInt32(txtVolume_controle_de_livros.Text);
@@ -105,7 +104,7 @@ namespace Software.Basico.Telas.Modulos.Livros
             txtPalavrasChaves.Text = livro.ds_palavrasChaves;
             txtSubtitulo_Controle_de_Livros.Text = livro.ds_subtitulo;
             txtTitulo_contole_de_livros.Text = livro.ds_titulo;
-            // imgLivro.Image = livro.img_Capa != null ? ImagemPlugin.ConverterParaImagem(livro.img_Capa) : null;
+            imgLivro.Image = livro.img_Capa != null ? ImagemPlugin.ConverterParaImagem(livro.img_Capa) : null;
             txtEditora_Contrle_de_Estoque.Text = livro.nm_editora;
             txtISBN.Text = livro.nu_isbn;
             txtVolume_controle_de_livros.Text = livro.nu_volume.ToString();
@@ -133,7 +132,7 @@ namespace Software.Basico.Telas.Modulos.Livros
                 livro.ds_subtitulo = txtSubtitulo_Controle_de_Livros.Text.Trim();
                 livro.ds_tipo = cboTipo.SelectedItem.ToString().Trim();
                 livro.ds_titulo = txtTitulo_contole_de_livros.Text.Trim();
-                //livro.img_Capa = imgLivro.Image == null ? null : ImagemPlugin.ConverterParaString(imgLivro.Image);
+                livro.img_Capa = imgLivro.Image == null ? null : ImagemPlugin.ConverterParaString(imgLivro.Image);
                 livro.nm_editora = txtEditora_Contrle_de_Estoque.Text.Trim();
                 livro.nu_isbn = txtISBN.Text.Trim();
                 livro.nu_volume = txtVolume_controle_de_livros.Text == string.Empty ? 0 : Convert.ToInt32(txtVolume_controle_de_livros.Text);
@@ -242,16 +241,6 @@ namespace Software.Basico.Telas.Modulos.Livros
                 e.Handled = false;
             else
                 e.Handled = true;
-        }
-
-        private void frmCadastrar_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

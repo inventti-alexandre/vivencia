@@ -86,7 +86,7 @@ namespace Software.Basico.Telas
 
         private void btnEmprestimo_Click(object sender, EventArgs e)
         {
-            Modulos.Emprestimo.frmConsultar frm = new Modulos.Emprestimo.frmConsultar();
+            Modulos.Emprestimo.frmMenu frm = new Modulos.Emprestimo.frmMenu();
             CarregarPanel(frm);
 
             telaSel = 5;

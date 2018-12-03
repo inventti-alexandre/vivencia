@@ -95,7 +95,7 @@
             this.label1.Size = new System.Drawing.Size(270, 36);
             this.label1.TabIndex = 45;
             this.label1.Text = "Controle de Livros";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+//            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel2
             // 
@@ -661,7 +661,7 @@
             this.Controls.Add(this.btnAlterar);
             this.Name = "frmCadastrar";
             this.Size = new System.Drawing.Size(913, 498);
-            this.Load += new System.EventHandler(this.frmCadastrar_Load);
+            //this.Load += new System.EventHandler(this.frmCadastrar_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLivro)).EndInit();

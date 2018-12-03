@@ -183,16 +183,34 @@
     <Compile Include="Telas\Modulos\Editora\frmCadastrar.Designer.cs">
       <DependentUpon>frmCadastrar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\Modulos\Emprestimo\frmCadastrar.cs">
+    <Compile Include="Telas\Modulos\Emprestimo\Aluno\frmCadastrar.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Telas\Modulos\Emprestimo\frmCadastrar.Designer.cs">
+    <Compile Include="Telas\Modulos\Emprestimo\Aluno\frmCadastrar.Designer.cs">
       <DependentUpon>frmCadastrar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\Modulos\Emprestimo\frmConsultar.cs">
+    <Compile Include="Telas\Modulos\Emprestimo\Aluno\frmConsultar.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Telas\Modulos\Emprestimo\frmConsultar.Designer.cs">
+    <Compile Include="Telas\Modulos\Emprestimo\Aluno\frmConsultar.Designer.cs">
+      <DependentUpon>frmConsultar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Modulos\Emprestimo\frmMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Modulos\Emprestimo\frmMenu.Designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Modulos\Emprestimo\Professor\frmCadastrar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Modulos\Emprestimo\Professor\frmCadastrar.Designer.cs">
+      <DependentUpon>frmCadastrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Modulos\Emprestimo\Professor\frmConsultar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Modulos\Emprestimo\Professor\frmConsultar.Designer.cs">
       <DependentUpon>frmConsultar.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\Modulos\Estoque\EstoqueCadastrar.cs">
@@ -287,10 +305,19 @@
     <EmbeddedResource Include="Telas\Modulos\Editora\frmCadastrar.resx">
       <DependentUpon>frmCadastrar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\Modulos\Emprestimo\frmCadastrar.resx">
+    <EmbeddedResource Include="Telas\Modulos\Emprestimo\Aluno\frmCadastrar.resx">
       <DependentUpon>frmCadastrar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\Modulos\Emprestimo\frmConsultar.resx">
+    <EmbeddedResource Include="Telas\Modulos\Emprestimo\Aluno\frmConsultar.resx">
+      <DependentUpon>frmConsultar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Modulos\Emprestimo\frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Modulos\Emprestimo\Professor\frmCadastrar.resx">
+      <DependentUpon>frmCadastrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Modulos\Emprestimo\Professor\frmConsultar.resx">
       <DependentUpon>frmConsultar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Modulos\Estoque\EstoqueCadastrar.resx">

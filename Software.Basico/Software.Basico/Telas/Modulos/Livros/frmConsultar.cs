@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Software.Basico.DB.Livros;
 using Software.Basico.DB.Base;
 using Software.Basico.DB.Autor;
+using Nsf._2018.Modulo3.App.Plugin;
 
 namespace Software.Basico.Telas.Modulos.Livros
 {
@@ -96,6 +97,16 @@ namespace Software.Basico.Telas.Modulos.Livros
         private void frmConsultar_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvLivros_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            vw_Livro_Autor_Genero livro = dgvLivros.CurrentRow.DataBoundItem as vw_Livro_Autor_Genero;
+
+            AzureBiblioteca db = new AzureBiblioteca();
+            tb_livro book = db.tb_livro.Where(x => x.id_livro == livro.id_livro).ToList().Single();
+
+            imgLivro.Image = ImagemPlugin.ConverterParaImagem(book.img_Capa);
         }
     }
 }

@@ -66,43 +66,43 @@ namespace Software.Basico.DB.Livros
 
         public List<vw_Livro_Autor_Genero> ListarFiltroTitulo(string titulo)
         {
-            List<vw_Livro_Autor_Genero> liv = db.vw_Livro_Autor_Genero.Where(x => x.ds_titulo == titulo).ToList();
+            List<vw_Livro_Autor_Genero> liv = db.vw_Livro_Autor_Genero.Where(x => x.ds_titulo.Contains(titulo)).ToList();
             return liv;
         }
 
         public List<vw_Livro_Autor_Genero> ListarFiltroAutor(string autor)
         {
-            List<vw_Livro_Autor_Genero> liv = db.vw_Livro_Autor_Genero.Where(x => x.nm_autor == autor).ToList();
+            List<vw_Livro_Autor_Genero> liv = db.vw_Livro_Autor_Genero.Where(x => x.nm_autor.Contains(autor)).ToList();
             return liv;
         }
 
         public List<vw_Livro_Autor_Genero> ListarFiltroPalavraChaves(string palavraChave)
         {
-            List<vw_Livro_Autor_Genero> liv = db.vw_Livro_Autor_Genero.Where(x => x.ds_palavrasChaves == palavraChave).ToList();
+            List<vw_Livro_Autor_Genero> liv = db.vw_Livro_Autor_Genero.Where(x => x.ds_palavrasChaves.Contains(palavraChave)).ToList();
             return liv;
         }
 
         public List<vw_Livro_Autor_Genero> ListarFiltroTituloAutor(string titulo, string autor)
         {
-            List<vw_Livro_Autor_Genero> liv = db.vw_Livro_Autor_Genero.Where(x => x.ds_titulo == titulo && x.nm_autor == autor).ToList();
+            List<vw_Livro_Autor_Genero> liv = db.vw_Livro_Autor_Genero.Where(x => x.ds_titulo.Contains(titulo) && x.nm_autor.Contains(autor)).ToList();
             return liv;
         }
 
         public List<vw_Livro_Autor_Genero> ListarFiltroTituloPalavra(string titulo, string palavraChave)
         {
-            List<vw_Livro_Autor_Genero> liv = db.vw_Livro_Autor_Genero.Where(x => x.ds_titulo == titulo && x.ds_palavrasChaves == palavraChave).ToList();
+            List<vw_Livro_Autor_Genero> liv = db.vw_Livro_Autor_Genero.Where(x => x.ds_titulo.Contains(titulo) && x.ds_palavrasChaves.Contains(palavraChave)).ToList();
             return liv;
         }
 
         public List<vw_Livro_Autor_Genero> ListarFiltroAutorPalavra(string autor, string palavraChave)
         {
-            List<vw_Livro_Autor_Genero> liv = db.vw_Livro_Autor_Genero.Where(x => x.nm_autor == autor && x.ds_palavrasChaves == palavraChave).ToList();
+            List<vw_Livro_Autor_Genero> liv = db.vw_Livro_Autor_Genero.Where(x => x.nm_autor.Contains(autor) && x.ds_palavrasChaves.Contains(palavraChave)).ToList();
             return liv;
         }
 
         public List<vw_Livro_Autor_Genero> ListarFiltroTituloAutorPalavra(string titulo, string autor, string palavraChave)
         {
-            List<vw_Livro_Autor_Genero> liv = db.vw_Livro_Autor_Genero.Where(x => x.ds_titulo == titulo && x.nm_autor == autor && x.ds_palavrasChaves == palavraChave).ToList();
+            List<vw_Livro_Autor_Genero> liv = db.vw_Livro_Autor_Genero.Where(x => x.ds_titulo.Contains(titulo) && x.nm_autor.Contains(autor) && x.ds_palavrasChaves.Contains(palavraChave)).ToList();
             return liv;
         }
     }

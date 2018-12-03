@@ -98,6 +98,7 @@
             this.dgvLivros.RowHeadersVisible = false;
             this.dgvLivros.Size = new System.Drawing.Size(559, 374);
             this.dgvLivros.TabIndex = 4;
+            this.dgvLivros.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLivros_CellClick);
             // 
             // Column1
             // 
