@@ -24,12 +24,12 @@ namespace Software.Basico.Telas.Modulos.Livros
         private void TemaTela()
         {
             pnTop.BackColor = Tema.Primaria;
-            btnAlterar.BackColor = Tema.Segundaria;
+            btnAlterar_Visualizar.BackColor = Tema.Segundaria;
             btnCadastrar.BackColor = Tema.Segundaria;
             btnRemover.BackColor = Tema.Segundaria;
             btnListar.BackColor = Tema.Segundaria;
 
-            btnAlterar.ForeColor = Tema.Texto;
+            btnAlterar_Visualizar.ForeColor = Tema.Texto;
             btnCadastrar.ForeColor = Tema.Texto;
             btnRemover.ForeColor = Tema.Texto;
             btnListar.ForeColor = Tema.Texto;
@@ -91,6 +91,11 @@ namespace Software.Basico.Telas.Modulos.Livros
                 MessageBox.Show($"Você deve selecionar um livro para remover!", "Biblioteca",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void txtPalavraChave_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

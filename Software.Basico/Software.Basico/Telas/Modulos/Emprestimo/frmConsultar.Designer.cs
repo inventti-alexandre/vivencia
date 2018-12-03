@@ -32,10 +32,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnAlterar = new System.Windows.Forms.Button();
-            this.btnCadastrar = new System.Windows.Forms.Button();
-            this.btnListar = new System.Windows.Forms.Button();
-            this.btnRemover = new System.Windows.Forms.Button();
+            this.btnAlterar_Emprestimo = new System.Windows.Forms.Button();
+            this.btnCadastrar_Emprestimo = new System.Windows.Forms.Button();
+            this.btnListar_Emprestimo = new System.Windows.Forms.Button();
+            this.btnRemover_Emprestimo = new System.Windows.Forms.Button();
             this.dgvLivros = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,61 +62,61 @@
             this.label1.TabIndex = 47;
             this.label1.Text = "Empréstimos";
             // 
-            // btnAlterar
+            // btnAlterar_Emprestimo
             // 
-            this.btnAlterar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlterar.Font = new System.Drawing.Font("Century Gothic", 14.75F);
-            this.btnAlterar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnAlterar.Location = new System.Drawing.Point(273, 442);
-            this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(141, 32);
-            this.btnAlterar.TabIndex = 51;
-            this.btnAlterar.Text = "Alterar";
-            this.btnAlterar.UseVisualStyleBackColor = true;
-            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            this.btnAlterar_Emprestimo.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnAlterar_Emprestimo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlterar_Emprestimo.Font = new System.Drawing.Font("Century Gothic", 14.75F);
+            this.btnAlterar_Emprestimo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
+            this.btnAlterar_Emprestimo.Location = new System.Drawing.Point(273, 442);
+            this.btnAlterar_Emprestimo.Name = "btnAlterar_Emprestimo";
+            this.btnAlterar_Emprestimo.Size = new System.Drawing.Size(141, 32);
+            this.btnAlterar_Emprestimo.TabIndex = 2;
+            this.btnAlterar_Emprestimo.Text = "Alterar";
+            this.btnAlterar_Emprestimo.UseVisualStyleBackColor = true;
+            this.btnAlterar_Emprestimo.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
-            // btnCadastrar
+            // btnCadastrar_Emprestimo
             // 
-            this.btnCadastrar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrar.Font = new System.Drawing.Font("Century Gothic", 14.75F);
-            this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnCadastrar.Location = new System.Drawing.Point(495, 442);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(141, 32);
-            this.btnCadastrar.TabIndex = 52;
-            this.btnCadastrar.Text = "Cadastrar";
-            this.btnCadastrar.UseVisualStyleBackColor = true;
-            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            this.btnCadastrar_Emprestimo.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnCadastrar_Emprestimo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrar_Emprestimo.Font = new System.Drawing.Font("Century Gothic", 14.75F);
+            this.btnCadastrar_Emprestimo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
+            this.btnCadastrar_Emprestimo.Location = new System.Drawing.Point(495, 442);
+            this.btnCadastrar_Emprestimo.Name = "btnCadastrar_Emprestimo";
+            this.btnCadastrar_Emprestimo.Size = new System.Drawing.Size(141, 32);
+            this.btnCadastrar_Emprestimo.TabIndex = 3;
+            this.btnCadastrar_Emprestimo.Text = "Cadastrar";
+            this.btnCadastrar_Emprestimo.UseVisualStyleBackColor = true;
+            this.btnCadastrar_Emprestimo.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
-            // btnListar
+            // btnListar_Emprestimo
             // 
-            this.btnListar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnListar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnListar.Font = new System.Drawing.Font("Century Gothic", 14.75F);
-            this.btnListar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnListar.Location = new System.Drawing.Point(51, 442);
-            this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(141, 32);
-            this.btnListar.TabIndex = 53;
-            this.btnListar.Text = "Listar";
-            this.btnListar.UseVisualStyleBackColor = true;
-            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
+            this.btnListar_Emprestimo.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnListar_Emprestimo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListar_Emprestimo.Font = new System.Drawing.Font("Century Gothic", 14.75F);
+            this.btnListar_Emprestimo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
+            this.btnListar_Emprestimo.Location = new System.Drawing.Point(51, 442);
+            this.btnListar_Emprestimo.Name = "btnListar_Emprestimo";
+            this.btnListar_Emprestimo.Size = new System.Drawing.Size(141, 32);
+            this.btnListar_Emprestimo.TabIndex = 1;
+            this.btnListar_Emprestimo.Text = "Listar";
+            this.btnListar_Emprestimo.UseVisualStyleBackColor = true;
+            this.btnListar_Emprestimo.Click += new System.EventHandler(this.btnListar_Click);
             // 
-            // btnRemover
+            // btnRemover_Emprestimo
             // 
-            this.btnRemover.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnRemover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemover.Font = new System.Drawing.Font("Century Gothic", 14.75F);
-            this.btnRemover.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnRemover.Location = new System.Drawing.Point(717, 442);
-            this.btnRemover.Name = "btnRemover";
-            this.btnRemover.Size = new System.Drawing.Size(140, 32);
-            this.btnRemover.TabIndex = 50;
-            this.btnRemover.Text = "Remover";
-            this.btnRemover.UseVisualStyleBackColor = true;
-            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
+            this.btnRemover_Emprestimo.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnRemover_Emprestimo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemover_Emprestimo.Font = new System.Drawing.Font("Century Gothic", 14.75F);
+            this.btnRemover_Emprestimo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
+            this.btnRemover_Emprestimo.Location = new System.Drawing.Point(717, 442);
+            this.btnRemover_Emprestimo.Name = "btnRemover_Emprestimo";
+            this.btnRemover_Emprestimo.Size = new System.Drawing.Size(140, 32);
+            this.btnRemover_Emprestimo.TabIndex = 4;
+            this.btnRemover_Emprestimo.Text = "Remover";
+            this.btnRemover_Emprestimo.UseVisualStyleBackColor = true;
+            this.btnRemover_Emprestimo.Click += new System.EventHandler(this.btnRemover_Click);
             // 
             // dgvLivros
             // 
@@ -189,10 +189,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dgvLivros);
-            this.Controls.Add(this.btnAlterar);
-            this.Controls.Add(this.btnCadastrar);
-            this.Controls.Add(this.btnListar);
-            this.Controls.Add(this.btnRemover);
+            this.Controls.Add(this.btnAlterar_Emprestimo);
+            this.Controls.Add(this.btnCadastrar_Emprestimo);
+            this.Controls.Add(this.btnListar_Emprestimo);
+            this.Controls.Add(this.btnRemover_Emprestimo);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Name = "frmConsultar";
@@ -208,10 +208,10 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnAlterar;
-        private System.Windows.Forms.Button btnCadastrar;
-        private System.Windows.Forms.Button btnListar;
-        private System.Windows.Forms.Button btnRemover;
+        private System.Windows.Forms.Button btnAlterar_Emprestimo;
+        private System.Windows.Forms.Button btnCadastrar_Emprestimo;
+        private System.Windows.Forms.Button btnListar_Emprestimo;
+        private System.Windows.Forms.Button btnRemover_Emprestimo;
         private System.Windows.Forms.DataGridView dgvLivros;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;

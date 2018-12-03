@@ -29,7 +29,7 @@ namespace Software.Basico.Telas.Modulos.Genero
             { 
                    tb_genero genero = new tb_genero ();
 
-                genero.nm_genero = txtCadastroDeGenero.Text.Trim();
+                genero.nm_genero = txtCadastrodegenero.Text.Trim();
                 
 
                 GeneroBusiness business = new GeneroBusiness();

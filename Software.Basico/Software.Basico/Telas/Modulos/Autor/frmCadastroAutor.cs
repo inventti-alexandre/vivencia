@@ -102,5 +102,10 @@ namespace Software.Basico.Telas.Modulos.Autor
                 e.Handled = true;
             }
         }
+
+        private void txtNomeCompleto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

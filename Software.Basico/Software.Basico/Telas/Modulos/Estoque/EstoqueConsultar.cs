@@ -20,10 +20,10 @@ namespace Software.Basico.Telas.Modulos.Estoque
         {
             panel1.BackColor = Tema.Primaria;
 
-            btnCadastrar.BackColor = Tema.Segundaria;
-            btnAlterar.BackColor = Tema.Segundaria;
+            btnCadastrar_consultar_Estoque.BackColor = Tema.Segundaria;
+            btnAlterar_consulta_Estoque.BackColor = Tema.Segundaria;
            
-                btnRemover.BackColor = Tema.Segundaria;
+                btnRemover_Estoque.BackColor = Tema.Segundaria;
         }
 
 
@@ -35,6 +35,11 @@ namespace Software.Basico.Telas.Modulos.Estoque
         }
 
         private void EstoqueConsultar_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvLivros_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

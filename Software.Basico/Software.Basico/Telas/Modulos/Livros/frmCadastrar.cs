@@ -27,7 +27,7 @@ namespace Software.Basico.Telas.Modulos.Livros
         {
             panel1.BackColor = Tema.Primaria;
           
-            btnCadastrar.BackColor = Tema.Segundaria;
+            btnCadastrar_Controle_de_Livros.BackColor = Tema.Segundaria;
             btnAlterar.BackColor = Tema.Segundaria;
             //btnRemover.BackColor = Tema.Segundaria;
         }
@@ -66,13 +66,13 @@ namespace Software.Basico.Telas.Modulos.Livros
                 livro.ds_condicoes = cboCondicao.SelectedItem.ToString().Trim();
                 livro.ds_idioma = txtIdioma.Text.Trim();
                 livro.ds_palavrasChaves = txtPalavrasChaves.Text.Trim();
-                livro.ds_subtitulo = txtSubtitulo.Text.Trim();
+                livro.ds_subtitulo = txtSubtitulo_Controle_de_Livros.Text.Trim();
                 livro.ds_tipo = cboTipo.SelectedItem.ToString().Trim();
-                livro.ds_titulo = txtTitulo.Text.Trim();
+                livro.ds_titulo = txtTitulo_contole_de_livros.Text.Trim();
                 //livro.img_Capa = imgLivro.Image == null ? null : ImagemPlugin.ConverterParaString(imgLivro.Image);
-                livro.nm_editora = txtEditora.Text.Trim();
+                livro.nm_editora = txtEditora_Contrle_de_Estoque.Text.Trim();
                 livro.nu_isbn = txtISBN.Text.Trim();
-                livro.nu_volume = txtVolume.Text == string.Empty ? 0 : Convert.ToInt32(txtVolume.Text);
+                livro.nu_volume = txtVolume_controle_de_livros.Text == string.Empty ? 0 : Convert.ToInt32(txtVolume_controle_de_livros.Text);
 
                 LivroBusiness business = new LivroBusiness();
                 business.AlterarLivro(livro, livro.id_livro);
@@ -99,15 +99,15 @@ namespace Software.Basico.Telas.Modulos.Livros
 
             txtIdioma.Text = livro.ds_idioma;
             txtPalavrasChaves.Text = livro.ds_palavrasChaves;
-            txtSubtitulo.Text = livro.ds_subtitulo;
-            txtTitulo.Text = livro.ds_titulo;
+            txtSubtitulo_Controle_de_Livros.Text = livro.ds_subtitulo;
+            txtTitulo_contole_de_livros.Text = livro.ds_titulo;
             // imgLivro.Image = livro.img_Capa != null ? ImagemPlugin.ConverterParaImagem(livro.img_Capa) : null;
-            txtEditora.Text = livro.nm_editora;
+            txtEditora_Contrle_de_Estoque.Text = livro.nm_editora;
             txtISBN.Text = livro.nu_isbn;
-            txtVolume.Text = livro.nu_volume.ToString();
+            txtVolume_controle_de_livros.Text = livro.nu_volume.ToString();
             lblid.Text = livro.id_livro.ToString();
 
-            btnCadastrar.Visible = false;
+            btnCadastrar_Controle_de_Livros.Visible = false;
             lblid.Visible = true;
             lblidTxt.Visible = true;
             lblQNT.Visible = false;
@@ -126,13 +126,13 @@ namespace Software.Basico.Telas.Modulos.Livros
                 livro.ds_condicoes = cboCondicao.SelectedItem.ToString().Trim();
                 livro.ds_idioma = txtIdioma.Text.Trim();
                 livro.ds_palavrasChaves = txtPalavrasChaves.Text.Trim();
-                livro.ds_subtitulo = txtSubtitulo.Text.Trim();
+                livro.ds_subtitulo = txtSubtitulo_Controle_de_Livros.Text.Trim();
                 livro.ds_tipo = cboTipo.SelectedItem.ToString().Trim();
-                livro.ds_titulo = txtTitulo.Text.Trim();
+                livro.ds_titulo = txtTitulo_contole_de_livros.Text.Trim();
                 //livro.img_Capa = imgLivro.Image == null ? null : ImagemPlugin.ConverterParaString(imgLivro.Image);
-                livro.nm_editora = txtEditora.Text.Trim();
+                livro.nm_editora = txtEditora_Contrle_de_Estoque.Text.Trim();
                 livro.nu_isbn = txtISBN.Text.Trim();
-                livro.nu_volume = txtVolume.Text == string.Empty ? 0 : Convert.ToInt32(txtVolume.Text);
+                livro.nu_volume = txtVolume_controle_de_livros.Text == string.Empty ? 0 : Convert.ToInt32(txtVolume_controle_de_livros.Text);
 
                 LivroBusiness business = new LivroBusiness();
                 business.CadastrarLivro(livro, Convert.ToInt32(nudQnt.Value));
@@ -142,12 +142,12 @@ namespace Software.Basico.Telas.Modulos.Livros
 
                 txtIdioma.Text = string.Empty;
                 txtPalavrasChaves.Text = string.Empty;
-                txtSubtitulo.Text = string.Empty;
-                txtTitulo.Text = string.Empty;
+                txtSubtitulo_Controle_de_Livros.Text = string.Empty;
+                txtTitulo_contole_de_livros.Text = string.Empty;
                 imgLivro.Image = null;
-                txtEditora.Text = string.Empty;
+                txtEditora_Contrle_de_Estoque.Text = string.Empty;
                 txtISBN.Text = string.Empty;
-                txtVolume.Text = string.Empty;
+                txtVolume_controle_de_livros.Text = string.Empty;
             }
             catch (ArgumentException ex)
             {

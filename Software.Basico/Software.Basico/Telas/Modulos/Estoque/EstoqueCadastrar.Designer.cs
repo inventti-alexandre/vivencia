@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.btnCadastrar_ = new System.Windows.Forms.Button();
             this.btnRemover = new System.Windows.Forms.Button();
-            this.cboxlivro = new System.Windows.Forms.ComboBox();
+            this.txtlivro = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,19 +41,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnCadastrar
+            // btnCadastrar_
             // 
-            this.btnCadastrar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrar.Font = new System.Drawing.Font("Century Gothic", 14.75F);
-            this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnCadastrar.Location = new System.Drawing.Point(403, 332);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(168, 32);
-            this.btnCadastrar.TabIndex = 91;
-            this.btnCadastrar.Text = "Salvar Dados";
-            this.btnCadastrar.UseVisualStyleBackColor = true;
-            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            this.btnCadastrar_.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnCadastrar_.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrar_.Font = new System.Drawing.Font("Century Gothic", 14.75F);
+            this.btnCadastrar_.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
+            this.btnCadastrar_.Location = new System.Drawing.Point(403, 332);
+            this.btnCadastrar_.Name = "btnCadastrar_";
+            this.btnCadastrar_.Size = new System.Drawing.Size(168, 32);
+            this.btnCadastrar_.TabIndex = 3;
+            this.btnCadastrar_.Text = "Salvar Dados";
+            this.btnCadastrar_.UseVisualStyleBackColor = true;
+            this.btnCadastrar_.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // btnRemover
             // 
@@ -64,18 +64,18 @@
             this.btnRemover.Location = new System.Drawing.Point(636, 332);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(173, 32);
-            this.btnRemover.TabIndex = 92;
+            this.btnRemover.TabIndex = 4;
             this.btnRemover.Text = "Cancelar";
             this.btnRemover.UseVisualStyleBackColor = true;
             // 
-            // cboxlivro
+            // txtlivro
             // 
-            this.cboxlivro.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboxlivro.FormattingEnabled = true;
-            this.cboxlivro.Location = new System.Drawing.Point(399, 213);
-            this.cboxlivro.Name = "cboxlivro";
-            this.cboxlivro.Size = new System.Drawing.Size(410, 30);
-            this.cboxlivro.TabIndex = 1;
+            this.txtlivro.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtlivro.FormattingEnabled = true;
+            this.txtlivro.Location = new System.Drawing.Point(399, 213);
+            this.txtlivro.Name = "txtlivro";
+            this.txtlivro.Size = new System.Drawing.Size(410, 30);
+            this.txtlivro.TabIndex = 1;
             // 
             // label3
             // 
@@ -140,9 +140,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.btnCadastrar);
+            this.Controls.Add(this.btnCadastrar_);
             this.Controls.Add(this.btnRemover);
-            this.Controls.Add(this.cboxlivro);
+            this.Controls.Add(this.txtlivro);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
@@ -159,9 +159,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnCadastrar;
+        private System.Windows.Forms.Button btnCadastrar_;
         private System.Windows.Forms.Button btnRemover;
-        private System.Windows.Forms.ComboBox cboxlivro;
+        private System.Windows.Forms.ComboBox txtlivro;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;

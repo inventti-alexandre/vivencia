@@ -95,7 +95,7 @@
             this.dgvLivros.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvLivros.RowHeadersVisible = false;
             this.dgvLivros.Size = new System.Drawing.Size(559, 185);
-            this.dgvLivros.TabIndex = 48;
+            this.dgvLivros.TabIndex = 1;
             // 
             // Column1
             // 

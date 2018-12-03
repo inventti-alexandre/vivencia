@@ -25,9 +25,9 @@ namespace Software.Basico.Telas.Modulos.Estoque
             LivroBusiness asbusiness = new LivroBusiness();
             List<tb_livro> livros = asbusiness.ListarLivros();
 
-            cboxlivro.ValueMember = nameof(tb_livro.ds_titulo);
-            cboxlivro.SelectedItem = nameof(tb_livro.id_livro);
-            cboxlivro.DataSource = asbusiness;
+            txtlivro.ValueMember = nameof(tb_livro.ds_titulo);
+            txtlivro.SelectedItem = nameof(tb_livro.id_livro);
+            txtlivro.DataSource = asbusiness;
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)

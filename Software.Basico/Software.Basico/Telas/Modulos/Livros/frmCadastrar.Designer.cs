@@ -32,12 +32,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.imgLivro = new System.Windows.Forms.PictureBox();
-            this.txtTitulo = new System.Windows.Forms.TextBox();
+            this.txtTitulo_contole_de_livros = new System.Windows.Forms.TextBox();
             this.lblid = new System.Windows.Forms.Label();
             this.lblidTxt = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.txtSubtitulo = new System.Windows.Forms.TextBox();
+            this.txtSubtitulo_Controle_de_Livros = new System.Windows.Forms.TextBox();
             this.lblsubtitulo = new System.Windows.Forms.Label();
             this.btnImg = new System.Windows.Forms.Button();
             this.cboCondicao = new System.Windows.Forms.ComboBox();
@@ -49,15 +49,15 @@
             this.lblpalavraschave = new System.Windows.Forms.Label();
             this.txtPalavrasChaves = new System.Windows.Forms.TextBox();
             this.lblvolume = new System.Windows.Forms.Label();
-            this.txtVolume = new System.Windows.Forms.TextBox();
+            this.txtVolume_controle_de_livros = new System.Windows.Forms.TextBox();
             this.lblCondicoes = new System.Windows.Forms.Label();
             this.lblidioma = new System.Windows.Forms.Label();
             this.txtIdioma = new System.Windows.Forms.TextBox();
             this.lblisbn = new System.Windows.Forms.Label();
             this.txtISBN = new System.Windows.Forms.TextBox();
             this.lblTipo = new System.Windows.Forms.Label();
-            this.btnCadastrar = new System.Windows.Forms.Button();
-            this.txtEditora = new System.Windows.Forms.TextBox();
+            this.btnCadastrar_Controle_de_Livros = new System.Windows.Forms.Button();
+            this.txtEditora_Contrle_de_Estoque = new System.Windows.Forms.TextBox();
             this.btnAddGenero = new System.Windows.Forms.Button();
             this.btnAddAutor = new System.Windows.Forms.Button();
             this.cboTipo = new System.Windows.Forms.ComboBox();
@@ -101,18 +101,18 @@
             this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.imgLivro);
-            this.panel2.Controls.Add(this.txtTitulo);
+            this.panel2.Controls.Add(this.txtTitulo_contole_de_livros);
             this.panel2.Controls.Add(this.lblid);
             this.panel2.Controls.Add(this.lblidTxt);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.lblTitulo);
-            this.panel2.Controls.Add(this.txtSubtitulo);
+            this.panel2.Controls.Add(this.txtSubtitulo_Controle_de_Livros);
             this.panel2.Controls.Add(this.lblsubtitulo);
             this.panel2.Controls.Add(this.btnImg);
             this.panel2.Location = new System.Drawing.Point(54, 86);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(295, 347);
-            this.panel2.TabIndex = 71;
+            this.panel2.TabIndex = 1;
             // 
             // imgLivro
             // 
@@ -124,15 +124,15 @@
             this.imgLivro.TabIndex = 83;
             this.imgLivro.TabStop = false;
             // 
-            // txtTitulo
+            // txtTitulo_contole_de_livros
             // 
-            this.txtTitulo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTitulo.Location = new System.Drawing.Point(26, 48);
-            this.txtTitulo.MaxLength = 90;
-            this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(242, 23);
-            this.txtTitulo.TabIndex = 1;
-            this.txtTitulo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_Text);
+            this.txtTitulo_contole_de_livros.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitulo_contole_de_livros.Location = new System.Drawing.Point(26, 48);
+            this.txtTitulo_contole_de_livros.MaxLength = 90;
+            this.txtTitulo_contole_de_livros.Name = "txtTitulo_contole_de_livros";
+            this.txtTitulo_contole_de_livros.Size = new System.Drawing.Size(242, 23);
+            this.txtTitulo_contole_de_livros.TabIndex = 1;
+            this.txtTitulo_contole_de_livros.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_Text);
             // 
             // lblid
             // 
@@ -177,14 +177,14 @@
             this.lblTitulo.TabIndex = 73;
             this.lblTitulo.Text = "Titulo";
             // 
-            // txtSubtitulo
+            // txtSubtitulo_Controle_de_Livros
             // 
-            this.txtSubtitulo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSubtitulo.Location = new System.Drawing.Point(26, 111);
-            this.txtSubtitulo.Name = "txtSubtitulo";
-            this.txtSubtitulo.Size = new System.Drawing.Size(242, 23);
-            this.txtSubtitulo.TabIndex = 2;
-            this.txtSubtitulo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_Text);
+            this.txtSubtitulo_Controle_de_Livros.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSubtitulo_Controle_de_Livros.Location = new System.Drawing.Point(26, 111);
+            this.txtSubtitulo_Controle_de_Livros.Name = "txtSubtitulo_Controle_de_Livros";
+            this.txtSubtitulo_Controle_de_Livros.Size = new System.Drawing.Size(242, 23);
+            this.txtSubtitulo_Controle_de_Livros.TabIndex = 2;
+            this.txtSubtitulo_Controle_de_Livros.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_Text);
             // 
             // lblsubtitulo
             // 
@@ -321,15 +321,15 @@
             this.lblvolume.TabIndex = 84;
             this.lblvolume.Text = "Volume";
             // 
-            // txtVolume
+            // txtVolume_controle_de_livros
             // 
-            this.txtVolume.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVolume.Location = new System.Drawing.Point(551, 126);
-            this.txtVolume.MaxLength = 3;
-            this.txtVolume.Name = "txtVolume";
-            this.txtVolume.Size = new System.Drawing.Size(137, 23);
-            this.txtVolume.TabIndex = 4;
-            this.txtVolume.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_Numb);
+            this.txtVolume_controle_de_livros.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVolume_controle_de_livros.Location = new System.Drawing.Point(551, 126);
+            this.txtVolume_controle_de_livros.MaxLength = 3;
+            this.txtVolume_controle_de_livros.Name = "txtVolume_controle_de_livros";
+            this.txtVolume_controle_de_livros.Size = new System.Drawing.Size(137, 23);
+            this.txtVolume_controle_de_livros.TabIndex = 4;
+            this.txtVolume_controle_de_livros.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_Numb);
             // 
             // lblCondicoes
             // 
@@ -389,28 +389,28 @@
             this.lblTipo.TabIndex = 75;
             this.lblTipo.Text = "Tipo";
             // 
-            // btnCadastrar
+            // btnCadastrar_Controle_de_Livros
             // 
-            this.btnCadastrar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrar.Font = new System.Drawing.Font("Century Gothic", 14.75F);
-            this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnCadastrar.Location = new System.Drawing.Point(612, 401);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(227, 32);
-            this.btnCadastrar.TabIndex = 12;
-            this.btnCadastrar.Text = "Salvar Dados";
-            this.btnCadastrar.UseVisualStyleBackColor = true;
-            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            this.btnCadastrar_Controle_de_Livros.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnCadastrar_Controle_de_Livros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrar_Controle_de_Livros.Font = new System.Drawing.Font("Century Gothic", 14.75F);
+            this.btnCadastrar_Controle_de_Livros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
+            this.btnCadastrar_Controle_de_Livros.Location = new System.Drawing.Point(612, 401);
+            this.btnCadastrar_Controle_de_Livros.Name = "btnCadastrar_Controle_de_Livros";
+            this.btnCadastrar_Controle_de_Livros.Size = new System.Drawing.Size(227, 32);
+            this.btnCadastrar_Controle_de_Livros.TabIndex = 12;
+            this.btnCadastrar_Controle_de_Livros.Text = "Salvar Dados";
+            this.btnCadastrar_Controle_de_Livros.UseVisualStyleBackColor = true;
+            this.btnCadastrar_Controle_de_Livros.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
-            // txtEditora
+            // txtEditora_Contrle_de_Estoque
             // 
-            this.txtEditora.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEditora.Location = new System.Drawing.Point(615, 224);
-            this.txtEditora.Name = "txtEditora";
-            this.txtEditora.Size = new System.Drawing.Size(224, 23);
-            this.txtEditora.TabIndex = 7;
-            this.txtEditora.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_Text);
+            this.txtEditora_Contrle_de_Estoque.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEditora_Contrle_de_Estoque.Location = new System.Drawing.Point(615, 224);
+            this.txtEditora_Contrle_de_Estoque.Name = "txtEditora_Contrle_de_Estoque";
+            this.txtEditora_Contrle_de_Estoque.Size = new System.Drawing.Size(224, 23);
+            this.txtEditora_Contrle_de_Estoque.TabIndex = 7;
+            this.txtEditora_Contrle_de_Estoque.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_Text);
             // 
             // btnAddGenero
             // 
@@ -623,7 +623,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.nudQnt);
-            this.Controls.Add(this.btnCadastrar);
+            this.Controls.Add(this.btnCadastrar_Controle_de_Livros);
             this.Controls.Add(this.cboTipo);
             this.Controls.Add(this.cboCondicao);
             this.Controls.Add(this.lblAutor);
@@ -634,13 +634,13 @@
             this.Controls.Add(this.lblpalavraschave);
             this.Controls.Add(this.txtPalavrasChaves);
             this.Controls.Add(this.lblvolume);
-            this.Controls.Add(this.txtVolume);
+            this.Controls.Add(this.txtVolume_controle_de_livros);
             this.Controls.Add(this.lblCondicoes);
             this.Controls.Add(this.lblidioma);
             this.Controls.Add(this.txtIdioma);
             this.Controls.Add(this.lblQNT);
             this.Controls.Add(this.lblisbn);
-            this.Controls.Add(this.txtEditora);
+            this.Controls.Add(this.txtEditora_Contrle_de_Estoque);
             this.Controls.Add(this.txtISBN);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -675,9 +675,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txtTitulo;
+        private System.Windows.Forms.TextBox txtTitulo_contole_de_livros;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.TextBox txtSubtitulo;
+        private System.Windows.Forms.TextBox txtSubtitulo_Controle_de_Livros;
         private System.Windows.Forms.Label lblsubtitulo;
         private System.Windows.Forms.ComboBox cboCondicao;
         private System.Windows.Forms.Label lblAutor;
@@ -688,15 +688,15 @@
         private System.Windows.Forms.Label lblpalavraschave;
         private System.Windows.Forms.TextBox txtPalavrasChaves;
         private System.Windows.Forms.Label lblvolume;
-        private System.Windows.Forms.TextBox txtVolume;
+        private System.Windows.Forms.TextBox txtVolume_controle_de_livros;
         private System.Windows.Forms.Label lblCondicoes;
         private System.Windows.Forms.Label lblidioma;
         private System.Windows.Forms.TextBox txtIdioma;
         private System.Windows.Forms.Label lblisbn;
         private System.Windows.Forms.TextBox txtISBN;
         private System.Windows.Forms.Label lblTipo;
-        private System.Windows.Forms.Button btnCadastrar;
-        private System.Windows.Forms.TextBox txtEditora;
+        private System.Windows.Forms.Button btnCadastrar_Controle_de_Livros;
+        private System.Windows.Forms.TextBox txtEditora_Contrle_de_Estoque;
         private System.Windows.Forms.Button btnAddGenero;
         private System.Windows.Forms.Button btnAddAutor;
         private System.Windows.Forms.ComboBox cboTipo;

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.btnCadastrar_autor = new System.Windows.Forms.Button();
             this.txtNomeCompleto = new System.Windows.Forms.TextBox();
-            this.btnRemover = new System.Windows.Forms.Button();
+            this.btnRemover_autor = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtAutor = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,19 +51,19 @@
             this.label1.TabIndex = 22;
             this.label1.Text = "Nome Completo";
             // 
-            // btnCadastrar
+            // btnCadastrar_autor
             // 
-            this.btnCadastrar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrar.Font = new System.Drawing.Font("Century Gothic", 14.75F);
-            this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnCadastrar.Location = new System.Drawing.Point(389, 387);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(204, 32);
-            this.btnCadastrar.TabIndex = 24;
-            this.btnCadastrar.Text = "Salvar Dados";
-            this.btnCadastrar.UseVisualStyleBackColor = true;
-            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            this.btnCadastrar_autor.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnCadastrar_autor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrar_autor.Font = new System.Drawing.Font("Century Gothic", 14.75F);
+            this.btnCadastrar_autor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
+            this.btnCadastrar_autor.Location = new System.Drawing.Point(389, 387);
+            this.btnCadastrar_autor.Name = "btnCadastrar_autor";
+            this.btnCadastrar_autor.Size = new System.Drawing.Size(204, 32);
+            this.btnCadastrar_autor.TabIndex = 24;
+            this.btnCadastrar_autor.Text = "Salvar Dados";
+            this.btnCadastrar_autor.UseVisualStyleBackColor = true;
+            this.btnCadastrar_autor.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // txtNomeCompleto
             // 
@@ -72,22 +72,23 @@
             this.txtNomeCompleto.MaxLength = 90;
             this.txtNomeCompleto.Name = "txtNomeCompleto";
             this.txtNomeCompleto.Size = new System.Drawing.Size(433, 33);
-            this.txtNomeCompleto.TabIndex = 23;
+            this.txtNomeCompleto.TabIndex = 1;
+            this.txtNomeCompleto.TextChanged += new System.EventHandler(this.txtNomeCompleto_TextChanged);
             this.txtNomeCompleto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomeCompleto_KeyPress);
             // 
-            // btnRemover
+            // btnRemover_autor
             // 
-            this.btnRemover.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnRemover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemover.Font = new System.Drawing.Font("Century Gothic", 14.75F);
-            this.btnRemover.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnRemover.Location = new System.Drawing.Point(618, 387);
-            this.btnRemover.Name = "btnRemover";
-            this.btnRemover.Size = new System.Drawing.Size(204, 32);
-            this.btnRemover.TabIndex = 25;
-            this.btnRemover.Text = "Cancelar";
-            this.btnRemover.UseVisualStyleBackColor = true;
-            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
+            this.btnRemover_autor.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnRemover_autor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemover_autor.Font = new System.Drawing.Font("Century Gothic", 14.75F);
+            this.btnRemover_autor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
+            this.btnRemover_autor.Location = new System.Drawing.Point(618, 387);
+            this.btnRemover_autor.Name = "btnRemover_autor";
+            this.btnRemover_autor.Size = new System.Drawing.Size(204, 32);
+            this.btnRemover_autor.TabIndex = 25;
+            this.btnRemover_autor.Text = "Cancelar";
+            this.btnRemover_autor.UseVisualStyleBackColor = true;
+            this.btnRemover_autor.Click += new System.EventHandler(this.btnRemover_Click);
             // 
             // pictureBox1
             // 
@@ -106,7 +107,7 @@
             this.txtAutor.MaxLength = 150;
             this.txtAutor.Name = "txtAutor";
             this.txtAutor.Size = new System.Drawing.Size(433, 33);
-            this.txtAutor.TabIndex = 28;
+            this.txtAutor.TabIndex = 2;
             this.txtAutor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAutor_KeyPress);
             // 
             // label2
@@ -126,7 +127,7 @@
             this.txtNascionalidade.MaxLength = 90;
             this.txtNascionalidade.Name = "txtNascionalidade";
             this.txtNascionalidade.Size = new System.Drawing.Size(433, 33);
-            this.txtNascionalidade.TabIndex = 30;
+            this.txtNascionalidade.TabIndex = 3;
             this.txtNascionalidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNascionalidade_KeyPress);
             // 
             // label3
@@ -160,8 +161,8 @@
             this.Controls.Add(this.txtAutor);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnRemover);
-            this.Controls.Add(this.btnCadastrar);
+            this.Controls.Add(this.btnRemover_autor);
+            this.Controls.Add(this.btnCadastrar_autor);
             this.Controls.Add(this.txtNomeCompleto);
             this.Controls.Add(this.label1);
             this.Name = "frmCadastroAutor";
@@ -175,9 +176,9 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnCadastrar;
+        private System.Windows.Forms.Button btnCadastrar_autor;
         private System.Windows.Forms.TextBox txtNomeCompleto;
-        private System.Windows.Forms.Button btnRemover;
+        private System.Windows.Forms.Button btnRemover_autor;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtAutor;
         private System.Windows.Forms.Label label2;

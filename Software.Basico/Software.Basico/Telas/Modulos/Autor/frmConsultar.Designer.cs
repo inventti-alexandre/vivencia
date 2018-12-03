@@ -35,9 +35,9 @@
             this.btnListar = new System.Windows.Forms.Button();
             this.btnRemover = new System.Windows.Forms.Button();
             this.dgvLivros = new System.Windows.Forms.DataGridView();
-            this.pnTop = new System.Windows.Forms.Panel();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnTop = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLivros)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +50,7 @@
             this.btnAlterar.Location = new System.Drawing.Point(301, 435);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(120, 32);
-            this.btnAlterar.TabIndex = 68;
+            this.btnAlterar.TabIndex = 2;
             this.btnAlterar.Text = "Visualizar";
             this.btnAlterar.UseVisualStyleBackColor = true;
             // 
@@ -63,7 +63,7 @@
             this.btnCadastrar.Location = new System.Drawing.Point(470, 435);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(120, 32);
-            this.btnCadastrar.TabIndex = 69;
+            this.btnCadastrar.TabIndex = 3;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
@@ -77,7 +77,7 @@
             this.btnListar.Location = new System.Drawing.Point(132, 435);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(120, 32);
-            this.btnListar.TabIndex = 70;
+            this.btnListar.TabIndex = 1;
             this.btnListar.Text = "Listar";
             this.btnListar.UseVisualStyleBackColor = true;
             // 
@@ -90,7 +90,7 @@
             this.btnRemover.Location = new System.Drawing.Point(639, 435);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(120, 32);
-            this.btnRemover.TabIndex = 67;
+            this.btnRemover.TabIndex = 4;
             this.btnRemover.Text = "Remover";
             this.btnRemover.UseVisualStyleBackColor = true;
             // 
@@ -132,14 +132,6 @@
             this.dgvLivros.Size = new System.Drawing.Size(627, 374);
             this.dgvLivros.TabIndex = 66;
             // 
-            // pnTop
-            // 
-            this.pnTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnTop.Location = new System.Drawing.Point(0, 0);
-            this.pnTop.Name = "pnTop";
-            this.pnTop.Size = new System.Drawing.Size(915, 12);
-            this.pnTop.TabIndex = 65;
-            // 
             // Column2
             // 
             this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -153,6 +145,14 @@
             this.Column1.HeaderText = "Nacionalidade";
             this.Column1.Name = "Column1";
             this.Column1.Width = 209;
+            // 
+            // pnTop
+            // 
+            this.pnTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnTop.Location = new System.Drawing.Point(0, 0);
+            this.pnTop.Name = "pnTop";
+            this.pnTop.Size = new System.Drawing.Size(915, 12);
+            this.pnTop.TabIndex = 65;
             // 
             // frmConsultar
             // 

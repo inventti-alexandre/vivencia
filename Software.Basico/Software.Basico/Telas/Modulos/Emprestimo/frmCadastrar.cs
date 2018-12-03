@@ -37,8 +37,8 @@ namespace Software.Basico.Telas.Modulos.Emprestimo
             try
             {
                 tb_emprestimo emprestimo = new tb_emprestimo();
-                emprestimo.tb_livro_id_livro = Convert.ToInt32(cboLivro.SelectedValue);
-                emprestimo.tb_turma_aluno_id_turma_aluno = Convert.ToInt32(cboCurso.SelectedValue);
+                emprestimo.tb_livro_id_livro = Convert.ToInt32(txtlivro.SelectedValue);
+                emprestimo.tb_turma_aluno_id_turma_aluno = Convert.ToInt32(txtcurso.SelectedValue);
                 
 
                 EmprestimoBusiness business = new EmprestimoBusiness();
@@ -66,6 +66,26 @@ namespace Software.Basico.Telas.Modulos.Emprestimo
         }
 
         private void btnRemover_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboCurso_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboLivro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEditara_TextChanged(object sender, EventArgs e)
         {
 
         }
