@@ -17,6 +17,7 @@ namespace Software.Basico.Telas.Modulos.Genero
         public frmCadastrar()
         {
             InitializeComponent();
+            TemaTela();
         }
         private void Tematela()
         {
@@ -29,18 +30,32 @@ namespace Software.Basico.Telas.Modulos.Genero
             btnCadastrar.ForeColor = Tema.Texto;
         
 
-    }
+        }
+
+        private void TemaTela()
+        {
+            pnTop.BackColor = Tema.Primaria;
+            btnCadastrar.BackColor = Tema.Segundaria;
+            btnRemover.BackColor = Tema.Segundaria;
+            btnRetornar.BackColor = Tema.Segundaria;
+            
+            btnCadastrar.ForeColor = Tema.Texto;
+            btnRemover.ForeColor = Tema.Texto;
+            btnRetornar.ForeColor = Tema.Texto;
+        }
+
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             CadastrarGenero();
         }
+
         private void CadastrarGenero()
         {
             try
             { 
-                   tb_genero genero = new tb_genero ();
+                tb_genero genero = new tb_genero ();
 
-                genero.nm_genero = txtCadastrode.Text.Trim();
+                genero.nm_genero = txtGenero.Text.Trim();
                 
 
                 GeneroBusiness business = new GeneroBusiness();
@@ -77,6 +92,12 @@ namespace Software.Basico.Telas.Modulos.Genero
         private void frmCadastrar_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnRetornar_Click(object sender, EventArgs e)
+        {
+            Livros.frmCadastrar frm = new Livros.frmCadastrar();
+            ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
         }
     }
 }
