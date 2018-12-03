@@ -25,7 +25,7 @@ namespace Software.Basico.DB.Emprestimo
             func.nm_funcionario = dto.nm_funcionario;
             func.dt_devolucao = dto.dt_devolucao;
             func.dt_emprestimo = dto.dt_emprestimo;
-            func.livro_id_livro = dto.livro_id_livro;
+            func.tb_livro_id_livro = dto.tb_livro_id_livro;
             func.tb_turma_aluno_id_turma_aluno = dto.tb_turma_aluno_id_turma_aluno;
             func.tb_locatario_id_locatario = dto.tb_locatario_id_locatario;
             db.SaveChanges();

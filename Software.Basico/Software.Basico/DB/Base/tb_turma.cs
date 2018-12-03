@@ -23,7 +23,7 @@ namespace Software.Basico.DB.Base
         public int id_turma { get; set; }
         public string nm_turma { get; set; }
         public string ds_periodo { get; set; }
-        public int curso_id_curso { get; set; }
+        public int tb_curso_id_curso { get; set; }
     
         public virtual tb_curso tb_curso { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

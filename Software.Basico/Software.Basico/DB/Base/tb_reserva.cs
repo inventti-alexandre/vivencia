@@ -12,13 +12,10 @@ namespace Software.Basico.DB.Base
     using System;
     using System.Collections.Generic;
     
-    public partial class tb_emprestimo
+    public partial class tb_reserva
     {
-        public int id_emprestimo { get; set; }
-        public System.DateTime dt_emprestimo { get; set; }
-        public System.DateTime dt_devolucao { get; set; }
-        public string nm_funcionario { get; set; }
-        public string ds_email { get; set; }
+        public int id_reserva { get; set; }
+        public System.DateTime dt_reserva { get; set; }
         public int tb_livro_id_livro { get; set; }
         public Nullable<int> tb_turma_aluno_id_turma_aluno { get; set; }
         public Nullable<int> tb_locatario_id_locatario { get; set; }

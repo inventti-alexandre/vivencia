@@ -45,7 +45,7 @@ namespace Software.Basico.DB.Estoque
         }
         public tb_estoque ConsultarLivroPorid(int IdLivro)
         {
-            tb_estoque EstoqueLivro = db.tb_estoque.Where(x => x.livro_id_livro == IdLivro).ToList().Single();
+            tb_estoque EstoqueLivro = db.tb_estoque.Where(x => x.tb_livro_id_livro == IdLivro).ToList().Single();
             return EstoqueLivro;
         }
     }

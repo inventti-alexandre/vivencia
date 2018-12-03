@@ -122,6 +122,12 @@
     <Compile Include="DB\Base\tb_livro.cs">
       <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
     </Compile>
+    <Compile Include="DB\Base\tb_locatario.cs">
+      <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Base\tb_reserva.cs">
+      <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
+    </Compile>
     <Compile Include="DB\Base\tb_turma.cs">
       <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
     </Compile>

@@ -15,8 +15,8 @@ namespace Software.Basico.DB.Base
     public partial class tb_estoque
     {
         public int id_estoque { get; set; }
-        public int livro_id_livro { get; set; }
         public int qtd_livro { get; set; }
+        public int tb_livro_id_livro { get; set; }
     
         public virtual tb_livro tb_livro { get; set; }
     }

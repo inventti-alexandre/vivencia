@@ -32,6 +32,8 @@ namespace Software.Basico.DB.Base
         public virtual DbSet<tb_estoque> tb_estoque { get; set; }
         public virtual DbSet<tb_genero> tb_genero { get; set; }
         public virtual DbSet<tb_livro> tb_livro { get; set; }
+        public virtual DbSet<tb_locatario> tb_locatario { get; set; }
+        public virtual DbSet<tb_reserva> tb_reserva { get; set; }
         public virtual DbSet<tb_turma> tb_turma { get; set; }
         public virtual DbSet<tb_turma_aluno> tb_turma_aluno { get; set; }
         public virtual DbSet<vw_Livro_Autor_Genero> vw_Livro_Autor_Genero { get; set; }

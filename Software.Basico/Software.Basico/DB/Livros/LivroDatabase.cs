@@ -33,7 +33,7 @@ namespace Software.Basico.DB.Livros
             liv.nm_editora = dto.nm_editora;
             liv.nu_isbn = dto.nu_isbn;
             liv.nu_volume = dto.nu_volume;
-            liv.autor_id_autor = dto.autor_id_autor;
+            liv.tb_autor_id_autor = dto.tb_autor_id_autor;
             liv.tb_genero_id_genero = dto.tb_genero_id_genero;
 
             db.SaveChanges();

@@ -17,9 +17,10 @@ namespace Software.Basico.DB.Locatorio
             db.SaveChanges();
         }
 
-        public void AlterarLocatorio(tb_locatorio dto, int idlocatario)
+        public void AlterarLocatorio(tb_locatario dto, int idlocatario)
         {
-            tb_locatario nha = db.id_locatario.Where(x => x.id_locatario == idlocatario).ToList().Single();
+
+            tb_locatario nha = db.tb_locatario.Where(x => x.id_locatario == idlocatario).ToList().Single();
 
             nha.nu_cpf = dto.nu_cpf;
             nha.nm_locatario = dto.nm_locatario;
@@ -30,14 +31,14 @@ namespace Software.Basico.DB.Locatorio
 
         public void RemoverLocatorio(int idlocatorio)
         {
-            var func = new tb_autor { id_locatario = idlocatorio };
+            var func = new tb_locatario { id_locatario = idlocatorio };
             db.Entry(func).State = EntityState.Deleted;
             db.SaveChanges();
         }
 
-        public List<tb_locatariot> ListarLocatario()
+        public List<tb_locatario> ListarLocatario()
         {
-            List<tb_autor> funcList = db.tb_locatario.ToList();
+            List<tb_locatario> funcList = db.tb_locatario.ToList();
             return funcList;
         }
 
@@ -48,4 +49,4 @@ namespace Software.Basico.DB.Locatorio
         }
     }
 }
-}
+

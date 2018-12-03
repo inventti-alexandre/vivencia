@@ -18,17 +18,20 @@ namespace Software.Basico.DB.Base
         public tb_turma_aluno()
         {
             this.tb_emprestimo = new HashSet<tb_emprestimo>();
+            this.tb_reserva = new HashSet<tb_reserva>();
         }
     
         public int id_turma_aluno { get; set; }
         public int nr_chamada { get; set; }
         public int cd_ra { get; set; }
-        public int aluno_id_aluno { get; set; }
-        public int turma_id_turma { get; set; }
+        public int tb_aluno_id_aluno { get; set; }
+        public int tb_turma_id_turma { get; set; }
     
         public virtual tb_aluno tb_aluno { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_emprestimo> tb_emprestimo { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_reserva> tb_reserva { get; set; }
         public virtual tb_turma tb_turma { get; set; }
     }
 }

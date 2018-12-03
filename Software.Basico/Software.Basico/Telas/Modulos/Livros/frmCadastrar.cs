@@ -61,7 +61,7 @@ namespace Software.Basico.Telas.Modulos.Livros
                 tb_livro livro = new tb_livro();
 
                 livro.id_livro = Convert.ToInt32(lblid.Text);
-                livro.autor_id_autor = Convert.ToInt32(cboAutor.SelectedValue);
+                livro.tb_autor_id_autor = Convert.ToInt32(cboAutor.SelectedValue);
                 livro.tb_genero_id_genero = Convert.ToInt32(cboGenero.SelectedValue);
                 livro.ds_condicoes = cboCondicao.SelectedItem.ToString().Trim();
                 livro.ds_idioma = txtIdioma.Text.Trim();
@@ -69,7 +69,7 @@ namespace Software.Basico.Telas.Modulos.Livros
                 livro.ds_subtitulo = txtSubtitulo.Text.Trim();
                 livro.ds_tipo = cboTipo.SelectedItem.ToString().Trim();
                 livro.ds_titulo = txtTitulo.Text.Trim();
-                livro.img_Capa = imgLivro.Image == null ? null : ImagemPlugin.ConverterParaString(imgLivro.Image);
+                //livro.img_Capa = imgLivro.Image == null ? null : ImagemPlugin.ConverterParaString(imgLivro.Image);
                 livro.nm_editora = txtEditora.Text.Trim();
                 livro.nu_isbn = txtISBN.Text.Trim();
                 livro.nu_volume = txtVolume.Text == string.Empty ? 0 : Convert.ToInt32(txtVolume.Text);
@@ -101,7 +101,7 @@ namespace Software.Basico.Telas.Modulos.Livros
             txtPalavrasChaves.Text = livro.ds_palavrasChaves;
             txtSubtitulo.Text = livro.ds_subtitulo;
             txtTitulo.Text = livro.ds_titulo;
-            imgLivro.Image = livro.img_Capa != null ? ImagemPlugin.ConverterParaImagem(livro.img_Capa) : null;
+            // imgLivro.Image = livro.img_Capa != null ? ImagemPlugin.ConverterParaImagem(livro.img_Capa) : null;
             txtEditora.Text = livro.nm_editora;
             txtISBN.Text = livro.nu_isbn;
             txtVolume.Text = livro.nu_volume.ToString();
@@ -121,7 +121,7 @@ namespace Software.Basico.Telas.Modulos.Livros
             {
                 tb_livro livro = new tb_livro();
 
-                livro.autor_id_autor = Convert.ToInt32(cboAutor.SelectedValue);
+                livro.tb_autor_id_autor = Convert.ToInt32(cboAutor.SelectedValue);
                 livro.tb_genero_id_genero = Convert.ToInt32(cboGenero.SelectedValue);
                 livro.ds_condicoes = cboCondicao.SelectedItem.ToString().Trim();
                 livro.ds_idioma = txtIdioma.Text.Trim();
@@ -129,7 +129,7 @@ namespace Software.Basico.Telas.Modulos.Livros
                 livro.ds_subtitulo = txtSubtitulo.Text.Trim();
                 livro.ds_tipo = cboTipo.SelectedItem.ToString().Trim();
                 livro.ds_titulo = txtTitulo.Text.Trim();
-                livro.img_Capa = imgLivro.Image == null ? null : ImagemPlugin.ConverterParaString(imgLivro.Image);
+                //livro.img_Capa = imgLivro.Image == null ? null : ImagemPlugin.ConverterParaString(imgLivro.Image);
                 livro.nm_editora = txtEditora.Text.Trim();
                 livro.nu_isbn = txtISBN.Text.Trim();
                 livro.nu_volume = txtVolume.Text == string.Empty ? 0 : Convert.ToInt32(txtVolume.Text);

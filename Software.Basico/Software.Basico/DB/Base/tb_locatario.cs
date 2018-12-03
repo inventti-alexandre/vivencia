@@ -12,36 +12,22 @@ namespace Software.Basico.DB.Base
     using System;
     using System.Collections.Generic;
     
-    public partial class tb_livro
+    public partial class tb_locatario
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tb_livro()
+        public tb_locatario()
         {
             this.tb_emprestimo = new HashSet<tb_emprestimo>();
-            this.tb_estoque = new HashSet<tb_estoque>();
             this.tb_reserva = new HashSet<tb_reserva>();
         }
     
-        public int id_livro { get; set; }
-        public string ds_titulo { get; set; }
-        public string ds_tipo { get; set; }
-        public string ds_condicoes { get; set; }
-        public string ds_idioma { get; set; }
-        public string nm_editora { get; set; }
-        public int nu_volume { get; set; }
-        public string nu_isbn { get; set; }
-        public string ds_subtitulo { get; set; }
-        public string ds_palavrasChaves { get; set; }
-        public string img_Capa { get; set; }
-        public int tb_genero_id_genero { get; set; }
-        public int tb_autor_id_autor { get; set; }
+        public int id_locatario { get; set; }
+        public string nu_cpf { get; set; }
+        public string nm_locatario { get; set; }
+        public string nu_celular { get; set; }
     
-        public virtual tb_autor tb_autor { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_emprestimo> tb_emprestimo { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_estoque> tb_estoque { get; set; }
-        public virtual tb_genero tb_genero { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_reserva> tb_reserva { get; set; }
     }
