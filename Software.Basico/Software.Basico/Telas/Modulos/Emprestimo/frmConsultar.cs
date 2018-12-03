@@ -45,7 +45,8 @@ namespace Software.Basico.Telas.Modulos.Emprestimo
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-
+            frmCadastrar frm = new frmCadastrar();
+            ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
         }
     }
 }

@@ -161,6 +161,12 @@
     <Compile Include="Telas\Modulos\Autor\frmCadastroAutor.Designer.cs">
       <DependentUpon>frmCadastroAutor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\Modulos\Autor\frmConsultar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Modulos\Autor\frmConsultar.Designer.cs">
+      <DependentUpon>frmConsultar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\Modulos\Editora\frmCadastrar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -264,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Modulos\Autor\frmCadastroAutor.resx">
       <DependentUpon>frmCadastroAutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Modulos\Autor\frmConsultar.resx">
+      <DependentUpon>frmConsultar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Modulos\Editora\frmCadastrar.resx">
       <DependentUpon>frmCadastrar.cs</DependentUpon>

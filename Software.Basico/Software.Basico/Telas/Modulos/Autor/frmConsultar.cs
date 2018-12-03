@@ -8,18 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Software.Basico.Telas.Modulos.Estoque
+namespace Software.Basico.Telas.Modulos.Autor
 {
-    public partial class EstoqueConsultar : UserControl
+    public partial class frmConsultar : UserControl
     {
-        public EstoqueConsultar()
+        public frmConsultar()
         {
             InitializeComponent();
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            EstoqueCadastrar frm = new EstoqueCadastrar();
+            frmCadastroAutor frm = new frmCadastroAutor();
             ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
         }
     }

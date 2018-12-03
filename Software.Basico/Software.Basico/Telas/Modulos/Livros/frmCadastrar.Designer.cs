@@ -57,7 +57,6 @@
             this.txtISBN = new System.Windows.Forms.TextBox();
             this.lblTipo = new System.Windows.Forms.Label();
             this.btnCadastrar = new System.Windows.Forms.Button();
-            this.btnRemover = new System.Windows.Forms.Button();
             this.txtEditora = new System.Windows.Forms.TextBox();
             this.btnAddGenero = new System.Windows.Forms.Button();
             this.btnAddAutor = new System.Windows.Forms.Button();
@@ -73,6 +72,7 @@
             this.lblQNT = new System.Windows.Forms.Label();
             this.lblQNT2 = new System.Windows.Forms.Label();
             this.nudQnt = new System.Windows.Forms.NumericUpDown();
+            this.btnClose = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLivro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQnt)).BeginInit();
@@ -358,7 +358,7 @@
             this.txtIdioma.Name = "txtIdioma";
             this.txtIdioma.Size = new System.Drawing.Size(141, 23);
             this.txtIdioma.TabIndex = 5;
-            this.txtIdioma.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_Text);
+            this.txtIdioma.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdioma_KeyPress);
             // 
             // lblisbn
             // 
@@ -395,27 +395,13 @@
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrar.Font = new System.Drawing.Font("Century Gothic", 14.75F);
             this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnCadastrar.Location = new System.Drawing.Point(370, 401);
+            this.btnCadastrar.Location = new System.Drawing.Point(612, 401);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(227, 32);
             this.btnCadastrar.TabIndex = 12;
             this.btnCadastrar.Text = "Salvar Dados";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
-            // 
-            // btnRemover
-            // 
-            this.btnRemover.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnRemover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemover.Font = new System.Drawing.Font("Century Gothic", 14.75F);
-            this.btnRemover.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnRemover.Location = new System.Drawing.Point(612, 401);
-            this.btnRemover.Name = "btnRemover";
-            this.btnRemover.Size = new System.Drawing.Size(227, 32);
-            this.btnRemover.TabIndex = 13;
-            this.btnRemover.Text = "Cancelar";
-            this.btnRemover.UseVisualStyleBackColor = true;
-            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
             // txtEditora
             // 
@@ -482,7 +468,7 @@
             this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlterar.Font = new System.Drawing.Font("Century Gothic", 14.75F);
             this.btnAlterar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnAlterar.Location = new System.Drawing.Point(370, 401);
+            this.btnAlterar.Location = new System.Drawing.Point(612, 401);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(227, 32);
             this.btnAlterar.TabIndex = 12;
@@ -612,6 +598,24 @@
             0,
             0});
             // 
+            // btnClose
+            // 
+            this.btnClose.BackgroundImage = global::Software.Basico.Properties.Resources.close32;
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.Location = new System.Drawing.Point(881, 19);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(28, 28);
+            this.btnClose.TabIndex = 93;
+            this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // frmCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -620,7 +624,6 @@
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.nudQnt);
             this.Controls.Add(this.btnCadastrar);
-            this.Controls.Add(this.btnRemover);
             this.Controls.Add(this.cboTipo);
             this.Controls.Add(this.cboCondicao);
             this.Controls.Add(this.lblAutor);
@@ -651,6 +654,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnAddAutor);
             this.Controls.Add(this.btnAddGenero);
             this.Controls.Add(this.btnAlterar);
@@ -691,7 +695,6 @@
         private System.Windows.Forms.TextBox txtISBN;
         private System.Windows.Forms.Label lblTipo;
         private System.Windows.Forms.Button btnCadastrar;
-        private System.Windows.Forms.Button btnRemover;
         private System.Windows.Forms.TextBox txtEditora;
         private System.Windows.Forms.Button btnAddGenero;
         private System.Windows.Forms.Button btnAddAutor;
@@ -712,5 +715,6 @@
         private System.Windows.Forms.Label lblQNT;
         private System.Windows.Forms.Label lblQNT2;
         private System.Windows.Forms.NumericUpDown nudQnt;
+        private System.Windows.Forms.Button btnClose;
     }
 }

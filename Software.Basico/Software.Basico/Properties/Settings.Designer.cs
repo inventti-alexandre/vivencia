@@ -33,5 +33,15 @@ namespace Software.Basico.Properties {
                 return ((string)(this["PBTdB"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("connection string=\"Server=nsf.database.windows.net;Database=BibliotecaDB;User Id=" +
+            "PedroHM;\r\nPassword=nsf@2018;App=EntityFramework\"")]
+        public string AzureBiblioteca {
+            get {
+                return ((string)(this["AzureBiblioteca"]));
+            }
+        }
     }
 }

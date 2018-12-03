@@ -10,5 +10,9 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Dsn=LocalHost;description=Banco de Dados Local;server=localhost;uid=root;pwd=1234;database=PBTdB;port=3306</Value>
     </Setting>
+    <Setting Name="AzureBiblioteca" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">connection string="Server=nsf.database.windows.net;Database=BibliotecaDB;User Id=PedroHM;
+Password=nsf@2018;App=EntityFramework"</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

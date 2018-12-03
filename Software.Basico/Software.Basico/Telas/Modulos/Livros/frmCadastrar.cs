@@ -29,7 +29,7 @@ namespace Software.Basico.Telas.Modulos.Livros
           
             btnCadastrar.BackColor = Tema.Segundaria;
             btnAlterar.BackColor = Tema.Segundaria;
-            btnRemover.BackColor = Tema.Segundaria;
+            //btnRemover.BackColor = Tema.Segundaria;
         }
 
         private void CarregarCombos()
@@ -51,9 +51,7 @@ namespace Software.Basico.Telas.Modulos.Livros
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            CadastrarLivro();
-            frmConsultar frm = new frmConsultar();
-            ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
+            CadastrarLivro();            
         }
 
         private void AlterarLivro()
@@ -141,6 +139,15 @@ namespace Software.Basico.Telas.Modulos.Livros
 
                 MessageBox.Show("Livro cadastrado com sucesso!", "Biblioteca",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                txtIdioma.Text = string.Empty;
+                txtPalavrasChaves.Text = string.Empty;
+                txtSubtitulo.Text = string.Empty;
+                txtTitulo.Text = string.Empty;
+                imgLivro.Image = null;
+                txtEditora.Text = string.Empty;
+                txtISBN.Text = string.Empty;
+                txtVolume.Text = string.Empty;
             }
             catch (ArgumentException ex)
             {
@@ -217,6 +224,20 @@ namespace Software.Basico.Telas.Modulos.Livros
         {
             frmConsultar frm = new frmConsultar();
             ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            frmConsultar frm = new frmConsultar();
+            ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
+        }
+
+        private void txtIdioma_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar) || char.IsSeparator(e.KeyChar))
+                e.Handled = false;
+            else
+                e.Handled = true;
         }
     }
 }
