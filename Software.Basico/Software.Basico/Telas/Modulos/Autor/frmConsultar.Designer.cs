@@ -142,16 +142,19 @@
             this.dgvAutor.RowHeadersVisible = false;
             this.dgvAutor.Size = new System.Drawing.Size(627, 264);
             this.dgvAutor.TabIndex = 66;
+            this.dgvAutor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAutor_CellClick);
             // 
             // Column2
             // 
             this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.DataPropertyName = "nm_autor";
             this.Column2.HeaderText = "Nome";
             this.Column2.Name = "Column2";
             // 
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column1.DataPropertyName = "ds_nacionalidade";
             this.Column1.FillWeight = 178.7234F;
             this.Column1.HeaderText = "Nacionalidade";
             this.Column1.Name = "Column1";
@@ -248,6 +251,7 @@
             this.Controls.Add(this.pnTop);
             this.Name = "frmConsultar";
             this.Size = new System.Drawing.Size(915, 500);
+            this.Load += new System.EventHandler(this.frmConsultar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAutor)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -264,8 +268,6 @@
         private System.Windows.Forms.Button btnRemover;
         private System.Windows.Forms.DataGridView dgvAutor;
         private System.Windows.Forms.Panel pnTop;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
@@ -273,5 +275,7 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtNacionalidade;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }
