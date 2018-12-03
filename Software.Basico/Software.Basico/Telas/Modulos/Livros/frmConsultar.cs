@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Software.Basico.DB.Livros;
 using Software.Basico.DB.Base;
 using Software.Basico.DB.Autor;
+using Nsf._2018.Modulo3.App.Plugin;
 
 namespace Software.Basico.Telas.Modulos.Livros
 {
@@ -91,6 +92,11 @@ namespace Software.Basico.Telas.Modulos.Livros
                 MessageBox.Show($"Você deve selecionar um livro para remover!", "Biblioteca",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void dgvLivros_CurrentCellChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
