@@ -25,7 +25,7 @@ namespace Software.Basico.APIs.Email
             mail.From = new MailAddress(dto.RemetenteEmail, dto.RemetenteNome);
             mail.To.Add(new MailAddress(dto.DestinatarioEmail, dto.DestinatarioNome));
             mail.Subject = dto.Assunto;
-            mail.Body = Resources.htmlEmail;
+            mail.Body = dto.Mensagem;
             mail.IsBodyHtml = true;
             mail.Priority = MailPriority.High;
 
