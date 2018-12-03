@@ -15,6 +15,21 @@ namespace Software.Basico.Telas.Modulos.Autor
         public frmConsultar()
         {
             InitializeComponent();
+            TemaTela();
+        }
+
+        private void TemaTela()
+        {
+            pnTop.BackColor = Tema.Primaria;
+            btnAlterar.BackColor = Tema.Segundaria;
+            btnCadastrar.BackColor = Tema.Segundaria;
+            btnRemover.BackColor = Tema.Segundaria;
+            btnListar.BackColor = Tema.Segundaria;
+
+            btnAlterar.ForeColor = Tema.Texto;
+            btnCadastrar.ForeColor = Tema.Texto;
+            btnRemover.ForeColor = Tema.Texto;
+            btnListar.ForeColor = Tema.Texto;
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)

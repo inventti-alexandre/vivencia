@@ -52,6 +52,10 @@ namespace Software.Basico.Telas.Modulos.Autor
 
                 MessageBox.Show("Autor cadastrado com sucesso!", "Biblioteca",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                txtAutor.Clear();
+                txtNomeCompleto.Clear();
+                txtNascionalidade.Clear();
             }
             catch (ArgumentException ex)
             {
@@ -67,9 +71,8 @@ namespace Software.Basico.Telas.Modulos.Autor
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
-            txtAutor.Clear();
-            txtNomeCompleto.Clear();
-            txtNascionalidade.Clear();
+            frmConsultar frm = new frmConsultar();
+            ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
         }
 
         private void txtNomeCompleto_KeyPress(object sender, KeyPressEventArgs e)

@@ -75,7 +75,7 @@ namespace Software.Basico.Telas
         
         private void btnAutores_Click(object sender, EventArgs e)
         {
-            Modulos.Autor.frmCadastroAutor frm = new Modulos.Autor.frmCadastroAutor();
+            Modulos.Autor.frmConsultar frm = new Modulos.Autor.frmConsultar();
             CarregarPanel(frm);
 
             telaSel = 4;
