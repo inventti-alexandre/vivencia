@@ -92,5 +92,10 @@ namespace Software.Basico.Telas.Modulos.Livros
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void frmConsultar_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

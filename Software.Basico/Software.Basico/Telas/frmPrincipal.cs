@@ -35,6 +35,8 @@ namespace Software.Basico.Telas
             ClimaModel clima = new ClimaModel();
             TempoResponse tempo = clima.AdivisorTempo("São Paulo");
 
+            if (tempo == null)
+                return;
 
             Umidade.Text = $"Umidade: {tempo.data.humidity}";
             Temperatura.Text = $"{tempo.data.temperature} Cº";
@@ -156,7 +158,7 @@ namespace Software.Basico.Telas
                 logo2.Visible = true;
 
             //Cores dos Panels segundo o tema
-            this.BackColor = Tema.Principal;
+            //this.BackColor = Tema.Principal;
             panel1.BackColor = Tema.Primaria;
             panel3.BackColor = Tema.Primaria;
             panel2.BackColor = Tema.Segundaria;

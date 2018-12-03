@@ -42,13 +42,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtPalavraChave = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imgLivro = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTitulo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtAutor = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLivros)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLivro)).BeginInit();
             this.SuspendLayout();
             // 
             // pnTop
@@ -204,16 +204,16 @@
             this.label2.TabIndex = 56;
             this.label2.Text = "Palavras Chave";
             // 
-            // pictureBox1
+            // imgLivro
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::Software.Basico.Properties.Resources.cuentos;
-            this.pictureBox1.Location = new System.Drawing.Point(33, 249);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(259, 208);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 60;
-            this.pictureBox1.TabStop = false;
+            this.imgLivro.BackColor = System.Drawing.Color.Transparent;
+            this.imgLivro.Image = global::Software.Basico.Properties.Resources.cuentos;
+            this.imgLivro.Location = new System.Drawing.Point(33, 249);
+            this.imgLivro.Name = "imgLivro";
+            this.imgLivro.Size = new System.Drawing.Size(259, 208);
+            this.imgLivro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgLivro.TabIndex = 60;
+            this.imgLivro.TabStop = false;
             // 
             // label4
             // 
@@ -259,7 +259,7 @@
             this.Controls.Add(this.txtTitulo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.imgLivro);
             this.Controls.Add(this.txtPalavraChave);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -271,8 +271,9 @@
             this.Controls.Add(this.pnTop);
             this.Name = "frmConsultar";
             this.Size = new System.Drawing.Size(915, 500);
+            this.Load += new System.EventHandler(this.frmConsultar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLivros)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLivro)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,7 +290,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtPalavraChave;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox imgLivro;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtTitulo;
         private System.Windows.Forms.Label label3;

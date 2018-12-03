@@ -34,6 +34,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +58,7 @@
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(204, 32);
             this.btnRemover.TabIndex = 30;
-            this.btnRemover.Text = "Cancelar";
+            this.btnRemover.Text = "Limpar";
             this.btnRemover.UseVisualStyleBackColor = true;
             // 
             // btnCadastrar
@@ -101,10 +102,19 @@
             this.label2.TabIndex = 38;
             this.label2.Text = "Cadastre uma nova editora de livros";
             // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(915, 12);
+            this.panel1.TabIndex = 47;
+            // 
             // frmCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnRemover);
@@ -113,6 +123,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmCadastrar";
             this.Size = new System.Drawing.Size(915, 500);
+            this.Load += new System.EventHandler(this.frmCadastrar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -127,5 +138,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

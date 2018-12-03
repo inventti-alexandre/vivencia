@@ -30,6 +30,10 @@ namespace Software.Basico.Telas.Modulos.Livros
             btnCadastrar.BackColor = Tema.Segundaria;
             btnAlterar.BackColor = Tema.Segundaria;
             //btnRemover.BackColor = Tema.Segundaria;
+
+            btnAlterar.ForeColor = Tema.Texto;
+            btnCadastrar.ForeColor = Tema.Texto;
+         
         }
 
         private void CarregarCombos()
@@ -245,7 +249,7 @@ namespace Software.Basico.Telas.Modulos.Livros
 
         }
 
-        private void cboTipo_SelectedIndexChanged(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

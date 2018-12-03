@@ -95,6 +95,7 @@
             this.label1.Size = new System.Drawing.Size(270, 36);
             this.label1.TabIndex = 45;
             this.label1.Text = "Controle de Livros";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel2
             // 
@@ -461,7 +462,7 @@
             this.cboTipo.Name = "cboTipo";
             this.cboTipo.Size = new System.Drawing.Size(170, 25);
             this.cboTipo.TabIndex = 11;
-            this.cboTipo.SelectedIndexChanged += new System.EventHandler(this.cboTipo_SelectedIndexChanged);
+            //this.cboTipo.SelectedIndexChanged += new System.EventHandler(this.cboTipo_SelectedIndexChanged);
             // 
             // btnAlterar
             // 

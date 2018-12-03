@@ -24,8 +24,14 @@ namespace Software.Basico.Telas.Modulos.Estoque
 
             btnCadastrar.BackColor = Tema.Segundaria;
             btnAlterar.BackColor = Tema.Segundaria;
-           
-                btnRemover.BackColor = Tema.Segundaria;
+            btnRemover.BackColor = Tema.Segundaria;
+            btnListar.BackColor = Tema.Segundaria;
+            //btnListar.Font = Tema.Terciaria; 
+
+            btnAlterar.ForeColor = Tema.Texto;
+            btnCadastrar.ForeColor = Tema.Texto;
+            btnRemover.ForeColor = Tema.Texto;
+            btnListar.ForeColor = Tema.Texto;
         }
 
 
