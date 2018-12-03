@@ -22,5 +22,20 @@ namespace Software.Basico.Telas.Modulos.Autor
             frmCadastroAutor frm = new frmCadastroAutor();
             ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
         }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

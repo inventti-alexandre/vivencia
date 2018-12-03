@@ -244,5 +244,10 @@ namespace Software.Basico.Telas.Modulos.Livros
         {
 
         }
+
+        private void cboTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
