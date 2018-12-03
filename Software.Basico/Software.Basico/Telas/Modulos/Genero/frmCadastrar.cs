@@ -18,10 +18,24 @@ namespace Software.Basico.Telas.Modulos.Genero
         {
             InitializeComponent();
         }
-        private void Tema()
+        private void Tematela()
         {
-            btnCadastrar.BackColor = Tema
-        }
+            btnCadastrar.BackColor = Tema.Segundaria;
+
+            pnTop.BackColor = Tema.Primaria;
+
+            btnAlterar.BackColor = Tema.Segundaria;
+            btnCadastrar.BackColor = Tema.Segundaria;
+            btnRemover.BackColor = Tema.Segundaria;
+            btnListar.BackColor = Tema.Segundaria;
+
+            btnAlterar.ForeColor = Tema.Texto;
+            btnCadastrar.ForeColor = Tema.Texto;
+            btnRemover.ForeColor = Tema.Texto;
+            btnListar.ForeColor = Tema.Texto;
+        
+
+    }
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             CadastrarGenero();
