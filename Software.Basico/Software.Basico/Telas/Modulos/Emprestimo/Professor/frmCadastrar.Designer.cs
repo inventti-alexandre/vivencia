@@ -47,6 +47,9 @@
             this.txtCelular = new System.Windows.Forms.MaskedTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtEditora = new System.Windows.Forms.TextBox();
+            this.txtGenero = new System.Windows.Forms.TextBox();
+            this.txtAutor = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnCadastrar
@@ -55,7 +58,7 @@
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrar.Font = new System.Drawing.Font("Century Gothic", 14.75F);
             this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnCadastrar.Location = new System.Drawing.Point(597, 311);
+            this.btnCadastrar.Location = new System.Drawing.Point(597, 366);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(216, 32);
             this.btnCadastrar.TabIndex = 110;
@@ -69,7 +72,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 14.75F);
             this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnCancelar.Location = new System.Drawing.Point(597, 349);
+            this.btnCancelar.Location = new System.Drawing.Point(597, 404);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(216, 32);
             this.btnCancelar.TabIndex = 111;
@@ -77,20 +80,11 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // txtGenero
-            //// 
-            //this.txtGenero.Enabled = false;
-            //this.txtGenero.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            //this.txtGenero.Location = new System.Drawing.Point(678, 286);
-            //this.txtGenero.Name = "txtGenero";
-            //this.txtGenero.Size = new System.Drawing.Size(131, 23);
-            //this.txtGenero.TabIndex = 108;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(675, 260);
+            this.label9.Location = new System.Drawing.Point(651, 271);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(69, 21);
             this.label9.TabIndex = 121;
@@ -99,7 +93,7 @@
             // txtNome
             // 
             this.txtNome.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(111, 177);
+            this.txtNome.Location = new System.Drawing.Point(110, 219);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(234, 23);
             this.txtNome.TabIndex = 105;
@@ -108,7 +102,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(111, 295);
+            this.label8.Location = new System.Drawing.Point(111, 350);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(181, 21);
             this.label8.TabIndex = 120;
@@ -124,15 +118,6 @@
             this.label6.TabIndex = 119;
             this.label6.Text = "CPF";
             // 
-            // txtEditora
-            // 
-            //this.txtEditora.Enabled = false;
-            //this.txtEditora.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            //this.txtEditora.Location = new System.Drawing.Point(531, 286);
-            //this.txtEditora.Name = "txtEditora";
-            //this.txtEditora.Size = new System.Drawing.Size(131, 23);
-            //this.txtEditora.TabIndex = 104;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -147,7 +132,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(538, 260);
+            this.label7.Location = new System.Drawing.Point(514, 271);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(66, 21);
             this.label7.TabIndex = 118;
@@ -157,7 +142,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(111, 216);
+            this.label3.Location = new System.Drawing.Point(111, 271);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 21);
             this.label3.TabIndex = 117;
@@ -168,25 +153,16 @@
             this.cboLivro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboLivro.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboLivro.FormattingEnabled = true;
-            this.cboLivro.Location = new System.Drawing.Point(111, 241);
+            this.cboLivro.Location = new System.Drawing.Point(111, 296);
             this.cboLivro.Name = "cboLivro";
             this.cboLivro.Size = new System.Drawing.Size(234, 25);
             this.cboLivro.TabIndex = 101;
-            // 
-            // txtAutor
-            // 
-            //this.txtAutor.Enabled = false;
-            //this.txtAutor.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            //this.txtAutor.Location = new System.Drawing.Point(384, 286);
-            //this.txtAutor.Name = "txtAutor";
-            //this.txtAutor.Size = new System.Drawing.Size(131, 23);
-            //this.txtAutor.TabIndex = 102;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(394, 260);
+            this.label4.Location = new System.Drawing.Point(365, 271);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 21);
             this.label4.TabIndex = 115;
@@ -195,7 +171,7 @@
             // dtpDevolucao
             // 
             this.dtpDevolucao.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDevolucao.Location = new System.Drawing.Point(111, 321);
+            this.dtpDevolucao.Location = new System.Drawing.Point(111, 376);
             this.dtpDevolucao.Name = "dtpDevolucao";
             this.dtpDevolucao.Size = new System.Drawing.Size(289, 23);
             this.dtpDevolucao.TabIndex = 109;
@@ -221,7 +197,7 @@
             // txtCPF
             // 
             this.txtCPF.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtCPF.Location = new System.Drawing.Point(362, 177);
+            this.txtCPF.Location = new System.Drawing.Point(361, 219);
             this.txtCPF.Mask = "999,999,999-99";
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(104, 23);
@@ -241,7 +217,7 @@
             // txtCelular
             // 
             this.txtCelular.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtCelular.Location = new System.Drawing.Point(480, 176);
+            this.txtCelular.Location = new System.Drawing.Point(479, 218);
             this.txtCelular.Mask = "(99) 99999-9999";
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(102, 23);
@@ -261,10 +237,34 @@
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(598, 177);
+            this.txtEmail.Location = new System.Drawing.Point(597, 219);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(215, 23);
             this.txtEmail.TabIndex = 105;
+            // 
+            // txtEditora
+            // 
+            this.txtEditora.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEditora.Location = new System.Drawing.Point(506, 295);
+            this.txtEditora.Name = "txtEditora";
+            this.txtEditora.Size = new System.Drawing.Size(135, 23);
+            this.txtEditora.TabIndex = 105;
+            // 
+            // txtGenero
+            // 
+            this.txtGenero.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGenero.Location = new System.Drawing.Point(654, 295);
+            this.txtGenero.Name = "txtGenero";
+            this.txtGenero.Size = new System.Drawing.Size(135, 23);
+            this.txtGenero.TabIndex = 105;
+            // 
+            // txtAutor
+            // 
+            this.txtAutor.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAutor.Location = new System.Drawing.Point(358, 295);
+            this.txtAutor.Name = "txtAutor";
+            this.txtAutor.Size = new System.Drawing.Size(135, 23);
+            this.txtAutor.TabIndex = 105;
             // 
             // frmCadastrar
             // 
@@ -275,6 +275,9 @@
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtGenero);
+            this.Controls.Add(this.txtAutor);
+            this.Controls.Add(this.txtEditora);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label2);
@@ -291,8 +294,6 @@
             this.Controls.Add(this.label1);
             this.Name = "frmCadastrar";
             this.Size = new System.Drawing.Size(915, 500);
-            //this.Load += new System.EventHandler(this.frmCadastrar_Load);
-            //((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,5 +320,8 @@
         private System.Windows.Forms.MaskedTextBox txtCelular;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtEditora;
+        private System.Windows.Forms.TextBox txtGenero;
+        private System.Windows.Forms.TextBox txtAutor;
     }
 }
