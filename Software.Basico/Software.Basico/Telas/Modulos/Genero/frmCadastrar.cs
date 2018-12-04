@@ -19,7 +19,7 @@ namespace Software.Basico.Telas.Modulos.Genero
             InitializeComponent();
             TemaTela();
             CarregarGrid();
-            
+
         }
         public void CarregarGrid()
         {
@@ -30,17 +30,17 @@ namespace Software.Basico.Telas.Modulos.Genero
 
 
         }
-    
+
         private void Tematela()
         {
             btnCadastrar.BackColor = Tema.Segundaria;
 
             pnTop.BackColor = Tema.Primaria;
-            
+
             btnCadastrar.BackColor = Tema.Segundaria;
-            
+
             btnCadastrar.ForeColor = Tema.Texto;
-        
+
 
         }
 
@@ -49,11 +49,9 @@ namespace Software.Basico.Telas.Modulos.Genero
             pnTop.BackColor = Tema.Primaria;
             btnCadastrar.BackColor = Tema.Segundaria;
             btnRemover.BackColor = Tema.Segundaria;
-            btnRetornar.BackColor = Tema.Segundaria;
-            
+           
             btnCadastrar.ForeColor = Tema.Texto;
             btnRemover.ForeColor = Tema.Texto;
-            btnRetornar.ForeColor = Tema.Texto;
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -64,11 +62,11 @@ namespace Software.Basico.Telas.Modulos.Genero
         private void CadastrarGenero()
         {
             try
-            { 
-                tb_genero genero = new tb_genero ();
+            {
+                tb_genero genero = new tb_genero();
 
                 genero.nm_genero = txtGenero.Text.Trim();
-                
+
 
                 GeneroBusiness business = new GeneroBusiness();
                 business.CadastrarGenero(genero);
@@ -95,12 +93,12 @@ namespace Software.Basico.Telas.Modulos.Genero
 
         private void txtCadastroDeGenero_TextChanged(object sender, EventArgs e)
         {
-          
+
         }
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
-          
+
         }
 
         private void frmCadastrar_Load(object sender, EventArgs e)
@@ -112,6 +110,13 @@ namespace Software.Basico.Telas.Modulos.Genero
         {
             Livros.frmCadastrar frm = new Livros.frmCadastrar();
             ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Livros.frmCadastrar frm = new Livros.frmCadastrar();
+            ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
+
         }
     }
 }

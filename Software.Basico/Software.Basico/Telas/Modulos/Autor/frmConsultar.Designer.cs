@@ -45,8 +45,10 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtNacionalidade = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAutor)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAlterar
@@ -55,7 +57,7 @@
             this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlterar.Font = new System.Drawing.Font("Century Gothic", 14.75F);
             this.btnAlterar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnAlterar.Location = new System.Drawing.Point(282, 461);
+            this.btnAlterar.Location = new System.Drawing.Point(278, 427);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(160, 32);
             this.btnAlterar.TabIndex = 2;
@@ -69,7 +71,7 @@
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrar.Font = new System.Drawing.Font("Century Gothic", 14.75F);
             this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnCadastrar.Location = new System.Drawing.Point(448, 461);
+            this.btnCadastrar.Location = new System.Drawing.Point(444, 427);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(160, 32);
             this.btnCadastrar.TabIndex = 3;
@@ -83,7 +85,7 @@
             this.btnListar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnListar.Font = new System.Drawing.Font("Century Gothic", 14.75F);
             this.btnListar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnListar.Location = new System.Drawing.Point(134, 461);
+            this.btnListar.Location = new System.Drawing.Point(130, 427);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(142, 32);
             this.btnListar.TabIndex = 1;
@@ -97,7 +99,7 @@
             this.btnRemover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemover.Font = new System.Drawing.Font("Century Gothic", 14.75F);
             this.btnRemover.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnRemover.Location = new System.Drawing.Point(614, 461);
+            this.btnRemover.Location = new System.Drawing.Point(610, 427);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(147, 32);
             this.btnRemover.TabIndex = 4;
@@ -127,7 +129,7 @@
             this.Column2,
             this.Column1});
             this.dgvAutor.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvAutor.Location = new System.Drawing.Point(134, 191);
+            this.dgvAutor.Location = new System.Drawing.Point(130, 157);
             this.dgvAutor.MultiSelect = false;
             this.dgvAutor.Name = "dgvAutor";
             this.dgvAutor.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
@@ -186,7 +188,7 @@
             this.panel2.Controls.Add(this.txtNome);
             this.panel2.Controls.Add(this.txtNacionalidade);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(134, 121);
+            this.panel2.Location = new System.Drawing.Point(130, 87);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(627, 64);
             this.panel2.TabIndex = 124;
@@ -194,10 +196,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(43, 18);
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(8, 19);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(113, 19);
+            this.label4.Size = new System.Drawing.Size(145, 24);
             this.label4.TabIndex = 71;
             this.label4.Text = "Pesquisar Por:";
             // 
@@ -205,7 +207,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(178, 6);
+            this.label3.Location = new System.Drawing.Point(168, 8);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 21);
             this.label3.TabIndex = 72;
@@ -231,16 +233,27 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(367, 6);
+            this.label2.Location = new System.Drawing.Point(348, 8);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(126, 21);
             this.label2.TabIndex = 72;
             this.label2.Text = "Nacionalidade";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Software.Basico.Properties.Resources.voltar;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 468);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(41, 29);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 125;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmConsultar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAlterar);
@@ -255,6 +268,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvAutor)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,5 +291,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

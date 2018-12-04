@@ -17,6 +17,7 @@ namespace Software.Basico.Telas.Modulos.Autor
         public frmCadastroAutor()
         {
             InitializeComponent();
+            TemaTela();
         }
         private void TemaTela()
         {
@@ -24,7 +25,10 @@ namespace Software.Basico.Telas.Modulos.Autor
 
             btnCadastrar.BackColor = Tema.Segundaria;
             btnRemover.BackColor = Tema.Segundaria;
-            //btnRemover.BackColor = Tema.Segundaria;
+
+            btnCadastrar.ForeColor = Tema.Texto;
+            btnRemover.ForeColor = Tema.Texto;
+
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)

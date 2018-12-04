@@ -16,6 +16,16 @@ namespace Software.Basico.Telas.SubTelas
         public frmHome()
         {
             InitializeComponent();
+            TemaTela();
+        }
+        private void TemaTela()
+        {
+            pnTop.BackColor = Tema.Primaria;
+        }
+
+        private void frmHome_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

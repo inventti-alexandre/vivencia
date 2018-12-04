@@ -39,7 +39,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pnTop = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -159,10 +161,21 @@
             this.pnTop.Size = new System.Drawing.Size(915, 12);
             this.pnTop.TabIndex = 47;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Software.Basico.Properties.Resources.voltar;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 471);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(41, 29);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 126;
+            this.pictureBox2.TabStop = false;
+            // 
             // frmCadastroAutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pnTop);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtNascionalidade);
@@ -178,6 +191,7 @@
             this.Size = new System.Drawing.Size(915, 500);
             this.Load += new System.EventHandler(this.frmCadastroAutor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,5 +210,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel pnTop;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

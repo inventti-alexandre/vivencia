@@ -31,16 +31,22 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Professor
             btnCadastrar.BackColor = Tema.Segundaria;
             btnRemover.BackColor = Tema.Segundaria;
             btnListar.BackColor = Tema.Segundaria;
-            btnRetornar.BackColor = Tema.Segundaria;
-
+           
             btnVisualizar.ForeColor = Tema.Texto;
             btnCadastrar.ForeColor = Tema.Texto;
             btnRemover.ForeColor = Tema.Texto;
             btnListar.ForeColor = Tema.Texto;
         }
 
-        private void btnRetornar_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
+            frmMenu frm = new frmMenu();
+          ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
+        }
+
+        private void pictureBox1_Click_2(object sender, EventArgs e)
+        {
+
             frmMenu frm = new frmMenu();
             ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
         }
