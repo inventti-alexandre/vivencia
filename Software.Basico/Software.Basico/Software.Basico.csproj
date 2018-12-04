@@ -107,7 +107,7 @@
     <Compile Include="DB\Base\tb_autor.cs">
       <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\Base\tb_Curso.cs">
+    <Compile Include="DB\Base\tb_curso.cs">
       <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Base\tb_emprestimo.cs">
@@ -385,7 +385,22 @@
       <DependentUpon>BibliotecaDBAzure.edmx</DependentUpon>
       <LastGenOutput>BibliotecaDBAzure.cs</LastGenOutput>
     </Content>
-    <None Include="Resources\htmlEmailAtrasado.txt" />
+    <None Include="Resources\TemaDark2.png" />
+    <None Include="Resources\TemaDark1.png" />
+    <None Include="Resources\TemaLight1.png" />
+    <None Include="Resources\TemaLight.png" />
+    <None Include="Resources\TemaDark.png" />
+    <None Include="Resources\studying.png" />
+    <None Include="Resources\201570.png" />
+    <None Include="Resources\201603.png" />
+    <None Include="Resources\201596.png" />
+    <None Include="Resources\201586-education.png" />
+    <None Include="Resources\teacher.jpg" />
+    <None Include="Resources\teste de prof.jpg" />
+    <None Include="Resources\teste.png" />
+    <None Include="Resources\student.png" />
+    <None Include="Resources\professores.png" />
+    <None Include="Resources\voltar.png" />
     <None Include="Resources\htmlEmail5Dia.txt" />
     <None Include="Resources\bell-icon_34488.png" />
     <None Include="Resources\setas-preta-png--256x200.png" />

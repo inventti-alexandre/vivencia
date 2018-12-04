@@ -113,9 +113,9 @@ namespace Software.Basico.Telas.Modulos.Livros
             btnCadastrar.Visible = false;
             lblid.Visible = true;
             lblidTxt.Visible = true;
-            lblQNT.Visible = false;
-            lblQNT2.Visible = false;
-            nudQnt.Visible = false;
+            //lblQNT.Visible = false;
+            //lblQNT2.Visible = false;
+            //nudQnt.Visible = false;
         }
 
         private void CadastrarLivro()
@@ -138,7 +138,7 @@ namespace Software.Basico.Telas.Modulos.Livros
                 livro.nu_volume = txtVolume_controle_de_livros.Text == string.Empty ? 0 : Convert.ToInt32(txtVolume_controle_de_livros.Text);
 
                 LivroBusiness business = new LivroBusiness();
-                business.CadastrarLivro(livro, Convert.ToInt32(nudQnt.Value));
+                //business.CadastrarLivro(livro, Convert.ToInt32(nudQnt.Value));
 
                 MessageBox.Show("Livro cadastrado com sucesso!", "Biblioteca",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -241,6 +241,17 @@ namespace Software.Basico.Telas.Modulos.Livros
                 e.Handled = false;
             else
                 e.Handled = true;
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            frmConsultar frm = new frmConsultar();
+            ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
+        }
+
+        private void frmCadastrar_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

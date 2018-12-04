@@ -31,7 +31,7 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Aluno
             btnCadastrar.BackColor = Tema.Segundaria;
             btnRemover.BackColor = Tema.Segundaria;
             btnListar.BackColor = Tema.Segundaria;
-            btnRetornar.BackColor = Tema.Segundaria;
+     
 
             btnVisualizar.ForeColor = Tema.Texto;
             btnCadastrar.ForeColor = Tema.Texto;
@@ -40,6 +40,17 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Aluno
         }
 
         private void btnRetornar_Click(object sender, EventArgs e)
+        {
+            frmMenu frm = new frmMenu();
+            ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
+        }
+
+        private void frmConsultar_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
             frmMenu frm = new frmMenu();
             ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
