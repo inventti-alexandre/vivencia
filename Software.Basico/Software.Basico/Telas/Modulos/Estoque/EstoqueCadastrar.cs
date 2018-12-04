@@ -19,8 +19,11 @@ namespace Software.Basico.Telas.Modulos.Estoque
         {
             InitializeComponent();
             CarregarCombos();
-           
+            TemaTela();
+
         }
+
+
         private void CarregarCombos()
         {
             LivroBusiness asbusiness = new LivroBusiness();
@@ -30,6 +33,19 @@ namespace Software.Basico.Telas.Modulos.Estoque
             txtlivro.SelectedItem = nameof(tb_livro.id_livro);
             txtlivro.DataSource = asbusiness;
         }
+
+        private void TemaTela()
+        {
+            pnTop.BackColor = Tema.Primaria;
+            btnCadastrar.BackColor = Tema.Segundaria;
+            btnRemover.BackColor = Tema.Segundaria;
+
+            btnRemover.ForeColor = Tema.Texto;
+            btnCadastrar.ForeColor = Tema.Texto;
+
+        }
+
+
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
@@ -50,7 +66,7 @@ namespace Software.Basico.Telas.Modulos.Estoque
                 MessageBox.Show("Produto Cadastrado com sucesso", "Biblioteca", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 numericUpDown1.Text.DefaultIfEmpty();
             }
-            catch(ArgumentException ex)
+            catch (ArgumentException ex)
             {
                 MessageBox.Show(ex.Message, "Biblioteca",
                   MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -60,7 +76,7 @@ namespace Software.Basico.Telas.Modulos.Estoque
                 MessageBox.Show($"Ocorreu um erro nhao identificado: {ex.Message}", "Biblioteca",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-           
+
 
         }
 
@@ -75,6 +91,11 @@ namespace Software.Basico.Telas.Modulos.Estoque
         }
 
         private void EstoqueCadastrar_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRemover_Click(object sender, EventArgs e)
         {
 
         }

@@ -15,9 +15,19 @@ namespace Software.Basico.Telas.SubTelas
         public frmSobreNos()
         {
             InitializeComponent();
+            TemaTela();
+        }
+        private void TemaTela()
+        {
+            pnTop.BackColor = Tema.Primaria;
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmSobreNos_Load(object sender, EventArgs e)
         {
 
         }

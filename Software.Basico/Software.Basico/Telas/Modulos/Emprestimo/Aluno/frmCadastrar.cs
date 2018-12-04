@@ -20,8 +20,7 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Aluno
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            frmConsultar frm = new frmConsultar();
-            ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
+           
         }
 
         private void TemaTela()
@@ -32,6 +31,17 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Aluno
 
             btnCancelar.ForeColor = Tema.Texto;
             btnCadastrar.ForeColor = Tema.Texto;
+        }
+
+        private void frmCadastrar_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            frmConsultar frm = new frmConsultar();
+            ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
         }
     }
 }

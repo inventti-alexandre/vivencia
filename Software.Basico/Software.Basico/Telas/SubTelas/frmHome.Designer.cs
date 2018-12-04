@@ -59,6 +59,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmHome";
             this.Size = new System.Drawing.Size(915, 500);
+            this.Load += new System.EventHandler(this.frmHome_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

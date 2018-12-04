@@ -15,8 +15,24 @@ namespace Software.Basico.Telas.SubTelas
         public frmTema()
         {
             InitializeComponent();
+            TemaTela();
+            Arredondar();
         }
 
+        private void Arredondar()
+        {
+            Gp gp = new Gp();
+
+            btndark.Region = new Region(gp.graphicsPath(btndark));
+            btnlight.Region = new Region(gp.graphicsPath(btnlight));
+            
+
+        }
+
+        private void TemaTela()
+        {
+            pnTop.BackColor = Tema.Primaria;
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             Tema cor = new Tema();
