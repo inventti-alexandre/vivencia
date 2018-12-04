@@ -48,6 +48,11 @@ namespace Software.Basico.DB.Autor
             return func;
         }
 
+        public List<tb_autor> ListarFiltroAutor(string autor)
+        {
+            List<tb_autor> aut = db.tb_autor.Where(x => x.nm_autor.Contains(autor)).ToList();
+            return aut;
+        }
 
         public List<tb_autor> ListarFiltroNacionalidade(string nacionalidade)
         {
