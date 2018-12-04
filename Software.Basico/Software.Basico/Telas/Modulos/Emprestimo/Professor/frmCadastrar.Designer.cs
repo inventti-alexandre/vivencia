@@ -30,17 +30,14 @@
         {
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.txtGenero = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtEditora = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cboLivro = new System.Windows.Forms.ComboBox();
-            this.txtAutor = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dtpDevolucao = new System.Windows.Forms.DateTimePicker();
             this.pnTop = new System.Windows.Forms.Panel();
@@ -50,6 +47,9 @@
             this.txtCelular = new System.Windows.Forms.MaskedTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.cboautor = new System.Windows.Forms.ComboBox();
+            this.cboeditora = new System.Windows.Forms.ComboBox();
+            this.cbogenero = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnCadastrar
@@ -64,6 +64,7 @@
             this.btnCadastrar.TabIndex = 110;
             this.btnCadastrar.Text = "Salvar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // btnCancelar
             // 
@@ -79,20 +80,11 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // txtGenero
-            // 
-            this.txtGenero.Enabled = false;
-            this.txtGenero.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGenero.Location = new System.Drawing.Point(678, 286);
-            this.txtGenero.Name = "txtGenero";
-            this.txtGenero.Size = new System.Drawing.Size(131, 23);
-            this.txtGenero.TabIndex = 108;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(675, 260);
+            this.label9.Location = new System.Drawing.Point(665, 261);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(69, 21);
             this.label9.TabIndex = 121;
@@ -120,26 +112,17 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(365, 195);
+            this.label6.Location = new System.Drawing.Point(356, 194);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 21);
             this.label6.TabIndex = 119;
             this.label6.Text = "CPF";
             // 
-            // txtEditora
-            // 
-            this.txtEditora.Enabled = false;
-            this.txtEditora.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEditora.Location = new System.Drawing.Point(531, 286);
-            this.txtEditora.Name = "txtEditora";
-            this.txtEditora.Size = new System.Drawing.Size(131, 23);
-            this.txtEditora.TabIndex = 104;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(114, 195);
+            this.label5.Location = new System.Drawing.Point(107, 195);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 21);
             this.label5.TabIndex = 116;
@@ -149,7 +132,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(538, 260);
+            this.label7.Location = new System.Drawing.Point(512, 260);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(66, 21);
             this.label7.TabIndex = 118;
@@ -172,23 +155,14 @@
             this.cboLivro.FormattingEnabled = true;
             this.cboLivro.Location = new System.Drawing.Point(107, 285);
             this.cboLivro.Name = "cboLivro";
-            this.cboLivro.Size = new System.Drawing.Size(261, 25);
+            this.cboLivro.Size = new System.Drawing.Size(234, 25);
             this.cboLivro.TabIndex = 101;
-            // 
-            // txtAutor
-            // 
-            this.txtAutor.Enabled = false;
-            this.txtAutor.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAutor.Location = new System.Drawing.Point(384, 286);
-            this.txtAutor.Name = "txtAutor";
-            this.txtAutor.Size = new System.Drawing.Size(131, 23);
-            this.txtAutor.TabIndex = 102;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(394, 260);
+            this.label4.Location = new System.Drawing.Point(356, 260);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 21);
             this.label4.TabIndex = 115;
@@ -234,7 +208,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(483, 194);
+            this.label2.Location = new System.Drawing.Point(472, 194);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 21);
             this.label2.TabIndex = 119;
@@ -254,7 +228,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(601, 195);
+            this.label10.Location = new System.Drawing.Point(590, 194);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(56, 21);
             this.label10.TabIndex = 116;
@@ -268,15 +242,47 @@
             this.txtEmail.Size = new System.Drawing.Size(215, 23);
             this.txtEmail.TabIndex = 105;
             // 
+            // cboautor
+            // 
+            this.cboautor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboautor.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboautor.FormattingEnabled = true;
+            this.cboautor.Location = new System.Drawing.Point(360, 285);
+            this.cboautor.Name = "cboautor";
+            this.cboautor.Size = new System.Drawing.Size(150, 25);
+            this.cboautor.TabIndex = 124;
+            // 
+            // cboeditora
+            // 
+            this.cboeditora.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboeditora.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboeditora.FormattingEnabled = true;
+            this.cboeditora.Location = new System.Drawing.Point(516, 285);
+            this.cboeditora.Name = "cboeditora";
+            this.cboeditora.Size = new System.Drawing.Size(147, 25);
+            this.cboeditora.TabIndex = 125;
+            // 
+            // cbogenero
+            // 
+            this.cbogenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbogenero.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbogenero.FormattingEnabled = true;
+            this.cbogenero.Location = new System.Drawing.Point(669, 285);
+            this.cbogenero.Name = "cbogenero";
+            this.cbogenero.Size = new System.Drawing.Size(140, 25);
+            this.cbogenero.TabIndex = 126;
+            // 
             // frmCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cbogenero);
+            this.Controls.Add(this.cboeditora);
+            this.Controls.Add(this.cboautor);
             this.Controls.Add(this.txtCelular);
             this.Controls.Add(this.txtCPF);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.txtGenero);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtNome);
@@ -284,12 +290,10 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.txtEditora);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cboLivro);
-            this.Controls.Add(this.txtAutor);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dtpDevolucao);
             this.Controls.Add(this.pnTop);
@@ -305,17 +309,14 @@
 
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.TextBox txtGenero;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtEditora;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cboLivro;
-        private System.Windows.Forms.TextBox txtAutor;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dtpDevolucao;
         private System.Windows.Forms.Panel pnTop;
@@ -325,5 +326,8 @@
         private System.Windows.Forms.MaskedTextBox txtCelular;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.ComboBox cboautor;
+        private System.Windows.Forms.ComboBox cboeditora;
+        private System.Windows.Forms.ComboBox cbogenero;
     }
 }

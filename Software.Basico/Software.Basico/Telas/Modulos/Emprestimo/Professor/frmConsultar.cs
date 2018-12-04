@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Software.Basico.DB.Emprestimo;
 
 namespace Software.Basico.Telas.Modulos.Emprestimo.Professor
 {
@@ -43,6 +44,12 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Professor
         {
             frmMenu frm = new frmMenu();
             ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
+        }
+
+    
+        private void btnVisualizar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
