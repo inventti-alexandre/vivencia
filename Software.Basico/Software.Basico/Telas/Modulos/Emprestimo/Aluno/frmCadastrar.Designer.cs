@@ -311,7 +311,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmCadastrar";
             this.Size = new System.Drawing.Size(915, 500);
-            this.Load += new System.EventHandler(this.frmCadastrar_Load);
+            //this.Load += new System.EventHandler(this.frmCadastrar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -78,13 +78,13 @@
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // txtGenero
-            // 
-            this.txtGenero.Enabled = false;
-            this.txtGenero.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGenero.Location = new System.Drawing.Point(678, 286);
-            this.txtGenero.Name = "txtGenero";
-            this.txtGenero.Size = new System.Drawing.Size(131, 23);
-            this.txtGenero.TabIndex = 108;
+            //// 
+            //this.txtGenero.Enabled = false;
+            //this.txtGenero.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            //this.txtGenero.Location = new System.Drawing.Point(678, 286);
+            //this.txtGenero.Name = "txtGenero";
+            //this.txtGenero.Size = new System.Drawing.Size(131, 23);
+            //this.txtGenero.TabIndex = 108;
             // 
             // label9
             // 
@@ -126,12 +126,12 @@
             // 
             // txtEditora
             // 
-            this.txtEditora.Enabled = false;
-            this.txtEditora.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEditora.Location = new System.Drawing.Point(531, 286);
-            this.txtEditora.Name = "txtEditora";
-            this.txtEditora.Size = new System.Drawing.Size(131, 23);
-            this.txtEditora.TabIndex = 104;
+            //this.txtEditora.Enabled = false;
+            //this.txtEditora.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            //this.txtEditora.Location = new System.Drawing.Point(531, 286);
+            //this.txtEditora.Name = "txtEditora";
+            //this.txtEditora.Size = new System.Drawing.Size(131, 23);
+            //this.txtEditora.TabIndex = 104;
             // 
             // label5
             // 
@@ -175,12 +175,12 @@
             // 
             // txtAutor
             // 
-            this.txtAutor.Enabled = false;
-            this.txtAutor.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAutor.Location = new System.Drawing.Point(384, 286);
-            this.txtAutor.Name = "txtAutor";
-            this.txtAutor.Size = new System.Drawing.Size(131, 23);
-            this.txtAutor.TabIndex = 102;
+            //this.txtAutor.Enabled = false;
+            //this.txtAutor.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            //this.txtAutor.Location = new System.Drawing.Point(384, 286);
+            //this.txtAutor.Name = "txtAutor";
+            //this.txtAutor.Size = new System.Drawing.Size(131, 23);
+            //this.txtAutor.TabIndex = 102;
             // 
             // label4
             // 
@@ -291,8 +291,8 @@
             this.Controls.Add(this.label1);
             this.Name = "frmCadastrar";
             this.Size = new System.Drawing.Size(915, 500);
-            this.Load += new System.EventHandler(this.frmCadastrar_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            //this.Load += new System.EventHandler(this.frmCadastrar_Load);
+            //((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

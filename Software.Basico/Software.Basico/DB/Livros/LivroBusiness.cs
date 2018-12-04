@@ -26,9 +26,6 @@ namespace Software.Basico.DB.Livros
             if (dto.nu_volume == 0)
                 throw new ArgumentException("O volume está incorreto!");
 
-            if (qntLivro == 0)
-                throw new ArgumentException("Deve ser adicionado pelo menos 1 livro!");
-
             db.CadastrarLivro(dto);
         }
 
