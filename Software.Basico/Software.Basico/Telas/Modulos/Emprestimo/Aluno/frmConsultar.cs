@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Software.Basico.DB.Emprestimo;
+using Software.Basico.DB.Base;
 
 namespace Software.Basico.Telas.Modulos.Emprestimo.Aluno
 {
@@ -16,6 +18,7 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Aluno
         {
             InitializeComponent();
             TemaTela();
+            CarregarGrid();
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -54,6 +57,20 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Aluno
         {
             frmMenu frm = new frmMenu();
             ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
+        }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+            CarregarGrid();
+        }
+
+        private void CarregarGrid()
+        {
+            EmprestimoBusiness business = new EmprestimoBusiness();
+            List<vw_emprestimo_aluno> emprestimos = business.ListarEmprestimosAlunos();
+
+            dgvLivros.AutoGenerateColumns = false;
+            dgvLivros.DataSource = emprestimos;
         }
     }
 }

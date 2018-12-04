@@ -59,6 +59,16 @@ namespace Software.Basico.DB.Emprestimo
             return EmprestimoDB.ListarEmprestimos();
         }
 
+        public List<vw_emprestimo_aluno> ListarEmprestimosAlunos()
+        {
+            return EmprestimoDB.ListarEmprestimosAlunos();
+        }
+
+        public List<vw_emprestimo_locatario> ListarEmprestimosLocatarios()
+        {
+            return EmprestimoDB.ListarEmprestimosLocatarios();
+        }
+
         public tb_emprestimo ListarEmprestimosPorId(int idemprestimos)
         {
             return EmprestimoDB.ListarEmprestimosPorId(idemprestimos);
