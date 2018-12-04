@@ -136,7 +136,7 @@
   <data name="computer32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\computer32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="htmlEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="htmlEmailDia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\htmlEmail.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="1491254405-plusaddmoredetail_82972" type="System.Resources.ResXFileRef, System.Windows.Forms">

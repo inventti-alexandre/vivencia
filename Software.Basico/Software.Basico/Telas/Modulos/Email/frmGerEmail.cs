@@ -24,17 +24,27 @@ namespace Software.Basico.Telas.Modulos.Email
 
         private void CarregarDias()
         {
-            AzureBiblioteca db = new AzureBiblioteca();
-            List<tb_emprestimo> livrosDia = db.tb_emprestimo.Where(x => x.dt_devolucao == DateTime.Today).ToList();
-            //List<tb_emprestimo> livro5dia = db.tb_emprestimo.Where(x => ((TimeSpan)(x.dt_devolucao - DateTime.Today)).Days < 5).ToList();
-            //List<tb_emprestimo> livroatrasado = db.tb_emprestimo.Where(x => ((TimeSpan)(x.dt_devolucao - DateTime.Today)).Days < 0).ToList();
+            if (Program.notificacaoEmail == true)
+            {
+                DateTime email5dias = DateTime.Today;
+                email5dias = email5dias.AddDays(5);
 
-            lblQntLivrosDia.Text = livrosDia.Count.ToString();
-            //lblLivro5Dias.Text = livro5dia.Count.ToString();
-            //lblLivroAtrasado.Text = livroatrasado.Count.ToString();
+                AzureBiblioteca db = new AzureBiblioteca();
+                List<tb_emprestimo> livrosDia = db.tb_emprestimo.Where(x => x.dt_devolucao == DateTime.Today).ToList();
+                List<tb_emprestimo> livro5dia = db.tb_emprestimo.Where(x => x.dt_devolucao == email5dias).ToList();
+                List<tb_emprestimo> livroatrasado = db.tb_emprestimo.Where(x => x.dt_devolucao < DateTime.Today).ToList();
 
-            if (livrosDia.Count > 0)
-                btnEnviarDia.Enabled = true;
+                lblQntLivrosDia.Text = livrosDia.Count.ToString();
+                lblLivro5Dias.Text = livro5dia.Count.ToString();
+                lblLivroAtrasado.Text = livroatrasado.Count.ToString();
+
+                if (livrosDia.Count > 0)
+                    btnEnviarDia.Enabled = true;
+                if (livro5dia.Count > 0)
+                    btnEnviar5Dia.Enabled = true;
+                if (livroatrasado.Count > 0)
+                    btnEnviarAtrasado.Enabled = true; 
+            }
         }
 
         private void TemaTela()
@@ -74,8 +84,11 @@ namespace Software.Basico.Telas.Modulos.Email
 
         private void EnviarEmail5Dia()
         {
+            DateTime email5dias = DateTime.Today;
+            email5dias = email5dias.AddDays(5);
+
             AzureBiblioteca db = new AzureBiblioteca();
-            List<tb_emprestimo> livro5dia = db.tb_emprestimo.Where(x => ((TimeSpan)(x.dt_devolucao - DateTime.Today)).Days < 5).ToList();
+            List<tb_emprestimo> livro5dia = db.tb_emprestimo.Where(x => x.dt_devolucao == email5dias).ToList();
 
             var emails = livro5dia.Select(x => x.ds_email);
 
@@ -88,10 +101,10 @@ namespace Software.Basico.Telas.Modulos.Email
                     foreach (string destino in Destinatarios)
                     {
                         EmailDTO email = new EmailDTO();
-                        email.Assunto = "Dia de Devolução!";
+                        email.Assunto = "Faltam 5 dias!";
                         email.DestinatarioEmail = destino;
                         email.DestinatarioNome = "";
-                        email.Mensagem = Resources.htmlEmail;
+                        email.Mensagem = Resources.htmlEmailDia;
                         email.RemetenteSenha = "pbtadmin1234";
                         email.RemetenteNome = "Biblioteca FREI";
                         email.RemetenteEmail = "pb.technology.ltda@gmail.com";
@@ -123,7 +136,39 @@ namespace Software.Basico.Telas.Modulos.Email
                         email.Assunto = "Dia de Devolução!";
                         email.DestinatarioEmail = destino;
                         email.DestinatarioNome = "";
-                        email.Mensagem = Resources.htmlEmail;
+                        email.Mensagem = Resources.htmlEmailDia;
+                        email.RemetenteSenha = "pbtadmin1234";
+                        email.RemetenteNome = "Biblioteca FREI";
+                        email.RemetenteEmail = "pb.technology.ltda@gmail.com";
+
+                        EmailSend send = new EmailSend();
+                        send.EnviarEmail(email);
+                    }
+                }
+            }
+            else
+                throw new ArgumentException("Nenhum email a ser enviado!");
+        }
+
+        private void EnviarEmailAtrasado()
+        {
+            AzureBiblioteca db = new AzureBiblioteca();
+            List<tb_emprestimo> livroatrasado = db.tb_emprestimo.Where(x => x.dt_devolucao < DateTime.Today).ToList();
+            var emails = livroatrasado.Select(x => x.ds_email);
+
+            if (livroatrasado.Count != 0)
+            {
+                Send(emails);
+
+                void Send(IEnumerable<string> Destinatarios)
+                {
+                    foreach (string destino in Destinatarios)
+                    {
+                        EmailDTO email = new EmailDTO();
+                        email.Assunto = "Dia de Devolução!";
+                        email.DestinatarioEmail = destino;
+                        email.DestinatarioNome = "";
+                        email.Mensagem = Resources.htmlEmailDia;
                         email.RemetenteSenha = "pbtadmin1234";
                         email.RemetenteNome = "Biblioteca FREI";
                         email.RemetenteEmail = "pb.technology.ltda@gmail.com";
@@ -158,6 +203,52 @@ namespace Software.Basico.Telas.Modulos.Email
                 }
                 else
                     return;
+            }
+        }
+
+        private void btnEnviar5Dia_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                EnviarEmail5Dia();
+
+                MessageBox.Show("Emails enviados com sucesso!", "Biblioteca",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                btnEnviar5Dia.Enabled = false;
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Biblioteca",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro não identificado: {ex.Message}", "Biblioteca",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnEnviarAtrasado_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                EnviarEmailAtrasado();
+
+                MessageBox.Show("Emails enviados com sucesso!", "Biblioteca",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                btnEnviarAtrasado.Enabled = false;
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Biblioteca",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro não identificado: {ex.Message}", "Biblioteca",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

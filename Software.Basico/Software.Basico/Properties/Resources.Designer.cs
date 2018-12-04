@@ -291,6 +291,15 @@ namespace Software.Basico.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        public static string htmlEmail5Dia {
+            get {
+                return ResourceManager.GetString("htmlEmail5Dia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;!DOCTYPE html PUBLIC &apos;-//W3C//DTD XHTML 1.0 Transitional//EN&apos; &apos;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&apos;&gt;
         ///
         ///
@@ -304,9 +313,9 @@ namespace Software.Basico.Properties {
         ///
         ///  &lt;meta http-equiv=&apos;Content-Type&apos; content=&apos;text/html; ch [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
-        public static string htmlEmail {
+        public static string htmlEmailDia {
             get {
-                return ResourceManager.GetString("htmlEmail", resourceCulture);
+                return ResourceManager.GetString("htmlEmailDia", resourceCulture);
             }
         }
         

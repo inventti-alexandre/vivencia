@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEnviarDia = new System.Windows.Forms.Button();
             this.lblQntLivrosDia = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnEnviar5Dia = new System.Windows.Forms.Button();
             this.lblLivro5Dias = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnEnviarAtrasado = new System.Windows.Forms.Button();
             this.lblLivroAtrasado = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pnTop = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
-            this.btnEnviarDia = new System.Windows.Forms.Button();
-            this.btnEnviar5Dia = new System.Windows.Forms.Button();
-            this.btnEnviarAtrasado = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -63,6 +63,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(250, 314);
             this.panel1.TabIndex = 0;
+            // 
+            // btnEnviarDia
+            // 
+            this.btnEnviarDia.Enabled = false;
+            this.btnEnviarDia.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnEnviarDia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnviarDia.Font = new System.Drawing.Font("Century Gothic", 14.75F);
+            this.btnEnviarDia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
+            this.btnEnviarDia.Location = new System.Drawing.Point(16, 260);
+            this.btnEnviarDia.Name = "btnEnviarDia";
+            this.btnEnviarDia.Size = new System.Drawing.Size(213, 39);
+            this.btnEnviarDia.TabIndex = 77;
+            this.btnEnviarDia.Text = "Lembrar";
+            this.btnEnviarDia.UseVisualStyleBackColor = true;
+            this.btnEnviarDia.Click += new System.EventHandler(this.btnEmailDia_Click);
             // 
             // lblQntLivrosDia
             // 
@@ -106,6 +121,21 @@
             this.panel2.Size = new System.Drawing.Size(250, 314);
             this.panel2.TabIndex = 0;
             // 
+            // btnEnviar5Dia
+            // 
+            this.btnEnviar5Dia.Enabled = false;
+            this.btnEnviar5Dia.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnEnviar5Dia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnviar5Dia.Font = new System.Drawing.Font("Century Gothic", 14.75F);
+            this.btnEnviar5Dia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
+            this.btnEnviar5Dia.Location = new System.Drawing.Point(15, 260);
+            this.btnEnviar5Dia.Name = "btnEnviar5Dia";
+            this.btnEnviar5Dia.Size = new System.Drawing.Size(213, 39);
+            this.btnEnviar5Dia.TabIndex = 77;
+            this.btnEnviar5Dia.Text = "Lembrar";
+            this.btnEnviar5Dia.UseVisualStyleBackColor = true;
+            this.btnEnviar5Dia.Click += new System.EventHandler(this.btnEnviar5Dia_Click);
+            // 
             // lblLivro5Dias
             // 
             this.lblLivro5Dias.AutoSize = true;
@@ -147,6 +177,21 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(250, 314);
             this.panel3.TabIndex = 0;
+            // 
+            // btnEnviarAtrasado
+            // 
+            this.btnEnviarAtrasado.Enabled = false;
+            this.btnEnviarAtrasado.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnEnviarAtrasado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnviarAtrasado.Font = new System.Drawing.Font("Century Gothic", 14.75F);
+            this.btnEnviarAtrasado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
+            this.btnEnviarAtrasado.Location = new System.Drawing.Point(16, 260);
+            this.btnEnviarAtrasado.Name = "btnEnviarAtrasado";
+            this.btnEnviarAtrasado.Size = new System.Drawing.Size(213, 39);
+            this.btnEnviarAtrasado.TabIndex = 77;
+            this.btnEnviarAtrasado.Text = "Lembrar";
+            this.btnEnviarAtrasado.UseVisualStyleBackColor = true;
+            this.btnEnviarAtrasado.Click += new System.EventHandler(this.btnEnviarAtrasado_Click);
             // 
             // lblLivroAtrasado
             // 
@@ -212,51 +257,6 @@
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnEnviarDia
-            // 
-            this.btnEnviarDia.Enabled = false;
-            this.btnEnviarDia.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnEnviarDia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEnviarDia.Font = new System.Drawing.Font("Century Gothic", 14.75F);
-            this.btnEnviarDia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnEnviarDia.Location = new System.Drawing.Point(16, 260);
-            this.btnEnviarDia.Name = "btnEnviarDia";
-            this.btnEnviarDia.Size = new System.Drawing.Size(213, 39);
-            this.btnEnviarDia.TabIndex = 77;
-            this.btnEnviarDia.Text = "Lembrar";
-            this.btnEnviarDia.UseVisualStyleBackColor = true;
-            this.btnEnviarDia.Click += new System.EventHandler(this.btnEmailDia_Click);
-            // 
-            // btnEnviar5Dia
-            // 
-            this.btnEnviar5Dia.Enabled = false;
-            this.btnEnviar5Dia.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnEnviar5Dia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEnviar5Dia.Font = new System.Drawing.Font("Century Gothic", 14.75F);
-            this.btnEnviar5Dia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnEnviar5Dia.Location = new System.Drawing.Point(15, 260);
-            this.btnEnviar5Dia.Name = "btnEnviar5Dia";
-            this.btnEnviar5Dia.Size = new System.Drawing.Size(213, 39);
-            this.btnEnviar5Dia.TabIndex = 77;
-            this.btnEnviar5Dia.Text = "Lembrar";
-            this.btnEnviar5Dia.UseVisualStyleBackColor = true;
-            this.btnEnviar5Dia.Click += new System.EventHandler(this.btnEmailDia_Click);
-            // 
-            // btnEnviarAtrasado
-            // 
-            this.btnEnviarAtrasado.Enabled = false;
-            this.btnEnviarAtrasado.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnEnviarAtrasado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEnviarAtrasado.Font = new System.Drawing.Font("Century Gothic", 14.75F);
-            this.btnEnviarAtrasado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnEnviarAtrasado.Location = new System.Drawing.Point(16, 260);
-            this.btnEnviarAtrasado.Name = "btnEnviarAtrasado";
-            this.btnEnviarAtrasado.Size = new System.Drawing.Size(213, 39);
-            this.btnEnviarAtrasado.TabIndex = 77;
-            this.btnEnviarAtrasado.Text = "Lembrar";
-            this.btnEnviarAtrasado.UseVisualStyleBackColor = true;
-            this.btnEnviarAtrasado.Click += new System.EventHandler(this.btnEmailDia_Click);
             // 
             // frmGerEmail
             // 

@@ -39,22 +39,18 @@ namespace Software.Basico.Telas
 
         private void SendEmail()
         {
+            DateTime email5dias = DateTime.Today;
+            email5dias = email5dias.AddDays(5);
+
             AzureBiblioteca db = new AzureBiblioteca();
             List<tb_emprestimo> livrodia = db.tb_emprestimo.Where(x => x.dt_devolucao == DateTime.Today).ToList();
+            List<tb_emprestimo> livroatrasado = db.tb_emprestimo.Where(x => x.dt_devolucao < DateTime.Today).ToList();
+            List<tb_emprestimo> livro5dia = db.tb_emprestimo.Where(x => x.dt_devolucao == email5dias).ToList();
 
-            if (livrodia.Count != 0)
+            if (livrodia.Count != 0 || livroatrasado.Count != 0 || livro5dia.Count != 0)
                 Program.notificacaoEmail = true;
             else
                 return;
-
-            //List<tb_emprestimo> livro5dia = db.tb_emprestimo.Where(x => x.dt_devolucao).ToList();
-
-            //List<tb_emprestimo> livroatrasado = db.tb_emprestimo.Where(x => ((TimeSpan)(x.dt_devolucao - DateTime.Today)).Days < 0).ToList();
-
-            //if (livrodia.Count != 0 || livro5dia.Count != 0 || livroatrasado.Count != 0)
-            //    Program.notificacaoEmail = true;
-            //else
-            //    return;
         }
     }
 }
