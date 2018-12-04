@@ -55,9 +55,8 @@ namespace Software.Basico.DB.Autor
                 func = db.ListarFiltroNacionalidade(nacionalidade);
 
             //Filtrar por autor e nacionalidade
-            else if (autor.Length > 0 && autor.Length > 0 && nacionalidade == string.Empty)
+            else if (autor.Length > 0  && nacionalidade.Length > 0)
                 func = db.ListarFiltroAutorNacionalidade(autor, nacionalidade);
-
 
             return func;
         }
