@@ -9,31 +9,59 @@ namespace Software.Basico.DB.Emprestimo
 {
     class EmprestimoBusiness
     {
-        EmprestimoDatabase db = new EmprestimoDatabase();
+        EmprestimoDatabase EmprestimoDB = new EmprestimoDatabase();
 
-        public void CadastroNovoEmprestimo(tb_emprestimo dto)
+        public void CadastroNovoEmprestimo(tb_emprestimo dto, string ra)
         {
-            db.CadastroNovoEmprestimo(dto);
+            AzureBiblioteca db = new AzureBiblioteca();
+            tb_turma_aluno data = db.tb_turma_aluno.Where(x => x.cd_ra == ra).ToList().Single();
+
+            dto.tb_turma_aluno_id_turma_aluno = data.id_aluno;
+
+            EmprestimoDB.CadastroNovoEmprestimo(dto);
+        }
+
+        public void CadastroNovoEmprestimo(tb_emprestimo dto, tb_locatario professor)
+        {
+            AzureBiblioteca db = new AzureBiblioteca();
+            tb_locatario data = db.tb_locatario.Where(x => x.nu_cpf == professor.nu_cpf).ToList().Single();
+
+            int id;
+
+            if (data.nm_locatario == null)
+            {
+                db.tb_locatario.Add(professor);
+                id = db.SaveChanges();
+
+                dto.tb_locatario_id_locatario = id;
+
+                EmprestimoDB.CadastroNovoEmprestimo(dto);
+            }
+            else
+            {
+                dto.tb_locatario_id_locatario = data.id_locatario;
+                EmprestimoDB.CadastroNovoEmprestimo(dto);
+            }
         }
 
         public void AlterarEmprestimo(tb_emprestimo dto, int idemprestimo)
         {
-            db.AlterarEmprestimo(dto, idemprestimo);
+            EmprestimoDB.AlterarEmprestimo(dto, idemprestimo);
         }
 
         public void RemoverEmprestimo(int idemprestimo)
         {
-            db.RemoverEmprestimo(idemprestimo);
+            EmprestimoDB.RemoverEmprestimo(idemprestimo);
         }
 
         public List<tb_emprestimo> ListarEmprestimos()
         {
-            return db.ListarEmprestimos();
+            return EmprestimoDB.ListarEmprestimos();
         }
 
         public tb_emprestimo ListarEmprestimosPorId(int idemprestimos)
         {
-            return db.ListarEmprestimosPorId(idemprestimos);
+            return EmprestimoDB.ListarEmprestimosPorId(idemprestimos);
         }
     }
 }

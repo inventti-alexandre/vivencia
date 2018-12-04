@@ -50,6 +50,10 @@
             this.txtEditora = new System.Windows.Forms.TextBox();
             this.txtGenero = new System.Windows.Forms.TextBox();
             this.txtAutor = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtFuncionario = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCadastrar
@@ -84,7 +88,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(651, 271);
+            this.label9.Location = new System.Drawing.Point(689, 271);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(69, 21);
             this.label9.TabIndex = 121;
@@ -132,7 +136,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(514, 271);
+            this.label7.Location = new System.Drawing.Point(529, 271);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(66, 21);
             this.label7.TabIndex = 118;
@@ -245,18 +249,20 @@
             // txtEditora
             // 
             this.txtEditora.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEditora.Location = new System.Drawing.Point(506, 295);
+            this.txtEditora.Location = new System.Drawing.Point(517, 295);
             this.txtEditora.Name = "txtEditora";
             this.txtEditora.Size = new System.Drawing.Size(135, 23);
             this.txtEditora.TabIndex = 105;
+            this.txtEditora.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TravaTexto_KeyPress);
             // 
             // txtGenero
             // 
             this.txtGenero.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGenero.Location = new System.Drawing.Point(654, 295);
+            this.txtGenero.Location = new System.Drawing.Point(676, 296);
             this.txtGenero.Name = "txtGenero";
             this.txtGenero.Size = new System.Drawing.Size(135, 23);
             this.txtGenero.TabIndex = 105;
+            this.txtGenero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TravaTexto_KeyPress);
             // 
             // txtAutor
             // 
@@ -265,11 +271,42 @@
             this.txtAutor.Name = "txtAutor";
             this.txtAutor.Size = new System.Drawing.Size(135, 23);
             this.txtAutor.TabIndex = 105;
+            this.txtAutor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TravaTexto_KeyPress);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(114, 118);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(100, 21);
+            this.label11.TabIndex = 116;
+            this.label11.Text = "Funcionario";
+            // 
+            // txtFuncionario
+            // 
+            this.txtFuncionario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFuncionario.Location = new System.Drawing.Point(110, 142);
+            this.txtFuncionario.Name = "txtFuncionario";
+            this.txtFuncionario.Size = new System.Drawing.Size(234, 23);
+            this.txtFuncionario.TabIndex = 105;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Software.Basico.Properties.Resources.voltar;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 468);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(41, 29);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 127;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // frmCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtCelular);
             this.Controls.Add(this.txtCPF);
             this.Controls.Add(this.btnCadastrar);
@@ -279,10 +316,12 @@
             this.Controls.Add(this.txtAutor);
             this.Controls.Add(this.txtEditora);
             this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtFuncionario);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label7);
@@ -294,6 +333,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmCadastrar";
             this.Size = new System.Drawing.Size(915, 500);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,5 +363,8 @@
         private System.Windows.Forms.TextBox txtEditora;
         private System.Windows.Forms.TextBox txtGenero;
         private System.Windows.Forms.TextBox txtAutor;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtFuncionario;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
