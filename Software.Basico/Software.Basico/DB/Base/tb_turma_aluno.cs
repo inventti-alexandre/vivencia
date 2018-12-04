@@ -22,10 +22,10 @@ namespace Software.Basico.DB.Base
         }
     
         public int id_turma_aluno { get; set; }
-        public int nr_chamada { get; set; }
-        public int cd_ra { get; set; }
-        public int tb_aluno_id_aluno { get; set; }
-        public int tb_turma_id_turma { get; set; }
+        public Nullable<int> id_aluno { get; set; }
+        public Nullable<int> id_turma { get; set; }
+        public Nullable<int> nr_chamada { get; set; }
+        public string cd_ra { get; set; }
     
         public virtual tb_aluno tb_aluno { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

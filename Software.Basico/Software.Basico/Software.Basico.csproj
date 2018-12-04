@@ -107,7 +107,7 @@
     <Compile Include="DB\Base\tb_autor.cs">
       <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\Base\tb_curso.cs">
+    <Compile Include="DB\Base\tb_Curso.cs">
       <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Base\tb_emprestimo.cs">
