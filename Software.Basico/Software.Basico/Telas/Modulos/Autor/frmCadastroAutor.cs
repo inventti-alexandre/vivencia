@@ -25,10 +25,11 @@ namespace Software.Basico.Telas.Modulos.Autor
 
             btnCadastrar.BackColor = Tema.Segundaria;
             btnRemover.BackColor = Tema.Segundaria;
+            btnAlterar.BackColor = Tema.Segundaria;
 
             btnCadastrar.ForeColor = Tema.Texto;
             btnRemover.ForeColor = Tema.Texto;
-
+            btnAlterar.ForeColor = Tema.Texto;
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -84,11 +85,14 @@ namespace Software.Basico.Telas.Modulos.Autor
             AzureBiblioteca db = new AzureBiblioteca();
             tb_autor autor = db.tb_autor.Where(x => x.id_autor == idAutor).ToList().Single();
 
+            lblid.Text = autor.id_autor.ToString();
             txtAutor.Text = autor.nm_autor;
             txtNomeCompleto.Text = autor.nm_nomeCompleto;
             txtNascionalidade.Text = autor.ds_nacionalidade;  
 
             btnCadastrar.Visible = false;
+            lblid.Visible = true;
+            lblidTxt.Visible = true;
         }
 
         private void txtNomeCompleto_KeyPress(object sender, KeyPressEventArgs e)
@@ -139,6 +143,41 @@ namespace Software.Basico.Telas.Modulos.Autor
         {
             frmConsultar frm = new frmConsultar();
             ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                tb_autor autor = new tb_autor();
+
+                autor.id_autor = Convert.ToInt32(lblid.Text);
+                autor.nm_autor = txtAutor.Text.Trim();
+                autor.nm_nomeCompleto = txtNomeCompleto.Text.Trim();
+                autor.ds_nacionalidade = txtNascionalidade.Text.Trim();
+
+
+                AutorBusiness business = new AutorBusiness();
+                business.AlterarAutor(autor, autor.id_autor);
+
+                MessageBox.Show("Autor alterado com sucesso!", "Biblioteca",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                txtAutor.Clear();
+                txtNomeCompleto.Clear();
+                txtNascionalidade.Clear();
+
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Biblioteca",
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro não identificado: {ex.Message}", "Biblioteca",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
