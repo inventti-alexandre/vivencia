@@ -95,7 +95,6 @@
             this.label1.Size = new System.Drawing.Size(270, 36);
             this.label1.TabIndex = 45;
             this.label1.Text = "Controle de Livros";
-//            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel2
             // 
@@ -103,8 +102,6 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.imgLivro);
             this.panel2.Controls.Add(this.txtTitulo_contole_de_livros);
-            this.panel2.Controls.Add(this.lblid);
-            this.panel2.Controls.Add(this.lblidTxt);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.lblTitulo);
             this.panel2.Controls.Add(this.txtSubtitulo_Controle_de_Livros);
@@ -139,7 +136,7 @@
             // 
             this.lblid.AutoSize = true;
             this.lblid.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblid.Location = new System.Drawing.Point(225, 13);
+            this.lblid.Location = new System.Drawing.Point(102, 53);
             this.lblid.Name = "lblid";
             this.lblid.Size = new System.Drawing.Size(52, 30);
             this.lblid.TabIndex = 73;
@@ -150,11 +147,11 @@
             // 
             this.lblidTxt.AutoSize = true;
             this.lblidTxt.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblidTxt.Location = new System.Drawing.Point(176, 13);
+            this.lblidTxt.Location = new System.Drawing.Point(56, 53);
             this.lblidTxt.Name = "lblidTxt";
-            this.lblidTxt.Size = new System.Drawing.Size(42, 30);
+            this.lblidTxt.Size = new System.Drawing.Size(40, 30);
             this.lblidTxt.TabIndex = 73;
-            this.lblidTxt.Text = "id:";
+            this.lblidTxt.Text = "Nº";
             this.lblidTxt.Visible = false;
             // 
             // label2
@@ -625,6 +622,8 @@
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.nudQnt);
             this.Controls.Add(this.btnCadastrar);
+            this.Controls.Add(this.lblid);
+            this.Controls.Add(this.lblidTxt);
             this.Controls.Add(this.cboTipo);
             this.Controls.Add(this.cboCondicao);
             this.Controls.Add(this.lblAutor);
@@ -661,7 +660,6 @@
             this.Controls.Add(this.btnAlterar);
             this.Name = "frmCadastrar";
             this.Size = new System.Drawing.Size(913, 498);
-            //this.Load += new System.EventHandler(this.frmCadastrar_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLivro)).EndInit();

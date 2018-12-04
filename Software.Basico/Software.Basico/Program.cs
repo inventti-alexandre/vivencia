@@ -19,5 +19,7 @@ namespace Software.Basico
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Splash());
         }
+
+        public static bool notificacaoEmail { get; set; }
     }
 }

@@ -177,6 +177,12 @@
     <Compile Include="Telas\Modulos\Autor\frmConsultar.Designer.cs">
       <DependentUpon>frmConsultar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\Modulos\Email\frmGerEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Modulos\Email\frmGerEmail.Designer.cs">
+      <DependentUpon>frmGerEmail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\Modulos\Emprestimo\Aluno\frmCadastrar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -296,6 +302,9 @@
     <EmbeddedResource Include="Telas\Modulos\Autor\frmConsultar.resx">
       <DependentUpon>frmConsultar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Modulos\Email\frmGerEmail.resx">
+      <DependentUpon>frmGerEmail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas\Modulos\Emprestimo\Aluno\frmCadastrar.resx">
       <DependentUpon>frmCadastrar.cs</DependentUpon>
     </EmbeddedResource>
@@ -376,6 +385,7 @@
       <DependentUpon>BibliotecaDBAzure.edmx</DependentUpon>
       <LastGenOutput>BibliotecaDBAzure.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\bell-icon_34488.png" />
     <None Include="Resources\setas-preta-png--256x200.png" />
   </ItemGroup>
   <ItemGroup>

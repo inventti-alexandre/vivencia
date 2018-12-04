@@ -1,4 +1,5 @@
 ﻿using Blibioteca.Developers.APIs.Clima;
+using Software.Basico.Telas.Modulos.Email;
 using Software.Basico.Telas.SubTelas;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,13 @@ namespace Software.Basico.Telas
             TemaTela();
             ScreenFrmHome();
             Clima();
+            Sininho();
+        }
+
+        private void Sininho()
+        {
+            if (Program.notificacaoEmail == true)
+                btnSininho.Visible = true;
         }
 
         public void CarregarPanel(System.Windows.Forms.UserControl frm)
@@ -255,6 +263,17 @@ namespace Software.Basico.Telas
         {
             //Horário atual.
             lblHorario.Text = DateTime.Now.ToLongTimeString();
+        }
+
+        private void btnSininho_Click(object sender, EventArgs e)
+        {
+            frmGerEmail frm = new frmGerEmail();
+            this.Hide();
+            frm.ShowDialog();
+            Show();
+
+            if (Program.notificacaoEmail == false)
+                btnSininho.Visible = false;
         }
     }
 }
