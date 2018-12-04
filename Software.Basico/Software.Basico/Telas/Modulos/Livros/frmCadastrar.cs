@@ -138,7 +138,7 @@ namespace Software.Basico.Telas.Modulos.Livros
                 livro.nu_volume = txtVolume_controle_de_livros.Text == string.Empty ? 0 : Convert.ToInt32(txtVolume_controle_de_livros.Text);
 
                 LivroBusiness business = new LivroBusiness();
-                //business.CadastrarLivro(livro, Convert.ToInt32(nudQnt.Value));
+                business.CadastrarLivro(livro);
 
                 MessageBox.Show("Livro cadastrado com sucesso!", "Biblioteca",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);

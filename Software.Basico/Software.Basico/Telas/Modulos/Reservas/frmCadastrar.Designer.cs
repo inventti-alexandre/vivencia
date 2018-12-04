@@ -30,8 +30,6 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.lblpalavraschave = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -62,24 +60,6 @@
             this.label1.TabIndex = 43;
             this.label1.Text = "Nova Reserva";
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(355, 303);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(347, 27);
-            this.dateTimePicker1.TabIndex = 45;
-            // 
-            // lblpalavraschave
-            // 
-            this.lblpalavraschave.AutoSize = true;
-            this.lblpalavraschave.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblpalavraschave.Location = new System.Drawing.Point(137, 301);
-            this.lblpalavraschave.Name = "lblpalavraschave";
-            this.lblpalavraschave.Size = new System.Drawing.Size(204, 30);
-            this.lblpalavraschave.TabIndex = 87;
-            this.lblpalavraschave.Text = "Data da reserva";
             // 
             // label2
             // 
@@ -147,7 +127,7 @@
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrar.Font = new System.Drawing.Font("Century Gothic", 14.75F);
             this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnCadastrar.Location = new System.Drawing.Point(579, 385);
+            this.btnCadastrar.Location = new System.Drawing.Point(579, 352);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(245, 32);
             this.btnCadastrar.TabIndex = 100;
@@ -172,7 +152,7 @@
             this.btnRemover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemover.Font = new System.Drawing.Font("Century Gothic", 14.75F);
             this.btnRemover.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnRemover.Location = new System.Drawing.Point(579, 423);
+            this.btnRemover.Location = new System.Drawing.Point(579, 390);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(245, 32);
             this.btnRemover.TabIndex = 128;
@@ -192,8 +172,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.lblpalavraschave);
-            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Name = "frmCadastrar";
@@ -209,8 +187,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label lblpalavraschave;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox1;

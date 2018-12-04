@@ -134,5 +134,11 @@ namespace Software.Basico.Telas.Modulos.Autor
         {
 
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            frmConsultar frm = new frmConsultar();
+            ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
+        }
     }
 }

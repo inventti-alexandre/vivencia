@@ -104,5 +104,10 @@ namespace Software.Basico.Telas.Modulos.Autor
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
