@@ -391,6 +391,8 @@
       <DependentUpon>BibliotecaDBAzure.edmx</DependentUpon>
       <LastGenOutput>BibliotecaDBAzure.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\email3.txt" />
+    <None Include="Resources\email2.txt" />
     <None Include="Resources\TemaDark2.png" />
     <None Include="Resources\TemaDark1.png" />
     <None Include="Resources\TemaLight1.png" />
