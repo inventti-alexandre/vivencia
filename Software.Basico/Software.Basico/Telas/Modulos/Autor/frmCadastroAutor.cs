@@ -156,6 +156,11 @@ namespace Software.Basico.Telas.Modulos.Autor
                 autor.nm_nomeCompleto = txtNomeCompleto.Text.Trim();
                 autor.ds_nacionalidade = txtNascionalidade.Text.Trim();
 
+                if (autor.nm_autor == string.Empty)
+                {
+                    MessageBox.Show("Diga quem é o Autor.");
+                    return;
+                }
 
                 AutorBusiness business = new AutorBusiness();
                 business.AlterarAutor(autor, autor.id_autor);
