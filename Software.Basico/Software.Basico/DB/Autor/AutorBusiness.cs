@@ -35,5 +35,31 @@ namespace Software.Basico.DB.Autor
         {
             return db.ListarAutorPorId(idAutor);
         }
+
+
+
+        public List<tb_autor> ListarAutores(string autor, string nacionalidade)
+        {
+            List<tb_autor> func = new List<tb_autor>();
+
+            //Sem filtro
+            if (autor == string.Empty && autor == string.Empty && nacionalidade == string.Empty)
+                func = db.ListarAutores();
+
+           
+
+            //Filtrar por nacionalidade
+            else if (autor == string.Empty && autor.Length > 0 && nacionalidade == string.Empty)
+                func = db.ListarFiltroNacionalidade(autor);
+
+            //Filtrar por autor e nacionalidade
+            else if (autor.Length > 0 && autor.Length > 0 && nacionalidade == string.Empty)
+                func = db.ListarFiltroAutorNacionalidade(autor, nacionalidade);
+
+
+            return func;
+        }
+
+
     }
 }
