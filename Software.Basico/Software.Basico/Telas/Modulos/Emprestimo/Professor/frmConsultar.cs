@@ -57,5 +57,11 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Professor
         {
 
         }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+            EmprestimoBusiness business = new EmprestimoBusiness();
+
+        }
     }
 }

@@ -44,6 +44,18 @@ namespace Software.Basico.DB.Emprestimo
             return funcList;
         }
 
+        public List<vw_emprestimo_aluno> ListarEmprestimosAlunos()
+        {
+            List<vw_emprestimo_aluno> funcList = db.vw_emprestimo_aluno.ToList();
+            return funcList;
+        }
+
+        public List<vw_emprestimo_locatario> ListarEmprestimosLocatarios()
+        {
+            List<vw_emprestimo_locatario> funcList = db.vw_emprestimo_locatario.ToList();
+            return funcList;
+        }
+
         public tb_emprestimo ListarEmprestimosPorId(int idemprestimo)
         {
             tb_emprestimo func = db.tb_emprestimo.Where(x => x.id_emprestimo == idemprestimo).ToList().Single();

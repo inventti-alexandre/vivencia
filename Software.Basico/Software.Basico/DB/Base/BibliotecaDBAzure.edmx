@@ -114,6 +114,33 @@
           <Property Name="cd_ra" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'BibliotecaDB.dbo.vw_emprestimo_aluno' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_emprestimo_aluno">
+          <Key>
+            <PropertyRef Name="dt_emprestimo" />
+            <PropertyRef Name="dt_devolucao" />
+            <PropertyRef Name="ds_titulo" />
+          </Key>
+          <Property Name="dt_emprestimo" Type="date" Nullable="false" />
+          <Property Name="dt_devolucao" Type="date" Nullable="false" />
+          <Property Name="ds_titulo" Type="varchar" MaxLength="90" Nullable="false" />
+          <Property Name="nm_aluno" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BibliotecaDB.dbo.vw_emprestimo_locatario' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_emprestimo_locatario">
+          <Key>
+            <PropertyRef Name="dt_emprestimo" />
+            <PropertyRef Name="dt_devolucao" />
+            <PropertyRef Name="ds_titulo" />
+            <PropertyRef Name="nm_locatario" />
+          </Key>
+          <Property Name="dt_emprestimo" Type="date" Nullable="false" />
+          <Property Name="dt_devolucao" Type="date" Nullable="false" />
+          <Property Name="ds_titulo" Type="varchar" MaxLength="90" Nullable="false" />
+          <Property Name="nm_locatario" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vw_Livro_Autor_Genero">
           <Key>
@@ -284,6 +311,22 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
           <EntitySet Name="tb_reserva" EntityType="Self.tb_reserva" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_turma" EntityType="Self.tb_turma" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_turma_aluno" EntityType="Self.tb_turma_aluno" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vw_emprestimo_aluno" EntityType="Self.vw_emprestimo_aluno" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_emprestimo_aluno].[dt_emprestimo] AS [dt_emprestimo], 
+    [vw_emprestimo_aluno].[dt_devolucao] AS [dt_devolucao], 
+    [vw_emprestimo_aluno].[ds_titulo] AS [ds_titulo], 
+    [vw_emprestimo_aluno].[nm_aluno] AS [nm_aluno]
+    FROM [dbo].[vw_emprestimo_aluno] AS [vw_emprestimo_aluno]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_emprestimo_locatario" EntityType="Self.vw_emprestimo_locatario" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_emprestimo_locatario].[dt_emprestimo] AS [dt_emprestimo], 
+    [vw_emprestimo_locatario].[dt_devolucao] AS [dt_devolucao], 
+    [vw_emprestimo_locatario].[ds_titulo] AS [ds_titulo], 
+    [vw_emprestimo_locatario].[nm_locatario] AS [nm_locatario]
+    FROM [dbo].[vw_emprestimo_locatario] AS [vw_emprestimo_locatario]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="vw_Livro_Autor_Genero" EntityType="Self.vw_Livro_Autor_Genero" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vw_Livro_Autor_Genero].[id_livro] AS [id_livro], 
@@ -358,6 +401,8 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
           <EntitySet Name="tb_reserva" EntityType="BibliotecaDBAzure.tb_reserva" />
           <EntitySet Name="tb_turma" EntityType="BibliotecaDBAzure.tb_turma" />
           <EntitySet Name="tb_turma_aluno" EntityType="BibliotecaDBAzure.tb_turma_aluno" />
+          <EntitySet Name="vw_emprestimo_aluno" EntityType="BibliotecaDBAzure.vw_emprestimo_aluno" />
+          <EntitySet Name="vw_emprestimo_locatario" EntityType="BibliotecaDBAzure.vw_emprestimo_locatario" />
           <EntitySet Name="vw_Livro_Autor_Genero" EntityType="BibliotecaDBAzure.vw_Livro_Autor_Genero" />
           <AssociationSet Name="fk_aluno" Association="BibliotecaDBAzure.fk_aluno">
             <End Role="tb_aluno" EntitySet="tb_aluno" />
@@ -539,6 +584,29 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
           <NavigationProperty Name="tb_emprestimo" Relationship="BibliotecaDBAzure.FK__tb_empres__tb_tu__6C190EBB" FromRole="tb_turma_aluno" ToRole="tb_emprestimo" />
           <NavigationProperty Name="tb_reserva" Relationship="BibliotecaDBAzure.FK__tb_reserv__tb_tu__71D1E811" FromRole="tb_turma_aluno" ToRole="tb_reserva" />
           <NavigationProperty Name="tb_turma" Relationship="BibliotecaDBAzure.fk_turma" FromRole="tb_turma_aluno" ToRole="tb_turma" />
+        </EntityType>
+        <EntityType Name="vw_emprestimo_aluno">
+          <Key>
+            <PropertyRef Name="dt_emprestimo" />
+            <PropertyRef Name="dt_devolucao" />
+            <PropertyRef Name="ds_titulo" />
+          </Key>
+          <Property Name="dt_emprestimo" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="dt_devolucao" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ds_titulo" Type="String" Nullable="false" MaxLength="90" FixedLength="false" Unicode="false" />
+          <Property Name="nm_aluno" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vw_emprestimo_locatario">
+          <Key>
+            <PropertyRef Name="dt_emprestimo" />
+            <PropertyRef Name="dt_devolucao" />
+            <PropertyRef Name="ds_titulo" />
+            <PropertyRef Name="nm_locatario" />
+          </Key>
+          <Property Name="dt_emprestimo" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="dt_devolucao" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ds_titulo" Type="String" Nullable="false" MaxLength="90" FixedLength="false" Unicode="false" />
+          <Property Name="nm_locatario" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="vw_Livro_Autor_Genero">
           <Key>
@@ -819,6 +887,26 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
                 <ScalarProperty Name="id_turma" ColumnName="id_turma" />
                 <ScalarProperty Name="id_aluno" ColumnName="id_aluno" />
                 <ScalarProperty Name="id_turma_aluno" ColumnName="id_turma_aluno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_emprestimo_aluno">
+            <EntityTypeMapping TypeName="BibliotecaDBAzure.vw_emprestimo_aluno">
+              <MappingFragment StoreEntitySet="vw_emprestimo_aluno">
+                <ScalarProperty Name="nm_aluno" ColumnName="nm_aluno" />
+                <ScalarProperty Name="ds_titulo" ColumnName="ds_titulo" />
+                <ScalarProperty Name="dt_devolucao" ColumnName="dt_devolucao" />
+                <ScalarProperty Name="dt_emprestimo" ColumnName="dt_emprestimo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_emprestimo_locatario">
+            <EntityTypeMapping TypeName="BibliotecaDBAzure.vw_emprestimo_locatario">
+              <MappingFragment StoreEntitySet="vw_emprestimo_locatario">
+                <ScalarProperty Name="nm_locatario" ColumnName="nm_locatario" />
+                <ScalarProperty Name="ds_titulo" ColumnName="ds_titulo" />
+                <ScalarProperty Name="dt_devolucao" ColumnName="dt_devolucao" />
+                <ScalarProperty Name="dt_emprestimo" ColumnName="dt_emprestimo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

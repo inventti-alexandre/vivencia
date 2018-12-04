@@ -25,8 +25,14 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Professor
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            frmConsultar frm = new frmConsultar();
-            ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
+            txtFuncionario.Clear();
+            txtNome.Clear();
+            txtAutor.Clear();
+            txtEditora.Clear();
+            txtEmail.Clear();
+            txtGenero.Clear();
+            txtCPF.Clear();
+            txtCelular.Clear();
         }
 
         private void TemaTela()
@@ -47,49 +53,41 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Professor
             cboLivro.DisplayMember = nameof(tb_livro.ds_titulo);
             cboLivro.DataSource = livros;
         }
-        private void CadastrarProfessor()
-        {
-            try
-            {
-                tb_locatario locatario = new tb_locatario();
-                locatario.nm_locatario = txtNome.Text.Trim();
-                locatario.nu_cpf = txtCPF.Text.Trim();
-                locatario.nu_celular = txtCelular.Text.Trim();
-
-                LocatorioBusiness locatorio = new LocatorioBusiness();
-                locatorio.CadastrarLocatario(locatario);
-            }
-            catch (ArgumentException ex)
-            {
-                MessageBox.Show(ex.Message, "Biblioteca",
-                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ocorreu um erro não identificado: {ex.Message}", "Biblioteca",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
         private void Emprestimo()
         {
             tb_emprestimo emprestimo = new tb_emprestimo();
+            emprestimo.bt_devolvido = false;
             emprestimo.ds_email = txtEmail.Text.Trim();
             emprestimo.dt_emprestimo = DateTime.Now;
+            emprestimo.nm_funcionario = txtFuncionario.Text;
             emprestimo.dt_devolucao = Convert.ToDateTime(dtpDevolucao.Text);
-            EmprestimoBusiness emprestimos = new EmprestimoBusiness();
-            emprestimos.CadastroNovoEmprestimo(emprestimo);
+            emprestimo.tb_livro_id_livro = Convert.ToInt32(cboLivro.SelectedValue);
 
+            tb_locatario prof = new tb_locatario();
+            prof.nm_locatario = txtNome.Text;
+            prof.nu_celular = txtCelular.Text;
+            prof.nu_cpf = txtCPF.Text;
+
+            EmprestimoBusiness emprestimos = new EmprestimoBusiness();
+            emprestimos.CadastroNovoEmprestimo(emprestimo, prof);
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            CadastrarProfessor();
             Emprestimo();
         }
 
-    }
+        private void TravaTexto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
 
-     
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            frmConsultar frm = new frmConsultar();
+            ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
+        }
+    }     
  }
 

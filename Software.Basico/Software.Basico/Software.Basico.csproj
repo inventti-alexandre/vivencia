@@ -107,7 +107,7 @@
     <Compile Include="DB\Base\tb_autor.cs">
       <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\Base\tb_curso.cs">
+    <Compile Include="DB\Base\tb_Curso.cs">
       <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Base\tb_emprestimo.cs">
@@ -132,6 +132,12 @@
       <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Base\tb_turma_aluno.cs">
+      <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Base\vw_emprestimo_aluno.cs">
+      <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Base\vw_emprestimo_locatario.cs">
       <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Base\vw_Livro_Autor_Genero.cs">
@@ -385,6 +391,8 @@
       <DependentUpon>BibliotecaDBAzure.edmx</DependentUpon>
       <LastGenOutput>BibliotecaDBAzure.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\email3.txt" />
+    <None Include="Resources\email2.txt" />
     <None Include="Resources\TemaDark2.png" />
     <None Include="Resources\TemaDark1.png" />
     <None Include="Resources\TemaLight1.png" />
