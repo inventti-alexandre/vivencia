@@ -9,7 +9,7 @@ namespace Software.Basico.DB.Livros
     {
         LivroDatabase db = new LivroDatabase();
 
-        public void CadastrarLivro(tb_livro dto, int qntLivro)
+        public void CadastrarLivro(tb_livro dto)
         {
             if (dto.ds_idioma == string.Empty)
                 throw new ArgumentException("O idioma é obrigatório!");
@@ -29,14 +29,7 @@ namespace Software.Basico.DB.Livros
             if (qntLivro == 0)
                 throw new ArgumentException("Deve ser adicionado pelo menos 1 livro!");
 
-            int pkLivro = db.CadastrarLivro(dto);
-
-            //tb_estoque dtoEstoque = new tb_estoque();
-            //dtoEstoque.livro_id_livro = pkLivro;
-            //dtoEstoque.qtd_livro = qntLivro;
-
-            //EstoqueDatabase dbEstoque = new EstoqueDatabase();
-            //dbEstoque.CadastrarnoEstoque(dtoEstoque);
+            db.CadastrarLivro(dto);
         }
 
         public void AlterarLivro(tb_livro dto, int idLivro)

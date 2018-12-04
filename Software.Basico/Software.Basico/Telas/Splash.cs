@@ -39,18 +39,30 @@ namespace Software.Basico.Telas
 
         private void SendEmail()
         {
-            DateTime email5dias = DateTime.Today;
-            email5dias = email5dias.AddDays(5);
+            try
+            {
+                DateTime email5dias = DateTime.Today;
+                email5dias = email5dias.AddDays(5);
 
-            AzureBiblioteca db = new AzureBiblioteca();
-            List<tb_emprestimo> livrodia = db.tb_emprestimo.Where(x => x.dt_devolucao == DateTime.Today).ToList();
-            List<tb_emprestimo> livroatrasado = db.tb_emprestimo.Where(x => x.dt_devolucao < DateTime.Today).ToList();
-            List<tb_emprestimo> livro5dia = db.tb_emprestimo.Where(x => x.dt_devolucao == email5dias).ToList();
+                AzureBiblioteca db = new AzureBiblioteca();
+                List<tb_emprestimo> livrodia = db.tb_emprestimo.Where(x => x.dt_devolucao == DateTime.Today).ToList();
+                List<tb_emprestimo> livroatrasado = db.tb_emprestimo.Where(x => x.dt_devolucao < DateTime.Today).ToList();
+                List<tb_emprestimo> livro5dia = db.tb_emprestimo.Where(x => x.dt_devolucao == email5dias).ToList();
 
-            if (livrodia.Count != 0 || livroatrasado.Count != 0 || livro5dia.Count != 0)
-                Program.notificacaoEmail = true;
-            else
-                return;
+                if (livrodia.Count != 0 || livroatrasado.Count != 0 || livro5dia.Count != 0)
+                    Program.notificacaoEmail = true;
+                else
+                    return;
+            }
+            catch (Exception ex)
+            {
+                if (ex.Message.Contains("The underlying provider failed on Open"))
+                    MessageBox.Show("Não é possivel conectar-se ao servidor. Verifique sua conexão com a internet!\nConsulte the tool Peedroc's", "Biblioteca",
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                else
+                    MessageBox.Show($"Ocorreu um erro não identificado: {ex.Message}", "Biblioteca",
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }
