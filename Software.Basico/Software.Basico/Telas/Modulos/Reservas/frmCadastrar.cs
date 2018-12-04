@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Software.Basico.DB.Locatorio;
+using Software.Basico.DB.Base;
 
 namespace Software.Basico.Telas.Modulos.Reservas
 {
@@ -16,8 +18,11 @@ namespace Software.Basico.Telas.Modulos.Reservas
         {
             InitializeComponent();
             TemaTela();
+            rdnlocatorio.Checked = true;
+            CarregarCombo();
         }
-
+        int idlocatorio;
+        int idaluno;
         private void TemaTela()
         {
             panel1.BackColor = Tema.Primaria;
@@ -81,6 +86,69 @@ namespace Software.Basico.Telas.Modulos.Reservas
 
             Reservas.frmConsultar frm = new Reservas.frmConsultar();
             ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
+        }
+
+        private void textBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void txtaluno_MouseClick(object sender, MouseEventArgs e)
+        {
+            txtaluno.Text = string.Empty;
+        }
+
+        private void ConsultarLocatario()
+        {
+            if(mktCPF.Text !="   .   .   -")
+            { 
+            LocatorioBusiness locatorio = new LocatorioBusiness();
+            tb_locatario dto = locatorio.ListarPOrCPFLocatario(mktCPF.Text);
+            lblLocatario.Text = dto.nm_locatario;
+            idlocatorio = dto.id_locatario;
+            }
+        }
+
+        private void ConsultarAluno()
+        {
+            if(txtaluno!=null)
+            { 
+            AzureBiblioteca db = new AzureBiblioteca();
+            tb_turma_aluno aluno = db.tb_turma_aluno.Where(x => x.cd_ra == txtaluno.Text).ToList().Single();
+            lblAluno.Text = aluno.tb_aluno.nm_aluno;
+            }
+        }
+        private void CarregarCombo()
+        {
+            AzureBiblioteca db = new AzureBiblioteca();
+            List<tb_livro> livro = db.tb_livro.ToList();
+            cbolivro.ValueMember = nameof(tb_livro.id_livro);
+            cbolivro.DisplayMember = nameof(tb_livro.ds_titulo);
+            cbolivro.DataSource = livro;
+        }
+
+        private void btnconsultar_Click(object sender, EventArgs e)
+        {
+            ConsultarAluno();
+            ConsultarLocatario();
+        }
+
+        private void rdnlocatorio_CheckedChanged(object sender, EventArgs e)
+        {
+            if(rdnlocatorio.Checked ==true)
+            {
+                mktCPF.Enabled = true;
+                txtaluno.Enabled = false;
+            }
+        }
+
+        private void rdnaluno_CheckedChanged(object sender, EventArgs e)
+        {
+            if(rdnaluno.Checked==true)
+            {
+                txtaluno.Enabled = true;
+                mktCPF.Enabled = false;
+            }
         }
     }
 }

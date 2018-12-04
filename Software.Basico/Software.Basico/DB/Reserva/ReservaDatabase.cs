@@ -47,6 +47,7 @@ namespace Software.Basico.DB.Reserva
             tb_reserva reversa = db.tb_reserva.Where(x => x.id_reserva == idReserva).ToList().Single();
             return reversa;
         }
+        //rever essa consulta
         public tb_reserva ConsultarReservaPorNome(int Nmnome)
         {
             tb_reserva reservas = db.tb_reserva.Where(x => x.tb_locatario_id_locatario == Nmnome).ToList().Single();

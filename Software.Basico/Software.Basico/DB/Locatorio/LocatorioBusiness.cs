@@ -35,5 +35,10 @@ namespace Software.Basico.DB.Locatorio
         {
             return db.ListarporIdLocatario(idLocatario);
         }
+
+        public tb_locatario ListarPOrCPFLocatario(string cpf)
+        {
+            return db.ListarporLocatarioCPF(cpf);
+        }
     }
 }

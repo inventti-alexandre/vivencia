@@ -55,5 +55,10 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Aluno
             frmMenu frm = new frmMenu();
             ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
         }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Software.Basico.DB.Base;
 
 namespace Software.Basico.Telas.Modulos.Reservas
 {
@@ -16,6 +17,10 @@ namespace Software.Basico.Telas.Modulos.Reservas
         {
             InitializeComponent();
             TemaTela();
+        }
+
+        private void CarregarGrid()
+        {
         }
 
         private void TemaTela()
