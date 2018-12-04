@@ -385,6 +385,7 @@
       <DependentUpon>BibliotecaDBAzure.edmx</DependentUpon>
       <LastGenOutput>BibliotecaDBAzure.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\htmlEmailAtrasado.txt" />
     <None Include="Resources\htmlEmail5Dia.txt" />
     <None Include="Resources\bell-icon_34488.png" />
     <None Include="Resources\setas-preta-png--256x200.png" />

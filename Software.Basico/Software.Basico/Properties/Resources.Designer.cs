@@ -291,11 +291,42 @@ namespace Software.Basico.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;!DOCTYPE html PUBLIC &apos;-//W3C//DTD XHTML 1.0 Transitional//EN&apos; &apos;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&apos;&gt;
+        ///
+        ///
+        ///&lt;html xmlns=&apos;http://www.w3.org/1999/xhtml&apos;&gt;
+        ///
+        /// &lt;head&gt;
+        /// 	&lt;!--Import Google Icon Font--&gt;
+        ///      &lt;link href=&apos;https://fonts.googleapis.com/icon?family=Material+Icons&apos; rel=&apos;stylesheet&apos;&gt;
+        ///      &lt;!--Import materialize.css--&gt;
+        ///      &lt;link type=&apos;text/css&apos; rel=&apos;stylesheet&apos; href=&apos;css/materialize.min.css&apos;  media=&apos;screen,projection&apos;/&gt;
+        ///
+        ///  &lt;meta http-equiv=&apos;Content-Type&apos; content=&apos;text/html; ch [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
         public static string htmlEmail5Dia {
             get {
                 return ResourceManager.GetString("htmlEmail5Dia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;!DOCTYPE html PUBLIC &apos;-//W3C//DTD XHTML 1.0 Transitional//EN&apos; &apos;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&apos;&gt;
+        ///
+        ///
+        ///&lt;html xmlns=&apos;http://www.w3.org/1999/xhtml&apos;&gt;
+        ///
+        /// &lt;head&gt;
+        /// 	&lt;!--Import Google Icon Font--&gt;
+        ///      &lt;link href=&apos;https://fonts.googleapis.com/icon?family=Material+Icons&apos; rel=&apos;stylesheet&apos;&gt;
+        ///      &lt;!--Import materialize.css--&gt;
+        ///      &lt;link type=&apos;text/css&apos; rel=&apos;stylesheet&apos; href=&apos;css/materialize.min.css&apos;  media=&apos;screen,projection&apos;/&gt;
+        ///
+        ///  &lt;meta http-equiv=&apos;Content-Type&apos; content=&apos;text/html; ch [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        public static string htmlEmailAtrasado {
+            get {
+                return ResourceManager.GetString("htmlEmailAtrasado", resourceCulture);
             }
         }
         
