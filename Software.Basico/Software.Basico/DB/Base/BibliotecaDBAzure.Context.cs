@@ -27,7 +27,7 @@ namespace Software.Basico.DB.Base
     
         public virtual DbSet<tb_aluno> tb_aluno { get; set; }
         public virtual DbSet<tb_autor> tb_autor { get; set; }
-        public virtual DbSet<tb_curso> tb_curso { get; set; }
+        public virtual DbSet<tb_Curso> tb_Curso { get; set; }
         public virtual DbSet<tb_emprestimo> tb_emprestimo { get; set; }
         public virtual DbSet<tb_estoque> tb_estoque { get; set; }
         public virtual DbSet<tb_genero> tb_genero { get; set; }

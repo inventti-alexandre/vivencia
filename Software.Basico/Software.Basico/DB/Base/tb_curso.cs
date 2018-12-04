@@ -12,10 +12,10 @@ namespace Software.Basico.DB.Base
     using System;
     using System.Collections.Generic;
     
-    public partial class tb_curso
+    public partial class tb_Curso
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tb_curso()
+        public tb_Curso()
         {
             this.tb_turma = new HashSet<tb_turma>();
         }

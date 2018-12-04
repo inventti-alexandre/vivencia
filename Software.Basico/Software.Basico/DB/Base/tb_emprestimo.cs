@@ -19,6 +19,7 @@ namespace Software.Basico.DB.Base
         public System.DateTime dt_devolucao { get; set; }
         public string nm_funcionario { get; set; }
         public string ds_email { get; set; }
+        public bool bt_devolvido { get; set; }
         public int tb_livro_id_livro { get; set; }
         public Nullable<int> tb_turma_aluno_id_turma_aluno { get; set; }
         public Nullable<int> tb_locatario_id_locatario { get; set; }

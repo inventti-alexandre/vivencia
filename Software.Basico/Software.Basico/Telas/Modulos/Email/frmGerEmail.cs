@@ -104,7 +104,7 @@ namespace Software.Basico.Telas.Modulos.Email
                         email.Assunto = "Faltam 5 dias!";
                         email.DestinatarioEmail = destino;
                         email.DestinatarioNome = "";
-                        email.Mensagem = Resources.htmlEmailDia;
+                        email.Mensagem = Resources.htmlEmail5Dia;
                         email.RemetenteSenha = "pbtadmin1234";
                         email.RemetenteNome = "Biblioteca FREI";
                         email.RemetenteEmail = "pb.technology.ltda@gmail.com";

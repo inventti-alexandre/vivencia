@@ -46,14 +46,16 @@ namespace Software.Basico.Telas.Modulos.Autor
         }
         private void CarregarGrid()
         {
-            string nome = txtNome.Text.Trim();
+            string autor = txtNome.Text.Trim();
             string nacionalidade = txtNacionalidade.Text.Trim();
 
             AutorBusiness business = new AutorBusiness();
-            List<tb_autor> autor = business.ListarAutores();
+            //List<tb_autor> aut = business.ListarAutores();
+            List<tb_autor> vem = business.ListarAutores(autor, nacionalidade);
 
             dgvAutor.AutoGenerateColumns = false;
-            dgvAutor.DataSource = autor;
+            dgvAutor.DataSource = vem;      
+          
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
