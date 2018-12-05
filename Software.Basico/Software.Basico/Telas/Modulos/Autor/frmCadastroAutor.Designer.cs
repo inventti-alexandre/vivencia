@@ -40,6 +40,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.pnTop = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnAlterar = new System.Windows.Forms.Button();
+            this.lblid = new System.Windows.Forms.Label();
+            this.lblidTxt = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -172,10 +175,48 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
+            // btnAlterar
+            // 
+            this.btnAlterar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlterar.Font = new System.Drawing.Font("Century Gothic", 14.75F);
+            this.btnAlterar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
+            this.btnAlterar.Location = new System.Drawing.Point(389, 387);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(204, 32);
+            this.btnAlterar.TabIndex = 127;
+            this.btnAlterar.Text = "Alterar Dados";
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            // 
+            // lblid
+            // 
+            this.lblid.AutoSize = true;
+            this.lblid.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblid.Location = new System.Drawing.Point(785, 70);
+            this.lblid.Name = "lblid";
+            this.lblid.Size = new System.Drawing.Size(37, 21);
+            this.lblid.TabIndex = 128;
+            this.lblid.Text = "100";
+            this.lblid.Visible = false;
+            // 
+            // lblidTxt
+            // 
+            this.lblidTxt.AutoSize = true;
+            this.lblidTxt.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblidTxt.Location = new System.Drawing.Point(739, 70);
+            this.lblidTxt.Name = "lblidTxt";
+            this.lblidTxt.Size = new System.Drawing.Size(28, 21);
+            this.lblidTxt.TabIndex = 129;
+            this.lblidTxt.Text = "Nº";
+            this.lblidTxt.Visible = false;
+            // 
             // frmCadastroAutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblid);
+            this.Controls.Add(this.lblidTxt);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pnTop);
             this.Controls.Add(this.label4);
@@ -185,9 +226,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnRemover);
-            this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.txtNomeCompleto);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnCadastrar);
+            this.Controls.Add(this.btnAlterar);
             this.Name = "frmCadastroAutor";
             this.Size = new System.Drawing.Size(915, 500);
             this.Load += new System.EventHandler(this.frmCadastroAutor_Load);
@@ -212,5 +254,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel pnTop;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.Label lblid;
+        private System.Windows.Forms.Label lblidTxt;
     }
 }

@@ -47,6 +47,12 @@ namespace Software.Basico.DB.Locatorio
             tb_locatario func = db.tb_locatario.Where(x => x.id_locatario == idlocatario).ToList().Single();
             return func;
         }
+
+        public tb_locatario ListarporLocatarioCPF(string CPF)
+        {
+            tb_locatario func = db.tb_locatario.Where(x => x.nu_cpf == CPF).ToList().Single();
+            return func;
+        }
     }
 }
 

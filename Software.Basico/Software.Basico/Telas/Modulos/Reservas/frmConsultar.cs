@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Software.Basico.DB.Base;
+using Software.Basico.DB.Reserva;
 
 namespace Software.Basico.Telas.Modulos.Reservas
 {
@@ -16,6 +18,22 @@ namespace Software.Basico.Telas.Modulos.Reservas
         {
             InitializeComponent();
             TemaTela();
+            CarregarGrid();
+        }
+
+        private void CarregarGrid()
+        {
+            AzureBiblioteca db = new AzureBiblioteca();
+            List<vw_reserva> reservas = db.vw_reserva.ToList();
+
+            ReservaBusiness reservaBusiness = new ReservaBusiness();
+            dgvReserva.AutoGenerateColumns = false;
+            dgvReserva.DataSource = reservaBusiness.ConsultarReservas();
+
+            List<tb_reserva> dto = new List<tb_reserva>();
+            dto = db.tb_reserva.ToList();
+            dgvteste.AutoGenerateColumns = false;
+            dgvteste.DataSource = dto;
         }
 
         private void TemaTela()
