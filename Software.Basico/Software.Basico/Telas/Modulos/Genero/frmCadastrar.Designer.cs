@@ -35,13 +35,13 @@
             this.pnTop = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dgvLivros = new System.Windows.Forms.DataGridView();
+            this.dgvgenero = new System.Windows.Forms.DataGridView();
+            this.Genero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnRemover = new System.Windows.Forms.Button();
             this.txtGenero = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.Genero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLivros)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvgenero)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,16 +97,16 @@
             this.label2.TabIndex = 37;
             this.label2.Text = "Cadastre um novo gênero de livro";
             // 
-            // dgvLivros
+            // dgvgenero
             // 
-            this.dgvLivros.AllowUserToAddRows = false;
-            this.dgvLivros.AllowUserToDeleteRows = false;
-            this.dgvLivros.AllowUserToResizeColumns = false;
-            this.dgvLivros.AllowUserToResizeRows = false;
-            this.dgvLivros.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvLivros.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenVertical;
-            this.dgvLivros.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            this.dgvLivros.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvgenero.AllowUserToAddRows = false;
+            this.dgvgenero.AllowUserToDeleteRows = false;
+            this.dgvgenero.AllowUserToResizeColumns = false;
+            this.dgvgenero.AllowUserToResizeRows = false;
+            this.dgvgenero.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvgenero.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenVertical;
+            this.dgvgenero.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            this.dgvgenero.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -114,16 +114,16 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLivros.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvLivros.ColumnHeadersHeight = 45;
-            this.dgvLivros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvLivros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvgenero.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvgenero.ColumnHeadersHeight = 45;
+            this.dgvgenero.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvgenero.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Genero});
-            this.dgvLivros.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvLivros.Location = new System.Drawing.Point(569, 73);
-            this.dgvLivros.MultiSelect = false;
-            this.dgvLivros.Name = "dgvLivros";
-            this.dgvLivros.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.dgvgenero.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvgenero.Location = new System.Drawing.Point(569, 73);
+            this.dgvgenero.MultiSelect = false;
+            this.dgvgenero.Name = "dgvgenero";
+            this.dgvgenero.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -131,10 +131,19 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLivros.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvLivros.RowHeadersVisible = false;
-            this.dgvLivros.Size = new System.Drawing.Size(271, 297);
-            this.dgvLivros.TabIndex = 67;
+            this.dgvgenero.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvgenero.RowHeadersVisible = false;
+            this.dgvgenero.Size = new System.Drawing.Size(271, 297);
+            this.dgvgenero.TabIndex = 67;
+            this.dgvgenero.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLivros_CellClick);
+            // 
+            // Genero
+            // 
+            this.Genero.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Genero.DataPropertyName = "nm_genero";
+            this.Genero.FillWeight = 178.7234F;
+            this.Genero.HeaderText = "Gênero";
+            this.Genero.Name = "Genero";
             // 
             // btnRemover
             // 
@@ -170,21 +179,13 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // Genero
-            // 
-            this.Genero.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Genero.DataPropertyName = "nm_genero";
-            this.Genero.FillWeight = 178.7234F;
-            this.Genero.HeaderText = "Gênero";
-            this.Genero.Name = "Genero";
-            // 
             // frmCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.txtGenero);
-            this.Controls.Add(this.dgvLivros);
+            this.Controls.Add(this.dgvgenero);
             this.Controls.Add(this.pnTop);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
@@ -195,7 +196,7 @@
             this.Size = new System.Drawing.Size(915, 500);
             this.Load += new System.EventHandler(this.frmCadastrar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLivros)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvgenero)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -209,7 +210,7 @@
         private System.Windows.Forms.Panel pnTop;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dgvLivros;
+        private System.Windows.Forms.DataGridView dgvgenero;
         private System.Windows.Forms.Button btnRemover;
         private System.Windows.Forms.TextBox txtGenero;
         private System.Windows.Forms.PictureBox pictureBox2;

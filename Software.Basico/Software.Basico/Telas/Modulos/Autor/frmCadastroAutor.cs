@@ -172,5 +172,10 @@ namespace Software.Basico.Telas.Modulos.Autor
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void txtNomeCompleto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

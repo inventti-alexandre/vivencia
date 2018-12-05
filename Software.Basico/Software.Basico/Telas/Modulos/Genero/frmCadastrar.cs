@@ -25,8 +25,8 @@ namespace Software.Basico.Telas.Modulos.Genero
         {
             GeneroBusiness nha = new GeneroBusiness();
 
-            dgvLivros.AutoGenerateColumns = false;
-            dgvLivros.DataSource = nha.ListarGeneros();
+            dgvgenero.AutoGenerateColumns = false;
+            dgvgenero.DataSource = nha.ListarGeneros();
 
 
         }
@@ -57,6 +57,7 @@ namespace Software.Basico.Telas.Modulos.Genero
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             CadastrarGenero();
+
         }
 
         private void CadastrarGenero()
@@ -100,15 +101,15 @@ namespace Software.Basico.Telas.Modulos.Genero
         {
             try
             {
-                tb_genero Autor = dgvLivros.CurrentRow.DataBoundItem as tb_genero;
+                tb_genero genero = dgvgenero.CurrentRow.DataBoundItem as tb_genero;
 
                 GeneroBusiness business = new GeneroBusiness();
-                business.RemoverGenero(Autor.id_genero);
+                business.RemoverGenero(genero.id_genero);
                 CarregarGrid();
             }
             catch (Exception)
             {
-                MessageBox.Show($"Você deve selecionar um autor para remover!", "Biblioteca",
+                MessageBox.Show($"Você deve selecionar um genero para remover!", "Biblioteca",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -129,6 +130,14 @@ namespace Software.Basico.Telas.Modulos.Genero
             Livros.frmCadastrar frm = new Livros.frmCadastrar();
             ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
 
+        }
+
+        private void dgvLivros_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tb_genero genero = dgvgenero.CurrentRow.DataBoundItem as tb_genero;
+
+            AzureBiblioteca db = new AzureBiblioteca();
+            tb_genero func = db.tb_genero.Where(x => x.id_genero == genero.id_genero).ToList().Single();
         }
     }
 }
