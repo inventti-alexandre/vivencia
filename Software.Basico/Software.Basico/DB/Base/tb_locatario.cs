@@ -18,6 +18,7 @@ namespace Software.Basico.DB.Base
         public tb_locatario()
         {
             this.tb_emprestimo = new HashSet<tb_emprestimo>();
+            this.tb_notificacao = new HashSet<tb_notificacao>();
             this.tb_reserva = new HashSet<tb_reserva>();
         }
     
@@ -25,9 +26,12 @@ namespace Software.Basico.DB.Base
         public string nu_cpf { get; set; }
         public string nm_locatario { get; set; }
         public string nu_celular { get; set; }
+        public string ds_email { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_emprestimo> tb_emprestimo { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_notificacao> tb_notificacao { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_reserva> tb_reserva { get; set; }
     }

@@ -18,8 +18,8 @@ namespace Software.Basico.Telas.Modulos.Email
         public frmGerEmail()
         {
             InitializeComponent();
-            CarregarDias();
-            TemaTela();
+            //CarregarDias();
+            //TemaTela();
         }
 
         private void CarregarDias()
@@ -43,7 +43,7 @@ namespace Software.Basico.Telas.Modulos.Email
                 if (livro5dia.Count > 0)
                     btnEnviar5Dia.Enabled = true;
                 if (livroatrasado.Count > 0)
-                    btnEnviarAtrasado.Enabled = true; 
+                    btnEnviarAtrasado.Enabled = true;
             }
         }
 
@@ -90,11 +90,11 @@ namespace Software.Basico.Telas.Modulos.Email
             AzureBiblioteca db = new AzureBiblioteca();
             List<tb_emprestimo> livro5dia = db.tb_emprestimo.Where(x => x.dt_devolucao == email5dias).ToList();
 
-            var emails = livro5dia.Select(x => x.ds_email);
+            //var emails = livro5dia.Select(x => x.ds_email);
 
             if (livro5dia.Count != 0)
             {
-                Send(emails);
+               // Send(emails);
 
                 void Send(IEnumerable<string> Destinatarios)
                 {
@@ -122,11 +122,11 @@ namespace Software.Basico.Telas.Modulos.Email
         {
             AzureBiblioteca db = new AzureBiblioteca();
             List<tb_emprestimo> emprestimos = db.tb_emprestimo.Where(x => x.dt_devolucao == DateTime.Today).ToList();
-            var emails = emprestimos.Select(x => x.ds_email);
+            //var emails = emprestimos.Select(x => x.ds_email);
 
             if (emprestimos.Count != 0)
             {
-                Send(emails);
+               // Send(emails);
 
                 void Send(IEnumerable<string> Destinatarios)
                 {
@@ -154,11 +154,11 @@ namespace Software.Basico.Telas.Modulos.Email
         {
             AzureBiblioteca db = new AzureBiblioteca();
             List<tb_emprestimo> livroatrasado = db.tb_emprestimo.Where(x => x.dt_devolucao < DateTime.Today).ToList();
-            var emails = livroatrasado.Select(x => x.ds_email);
+            //var emails = livroatrasado.Select(x => x.ds_email);
 
             if (livroatrasado.Count != 0)
             {
-                Send(emails);
+                //Send(emails);
 
                 void Send(IEnumerable<string> Destinatarios)
                 {

@@ -12,19 +12,16 @@ namespace Software.Basico.DB.Base
     using System;
     using System.Collections.Generic;
     
-    public partial class tb_emprestimo
+    public partial class tb_notificacao
     {
-        public int id_emprestimo { get; set; }
-        public System.DateTime dt_emprestimo { get; set; }
-        public System.DateTime dt_devolucao { get; set; }
-        public string nm_funcionario { get; set; }
-        public bool bt_devolvido { get; set; }
-        public int tb_livro_id_livro { get; set; }
-        public Nullable<int> tb_turma_aluno_id_turma_aluno { get; set; }
+        public int id_notificacao { get; set; }
+        public bool bt_emailDia { get; set; }
+        public bool bt_email5DIa { get; set; }
+        public bool bt_emailAtrasado { get; set; }
+        public Nullable<int> tb_aluno_dados_id_aluno_dados { get; set; }
         public Nullable<int> tb_locatario_id_locatario { get; set; }
     
-        public virtual tb_livro tb_livro { get; set; }
+        public virtual tb_aluno_dados tb_aluno_dados { get; set; }
         public virtual tb_locatario tb_locatario { get; set; }
-        public virtual tb_turma_aluno tb_turma_aluno { get; set; }
     }
 }

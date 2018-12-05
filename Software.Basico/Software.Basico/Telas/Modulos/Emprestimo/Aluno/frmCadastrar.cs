@@ -59,7 +59,6 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Aluno
         {
             tb_emprestimo emprestimo = new tb_emprestimo();
             emprestimo.bt_devolvido = false;
-            emprestimo.ds_email = txtEmail.Text.Trim();
             emprestimo.dt_emprestimo = DateTime.Now;
             emprestimo.nm_funcionario = txtFuncionario.Text;
             emprestimo.dt_devolucao = Convert.ToDateTime(dtpDevolucao.Text);

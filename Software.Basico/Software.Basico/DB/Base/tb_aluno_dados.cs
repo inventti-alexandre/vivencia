@@ -12,21 +12,20 @@ namespace Software.Basico.DB.Base
     using System;
     using System.Collections.Generic;
     
-    public partial class tb_aluno
+    public partial class tb_aluno_dados
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tb_aluno()
+        public tb_aluno_dados()
         {
-            this.tb_aluno_dados = new HashSet<tb_aluno_dados>();
-            this.tb_turma_aluno = new HashSet<tb_turma_aluno>();
+            this.tb_notificacao = new HashSet<tb_notificacao>();
         }
     
-        public int id_aluno { get; set; }
-        public string nm_aluno { get; set; }
+        public int id_aluno_dados { get; set; }
+        public string ds_email { get; set; }
+        public Nullable<int> tb_aluno_id_aluno { get; set; }
     
+        public virtual tb_aluno tb_aluno { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_aluno_dados> tb_aluno_dados { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_turma_aluno> tb_turma_aluno { get; set; }
+        public virtual ICollection<tb_notificacao> tb_notificacao { get; set; }
     }
 }

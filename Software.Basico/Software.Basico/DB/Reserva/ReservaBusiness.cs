@@ -13,7 +13,7 @@ namespace Software.Basico.DB.Reserva
 
         public void SalvarReserva (tb_reserva dto)
         {
-            if (dto.tb_livro_id_livro == null)
+            if (dto.tb_livro_id_livro == 0)
             {
                 throw new ArgumentException("Por favor Escolha um livro.");
             }

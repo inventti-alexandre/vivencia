@@ -5,32 +5,38 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="2383849c238345bd8c5dd51c56b88ff6" Name="Diagram1" ZoomLevel="86">
-        <EntityTypeShape EntityType="BibliotecaDBAzure.tb_aluno" Width="1.5" PointX="3.75" PointY="18" />
-        <EntityTypeShape EntityType="BibliotecaDBAzure.tb_autor" Width="1.5" PointX="0.75" PointY="1.875" />
-        <EntityTypeShape EntityType="BibliotecaDBAzure.tb_Curso" Width="1.5" PointX="1.5" PointY="15.375" />
+        <EntityTypeShape EntityType="BibliotecaDBAzure.sysdiagrams" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="BibliotecaDBAzure.tb_aluno" Width="1.5" PointX="3.75" PointY="18" FillColor="Yellow" />
+        <EntityTypeShape EntityType="BibliotecaDBAzure.tb_aluno_dados" Width="1.5" PointX="6" PointY="8" />
+        <EntityTypeShape EntityType="BibliotecaDBAzure.tb_autor" Width="1.5" PointX="0.75" PointY="1.75" />
+        <EntityTypeShape EntityType="BibliotecaDBAzure.tb_Curso" Width="1.5" PointX="1.5" PointY="15.375" FillColor="Yellow" />
         <EntityTypeShape EntityType="BibliotecaDBAzure.tb_emprestimo" Width="1.5" PointX="8.25" PointY="4.25" />
-        <EntityTypeShape EntityType="BibliotecaDBAzure.tb_estoque" Width="1.5" PointX="5.25" PointY="12.375" />
-        <EntityTypeShape EntityType="BibliotecaDBAzure.tb_genero" Width="1.5" PointX="0.75" PointY="5.125" />
-        <EntityTypeShape EntityType="BibliotecaDBAzure.tb_livro" Width="1.5" PointX="3" PointY="3.625" />
-        <EntityTypeShape EntityType="BibliotecaDBAzure.tb_locatario" Width="1.5" PointX="6" PointY="1.125" />
-        <EntityTypeShape EntityType="BibliotecaDBAzure.tb_reserva" Width="1.5" PointX="5.25" PointY="4.625" />
-        <EntityTypeShape EntityType="BibliotecaDBAzure.tb_turma" Width="1.5" PointX="3.75" PointY="15.125" />
-        <EntityTypeShape EntityType="BibliotecaDBAzure.tb_turma_aluno" Width="1.5" PointX="6" PointY="16" />
-        <EntityTypeShape EntityType="BibliotecaDBAzure.vw_emprestimo_aluno" Width="1.5" PointX="2.75" PointY="0.75" />
-        <EntityTypeShape EntityType="BibliotecaDBAzure.vw_emprestimo_locatario" Width="1.5" PointX="8.75" PointY="0.75" />
-        <EntityTypeShape EntityType="BibliotecaDBAzure.vw_Livro_Autor_Genero" Width="1.5" PointX="5.75" PointY="8.75" />
-        <EntityTypeShape EntityType="BibliotecaDBAzure.vw_reserva" Width="1.5" PointX="7.75" PointY="8.75" />
+        <EntityTypeShape EntityType="BibliotecaDBAzure.tb_estoque" Width="1.5" PointX="5.25" PointY="12" />
+        <EntityTypeShape EntityType="BibliotecaDBAzure.tb_genero" Width="1.5" PointX="0.75" PointY="5" />
+        <EntityTypeShape EntityType="BibliotecaDBAzure.tb_livro" Width="1.5" PointX="3" PointY="3.5" />
+        <EntityTypeShape EntityType="BibliotecaDBAzure.tb_locatario" Width="1.5" PointX="6" PointY="0.75" />
+        <EntityTypeShape EntityType="BibliotecaDBAzure.tb_notificacao" Width="1.5" PointX="8.25" PointY="0.75" />
+        <EntityTypeShape EntityType="BibliotecaDBAzure.tb_reserva" Width="1.5" PointX="5.25" PointY="4.5" />
+        <EntityTypeShape EntityType="BibliotecaDBAzure.tb_turma" Width="1.5" PointX="3.75" PointY="15" FillColor="Yellow" />
+        <EntityTypeShape EntityType="BibliotecaDBAzure.tb_turma_aluno" Width="1.5" PointX="6" PointY="16" FillColor="Yellow" />
+        <EntityTypeShape EntityType="BibliotecaDBAzure.vw_emprestimo_aluno" Width="1.5" PointX="8.75" PointY="8.75" />
+        <EntityTypeShape EntityType="BibliotecaDBAzure.vw_emprestimo_locatario" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="BibliotecaDBAzure.vw_Livro_Autor_Genero" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="BibliotecaDBAzure.vw_reserva" Width="1.5" PointX="10.75" PointY="3.75" />
+        <AssociationConnector Association="BibliotecaDBAzure.FK__tb_aluno___tb_al__68487DD7" />
         <AssociationConnector Association="BibliotecaDBAzure.fk_aluno" />
-        <AssociationConnector Association="BibliotecaDBAzure.FK__tb_livro__tb_aut__6E01572D" />
+        <AssociationConnector Association="BibliotecaDBAzure.FK__tb_notifi__tb_al__693CA210" />
+        <AssociationConnector Association="BibliotecaDBAzure.FK__tb_livro__tb_aut__74AE54BC" />
         <AssociationConnector Association="BibliotecaDBAzure.fk_curso" />
-        <AssociationConnector Association="BibliotecaDBAzure.FK__tb_empres__tb_li__6A30C649" />
-        <AssociationConnector Association="BibliotecaDBAzure.FK__tb_empres__tb_lo__6B24EA82" />
-        <AssociationConnector Association="BibliotecaDBAzure.FK__tb_empres__tb_tu__6C190EBB" />
-        <AssociationConnector Association="BibliotecaDBAzure.FK__tb_estoqu__tb_li__6D0D32F4" />
-        <AssociationConnector Association="BibliotecaDBAzure.FK__tb_livro__tb_gen__6EF57B66" />
-        <AssociationConnector Association="BibliotecaDBAzure.FK__tb_reserv__tb_li__6FE99F9F" />
-        <AssociationConnector Association="BibliotecaDBAzure.FK__tb_reserv__tb_lo__70DDC3D8" />
-        <AssociationConnector Association="BibliotecaDBAzure.FK__tb_reserv__tb_tu__71D1E811" />
+        <AssociationConnector Association="BibliotecaDBAzure.FK__tb_empres__tb_li__70DDC3D8" />
+        <AssociationConnector Association="BibliotecaDBAzure.FK__tb_empres__tb_lo__71D1E811" />
+        <AssociationConnector Association="BibliotecaDBAzure.FK__tb_empres__tb_tu__72C60C4A" />
+        <AssociationConnector Association="BibliotecaDBAzure.FK__tb_estoqu__tb_li__73BA3083" />
+        <AssociationConnector Association="BibliotecaDBAzure.FK__tb_livro__tb_gen__75A278F5" />
+        <AssociationConnector Association="BibliotecaDBAzure.FK__tb_reserv__tb_li__76969D2E" />
+        <AssociationConnector Association="BibliotecaDBAzure.FK__tb_notifi__tb_lo__6A30C649" />
+        <AssociationConnector Association="BibliotecaDBAzure.FK__tb_reserv__tb_lo__778AC167" />
+        <AssociationConnector Association="BibliotecaDBAzure.FK__tb_reserv__tb_tu__787EE5A0" />
         <AssociationConnector Association="BibliotecaDBAzure.fk_turma" />
       </Diagram>
     </edmx:Diagrams>

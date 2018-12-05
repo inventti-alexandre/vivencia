@@ -101,7 +101,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BibliotecaDBAzure.edmx</DependentUpon>
     </Compile>
+    <Compile Include="DB\Base\sysdiagrams.cs">
+      <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
+    </Compile>
     <Compile Include="DB\Base\tb_aluno.cs">
+      <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Base\tb_aluno_dados.cs">
       <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Base\tb_autor.cs">
@@ -123,6 +129,9 @@
       <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Base\tb_locatario.cs">
+      <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Base\tb_notificacao.cs">
       <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Base\tb_reserva.cs">

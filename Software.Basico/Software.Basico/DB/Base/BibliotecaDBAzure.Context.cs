@@ -25,7 +25,9 @@ namespace Software.Basico.DB.Base
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<tb_aluno> tb_aluno { get; set; }
+        public virtual DbSet<tb_aluno_dados> tb_aluno_dados { get; set; }
         public virtual DbSet<tb_autor> tb_autor { get; set; }
         public virtual DbSet<tb_Curso> tb_Curso { get; set; }
         public virtual DbSet<tb_emprestimo> tb_emprestimo { get; set; }
@@ -33,6 +35,7 @@ namespace Software.Basico.DB.Base
         public virtual DbSet<tb_genero> tb_genero { get; set; }
         public virtual DbSet<tb_livro> tb_livro { get; set; }
         public virtual DbSet<tb_locatario> tb_locatario { get; set; }
+        public virtual DbSet<tb_notificacao> tb_notificacao { get; set; }
         public virtual DbSet<tb_reserva> tb_reserva { get; set; }
         public virtual DbSet<tb_turma> tb_turma { get; set; }
         public virtual DbSet<tb_turma_aluno> tb_turma_aluno { get; set; }
