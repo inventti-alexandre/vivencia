@@ -98,7 +98,19 @@ namespace Software.Basico.Telas.Modulos.Genero
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
+            try
+            {
+                tb_genero Autor = dgvLivros.CurrentRow.DataBoundItem as tb_genero;
 
+                GeneroBusiness business = new GeneroBusiness();
+                business.RemoverGenero(Autor.id_genero);
+                CarregarGrid();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show($"Você deve selecionar um autor para remover!", "Biblioteca",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void frmCadastrar_Load(object sender, EventArgs e)

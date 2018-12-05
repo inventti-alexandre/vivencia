@@ -9,7 +9,8 @@ using System.Data.Entity;
 namespace Software.Basico.DB.Genero
 {
     class GeneroDatabase
-    {  //123 Nha testanto 123 nha
+    {  
+        //123 Nha testanto 123 nha
         //nha
 
         AzureBiblioteca db = new AzureBiblioteca();
