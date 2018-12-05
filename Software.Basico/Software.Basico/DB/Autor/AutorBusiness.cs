@@ -13,11 +13,17 @@ namespace Software.Basico.DB.Autor
 
         public void CadastrarAutor(tb_autor dto)
         {
+            if (dto.nm_autor == string.Empty)
+            throw new ArgumentException("O autor é obrigatório!");
+
             db.CadastrarAutor(dto);
         }
 
         public void AlterarAutor(tb_autor dto, int idAutor)
         {
+            if (dto.nm_autor == string.Empty)
+            throw new ArgumentException("O autor é obrigatório!");
+
             db.AlterarAutor(dto, idAutor);
         }
 
