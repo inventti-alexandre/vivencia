@@ -66,7 +66,19 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Professor
     
         private void btnVisualizar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                vw_emprestimo_locatario locatario = dgvEmprestimo.CurrentRow.DataBoundItem as vw_emprestimo_locatario;
 
+                frmCadastrar frm = new frmCadastrar();
+                frm.PreencherCampos(locatario.id_emprestimo);
+                ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
+            }
+            catch (Exception ex)
+            {
+                if (ex.Message.Contains("Referência de objeto não definida para uma instância de um objeto"))
+                    MessageBox.Show("Selecione um emprestimo!", "Biblioteca", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void btnListar_Click(object sender, EventArgs e)

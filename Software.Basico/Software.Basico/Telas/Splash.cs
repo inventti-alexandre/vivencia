@@ -21,7 +21,7 @@ namespace Software.Basico.Telas
             // Inicia contagem para término da Splash Screen
             Task.Factory.StartNew(() =>
             {
-                SendEmail();
+                //SendEmail();
                 // Espera 5 segundos para iniciar o sistema
                 System.Threading.Thread.Sleep(2000);
 

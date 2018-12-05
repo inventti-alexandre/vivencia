@@ -24,6 +24,9 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Professor
             CarregarCombo();
         }
 
+        int id;
+        bool cpf;
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Clean();
@@ -46,9 +49,11 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Professor
             pnTop.BackColor = Tema.Primaria;
             btnCadastrar.BackColor = Tema.Segundaria;
             btnCancelar.BackColor = Tema.Segundaria;
+            btnAlterar.BackColor = Tema.Segundaria;
 
             btnCancelar.ForeColor = Tema.Texto;
             btnCadastrar.ForeColor = Tema.Texto;
+            btnAlterar.ForeColor = Tema.Texto;
         }
         private void CarregarCombo()
         {
@@ -76,40 +81,53 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Professor
             prof.ds_email = txtEmail.Text;
 
             EmprestimoBusiness emprestimos = new EmprestimoBusiness();
-            emprestimos.CadastroNovoEmprestimo(emprestimo, prof);
+            cad = emprestimos.CadastroNovoEmprestimo(emprestimo, prof);
         }
+
+        int cad;
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            Emprestimo();
+            if (cpf)
+            {
+                Emprestimo();
 
-            MessageBox.Show("Cadastro efetuado com sucesso!", "Biblioteca",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (cad != 0)
+                {
+                    MessageBox.Show("Cadastro efetuado com sucesso!", "Biblioteca",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            Clean(); 
+                    Clean(); 
+                }
+            }
+            else
+                MessageBox.Show("Você deve validar o CPF antes!", "Biblioteca",
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
-        private void PreencherCampos(int idEmprestimo)
+        public void PreencherCampos(int idEmprestimo)
         {
-            btnCadastrar.Visible = false;
-            btnCancelar.Visible = false;
-
             AzureBiblioteca db = new AzureBiblioteca();
             tb_emprestimo emprestimo = db.tb_emprestimo.Where(x => x.id_emprestimo == idEmprestimo).ToList().Single();
 
-            cboLivro.SelectedIndex = emprestimo.tb_livro_id_livro;
+            cboLivro.SelectedItem = emprestimo.tb_livro_id_livro;
             txtCelular.Text = emprestimo.tb_locatario.nu_celular;
             txtCPF.Text = emprestimo.tb_locatario.nu_cpf;
             txtEmail.Text = emprestimo.tb_locatario.ds_email;
             txtFuncionario.Text = emprestimo.nm_funcionario;
             txtNome.Text = emprestimo.tb_locatario.nm_locatario;
+            id = emprestimo.id_emprestimo;
+            chkDevolvido.Checked = emprestimo.bt_devolvido;
+            dtpEmprestimo.Value = emprestimo.dt_emprestimo;
+            dtpDevolucao.Value = emprestimo.dt_devolucao;
 
-            cboLivro.Enabled = false;
-            txtCelular.Enabled = false;
-            txtCPF.Enabled = false;
-            txtEmail.Enabled = false;
-            txtFuncionario.Enabled = false;
-            txtNome.Enabled = false;
+            dtpDevolucao.Enabled = false;
+            dtpEmprestimo.Enabled = false;
+            dtpEmprestimo.Visible = true;
+            label13.Visible = true;
+            chkDevolvido.Visible = true;
+            label12.Visible = true;
+            btnAlterar.Visible = true;
         }
 
         private void TravaTexto_KeyPress(object sender, KeyPressEventArgs e)
@@ -128,7 +146,7 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Professor
             try
             {
                 CPF val = new CPF();
-                val.ValidarCPF(txtCPF.Text);
+                cpf = val.ValidarCPF(txtCPF.Text);
 
                 AzureBiblioteca db = new AzureBiblioteca();
                 tb_locatario locatario = db.tb_locatario.Where(x => x.nu_cpf == txtCPF.Text).ToList().Single();
@@ -138,7 +156,7 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Professor
                     txtNome.Text = locatario.nm_locatario;
                     txtEmail.Text = locatario.ds_email;
                     txtCelular.Text = locatario.nu_celular;
-                }                    
+                }  
             }
             catch (ArgumentException ex)
             {
@@ -163,6 +181,44 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Professor
             txtAutor.Text = book.tb_autor.nm_autor;
             txtGenero.Text = book.tb_genero.nm_genero;
             txtEditora.Text = book.nm_editora;
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            AlterarEmprestimo();
+
+            MessageBox.Show("Emprestimo alterado com sucesso!", "Biblioteca", 
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            frmConsultar frm = new frmConsultar();
+            ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
+        }
+
+        private void AlterarEmprestimo()
+        {
+            tb_emprestimo emprestimo = new tb_emprestimo();
+            emprestimo.bt_devolvido = chkDevolvido.Checked;
+            emprestimo.nm_funcionario = txtFuncionario.Text;
+            emprestimo.dt_devolucao = Convert.ToDateTime(dtpDevolucao.Text);
+            emprestimo.tb_livro_id_livro = Convert.ToInt32(cboLivro.SelectedValue);
+            emprestimo.dt_emprestimo = Convert.ToDateTime(dtpEmprestimo.Text);
+
+            tb_locatario prof = new tb_locatario();
+            prof.nm_locatario = txtNome.Text;
+            prof.nu_celular = txtCelular.Text;
+            prof.nu_cpf = txtCPF.Text;
+            prof.ds_email = txtEmail.Text;
+
+            EmprestimoBusiness emprestimos = new EmprestimoBusiness();
+            emprestimos.AlterarEmprestimo(emprestimo, id, prof);
+        }
+
+        private void txtFuncionario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar))
+                e.Handled = false;
+            else
+                e.Handled = true;
         }
     }     
  }

@@ -31,6 +31,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvEmprestimo = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnVisualizar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnListar = new System.Windows.Forms.Button();
@@ -42,15 +47,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtProfessor = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.voltar = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.chkDevolvido = new System.Windows.Forms.CheckBox();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.voltar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmprestimo)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.voltar)).BeginInit();
@@ -97,6 +97,42 @@
             this.dgvEmprestimo.RowHeadersVisible = false;
             this.dgvEmprestimo.Size = new System.Drawing.Size(915, 265);
             this.dgvEmprestimo.TabIndex = 69;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ds_titulo";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Livro";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // Column10
+            // 
+            this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column10.DataPropertyName = "nm_locatario";
+            this.Column10.HeaderText = "Professor";
+            this.Column10.Name = "Column10";
+            // 
+            // Column9
+            // 
+            this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column9.DataPropertyName = "dt_emprestimo";
+            this.Column9.HeaderText = "Data Empréstimo";
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 170;
+            // 
+            // Column8
+            // 
+            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column8.DataPropertyName = "dt_devolucao";
+            this.Column8.HeaderText = "Data Devolução";
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 170;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "bt_devolvido";
+            this.Column1.HeaderText = "Devolvido";
+            this.Column1.Name = "Column1";
             // 
             // btnVisualizar
             // 
@@ -176,6 +212,7 @@
             // 
             this.txtTitulo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTitulo.Location = new System.Drawing.Point(262, 32);
+            this.txtTitulo.MaxLength = 90;
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(153, 23);
             this.txtTitulo.TabIndex = 70;
@@ -204,6 +241,7 @@
             // 
             this.txtProfessor.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProfessor.Location = new System.Drawing.Point(421, 32);
+            this.txtProfessor.MaxLength = 45;
             this.txtProfessor.Name = "txtProfessor";
             this.txtProfessor.Size = new System.Drawing.Size(216, 23);
             this.txtProfessor.TabIndex = 70;
@@ -223,6 +261,15 @@
             this.panel2.Size = new System.Drawing.Size(909, 64);
             this.panel2.TabIndex = 123;
             // 
+            // chkDevolvido
+            // 
+            this.chkDevolvido.AutoSize = true;
+            this.chkDevolvido.Location = new System.Drawing.Point(748, 29);
+            this.chkDevolvido.Name = "chkDevolvido";
+            this.chkDevolvido.Size = new System.Drawing.Size(15, 14);
+            this.chkDevolvido.TabIndex = 124;
+            this.chkDevolvido.UseVisualStyleBackColor = true;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -232,17 +279,6 @@
             this.label5.Size = new System.Drawing.Size(145, 24);
             this.label5.TabIndex = 123;
             this.label5.Text = "Pesquisar Por:";
-            // 
-            // voltar
-            // 
-            this.voltar.Image = global::Software.Basico.Properties.Resources.voltar;
-            this.voltar.Location = new System.Drawing.Point(0, 471);
-            this.voltar.Name = "voltar";
-            this.voltar.Size = new System.Drawing.Size(41, 29);
-            this.voltar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.voltar.TabIndex = 127;
-            this.voltar.TabStop = false;
-            this.voltar.Click += new System.EventHandler(this.pictureBox1_Click_2);
             // 
             // label4
             // 
@@ -254,50 +290,16 @@
             this.label4.TabIndex = 72;
             this.label4.Text = "Devolvido";
             // 
-            // chkDevolvido
+            // voltar
             // 
-            this.chkDevolvido.AutoSize = true;
-            this.chkDevolvido.Location = new System.Drawing.Point(748, 29);
-            this.chkDevolvido.Name = "chkDevolvido";
-            this.chkDevolvido.Size = new System.Drawing.Size(15, 14);
-            this.chkDevolvido.TabIndex = 124;
-            this.chkDevolvido.UseVisualStyleBackColor = true;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ds_titulo";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Livro";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // Column10
-            // 
-            this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column10.DataPropertyName = "nm_locatario";
-            this.Column10.HeaderText = "Professor";
-            this.Column10.Name = "Column10";
-            // 
-            // Column9
-            // 
-            this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column9.DataPropertyName = "dt_emprestimo";
-            this.Column9.HeaderText = "Data Empréstimo";
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 170;
-            // 
-            // Column8
-            // 
-            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column8.DataPropertyName = "dt_devolucao";
-            this.Column8.HeaderText = "Data Devolução";
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 170;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "bt_devolvido";
-            this.Column1.HeaderText = "Devolvido";
-            this.Column1.Name = "Column1";
+            this.voltar.Image = global::Software.Basico.Properties.Resources.voltar;
+            this.voltar.Location = new System.Drawing.Point(0, 471);
+            this.voltar.Name = "voltar";
+            this.voltar.Size = new System.Drawing.Size(41, 29);
+            this.voltar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.voltar.TabIndex = 127;
+            this.voltar.TabStop = false;
+            this.voltar.Click += new System.EventHandler(this.pictureBox1_Click_2);
             // 
             // frmConsultar
             // 

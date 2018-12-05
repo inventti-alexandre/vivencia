@@ -74,6 +74,7 @@
             this.btnAluno.Text = "Aluno";
             this.btnAluno.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAluno.UseVisualStyleBackColor = true;
+            this.btnAluno.Visible = false;
             this.btnAluno.Click += new System.EventHandler(this.btnAluno_Click_1);
             // 
             // frmMenu

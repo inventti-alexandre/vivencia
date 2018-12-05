@@ -12,22 +12,42 @@ namespace Software.Basico.DB.Emprestimo
     {
         AzureBiblioteca db = new AzureBiblioteca();
 
-        public void CadastroNovoEmprestimo(tb_emprestimo dto)
+        public int CadastroNovoEmprestimo(tb_emprestimo dto)
         {
             db.tb_emprestimo.Add(dto);
-            db.SaveChanges();
+            return db.SaveChanges();
         }
 
         public void AlterarEmprestimo(tb_emprestimo dto, int idemprestimo)
         {
-            tb_emprestimo func = db.tb_emprestimo.Where(x => x.id_emprestimo == idemprestimo).ToList().Single();
+            tb_emprestimo emp = db.tb_emprestimo.Where(x => x.id_emprestimo == idemprestimo).ToList().Single();
 
-            func.nm_funcionario = dto.nm_funcionario;
-            func.dt_devolucao = dto.dt_devolucao;
-            func.dt_emprestimo = dto.dt_emprestimo;
-            func.tb_livro_id_livro = dto.tb_livro_id_livro;
-            func.tb_turma_aluno_id_turma_aluno = dto.tb_turma_aluno_id_turma_aluno;
-            //func.tb_locatario_id_locatario = dto.tb_locatario_id_locatario;
+            emp.nm_funcionario = dto.nm_funcionario;
+            emp.dt_devolucao = dto.dt_devolucao;
+            emp.dt_emprestimo = dto.dt_emprestimo;
+            emp.bt_devolvido = dto.bt_devolvido;
+            emp.tb_livro_id_livro = dto.tb_livro_id_livro;
+            emp.tb_locatario_id_locatario = dto.tb_locatario_id_locatario;
+            db.SaveChanges();
+        }
+
+        public void AlterarEmprestimo(tb_emprestimo dto, int idemprestimo, tb_locatario locatario)
+        {
+            tb_locatario loc = db.tb_locatario.Where(x => x.id_locatario == locatario.id_locatario).ToList().Single();
+            loc.nm_locatario = locatario.nm_locatario;
+            loc.nu_celular = locatario.nu_celular;
+            loc.nu_cpf = locatario.nu_cpf;
+
+            db.SaveChanges();
+
+            tb_emprestimo emp = db.tb_emprestimo.Where(x => x.id_emprestimo == idemprestimo).ToList().Single();
+
+            emp.nm_funcionario = dto.nm_funcionario;
+            emp.dt_devolucao = dto.dt_devolucao;
+            emp.dt_emprestimo = dto.dt_emprestimo;
+            emp.bt_devolvido = dto.bt_devolvido;
+            emp.tb_livro_id_livro = dto.tb_livro_id_livro;
+            
             db.SaveChanges();
         }
 
@@ -53,6 +73,12 @@ namespace Software.Basico.DB.Emprestimo
         public List<vw_emprestimo_locatario> ListarEmprestimosLocatarios()
         {
             List<vw_emprestimo_locatario> funcList = db.vw_emprestimo_locatario.ToList();
+            return funcList;
+        }
+
+        public List<vw_emprestimo_locatario> ListarEmprestimosLocatariosPorDevolucao()
+        {
+            List<vw_emprestimo_locatario> funcList = db.vw_emprestimo_locatario.Where(x => x.bt_devolvido == true).ToList();
             return funcList;
         }
 

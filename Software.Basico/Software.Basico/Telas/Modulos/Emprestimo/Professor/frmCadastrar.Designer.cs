@@ -53,6 +53,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtEditora = new System.Windows.Forms.TextBox();
+            this.btnAlterar = new System.Windows.Forms.Button();
+            this.chkDevolvido = new System.Windows.Forms.CheckBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.dtpEmprestimo = new System.Windows.Forms.DateTimePicker();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,6 +103,7 @@
             // 
             this.txtNome.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNome.Location = new System.Drawing.Point(230, 219);
+            this.txtNome.MaxLength = 45;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(234, 23);
             this.txtNome.TabIndex = 105;
@@ -234,6 +240,7 @@
             // 
             this.txtEmail.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(597, 219);
+            this.txtEmail.MaxLength = 150;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(215, 23);
             this.txtEmail.TabIndex = 105;
@@ -270,9 +277,11 @@
             // 
             this.txtFuncionario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFuncionario.Location = new System.Drawing.Point(110, 142);
+            this.txtFuncionario.MaxLength = 100;
             this.txtFuncionario.Name = "txtFuncionario";
             this.txtFuncionario.Size = new System.Drawing.Size(234, 23);
             this.txtFuncionario.TabIndex = 105;
+            this.txtFuncionario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFuncionario_KeyPress);
             // 
             // pictureBox1
             // 
@@ -304,13 +313,72 @@
             this.txtEditora.TabIndex = 105;
             this.txtEditora.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TravaTexto_KeyPress);
             // 
+            // btnAlterar
+            // 
+            this.btnAlterar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlterar.Font = new System.Drawing.Font("Century Gothic", 14.75F);
+            this.btnAlterar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
+            this.btnAlterar.Location = new System.Drawing.Point(597, 366);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(216, 32);
+            this.btnAlterar.TabIndex = 110;
+            this.btnAlterar.Text = "Salvar";
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Visible = false;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            // 
+            // chkDevolvido
+            // 
+            this.chkDevolvido.AutoSize = true;
+            this.chkDevolvido.Location = new System.Drawing.Point(482, 383);
+            this.chkDevolvido.Name = "chkDevolvido";
+            this.chkDevolvido.Size = new System.Drawing.Size(15, 14);
+            this.chkDevolvido.TabIndex = 129;
+            this.chkDevolvido.UseVisualStyleBackColor = true;
+            this.chkDevolvido.Visible = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(449, 350);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(89, 21);
+            this.label12.TabIndex = 128;
+            this.label12.Text = "Devolvido";
+            this.label12.Visible = false;
+            // 
+            // dtpEmprestimo
+            // 
+            this.dtpEmprestimo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpEmprestimo.Location = new System.Drawing.Point(110, 430);
+            this.dtpEmprestimo.Name = "dtpEmprestimo";
+            this.dtpEmprestimo.Size = new System.Drawing.Size(289, 23);
+            this.dtpEmprestimo.TabIndex = 109;
+            this.dtpEmprestimo.Visible = false;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(110, 404);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(172, 21);
+            this.label13.TabIndex = 120;
+            this.label13.Text = "Data De Emprestimo";
+            this.label13.Visible = false;
+            // 
             // frmCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.chkDevolvido);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtCelular);
             this.Controls.Add(this.txtCPF);
+            this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.label9);
@@ -321,6 +389,7 @@
             this.Controls.Add(this.txtFuncionario);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label11);
@@ -330,6 +399,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cboLivro);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.dtpEmprestimo);
             this.Controls.Add(this.dtpDevolucao);
             this.Controls.Add(this.pnTop);
             this.Controls.Add(this.label1);
@@ -368,5 +438,10 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtEditora;
+        private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.CheckBox chkDevolvido;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DateTimePicker dtpEmprestimo;
+        private System.Windows.Forms.Label label13;
     }
 }
