@@ -13,15 +13,12 @@ namespace Software.Basico.DB.Reserva
 
         public void SalvarReserva (tb_reserva dto)
         {
-            if (dto.tb_locatario_id_locatario == null)
+            if (dto.tb_livro_id_livro == null)
             {
                 throw new ArgumentException("Por favor Escolha um livro.");
             }
 
-            if (dto.tb_turma_aluno_id_turma_aluno == null)
-            {
-                throw new ArgumentException("Por favor Escolha um livro.");
-            }
+ 
             db.CadastrarReserva(dto);
 
         }
@@ -36,7 +33,7 @@ namespace Software.Basico.DB.Reserva
             db.RemoverReserva(idreserva);
         }
 
-        public List<tb_reserva> ConsultarReservas ()
+        public List<vw_reserva> ConsultarReservas ()
         {
             return db.ConsultarReservas();
         }

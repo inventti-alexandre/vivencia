@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Software.Basico.DB.Locatorio;
 using Software.Basico.DB.Base;
+using Software.Basico.DB.Reserva;
 
 namespace Software.Basico.Telas.Modulos.Reservas
 {
@@ -21,8 +22,9 @@ namespace Software.Basico.Telas.Modulos.Reservas
             rdnlocatorio.Checked = true;
             CarregarCombo();
         }
-        int idlocatorio;
+        int idlocatario;
         int idaluno;
+        AzureBiblioteca db = new AzureBiblioteca();
         private void TemaTela()
         {
             panel1.BackColor = Tema.Primaria;
@@ -73,14 +75,6 @@ namespace Software.Basico.Telas.Modulos.Reservas
         {
 
         }
-
-        private void btnCadastrar_Click(object sender, EventArgs e)
-        {
-             // Oi gente, vocês não acham melhor que 
-            //a data da reserva fique somente no código? 
-           //  pq a data da reserva vai ser sempre o dia atual, ou seja, é só dar um datetime.now 
-        }
-
         private void pictureBox2_Click(object sender, EventArgs e)
         {
 
@@ -105,7 +99,7 @@ namespace Software.Basico.Telas.Modulos.Reservas
             LocatorioBusiness locatorio = new LocatorioBusiness();
             tb_locatario dto = locatorio.ListarPOrCPFLocatario(mktCPF.Text);
             lblLocatario.Text = dto.nm_locatario;
-            idlocatorio = dto.id_locatario;
+            idlocatario = dto.id_locatario;
             }
         }
 
@@ -113,14 +107,15 @@ namespace Software.Basico.Telas.Modulos.Reservas
         {
             if(txtaluno!=null)
             { 
-            AzureBiblioteca db = new AzureBiblioteca();
+            
             tb_turma_aluno aluno = db.tb_turma_aluno.Where(x => x.cd_ra == txtaluno.Text).ToList().Single();
             lblAluno.Text = aluno.tb_aluno.nm_aluno;
+            idaluno = aluno.tb_aluno.id_aluno;
             }
         }
         private void CarregarCombo()
         {
-            AzureBiblioteca db = new AzureBiblioteca();
+           
             List<tb_livro> livro = db.tb_livro.ToList();
             cbolivro.ValueMember = nameof(tb_livro.id_livro);
             cbolivro.DisplayMember = nameof(tb_livro.ds_titulo);
@@ -149,6 +144,36 @@ namespace Software.Basico.Telas.Modulos.Reservas
                 txtaluno.Enabled = true;
                 mktCPF.Enabled = false;
             }
+        }
+
+        private void SalvarDados()
+        {
+            tb_reserva dto = new tb_reserva();
+            if (rdnaluno.Checked == true)
+            { 
+            tb_livro livro = cbolivro.SelectedItem as tb_livro;
+            dto.tb_livro_id_livro = livro.id_livro;
+            //dto.tb_locatario_id_locatario = idlocatario;
+            dto.tb_turma_aluno_id_turma_aluno = idaluno;
+            dto.dt_reserva = DateTime.Now;
+            }
+
+            if(rdnlocatorio.Checked==true)
+            {
+                tb_livro livro = cbolivro.SelectedItem as tb_livro;
+                dto.tb_livro_id_livro = livro.id_livro;
+                dto.tb_locatario_id_locatario = idlocatario;
+               // dto.tb_turma_aluno_id_turma_aluno = idaluno;
+                dto.dt_reserva = DateTime.Now;
+            }
+
+            ReservaBusiness reserva = new ReservaBusiness();
+            reserva.SalvarReserva(dto);
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            SalvarDados();
         }
     }
 }

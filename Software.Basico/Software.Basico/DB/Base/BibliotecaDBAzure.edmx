@@ -155,6 +155,19 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
           <Property Name="nm_autor" Type="varchar" MaxLength="90" Nullable="false" />
           <Property Name="nm_genero" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_reserva">
+          <Key>
+            <PropertyRef Name="nm_locatario" />
+            <PropertyRef Name="ds_titulo" />
+            <PropertyRef Name="dt_reserva" />
+          </Key>
+          <Property Name="nm_locatario" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="nm_aluno" Type="nvarchar" MaxLength="255" />
+          <Property Name="ds_titulo" Type="varchar" MaxLength="90" Nullable="false" />
+          <Property Name="dt_reserva" Type="date" Nullable="false" />
+        </EntityType>
         <Association Name="FK__tb_empres__tb_li__6A30C649">
           <End Role="tb_livro" Type="Self.tb_livro" Multiplicity="1" />
           <End Role="tb_emprestimo" Type="Self.tb_emprestimo" Multiplicity="*" />
@@ -336,6 +349,14 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
     [vw_Livro_Autor_Genero].[nm_genero] AS [nm_genero]
     FROM [dbo].[vw_Livro_Autor_Genero] AS [vw_Livro_Autor_Genero]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="vw_reserva" EntityType="Self.vw_reserva" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_reserva].[nm_locatario] AS [nm_locatario], 
+    [vw_reserva].[nm_aluno] AS [nm_aluno], 
+    [vw_reserva].[ds_titulo] AS [ds_titulo], 
+    [vw_reserva].[dt_reserva] AS [dt_reserva]
+    FROM [dbo].[vw_reserva] AS [vw_reserva]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK__tb_empres__tb_li__6A30C649" Association="Self.FK__tb_empres__tb_li__6A30C649">
             <End Role="tb_livro" EntitySet="tb_livro" />
             <End Role="tb_emprestimo" EntitySet="tb_emprestimo" />
@@ -404,6 +425,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
           <EntitySet Name="vw_emprestimo_aluno" EntityType="BibliotecaDBAzure.vw_emprestimo_aluno" />
           <EntitySet Name="vw_emprestimo_locatario" EntityType="BibliotecaDBAzure.vw_emprestimo_locatario" />
           <EntitySet Name="vw_Livro_Autor_Genero" EntityType="BibliotecaDBAzure.vw_Livro_Autor_Genero" />
+          <EntitySet Name="vw_reserva" EntityType="BibliotecaDBAzure.vw_reserva" />
           <AssociationSet Name="fk_aluno" Association="BibliotecaDBAzure.fk_aluno">
             <End Role="tb_aluno" EntitySet="tb_aluno" />
             <End Role="tb_turma_aluno" EntitySet="tb_turma_aluno" />
@@ -620,6 +642,17 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
           <Property Name="ds_palavrasChaves" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
           <Property Name="nm_autor" Type="String" Nullable="false" MaxLength="90" FixedLength="false" Unicode="false" />
           <Property Name="nm_genero" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vw_reserva">
+          <Key>
+            <PropertyRef Name="nm_locatario" />
+            <PropertyRef Name="ds_titulo" />
+            <PropertyRef Name="dt_reserva" />
+          </Key>
+          <Property Name="nm_locatario" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="nm_aluno" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ds_titulo" Type="String" Nullable="false" MaxLength="90" FixedLength="false" Unicode="false" />
+          <Property Name="dt_reserva" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
         <Association Name="fk_aluno">
           <End Type="BibliotecaDBAzure.tb_aluno" Role="tb_aluno" Multiplicity="0..1" />
@@ -918,6 +951,16 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
                 <ScalarProperty Name="ds_palavrasChaves" ColumnName="ds_palavrasChaves" />
                 <ScalarProperty Name="ds_titulo" ColumnName="ds_titulo" />
                 <ScalarProperty Name="id_livro" ColumnName="id_livro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_reserva">
+            <EntityTypeMapping TypeName="BibliotecaDBAzure.vw_reserva">
+              <MappingFragment StoreEntitySet="vw_reserva">
+                <ScalarProperty Name="dt_reserva" ColumnName="dt_reserva" />
+                <ScalarProperty Name="ds_titulo" ColumnName="ds_titulo" />
+                <ScalarProperty Name="nm_aluno" ColumnName="nm_aluno" />
+                <ScalarProperty Name="nm_locatario" ColumnName="nm_locatario" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

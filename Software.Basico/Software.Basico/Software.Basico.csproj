@@ -143,6 +143,9 @@
     <Compile Include="DB\Base\vw_Livro_Autor_Genero.cs">
       <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
     </Compile>
+    <Compile Include="DB\Base\vw_reserva.cs">
+      <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
+    </Compile>
     <Compile Include="DB\Emprestimo\EmprestimoBusiness.cs" />
     <Compile Include="DB\Emprestimo\EmprestimoDatabase.cs" />
     <Compile Include="DB\Estoque\EstoqueBusiness.cs" />
