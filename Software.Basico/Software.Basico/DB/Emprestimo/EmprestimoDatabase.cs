@@ -37,6 +37,7 @@ namespace Software.Basico.DB.Emprestimo
             loc.nm_locatario = locatario.nm_locatario;
             loc.nu_celular = locatario.nu_celular;
             loc.nu_cpf = locatario.nu_cpf;
+            loc.ds_email = locatario.ds_email;
 
             db.SaveChanges();
 
@@ -48,6 +49,25 @@ namespace Software.Basico.DB.Emprestimo
             emp.bt_devolvido = dto.bt_devolvido;
             emp.tb_livro_id_livro = dto.tb_livro_id_livro;
             
+            db.SaveChanges();
+        }
+
+        public void AlterarEmprestimo(tb_emprestimo dto, int idemprestimo, tb_aluno_dados aluno)
+        {
+            tb_aluno_dados alun = db.tb_aluno_dados.Where(x => x.id_aluno_dados == aluno.id_aluno_dados).ToList().Single();
+            alun.tb_aluno_id_aluno = aluno.tb_aluno_id_aluno;
+            alun.ds_email = aluno.ds_email;
+
+            db.SaveChanges();
+
+            tb_emprestimo emp = db.tb_emprestimo.Where(x => x.id_emprestimo == idemprestimo).ToList().Single();
+
+            emp.nm_funcionario = dto.nm_funcionario;
+            emp.dt_devolucao = dto.dt_devolucao;
+            emp.dt_emprestimo = dto.dt_emprestimo;
+            emp.bt_devolvido = dto.bt_devolvido;
+            emp.tb_livro_id_livro = dto.tb_livro_id_livro;
+
             db.SaveChanges();
         }
 
@@ -70,6 +90,49 @@ namespace Software.Basico.DB.Emprestimo
             return funcList;
         }
 
+        public List<vw_emprestimo_aluno> ListarEmprestimosAlunosPorDevolucao()
+        {
+            List<vw_emprestimo_aluno> funcList = db.vw_emprestimo_aluno.Where(x => x.bt_devolvido == true).ToList();
+            return funcList;
+        }
+
+        public List<vw_emprestimo_aluno> ListarEmprestimosAlunosPorLivro(string titulo)
+        {
+            List<vw_emprestimo_aluno> funcList = db.vw_emprestimo_aluno.Where(x => x.ds_titulo.Contains(titulo)).ToList();
+            return funcList;
+        }
+
+        public List<vw_emprestimo_aluno> ListarEmprestimosAlunosPorProfessor(string professor)
+        {
+            List<vw_emprestimo_aluno> funcList = db.vw_emprestimo_aluno.Where(x => x.nm_aluno.Contains(professor)).ToList();
+            return funcList;
+        }
+
+        public List<vw_emprestimo_aluno> ListarEmprestimosAlunosPorLivroProfessor(string titulo, string professor)
+        {
+            List<vw_emprestimo_aluno> funcList = db.vw_emprestimo_aluno.Where(x => x.ds_titulo.Contains(titulo) && x.nm_aluno.Contains(professor)).ToList();
+            return funcList;
+        }
+
+        public List<vw_emprestimo_aluno> ListarEmprestimosAlunosPorLivro(string titulo, bool dev)
+        {
+            List<vw_emprestimo_aluno> funcList = db.vw_emprestimo_aluno.Where(x => x.ds_titulo.Contains(titulo) && x.bt_devolvido == dev).ToList();
+            return funcList;
+        }
+
+        public List<vw_emprestimo_aluno> ListarEmprestimosAlunosPorProfessor(string professor, bool dev)
+        {
+            List<vw_emprestimo_aluno> funcList = db.vw_emprestimo_aluno.Where(x => x.nm_aluno.Contains(professor) && x.bt_devolvido == dev).ToList();
+            return funcList;
+        }
+
+        public List<vw_emprestimo_aluno> ListarEmprestimosAlunosPorLivroProfessor(string titulo, string professor, bool dev)
+        {
+            List<vw_emprestimo_aluno> funcList = db.vw_emprestimo_aluno.Where(x => x.ds_titulo.Contains(titulo) && x.nm_aluno.Contains(professor) && x.bt_devolvido == dev).ToList();
+            return funcList;
+        }
+
+        //
         public List<vw_emprestimo_locatario> ListarEmprestimosLocatarios()
         {
             List<vw_emprestimo_locatario> funcList = db.vw_emprestimo_locatario.ToList();

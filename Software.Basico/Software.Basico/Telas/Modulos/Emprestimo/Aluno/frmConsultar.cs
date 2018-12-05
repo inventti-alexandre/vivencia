@@ -21,6 +21,15 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Aluno
             CarregarGrid();
         }
 
+        private void CarregarGrid()
+        {
+            EmprestimoBusiness business = new EmprestimoBusiness();
+            List<vw_emprestimo_aluno> emprestimo = business.ListarEmprestimosAlunos(txtTitulo.Text.Trim(), txtAluno.Text.Trim(), chkDevolvido.Checked);
+
+            dgvEmprestimo.AutoGenerateColumns = false;
+            dgvEmprestimo.DataSource = emprestimo;
+        }
+
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             frmCadastrar frm = new frmCadastrar();
@@ -34,23 +43,11 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Aluno
             btnCadastrar.BackColor = Tema.Segundaria;
             btnRemover.BackColor = Tema.Segundaria;
             btnListar.BackColor = Tema.Segundaria;
-     
 
             btnVisualizar.ForeColor = Tema.Texto;
             btnCadastrar.ForeColor = Tema.Texto;
             btnRemover.ForeColor = Tema.Texto;
             btnListar.ForeColor = Tema.Texto;
-        }
-
-        private void btnRetornar_Click(object sender, EventArgs e)
-        {
-            frmMenu frm = new frmMenu();
-            ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
-        }
-
-        private void frmConsultar_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -59,18 +56,53 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Aluno
             ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
         }
 
+        private void pictureBox1_Click_2(object sender, EventArgs e)
+        {
+
+            frmMenu frm = new frmMenu();
+            ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
+        }
+
+
+        private void btnVisualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                vw_emprestimo_aluno locatario = dgvEmprestimo.CurrentRow.DataBoundItem as vw_emprestimo_aluno;
+
+                frmCadastrar frm = new frmCadastrar();
+                frm.PreencherCampos(locatario.id_emprestimo);
+                ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
+            }
+            catch (Exception ex)
+            {
+                if (ex.Message.Contains("Referência de objeto não definida para uma instância de um objeto"))
+                    MessageBox.Show("Selecione um emprestimo!", "Biblioteca", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
         private void btnListar_Click(object sender, EventArgs e)
         {
             CarregarGrid();
         }
 
-        private void CarregarGrid()
+        private void btnRemover_Click(object sender, EventArgs e)
         {
-            EmprestimoBusiness business = new EmprestimoBusiness();
-            List<vw_emprestimo_aluno> emprestimos = business.ListarEmprestimosAlunos();
+            try
+            {
+                vw_emprestimo_aluno locatario = dgvEmprestimo.CurrentRow.DataBoundItem as vw_emprestimo_aluno;
 
-            dgvLivros.AutoGenerateColumns = false;
-            dgvLivros.DataSource = emprestimos;
+                EmprestimoBusiness business = new EmprestimoBusiness();
+                business.RemoverEmprestimo(locatario.id_emprestimo);
+
+                MessageBox.Show("Emprestimo removido com sucesso!", "Biblioteca", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CarregarGrid();
+            }
+            catch (Exception ex)
+            {
+                if (ex.Message.Contains("Referência de objeto não definida para uma instância de um objeto"))
+                    MessageBox.Show("Selecione um emprestimo!", "Biblioteca", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }
