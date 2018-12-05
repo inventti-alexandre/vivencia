@@ -70,8 +70,9 @@ namespace Software.Basico.Telas.Modulos.Autor
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
-            frmConsultar frm = new frmConsultar();
-            ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
+            txtAutor.Clear();
+            txtNascionalidade.Clear();
+            txtNomeCompleto.Clear();
         }
 
         public void PreencherCampos(int idAutor)
@@ -156,9 +157,8 @@ namespace Software.Basico.Telas.Modulos.Autor
                 MessageBox.Show("Autor alterado com sucesso!", "Biblioteca",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                txtAutor.Clear();
-                txtNomeCompleto.Clear();
-                txtNascionalidade.Clear();
+                frmConsultar frm = new frmConsultar();
+                ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
 
             }
             catch (ArgumentException ex)

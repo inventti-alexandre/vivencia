@@ -91,7 +91,7 @@
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(204, 32);
             this.btnRemover.TabIndex = 25;
-            this.btnRemover.Text = "Cancelar";
+            this.btnRemover.Text = "Limpar";
             this.btnRemover.UseVisualStyleBackColor = true;
             this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
@@ -228,8 +228,8 @@
             this.Controls.Add(this.btnRemover);
             this.Controls.Add(this.txtNomeCompleto);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.btnAlterar);
+            this.Controls.Add(this.btnCadastrar);
             this.Name = "frmCadastroAutor";
             this.Size = new System.Drawing.Size(915, 500);
             this.Load += new System.EventHandler(this.frmCadastroAutor_Load);

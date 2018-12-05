@@ -332,6 +332,7 @@
             this.txtFuncionario.Name = "txtFuncionario";
             this.txtFuncionario.Size = new System.Drawing.Size(148, 23);
             this.txtFuncionario.TabIndex = 85;
+            this.txtFuncionario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFuncionario_KeyPress);
             // 
             // btnAlterar
             // 

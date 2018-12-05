@@ -220,6 +220,14 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Aluno
             }            
         }
 
+        private void txtFuncionario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
         private void AlterarEmprestimo()
         {
             tb_emprestimo emprestimo = new tb_emprestimo();

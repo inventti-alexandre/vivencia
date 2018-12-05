@@ -31,7 +31,7 @@ namespace Software.Basico.DB.Genero
 
         public void RemoverGenero(int idgenero)
         {
-            var nha = new tb_autor { id_autor = idgenero };
+            var nha = new tb_genero { id_genero = idgenero };
             db.Entry(nha).State = EntityState.Deleted;
             db.SaveChanges();
         }

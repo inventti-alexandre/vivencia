@@ -118,5 +118,40 @@ namespace Software.Basico.Telas.Modulos.Genero
             ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
 
         }
+
+        private void btnRemover_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                tb_genero generos = dgvLivros.CurrentRow.DataBoundItem as tb_genero;
+
+                GeneroBusiness business = new GeneroBusiness();
+                business.RemoverGenero(generos.id_genero);
+
+                MessageBox.Show("Gênero removido com sucesso!", "Biblioteca", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                CarregarGrid();
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Biblioteca",
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro nhao identificado: {ex.Message}", "Biblioteca",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtGenero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
     }
 }

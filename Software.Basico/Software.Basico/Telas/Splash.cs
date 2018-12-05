@@ -64,5 +64,122 @@ namespace Software.Basico.Telas
                         MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+        
+        private void EnviarEmail5Dia()
+        {
+            DateTime email5dias = DateTime.Today;
+            email5dias = email5dias.AddDays(5);
+
+            AzureBiblioteca db = new AzureBiblioteca();
+            List<tb_emprestimo> livro5dia = db.tb_emprestimo.Where(x => x.dt_devolucao == email5dias).ToList();
+
+
+            if (livro5dia.Count != 0)
+            {
+                foreach (tb_emprestimo emprestimo in livro5dia)
+                {
+                    if (emprestimo.tb_locatario_id_locatario != null)
+                        Send(emprestimo.tb_locatario.ds_email, emprestimo.tb_locatario.nm_locatario);
+                    else
+                    {
+                        tb_aluno_dados emailAluno = db.tb_aluno_dados.Where(x => x.tb_aluno_id_aluno == emprestimo.tb_turma_aluno_id_turma_aluno).ToList().Single();
+                        Send(emailAluno.ds_email, emprestimo.tb_locatario.nm_locatario);
+                    }
+                }
+
+                void Send(string email, string nome)
+                {
+                    EmailDTO mail = new EmailDTO();
+                    mail.Assunto = "FALTAM 5 DIAS PARA A DEVOULUÇÃO!";
+                    mail.DestinatarioEmail = email;
+                    mail.DestinatarioNome = nome;
+                    mail.Mensagem = Resources.email2                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ;
+                    mail.RemetenteSenha = "pbtadmin1234";
+                    mail.RemetenteNome = "Biblioteca FREI";
+                    mail.RemetenteEmail = "pb.technology.ltda@gmail.com";
+
+                    EmailSend send = new EmailSend();
+                    send.EnviarEmail(mail);
+                }
+            }
+            else
+                return;
+        }
+
+        private void EnviarEmailDia()
+        {
+            AzureBiblioteca db = new AzureBiblioteca();
+            List<tb_emprestimo> emprestimos = db.tb_emprestimo.Where(x => x.dt_devolucao == DateTime.Today).ToList();
+
+
+            if (emprestimos.Count != 0)
+            {
+                foreach (tb_emprestimo emprestimo in emprestimos)
+                {
+                    if (emprestimo.tb_locatario_id_locatario != null)
+                        Send(emprestimo.tb_locatario.ds_email, emprestimo.tb_locatario.nm_locatario);
+                    else
+                    {
+                        tb_aluno_dados emailAluno = db.tb_aluno_dados.Where(x => x.tb_aluno_id_aluno == emprestimo.tb_turma_aluno_id_turma_aluno).ToList().Single();
+                        Send(emailAluno.ds_email, emprestimo.tb_locatario.nm_locatario);
+                    }
+                }
+
+                void Send(string email, string nome)
+                {
+                    EmailDTO mail = new EmailDTO();
+                    mail.Assunto = "HOJE É DIA DE DEVOLUÇÃO!";
+                    mail.DestinatarioEmail = email;
+                    mail.DestinatarioNome = nome;
+                    mail.Mensagem = Resources.htmlEmailDia;
+                    mail.RemetenteSenha = "pbtadmin1234";
+                    mail.RemetenteNome = "Biblioteca FREI";
+                    mail.RemetenteEmail = "pb.technology.ltda@gmail.com";
+
+                    EmailSend send = new EmailSend();
+                    send.EnviarEmail(mail);
+                }
+            }
+            else
+                return;
+        }
+
+        private void EnviarEmailAtrasado()
+        {
+            AzureBiblioteca db = new AzureBiblioteca();
+            List<tb_emprestimo> livroatrasado = db.tb_emprestimo.Where(x => x.dt_devolucao < DateTime.Today).ToList();
+            
+
+            if (livroatrasado.Count != 0)
+            {
+                foreach (tb_emprestimo emprestimo in livroatrasado)
+                {
+                    if (emprestimo.tb_locatario_id_locatario != null)
+                        Send(emprestimo.tb_locatario.ds_email, emprestimo.tb_locatario.nm_locatario);
+                    else
+                    {
+                        tb_aluno_dados emailAluno = db.tb_aluno_dados.Where(x => x.tb_aluno_id_aluno == emprestimo.tb_turma_aluno_id_turma_aluno).ToList().Single();
+                        Send(emailAluno.ds_email, emprestimo.tb_locatario.nm_locatario);
+                    }                        
+                }
+
+                void Send(string email, string nome)
+                {
+                    EmailDTO mail = new EmailDTO();
+                    mail.Assunto = "ENTREGA DO LIVRO ATRASADA!";
+                    mail.DestinatarioEmail = email;
+                    mail.DestinatarioNome = nome;
+                    mail.Mensagem = Resources.email3;
+                    mail.RemetenteSenha = "pbtadmin1234";
+                    mail.RemetenteNome = "Biblioteca FREI";
+                    mail.RemetenteEmail = "pb.technology.ltda@gmail.com";
+
+                    EmailSend send = new EmailSend();
+                    send.EnviarEmail(mail);
+                }
+            }
+            else
+                return;
+        }
     }
 }
