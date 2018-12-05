@@ -35,7 +35,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cboLivro = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -47,12 +46,13 @@
             this.txtCelular = new System.Windows.Forms.MaskedTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtEditora = new System.Windows.Forms.TextBox();
             this.txtGenero = new System.Windows.Forms.TextBox();
             this.txtAutor = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtFuncionario = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtEditora = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,7 +97,7 @@
             // txtNome
             // 
             this.txtNome.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(110, 219);
+            this.txtNome.Location = new System.Drawing.Point(230, 219);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(234, 23);
             this.txtNome.TabIndex = 105;
@@ -116,7 +116,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(365, 195);
+            this.label6.Location = new System.Drawing.Point(115, 195);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 21);
             this.label6.TabIndex = 119;
@@ -126,21 +126,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(114, 195);
+            this.label5.Location = new System.Drawing.Point(234, 195);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 21);
             this.label5.TabIndex = 116;
             this.label5.Text = "Nome";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(529, 271);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 21);
-            this.label7.TabIndex = 118;
-            this.label7.Text = "Editora";
             // 
             // label3
             // 
@@ -161,6 +151,7 @@
             this.cboLivro.Name = "cboLivro";
             this.cboLivro.Size = new System.Drawing.Size(234, 25);
             this.cboLivro.TabIndex = 101;
+            this.cboLivro.TextChanged += new System.EventHandler(this.cboLivro_TextChanged);
             // 
             // label4
             // 
@@ -192,21 +183,22 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(247, 47);
+            this.label1.Location = new System.Drawing.Point(292, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(415, 36);
+            this.label1.Size = new System.Drawing.Size(331, 36);
             this.label1.TabIndex = 112;
-            this.label1.Text = "Novo Emprestimo - Professor";
+            this.label1.Text = "Emprestimo - Professor";
             // 
             // txtCPF
             // 
             this.txtCPF.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtCPF.Location = new System.Drawing.Point(361, 219);
+            this.txtCPF.Location = new System.Drawing.Point(111, 219);
             this.txtCPF.Mask = "999,999,999-99";
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(104, 23);
             this.txtCPF.TabIndex = 123;
             this.txtCPF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCPF.Leave += new System.EventHandler(this.txtCPF_Leave);
             // 
             // label2
             // 
@@ -245,15 +237,6 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(215, 23);
             this.txtEmail.TabIndex = 105;
-            // 
-            // txtEditora
-            // 
-            this.txtEditora.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEditora.Location = new System.Drawing.Point(517, 295);
-            this.txtEditora.Name = "txtEditora";
-            this.txtEditora.Size = new System.Drawing.Size(135, 23);
-            this.txtEditora.TabIndex = 105;
-            this.txtEditora.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TravaTexto_KeyPress);
             // 
             // txtGenero
             // 
@@ -302,6 +285,25 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(529, 271);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(66, 21);
+            this.label7.TabIndex = 118;
+            this.label7.Text = "Editora";
+            // 
+            // txtEditora
+            // 
+            this.txtEditora.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEditora.Location = new System.Drawing.Point(517, 295);
+            this.txtEditora.Name = "txtEditora";
+            this.txtEditora.Size = new System.Drawing.Size(135, 23);
+            this.txtEditora.TabIndex = 105;
+            this.txtEditora.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TravaTexto_KeyPress);
+            // 
             // frmCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -348,7 +350,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cboLivro;
         private System.Windows.Forms.Label label4;
@@ -360,11 +361,12 @@
         private System.Windows.Forms.MaskedTextBox txtCelular;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtEditora;
         private System.Windows.Forms.TextBox txtGenero;
         private System.Windows.Forms.TextBox txtAutor;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtFuncionario;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtEditora;
     }
 }

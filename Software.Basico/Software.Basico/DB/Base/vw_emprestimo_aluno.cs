@@ -14,8 +14,10 @@ namespace Software.Basico.DB.Base
     
     public partial class vw_emprestimo_aluno
     {
+        public int id_emprestimo { get; set; }
         public System.DateTime dt_emprestimo { get; set; }
         public System.DateTime dt_devolucao { get; set; }
+        public bool bt_devolvido { get; set; }
         public string ds_titulo { get; set; }
         public string nm_aluno { get; set; }
     }

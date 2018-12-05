@@ -56,6 +56,42 @@ namespace Software.Basico.DB.Emprestimo
             return funcList;
         }
 
+        public List<vw_emprestimo_locatario> ListarEmprestimosLocatariosPorLivro(string titulo)
+        {
+            List<vw_emprestimo_locatario> funcList = db.vw_emprestimo_locatario.Where(x => x.ds_titulo.Contains(titulo)).ToList();
+            return funcList;
+        }
+
+        public List<vw_emprestimo_locatario> ListarEmprestimosLocatariosPorProfessor(string professor)
+        {
+            List<vw_emprestimo_locatario> funcList = db.vw_emprestimo_locatario.Where(x => x.nm_locatario.Contains(professor)).ToList();
+            return funcList;
+        }
+
+        public List<vw_emprestimo_locatario> ListarEmprestimosLocatariosPorLivroProfessor(string titulo, string professor)
+        {
+            List<vw_emprestimo_locatario> funcList = db.vw_emprestimo_locatario.Where(x => x.ds_titulo.Contains(titulo) && x.nm_locatario.Contains(professor)).ToList();
+            return funcList;
+        }
+
+        public List<vw_emprestimo_locatario> ListarEmprestimosLocatariosPorLivro(string titulo, bool dev)
+        {
+            List<vw_emprestimo_locatario> funcList = db.vw_emprestimo_locatario.Where(x => x.ds_titulo.Contains(titulo) && x.bt_devolvido == dev).ToList();
+            return funcList;
+        }
+
+        public List<vw_emprestimo_locatario> ListarEmprestimosLocatariosPorProfessor(string professor, bool dev)
+        {
+            List<vw_emprestimo_locatario> funcList = db.vw_emprestimo_locatario.Where(x => x.nm_locatario.Contains(professor) && x.bt_devolvido == dev).ToList();
+            return funcList;
+        }
+
+        public List<vw_emprestimo_locatario> ListarEmprestimosLocatariosPorLivroProfessor(string titulo, string professor, bool dev)
+        {
+            List<vw_emprestimo_locatario> funcList = db.vw_emprestimo_locatario.Where(x => x.ds_titulo.Contains(titulo) && x.nm_locatario.Contains(professor) && x.bt_devolvido == dev).ToList();
+            return funcList;
+        }
+
         public tb_emprestimo ListarEmprestimosPorId(int idemprestimo)
         {
             tb_emprestimo func = db.tb_emprestimo.Where(x => x.id_emprestimo == idemprestimo).ToList().Single();

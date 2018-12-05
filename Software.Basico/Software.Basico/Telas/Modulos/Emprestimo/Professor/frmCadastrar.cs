@@ -11,6 +11,7 @@ using Software.Basico.DB.Base;
 using Software.Basico.DB.Livros;
 using Software.Basico.DB.Locatorio;
 using Software.Basico.DB.Emprestimo;
+using Blibioteca.Developers.Validacao;
 
 namespace Software.Basico.Telas.Modulos.Emprestimo.Professor
 {
@@ -25,11 +26,16 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Professor
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            Clean();
+        }
+
+        private void Clean()
+        {
             txtFuncionario.Clear();
             txtNome.Clear();
             txtAutor.Clear();
-            txtEditora.Clear();
             txtEmail.Clear();
+            txtEditora.Clear();
             txtGenero.Clear();
             txtCPF.Clear();
             txtCelular.Clear();
@@ -67,6 +73,7 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Professor
             prof.nm_locatario = txtNome.Text;
             prof.nu_celular = txtCelular.Text;
             prof.nu_cpf = txtCPF.Text;
+            prof.ds_email = txtEmail.Text;
 
             EmprestimoBusiness emprestimos = new EmprestimoBusiness();
             emprestimos.CadastroNovoEmprestimo(emprestimo, prof);
@@ -78,6 +85,31 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Professor
 
             MessageBox.Show("Cadastro efetuado com sucesso!", "Biblioteca",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            Clean(); 
+        }
+
+        private void PreencherCampos(int idEmprestimo)
+        {
+            btnCadastrar.Visible = false;
+            btnCancelar.Visible = false;
+
+            AzureBiblioteca db = new AzureBiblioteca();
+            tb_emprestimo emprestimo = db.tb_emprestimo.Where(x => x.id_emprestimo == idEmprestimo).ToList().Single();
+
+            cboLivro.SelectedIndex = emprestimo.tb_livro_id_livro;
+            txtCelular.Text = emprestimo.tb_locatario.nu_celular;
+            txtCPF.Text = emprestimo.tb_locatario.nu_cpf;
+            txtEmail.Text = emprestimo.tb_locatario.ds_email;
+            txtFuncionario.Text = emprestimo.nm_funcionario;
+            txtNome.Text = emprestimo.tb_locatario.nm_locatario;
+
+            cboLivro.Enabled = false;
+            txtCelular.Enabled = false;
+            txtCPF.Enabled = false;
+            txtEmail.Enabled = false;
+            txtFuncionario.Enabled = false;
+            txtNome.Enabled = false;
         }
 
         private void TravaTexto_KeyPress(object sender, KeyPressEventArgs e)
@@ -89,6 +121,48 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Professor
         {
             frmConsultar frm = new frmConsultar();
             ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
+        }
+
+        private void txtCPF_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                CPF val = new CPF();
+                val.ValidarCPF(txtCPF.Text);
+
+                AzureBiblioteca db = new AzureBiblioteca();
+                tb_locatario locatario = db.tb_locatario.Where(x => x.nu_cpf == txtCPF.Text).ToList().Single();
+
+                if (locatario.nm_locatario != null)
+                {
+                    txtNome.Text = locatario.nm_locatario;
+                    txtEmail.Text = locatario.ds_email;
+                    txtCelular.Text = locatario.nu_celular;
+                }                    
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show($"{ex.Message}", "Biblioteca",
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            catch (Exception ex)
+            {
+                if (ex.Message.Contains("A sequência não contém elementos"))
+                    MessageBox.Show($"CPF ainda não cadastrado", "Biblioteca",
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                else
+                    MessageBox.Show($"Ocorreu um erro não identificado: {ex.Message}", "Biblioteca",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void cboLivro_TextChanged(object sender, EventArgs e)
+        {
+            tb_livro book = cboLivro.SelectedItem as tb_livro;
+            
+            txtAutor.Text = book.tb_autor.nm_autor;
+            txtGenero.Text = book.tb_genero.nm_genero;
+            txtEditora.Text = book.nm_editora;
         }
     }     
  }

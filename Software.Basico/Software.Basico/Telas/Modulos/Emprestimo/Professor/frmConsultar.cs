@@ -23,8 +23,8 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Professor
 
         private void CarregarGrid()
         {
-            AzureBiblioteca db = new AzureBiblioteca();
-            List<vw_emprestimo_locatario> emprestimo = db.vw_emprestimo_locatario.ToList();
+            EmprestimoBusiness business = new EmprestimoBusiness();
+            List<vw_emprestimo_locatario> emprestimo = business.ListarEmprestimosLocatarios(txtTitulo.Text.Trim(), txtProfessor.Text.Trim(), chkDevolvido.Checked);
 
             dgvEmprestimo.AutoGenerateColumns = false;
             dgvEmprestimo.DataSource = emprestimo;
@@ -72,6 +72,25 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Professor
         private void btnListar_Click(object sender, EventArgs e)
         {
             CarregarGrid();
+        }
+
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                vw_emprestimo_locatario locatario = dgvEmprestimo.CurrentRow.DataBoundItem as vw_emprestimo_locatario;
+
+                EmprestimoBusiness business = new EmprestimoBusiness();
+                business.RemoverEmprestimo(locatario.id_emprestimo);
+
+                MessageBox.Show("Emprestimo removido com sucesso!", "Biblioteca", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CarregarGrid();
+            }
+            catch (Exception ex)
+            {
+                if (ex.Message.Contains("Referência de objeto não definida para uma instância de um objeto"))
+                    MessageBox.Show("Selecione um emprestimo!", "Biblioteca", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

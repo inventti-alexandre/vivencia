@@ -31,10 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvEmprestimo = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnVisualizar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnListar = new System.Windows.Forms.Button();
@@ -45,11 +41,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtProfessor = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.dtpDevolucao = new System.Windows.Forms.DateTimePicker();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.voltar = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.chkDevolvido = new System.Windows.Forms.CheckBox();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmprestimo)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.voltar)).BeginInit();
@@ -78,7 +79,8 @@
             this.dataGridViewTextBoxColumn1,
             this.Column10,
             this.Column9,
-            this.Column8});
+            this.Column8,
+            this.Column1});
             this.dgvEmprestimo.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvEmprestimo.Location = new System.Drawing.Point(0, 164);
             this.dgvEmprestimo.MultiSelect = false;
@@ -96,36 +98,8 @@
             this.dgvEmprestimo.Size = new System.Drawing.Size(915, 265);
             this.dgvEmprestimo.TabIndex = 69;
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ds_titulo";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Livro";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // Column10
-            // 
-            this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column10.HeaderText = "Professor";
-            this.Column10.Name = "Column10";
-            // 
-            // Column9
-            // 
-            this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column9.HeaderText = "Data Empréstimo";
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 170;
-            // 
-            // Column8
-            // 
-            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column8.HeaderText = "Data Devolução";
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 170;
-            // 
             // btnVisualizar
             // 
-            this.btnVisualizar.Enabled = false;
             this.btnVisualizar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnVisualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVisualizar.Font = new System.Drawing.Font("Century Gothic", 14.75F);
@@ -168,7 +142,6 @@
             // 
             // btnRemover
             // 
-            this.btnRemover.Enabled = false;
             this.btnRemover.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnRemover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemover.Font = new System.Drawing.Font("Century Gothic", 14.75F);
@@ -179,6 +152,7 @@
             this.btnRemover.TabIndex = 65;
             this.btnRemover.Text = "Remover";
             this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
             // pnTop
             // 
@@ -201,7 +175,7 @@
             // txtTitulo
             // 
             this.txtTitulo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTitulo.Location = new System.Drawing.Point(166, 30);
+            this.txtTitulo.Location = new System.Drawing.Point(262, 32);
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(153, 23);
             this.txtTitulo.TabIndex = 70;
@@ -210,7 +184,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(166, 6);
+            this.label3.Location = new System.Drawing.Point(262, 8);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 21);
             this.label3.TabIndex = 72;
@@ -220,7 +194,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(335, 6);
+            this.label2.Location = new System.Drawing.Point(421, 8);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 21);
             this.label2.TabIndex = 72;
@@ -229,50 +203,31 @@
             // txtProfessor
             // 
             this.txtProfessor.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProfessor.Location = new System.Drawing.Point(335, 30);
+            this.txtProfessor.Location = new System.Drawing.Point(421, 32);
             this.txtProfessor.Name = "txtProfessor";
             this.txtProfessor.Size = new System.Drawing.Size(216, 23);
             this.txtProfessor.TabIndex = 70;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(567, 6);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(181, 21);
-            this.label8.TabIndex = 122;
-            this.label8.Text = "Data Para Devolução";
-            // 
-            // dtpDevolucao
-            // 
-            this.dtpDevolucao.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDevolucao.Location = new System.Drawing.Point(567, 30);
-            this.dtpDevolucao.Name = "dtpDevolucao";
-            this.dtpDevolucao.Size = new System.Drawing.Size(300, 23);
-            this.dtpDevolucao.TabIndex = 121;
-            // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.chkDevolvido);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.dtpDevolucao);
             this.panel2.Controls.Add(this.txtTitulo);
             this.panel2.Controls.Add(this.txtProfessor);
+            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(3, 94);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(909, 64);
             this.panel2.TabIndex = 123;
-            this.panel2.Visible = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 20);
+            this.label5.Location = new System.Drawing.Point(111, 20);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(145, 24);
             this.label5.TabIndex = 123;
@@ -288,6 +243,61 @@
             this.voltar.TabIndex = 127;
             this.voltar.TabStop = false;
             this.voltar.Click += new System.EventHandler(this.pictureBox1_Click_2);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(653, 24);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(89, 21);
+            this.label4.TabIndex = 72;
+            this.label4.Text = "Devolvido";
+            // 
+            // chkDevolvido
+            // 
+            this.chkDevolvido.AutoSize = true;
+            this.chkDevolvido.Location = new System.Drawing.Point(748, 29);
+            this.chkDevolvido.Name = "chkDevolvido";
+            this.chkDevolvido.Size = new System.Drawing.Size(15, 14);
+            this.chkDevolvido.TabIndex = 124;
+            this.chkDevolvido.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ds_titulo";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Livro";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // Column10
+            // 
+            this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column10.DataPropertyName = "nm_locatario";
+            this.Column10.HeaderText = "Professor";
+            this.Column10.Name = "Column10";
+            // 
+            // Column9
+            // 
+            this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column9.DataPropertyName = "dt_emprestimo";
+            this.Column9.HeaderText = "Data Empréstimo";
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 170;
+            // 
+            // Column8
+            // 
+            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column8.DataPropertyName = "dt_devolucao";
+            this.Column8.HeaderText = "Data Devolução";
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 170;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "bt_devolvido";
+            this.Column1.HeaderText = "Devolvido";
+            this.Column1.Name = "Column1";
             // 
             // frmConsultar
             // 
@@ -322,18 +332,19 @@
         private System.Windows.Forms.Button btnRemover;
         private System.Windows.Forms.Panel pnTop;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.TextBox txtTitulo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtProfessor;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DateTimePicker dtpDevolucao;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox voltar;
+        private System.Windows.Forms.CheckBox chkDevolvido;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }

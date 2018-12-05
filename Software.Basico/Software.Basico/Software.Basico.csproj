@@ -298,6 +298,7 @@
       <DependentUpon>frmTema.cs</DependentUpon>
     </Compile>
     <Compile Include="Tema.cs" />
+    <Compile Include="Validacoes\CPF.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

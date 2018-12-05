@@ -146,12 +146,16 @@
 warning 6002: The table/view 'BibliotecaDB.dbo.vw_emprestimo_aluno' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vw_emprestimo_aluno">
           <Key>
+            <PropertyRef Name="id_emprestimo" />
             <PropertyRef Name="dt_emprestimo" />
             <PropertyRef Name="dt_devolucao" />
+            <PropertyRef Name="bt_devolvido" />
             <PropertyRef Name="ds_titulo" />
           </Key>
+          <Property Name="id_emprestimo" Type="int" Nullable="false" />
           <Property Name="dt_emprestimo" Type="date" Nullable="false" />
           <Property Name="dt_devolucao" Type="date" Nullable="false" />
+          <Property Name="bt_devolvido" Type="bit" Nullable="false" />
           <Property Name="ds_titulo" Type="varchar" MaxLength="90" Nullable="false" />
           <Property Name="nm_aluno" Type="nvarchar" MaxLength="255" />
         </EntityType>
@@ -159,13 +163,17 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_emprestimo_aluno' does not hav
 warning 6002: The table/view 'BibliotecaDB.dbo.vw_emprestimo_locatario' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vw_emprestimo_locatario">
           <Key>
+            <PropertyRef Name="id_emprestimo" />
             <PropertyRef Name="dt_emprestimo" />
             <PropertyRef Name="dt_devolucao" />
+            <PropertyRef Name="bt_devolvido" />
             <PropertyRef Name="ds_titulo" />
             <PropertyRef Name="nm_locatario" />
           </Key>
+          <Property Name="id_emprestimo" Type="int" Nullable="false" />
           <Property Name="dt_emprestimo" Type="date" Nullable="false" />
           <Property Name="dt_devolucao" Type="date" Nullable="false" />
+          <Property Name="bt_devolvido" Type="bit" Nullable="false" />
           <Property Name="ds_titulo" Type="varchar" MaxLength="90" Nullable="false" />
           <Property Name="nm_locatario" Type="varchar" MaxLength="45" Nullable="false" />
         </EntityType>
@@ -394,16 +402,20 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
           <EntitySet Name="tb_turma_aluno" EntityType="Self.tb_turma_aluno" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="vw_emprestimo_aluno" EntityType="Self.vw_emprestimo_aluno" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
+    [vw_emprestimo_aluno].[id_emprestimo] AS [id_emprestimo], 
     [vw_emprestimo_aluno].[dt_emprestimo] AS [dt_emprestimo], 
     [vw_emprestimo_aluno].[dt_devolucao] AS [dt_devolucao], 
+    [vw_emprestimo_aluno].[bt_devolvido] AS [bt_devolvido], 
     [vw_emprestimo_aluno].[ds_titulo] AS [ds_titulo], 
     [vw_emprestimo_aluno].[nm_aluno] AS [nm_aluno]
     FROM [dbo].[vw_emprestimo_aluno] AS [vw_emprestimo_aluno]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vw_emprestimo_locatario" EntityType="Self.vw_emprestimo_locatario" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
+    [vw_emprestimo_locatario].[id_emprestimo] AS [id_emprestimo], 
     [vw_emprestimo_locatario].[dt_emprestimo] AS [dt_emprestimo], 
     [vw_emprestimo_locatario].[dt_devolucao] AS [dt_devolucao], 
+    [vw_emprestimo_locatario].[bt_devolvido] AS [bt_devolvido], 
     [vw_emprestimo_locatario].[ds_titulo] AS [ds_titulo], 
     [vw_emprestimo_locatario].[nm_locatario] AS [nm_locatario]
     FROM [dbo].[vw_emprestimo_locatario] AS [vw_emprestimo_locatario]</DefiningQuery>
@@ -505,8 +517,6 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
           <EntitySet Name="tb_reserva" EntityType="BibliotecaDBAzure.tb_reserva" />
           <EntitySet Name="tb_turma" EntityType="BibliotecaDBAzure.tb_turma" />
           <EntitySet Name="tb_turma_aluno" EntityType="BibliotecaDBAzure.tb_turma_aluno" />
-          <EntitySet Name="vw_emprestimo_aluno" EntityType="BibliotecaDBAzure.vw_emprestimo_aluno" />
-          <EntitySet Name="vw_emprestimo_locatario" EntityType="BibliotecaDBAzure.vw_emprestimo_locatario" />
           <EntitySet Name="vw_Livro_Autor_Genero" EntityType="BibliotecaDBAzure.vw_Livro_Autor_Genero" />
           <EntitySet Name="vw_reserva" EntityType="BibliotecaDBAzure.vw_reserva" />
           <AssociationSet Name="FK__tb_aluno___tb_al__68487DD7" Association="BibliotecaDBAzure.FK__tb_aluno___tb_al__68487DD7">
@@ -569,6 +579,8 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
             <End Role="tb_turma" EntitySet="tb_turma" />
             <End Role="tb_turma_aluno" EntitySet="tb_turma_aluno" />
           </AssociationSet>
+          <EntitySet Name="vw_emprestimo_aluno" EntityType="BibliotecaDBAzure.vw_emprestimo_aluno" />
+          <EntitySet Name="vw_emprestimo_locatario" EntityType="BibliotecaDBAzure.vw_emprestimo_locatario" />
         </EntityContainer>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -736,29 +748,6 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
           <NavigationProperty Name="tb_emprestimo" Relationship="BibliotecaDBAzure.FK__tb_empres__tb_tu__72C60C4A" FromRole="tb_turma_aluno" ToRole="tb_emprestimo" />
           <NavigationProperty Name="tb_reserva" Relationship="BibliotecaDBAzure.FK__tb_reserv__tb_tu__787EE5A0" FromRole="tb_turma_aluno" ToRole="tb_reserva" />
           <NavigationProperty Name="tb_turma" Relationship="BibliotecaDBAzure.fk_turma" FromRole="tb_turma_aluno" ToRole="tb_turma" />
-        </EntityType>
-        <EntityType Name="vw_emprestimo_aluno">
-          <Key>
-            <PropertyRef Name="dt_emprestimo" />
-            <PropertyRef Name="dt_devolucao" />
-            <PropertyRef Name="ds_titulo" />
-          </Key>
-          <Property Name="dt_emprestimo" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="dt_devolucao" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="ds_titulo" Type="String" Nullable="false" MaxLength="90" FixedLength="false" Unicode="false" />
-          <Property Name="nm_aluno" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="vw_emprestimo_locatario">
-          <Key>
-            <PropertyRef Name="dt_emprestimo" />
-            <PropertyRef Name="dt_devolucao" />
-            <PropertyRef Name="ds_titulo" />
-            <PropertyRef Name="nm_locatario" />
-          </Key>
-          <Property Name="dt_emprestimo" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="dt_devolucao" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="ds_titulo" Type="String" Nullable="false" MaxLength="90" FixedLength="false" Unicode="false" />
-          <Property Name="nm_locatario" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="vw_Livro_Autor_Genero">
           <Key>
@@ -964,6 +953,37 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="vw_emprestimo_aluno">
+          <Key>
+            <PropertyRef Name="id_emprestimo" />
+            <PropertyRef Name="dt_emprestimo" />
+            <PropertyRef Name="dt_devolucao" />
+            <PropertyRef Name="bt_devolvido" />
+            <PropertyRef Name="ds_titulo" />
+          </Key>
+          <Property Name="id_emprestimo" Type="Int32" Nullable="false" />
+          <Property Name="dt_emprestimo" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="dt_devolucao" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="bt_devolvido" Type="Boolean" Nullable="false" />
+          <Property Name="ds_titulo" Type="String" Nullable="false" MaxLength="90" FixedLength="false" Unicode="false" />
+          <Property Name="nm_aluno" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vw_emprestimo_locatario">
+          <Key>
+            <PropertyRef Name="id_emprestimo" />
+            <PropertyRef Name="dt_emprestimo" />
+            <PropertyRef Name="dt_devolucao" />
+            <PropertyRef Name="bt_devolvido" />
+            <PropertyRef Name="ds_titulo" />
+            <PropertyRef Name="nm_locatario" />
+          </Key>
+          <Property Name="id_emprestimo" Type="Int32" Nullable="false" />
+          <Property Name="dt_emprestimo" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="dt_devolucao" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="bt_devolvido" Type="Boolean" Nullable="false" />
+          <Property Name="ds_titulo" Type="String" Nullable="false" MaxLength="90" FixedLength="false" Unicode="false" />
+          <Property Name="nm_locatario" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1121,26 +1141,6 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="vw_emprestimo_aluno">
-            <EntityTypeMapping TypeName="BibliotecaDBAzure.vw_emprestimo_aluno">
-              <MappingFragment StoreEntitySet="vw_emprestimo_aluno">
-                <ScalarProperty Name="nm_aluno" ColumnName="nm_aluno" />
-                <ScalarProperty Name="ds_titulo" ColumnName="ds_titulo" />
-                <ScalarProperty Name="dt_devolucao" ColumnName="dt_devolucao" />
-                <ScalarProperty Name="dt_emprestimo" ColumnName="dt_emprestimo" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vw_emprestimo_locatario">
-            <EntityTypeMapping TypeName="BibliotecaDBAzure.vw_emprestimo_locatario">
-              <MappingFragment StoreEntitySet="vw_emprestimo_locatario">
-                <ScalarProperty Name="nm_locatario" ColumnName="nm_locatario" />
-                <ScalarProperty Name="ds_titulo" ColumnName="ds_titulo" />
-                <ScalarProperty Name="dt_devolucao" ColumnName="dt_devolucao" />
-                <ScalarProperty Name="dt_emprestimo" ColumnName="dt_emprestimo" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="vw_Livro_Autor_Genero">
             <EntityTypeMapping TypeName="BibliotecaDBAzure.vw_Livro_Autor_Genero">
               <MappingFragment StoreEntitySet="vw_Livro_Autor_Genero">
@@ -1159,6 +1159,30 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
                 <ScalarProperty Name="ds_titulo" ColumnName="ds_titulo" />
                 <ScalarProperty Name="nm_aluno" ColumnName="nm_aluno" />
                 <ScalarProperty Name="nm_locatario" ColumnName="nm_locatario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_emprestimo_aluno">
+            <EntityTypeMapping TypeName="BibliotecaDBAzure.vw_emprestimo_aluno">
+              <MappingFragment StoreEntitySet="vw_emprestimo_aluno">
+                <ScalarProperty Name="nm_aluno" ColumnName="nm_aluno" />
+                <ScalarProperty Name="ds_titulo" ColumnName="ds_titulo" />
+                <ScalarProperty Name="bt_devolvido" ColumnName="bt_devolvido" />
+                <ScalarProperty Name="dt_devolucao" ColumnName="dt_devolucao" />
+                <ScalarProperty Name="dt_emprestimo" ColumnName="dt_emprestimo" />
+                <ScalarProperty Name="id_emprestimo" ColumnName="id_emprestimo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_emprestimo_locatario">
+            <EntityTypeMapping TypeName="BibliotecaDBAzure.vw_emprestimo_locatario">
+              <MappingFragment StoreEntitySet="vw_emprestimo_locatario">
+                <ScalarProperty Name="nm_locatario" ColumnName="nm_locatario" />
+                <ScalarProperty Name="ds_titulo" ColumnName="ds_titulo" />
+                <ScalarProperty Name="bt_devolvido" ColumnName="bt_devolvido" />
+                <ScalarProperty Name="dt_devolucao" ColumnName="dt_devolucao" />
+                <ScalarProperty Name="dt_emprestimo" ColumnName="dt_emprestimo" />
+                <ScalarProperty Name="id_emprestimo" ColumnName="id_emprestimo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
