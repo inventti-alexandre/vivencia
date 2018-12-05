@@ -30,7 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dgvLivros = new System.Windows.Forms.DataGridView();
+            this.dgvEmprestimo = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,20 +50,20 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.voltar = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLivros)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmprestimo)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.voltar)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvLivros
+            // dgvEmprestimo
             // 
-            this.dgvLivros.AllowUserToOrderColumns = true;
-            this.dgvLivros.AllowUserToResizeColumns = false;
-            this.dgvLivros.AllowUserToResizeRows = false;
-            this.dgvLivros.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvLivros.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvLivros.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenVertical;
-            this.dgvLivros.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvEmprestimo.AllowUserToOrderColumns = true;
+            this.dgvEmprestimo.AllowUserToResizeColumns = false;
+            this.dgvEmprestimo.AllowUserToResizeRows = false;
+            this.dgvEmprestimo.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvEmprestimo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvEmprestimo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenVertical;
+            this.dgvEmprestimo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -71,19 +71,19 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLivros.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvLivros.ColumnHeadersHeight = 50;
-            this.dgvLivros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvLivros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvEmprestimo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvEmprestimo.ColumnHeadersHeight = 50;
+            this.dgvEmprestimo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvEmprestimo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.Column10,
             this.Column9,
             this.Column8});
-            this.dgvLivros.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvLivros.Location = new System.Drawing.Point(0, 164);
-            this.dgvLivros.MultiSelect = false;
-            this.dgvLivros.Name = "dgvLivros";
-            this.dgvLivros.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.dgvEmprestimo.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvEmprestimo.Location = new System.Drawing.Point(0, 164);
+            this.dgvEmprestimo.MultiSelect = false;
+            this.dgvEmprestimo.Name = "dgvEmprestimo";
+            this.dgvEmprestimo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -91,10 +91,10 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLivros.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvLivros.RowHeadersVisible = false;
-            this.dgvLivros.Size = new System.Drawing.Size(915, 265);
-            this.dgvLivros.TabIndex = 69;
+            this.dgvEmprestimo.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvEmprestimo.RowHeadersVisible = false;
+            this.dgvEmprestimo.Size = new System.Drawing.Size(915, 265);
+            this.dgvEmprestimo.TabIndex = 69;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -125,6 +125,7 @@
             // 
             // btnVisualizar
             // 
+            this.btnVisualizar.Enabled = false;
             this.btnVisualizar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnVisualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVisualizar.Font = new System.Drawing.Font("Century Gothic", 14.75F);
@@ -167,6 +168,7 @@
             // 
             // btnRemover
             // 
+            this.btnRemover.Enabled = false;
             this.btnRemover.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnRemover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemover.Font = new System.Drawing.Font("Century Gothic", 14.75F);
@@ -264,6 +266,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(909, 64);
             this.panel2.TabIndex = 123;
+            this.panel2.Visible = false;
             // 
             // label5
             // 
@@ -292,7 +295,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.voltar);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.dgvLivros);
+            this.Controls.Add(this.dgvEmprestimo);
             this.Controls.Add(this.btnVisualizar);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.btnListar);
@@ -301,7 +304,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmConsultar";
             this.Size = new System.Drawing.Size(915, 500);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLivros)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmprestimo)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.voltar)).EndInit();
@@ -312,7 +315,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvLivros;
+        private System.Windows.Forms.DataGridView dgvEmprestimo;
         private System.Windows.Forms.Button btnVisualizar;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Button btnListar;

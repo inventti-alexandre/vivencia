@@ -78,6 +78,11 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Aluno
                 else
                     throw new ArgumentException("RA inválido!");
 
+                MessageBox.Show($"Cadastro efetuado com sucesso!", "Biblioteca",
+                       MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                frmConsultar frm = new frmConsultar();
+                ((frmPrincipal)this.ParentForm).CarregarPanel(frm);
             }
             catch (ArgumentException ex)
             {

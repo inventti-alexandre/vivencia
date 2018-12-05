@@ -76,6 +76,9 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Professor
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             Emprestimo();
+
+            MessageBox.Show("Cadastro efetuado com sucesso!", "Biblioteca",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void TravaTexto_KeyPress(object sender, KeyPressEventArgs e)

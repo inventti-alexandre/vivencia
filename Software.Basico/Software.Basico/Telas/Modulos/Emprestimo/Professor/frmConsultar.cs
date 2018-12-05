@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Software.Basico.DB.Emprestimo;
+using Software.Basico.DB.Base;
 
 namespace Software.Basico.Telas.Modulos.Emprestimo.Professor
 {
@@ -17,6 +18,16 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Professor
         {
             InitializeComponent();
             TemaTela();
+            CarregarGrid();
+        }
+
+        private void CarregarGrid()
+        {
+            AzureBiblioteca db = new AzureBiblioteca();
+            List<vw_emprestimo_locatario> emprestimo = db.vw_emprestimo_locatario.ToList();
+
+            dgvEmprestimo.AutoGenerateColumns = false;
+            dgvEmprestimo.DataSource = emprestimo;
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -60,8 +71,7 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Professor
 
         private void btnListar_Click(object sender, EventArgs e)
         {
-            EmprestimoBusiness business = new EmprestimoBusiness();
-
+            CarregarGrid();
         }
     }
 }

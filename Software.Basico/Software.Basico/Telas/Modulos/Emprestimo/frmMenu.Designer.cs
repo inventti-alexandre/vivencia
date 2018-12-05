@@ -45,7 +45,6 @@
             // 
             this.btnProfessor.BackgroundImage = global::Software.Basico.Properties.Resources._201570;
             this.btnProfessor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnProfessor.Enabled = false;
             this.btnProfessor.FlatAppearance.BorderSize = 0;
             this.btnProfessor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProfessor.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
