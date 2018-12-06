@@ -143,7 +143,7 @@
             this.btnVisualizar.Location = new System.Drawing.Point(274, 427);
             this.btnVisualizar.Name = "btnVisualizar";
             this.btnVisualizar.Size = new System.Drawing.Size(141, 32);
-            this.btnVisualizar.TabIndex = 56;
+            this.btnVisualizar.TabIndex = 5;
             this.btnVisualizar.Text = "Visualizar";
             this.btnVisualizar.UseVisualStyleBackColor = true;
             this.btnVisualizar.Click += new System.EventHandler(this.btnVisualizar_Click);
@@ -157,7 +157,7 @@
             this.btnCadastrar.Location = new System.Drawing.Point(496, 427);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(141, 32);
-            this.btnCadastrar.TabIndex = 57;
+            this.btnCadastrar.TabIndex = 6;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
@@ -171,7 +171,7 @@
             this.btnListar.Location = new System.Drawing.Point(52, 427);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(141, 32);
-            this.btnListar.TabIndex = 55;
+            this.btnListar.TabIndex = 4;
             this.btnListar.Text = "Listar";
             this.btnListar.UseVisualStyleBackColor = true;
             this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
@@ -185,7 +185,7 @@
             this.btnRemover.Location = new System.Drawing.Point(718, 427);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(140, 32);
-            this.btnRemover.TabIndex = 58;
+            this.btnRemover.TabIndex = 7;
             this.btnRemover.Text = "Remover";
             this.btnRemover.UseVisualStyleBackColor = true;
             this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
@@ -240,7 +240,7 @@
             this.chkDevolvido.Location = new System.Drawing.Point(748, 29);
             this.chkDevolvido.Name = "chkDevolvido";
             this.chkDevolvido.Size = new System.Drawing.Size(15, 14);
-            this.chkDevolvido.TabIndex = 124;
+            this.chkDevolvido.TabIndex = 3;
             this.chkDevolvido.UseVisualStyleBackColor = true;
             // 
             // label5
@@ -270,7 +270,7 @@
             this.txtTitulo.MaxLength = 90;
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(153, 23);
-            this.txtTitulo.TabIndex = 70;
+            this.txtTitulo.TabIndex = 1;
             // 
             // txtAluno
             // 
@@ -279,7 +279,7 @@
             this.txtAluno.MaxLength = 45;
             this.txtAluno.Name = "txtAluno";
             this.txtAluno.Size = new System.Drawing.Size(216, 23);
-            this.txtAluno.TabIndex = 70;
+            this.txtAluno.TabIndex = 2;
             // 
             // label4
             // 

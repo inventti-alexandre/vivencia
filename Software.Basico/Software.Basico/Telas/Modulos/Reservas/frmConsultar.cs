@@ -60,10 +60,20 @@ namespace Software.Basico.Telas.Modulos.Reservas
             btnCancelar.BackColor = Tema.Segundaria;
             btnNova.BackColor = Tema.Segundaria;
 
-            btnNova.ForeColor = Tema.Texto;
+            btnNova.ForeColor =     Tema.Texto;
             btnCancelar.ForeColor = Tema.Texto;
-            btnAlterar.ForeColor = Tema.Texto;
+            btnAlterar.ForeColor =  Tema.Texto;
+            
+            btnnovareserva1.BackColor = Tema.Segundaria;
+            btnalterardados1.BackColor = Tema.Segundaria;
+            btnremover1.BackColor = Tema.Segundaria;
+
+            btnnovareserva1.ForeColor = Tema.Texto;
+            btnalterardados1.ForeColor = Tema.Texto;
+            btnremover1.ForeColor = Tema.Texto;
         }
+
+      
 
         private void dgvLivros_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

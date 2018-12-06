@@ -95,7 +95,7 @@
             this.cbolivro.Location = new System.Drawing.Point(154, 288);
             this.cbolivro.Name = "cbolivro";
             this.cbolivro.Size = new System.Drawing.Size(347, 29);
-            this.cbolivro.TabIndex = 91;
+            this.cbolivro.TabIndex = 5;
             this.cbolivro.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
             // label4
@@ -118,7 +118,7 @@
             this.btnCadastrar.Location = new System.Drawing.Point(579, 352);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(245, 32);
-            this.btnCadastrar.TabIndex = 100;
+            this.btnCadastrar.TabIndex = 7;
             this.btnCadastrar.Text = "Salvar Dados";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
@@ -143,7 +143,7 @@
             this.btnRemover.Location = new System.Drawing.Point(579, 390);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(245, 32);
-            this.btnRemover.TabIndex = 128;
+            this.btnRemover.TabIndex = 8;
             this.btnRemover.Text = "Limpar";
             this.btnRemover.UseVisualStyleBackColor = true;
             // 
@@ -154,7 +154,7 @@
             this.txtaluno.MaxLength = 20;
             this.txtaluno.Name = "txtaluno";
             this.txtaluno.Size = new System.Drawing.Size(347, 27);
-            this.txtaluno.TabIndex = 129;
+            this.txtaluno.TabIndex = 4;
             this.txtaluno.Text = "RA";
             this.txtaluno.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtaluno_MouseClick);
             // 
@@ -185,7 +185,7 @@
             this.mktCPF.Mask = "999,999,999-99";
             this.mktCPF.Name = "mktCPF";
             this.mktCPF.Size = new System.Drawing.Size(347, 23);
-            this.mktCPF.TabIndex = 132;
+            this.mktCPF.TabIndex = 3;
             this.mktCPF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnconsultar
@@ -197,7 +197,7 @@
             this.btnconsultar.Location = new System.Drawing.Point(154, 323);
             this.btnconsultar.Name = "btnconsultar";
             this.btnconsultar.Size = new System.Drawing.Size(128, 32);
-            this.btnconsultar.TabIndex = 133;
+            this.btnconsultar.TabIndex = 6;
             this.btnconsultar.Text = "Consultar";
             this.btnconsultar.UseVisualStyleBackColor = true;
             this.btnconsultar.Click += new System.EventHandler(this.btnconsultar_Click);
@@ -209,7 +209,7 @@
             this.rdnlocatorio.Location = new System.Drawing.Point(154, 124);
             this.rdnlocatorio.Name = "rdnlocatorio";
             this.rdnlocatorio.Size = new System.Drawing.Size(140, 36);
-            this.rdnlocatorio.TabIndex = 134;
+            this.rdnlocatorio.TabIndex = 1;
             this.rdnlocatorio.TabStop = true;
             this.rdnlocatorio.Text = "Locatório";
             this.rdnlocatorio.UseCompatibleTextRendering = true;
@@ -223,7 +223,7 @@
             this.rdnaluno.Location = new System.Drawing.Point(358, 124);
             this.rdnaluno.Name = "rdnaluno";
             this.rdnaluno.Size = new System.Drawing.Size(100, 34);
-            this.rdnaluno.TabIndex = 135;
+            this.rdnaluno.TabIndex = 2;
             this.rdnaluno.TabStop = true;
             this.rdnaluno.Text = "Aluno";
             this.rdnaluno.UseVisualStyleBackColor = true;

@@ -86,7 +86,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(594, 444);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(216, 32);
-            this.btnCancelar.TabIndex = 90;
+            this.btnCancelar.TabIndex = 15;
             this.btnCancelar.Text = "Limpar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -97,7 +97,7 @@
             this.txtGenero.Location = new System.Drawing.Point(679, 299);
             this.txtGenero.Name = "txtGenero";
             this.txtGenero.Size = new System.Drawing.Size(131, 23);
-            this.txtGenero.TabIndex = 87;
+            this.txtGenero.TabIndex = 9;
             this.txtGenero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TravarTexto_KeyPress);
             // 
             // label9
@@ -126,7 +126,7 @@
             this.txtEditora.Location = new System.Drawing.Point(532, 299);
             this.txtEditora.Name = "txtEditora";
             this.txtEditora.Size = new System.Drawing.Size(131, 23);
-            this.txtEditora.TabIndex = 86;
+            this.txtEditora.TabIndex = 8;
             this.txtEditora.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TravarTexto_KeyPress);
             // 
             // label7
@@ -157,7 +157,7 @@
             this.cboLivro.Location = new System.Drawing.Point(108, 298);
             this.cboLivro.Name = "cboLivro";
             this.cboLivro.Size = new System.Drawing.Size(261, 25);
-            this.cboLivro.TabIndex = 84;
+            this.cboLivro.TabIndex = 6;
             this.cboLivro.TextChanged += new System.EventHandler(this.cboLivro_TextChanged);
             // 
             // txtAutor
@@ -166,7 +166,7 @@
             this.txtAutor.Location = new System.Drawing.Point(385, 299);
             this.txtAutor.Name = "txtAutor";
             this.txtAutor.Size = new System.Drawing.Size(131, 23);
-            this.txtAutor.TabIndex = 85;
+            this.txtAutor.TabIndex = 7;
             this.txtAutor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TravarTexto_KeyPress);
             // 
             // label4
@@ -185,7 +185,7 @@
             this.dtpDevolucao.Location = new System.Drawing.Point(108, 370);
             this.dtpDevolucao.Name = "dtpDevolucao";
             this.dtpDevolucao.Size = new System.Drawing.Size(289, 23);
-            this.dtpDevolucao.TabIndex = 88;
+            this.dtpDevolucao.TabIndex = 10;
             // 
             // pnTop
             // 
@@ -222,7 +222,7 @@
             this.txtRA.MaxLength = 9;
             this.txtRA.Name = "txtRA";
             this.txtRA.Size = new System.Drawing.Size(148, 23);
-            this.txtRA.TabIndex = 85;
+            this.txtRA.TabIndex = 2;
             this.txtRA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRA_KeyPress);
             // 
             // label5
@@ -251,7 +251,7 @@
             this.txtN.Location = new System.Drawing.Point(532, 226);
             this.txtN.Name = "txtN";
             this.txtN.Size = new System.Drawing.Size(131, 23);
-            this.txtN.TabIndex = 86;
+            this.txtN.TabIndex = 4;
             this.txtN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TravarTexto_KeyPress);
             // 
@@ -271,7 +271,7 @@
             this.txtTurma.Location = new System.Drawing.Point(679, 226);
             this.txtTurma.Name = "txtTurma";
             this.txtTurma.Size = new System.Drawing.Size(131, 23);
-            this.txtTurma.TabIndex = 87;
+            this.txtTurma.TabIndex = 5;
             this.txtTurma.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTurma.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TravarTexto_KeyPress);
             // 
@@ -281,7 +281,7 @@
             this.txtAluno.Location = new System.Drawing.Point(276, 226);
             this.txtAluno.Name = "txtAluno";
             this.txtAluno.Size = new System.Drawing.Size(240, 23);
-            this.txtAluno.TabIndex = 86;
+            this.txtAluno.TabIndex = 3;
             this.txtAluno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TravarTexto_KeyPress);
             // 
             // pictureBox1
@@ -312,7 +312,7 @@
             this.txtEmail.MaxLength = 150;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(387, 23);
-            this.txtEmail.TabIndex = 86;
+            this.txtEmail.TabIndex = 11;
             // 
             // label12
             // 
@@ -331,7 +331,7 @@
             this.txtFuncionario.MaxLength = 90;
             this.txtFuncionario.Name = "txtFuncionario";
             this.txtFuncionario.Size = new System.Drawing.Size(148, 23);
-            this.txtFuncionario.TabIndex = 85;
+            this.txtFuncionario.TabIndex = 1;
             this.txtFuncionario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFuncionario_KeyPress);
             // 
             // btnAlterar
@@ -343,7 +343,7 @@
             this.btnAlterar.Location = new System.Drawing.Point(594, 406);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(216, 32);
-            this.btnAlterar.TabIndex = 89;
+            this.btnAlterar.TabIndex = 14;
             this.btnAlterar.Text = "Salvar";
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Visible = false;
@@ -355,7 +355,7 @@
             this.dtpEmprestimo.Location = new System.Drawing.Point(108, 427);
             this.dtpEmprestimo.Name = "dtpEmprestimo";
             this.dtpEmprestimo.Size = new System.Drawing.Size(289, 23);
-            this.dtpEmprestimo.TabIndex = 88;
+            this.dtpEmprestimo.TabIndex = 12;
             this.dtpEmprestimo.Visible = false;
             // 
             // label13
@@ -375,7 +375,7 @@
             this.chkDevolvido.Location = new System.Drawing.Point(475, 446);
             this.chkDevolvido.Name = "chkDevolvido";
             this.chkDevolvido.Size = new System.Drawing.Size(15, 14);
-            this.chkDevolvido.TabIndex = 131;
+            this.chkDevolvido.TabIndex = 13;
             this.chkDevolvido.UseVisualStyleBackColor = true;
             this.chkDevolvido.Visible = false;
             // 

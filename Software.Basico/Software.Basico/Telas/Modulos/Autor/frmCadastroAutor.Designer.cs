@@ -66,7 +66,7 @@
             this.btnCadastrar.Location = new System.Drawing.Point(389, 387);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(204, 32);
-            this.btnCadastrar.TabIndex = 24;
+            this.btnCadastrar.TabIndex = 4;
             this.btnCadastrar.Text = "Salvar Dados";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
@@ -91,7 +91,7 @@
             this.btnRemover.Location = new System.Drawing.Point(618, 387);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(204, 32);
-            this.btnRemover.TabIndex = 25;
+            this.btnRemover.TabIndex = 5;
             this.btnRemover.Text = "Limpar";
             this.btnRemover.UseVisualStyleBackColor = true;
             this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);

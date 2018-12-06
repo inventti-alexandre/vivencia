@@ -74,10 +74,9 @@
             this.btnEnviarDia.Location = new System.Drawing.Point(16, 260);
             this.btnEnviarDia.Name = "btnEnviarDia";
             this.btnEnviarDia.Size = new System.Drawing.Size(213, 39);
-            this.btnEnviarDia.TabIndex = 77;
+            this.btnEnviarDia.TabIndex = 1;
             this.btnEnviarDia.Text = "Lembrar";
             this.btnEnviarDia.UseVisualStyleBackColor = true;
-            //this.btnEnviarDia.Click += new System.EventHandler(this.btnEmailDia_Click);
             // 
             // lblQntLivrosDia
             // 
@@ -131,10 +130,9 @@
             this.btnEnviar5Dia.Location = new System.Drawing.Point(15, 260);
             this.btnEnviar5Dia.Name = "btnEnviar5Dia";
             this.btnEnviar5Dia.Size = new System.Drawing.Size(213, 39);
-            this.btnEnviar5Dia.TabIndex = 77;
+            this.btnEnviar5Dia.TabIndex = 2;
             this.btnEnviar5Dia.Text = "Lembrar";
             this.btnEnviar5Dia.UseVisualStyleBackColor = true;
-            //this.btnEnviar5Dia.Click += new System.EventHandler(this.btnEnviar5Dia_Click);
             // 
             // lblLivro5Dias
             // 
@@ -188,10 +186,9 @@
             this.btnEnviarAtrasado.Location = new System.Drawing.Point(16, 260);
             this.btnEnviarAtrasado.Name = "btnEnviarAtrasado";
             this.btnEnviarAtrasado.Size = new System.Drawing.Size(213, 39);
-            this.btnEnviarAtrasado.TabIndex = 77;
+            this.btnEnviarAtrasado.TabIndex = 3;
             this.btnEnviarAtrasado.Text = "Lembrar";
             this.btnEnviarAtrasado.UseVisualStyleBackColor = true;
-            //this.btnEnviarAtrasado.Click += new System.EventHandler(this.btnEnviarAtrasado_Click);
             // 
             // lblLivroAtrasado
             // 
@@ -256,7 +253,6 @@
             this.btnClose.TabIndex = 78;
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.UseVisualStyleBackColor = true;
-            //this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmGerEmail
             // 
