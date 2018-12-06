@@ -39,6 +39,14 @@ namespace Software.Basico.Telas.Modulos.Reservas
             btnRemover.ForeColor = Tema.Texto;
         }
 
+        private void PreencherDados(int idLocatario)
+        {
+            AzureBiblioteca db = new AzureBiblioteca();
+            vw_emprestimo_locatario loc = db.vw_emprestimo_locatario.Where(x => x.id_emprestimo == idLocatario).ToList().Single();
+
+
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
 

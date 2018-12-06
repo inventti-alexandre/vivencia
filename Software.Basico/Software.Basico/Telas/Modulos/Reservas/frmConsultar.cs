@@ -116,5 +116,17 @@ namespace Software.Basico.Telas.Modulos.Reservas
             Reservas.frmCadastrar frmCadastrar = new Reservas.frmCadastrar();
             ((frmPrincipal)this.ParentForm).CarregarPanel(frmCadastrar);
         }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Alterar()
+        {
+            vw_reserva_locatario reservasL = dgvReserva.CurrentRow.DataBoundItem as vw_reserva_locatario;
+
+
+        }
     }
 }

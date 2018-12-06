@@ -148,6 +148,7 @@
             this.btnAlterar.TabIndex = 135;
             this.btnAlterar.Text = "Alterar Dados";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnNova
             // 
