@@ -187,10 +187,13 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
 warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva_aluno' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vw_reserva_aluno">
           <Key>
+            <PropertyRef Name="id_reserva" />
             <PropertyRef Name="ds_titulo" />
             <PropertyRef Name="dt_reserva" />
           </Key>
+          <Property Name="id_reserva" Type="int" Nullable="false" />
           <Property Name="nm_aluno" Type="nvarchar" MaxLength="255" />
+          <Property Name="tb_turma_aluno_id_turma_aluno" Type="int" />
           <Property Name="ds_titulo" Type="varchar" MaxLength="90" Nullable="false" />
           <Property Name="dt_reserva" Type="date" Nullable="false" />
         </EntityType>
@@ -198,11 +201,14 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva_aluno' does not have a
 warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva_locatario' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vw_reserva_locatario">
           <Key>
+            <PropertyRef Name="id_reserva" />
             <PropertyRef Name="nm_locatario" />
             <PropertyRef Name="ds_titulo" />
             <PropertyRef Name="dt_reserva" />
           </Key>
+          <Property Name="id_reserva" Type="int" Nullable="false" />
           <Property Name="nm_locatario" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="tb_locatario_id_locatario" Type="int" />
           <Property Name="ds_titulo" Type="varchar" MaxLength="90" Nullable="false" />
           <Property Name="dt_reserva" Type="date" Nullable="false" />
         </EntityType>
@@ -443,14 +449,18 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva_locatario' does not ha
           </EntitySet>
           <EntitySet Name="vw_reserva_aluno" EntityType="Self.vw_reserva_aluno" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
+    [vw_reserva_aluno].[id_reserva] AS [id_reserva], 
     [vw_reserva_aluno].[nm_aluno] AS [nm_aluno], 
+    [vw_reserva_aluno].[tb_turma_aluno_id_turma_aluno] AS [tb_turma_aluno_id_turma_aluno], 
     [vw_reserva_aluno].[ds_titulo] AS [ds_titulo], 
     [vw_reserva_aluno].[dt_reserva] AS [dt_reserva]
     FROM [dbo].[vw_reserva_aluno] AS [vw_reserva_aluno]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vw_reserva_locatario" EntityType="Self.vw_reserva_locatario" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
+    [vw_reserva_locatario].[id_reserva] AS [id_reserva], 
     [vw_reserva_locatario].[nm_locatario] AS [nm_locatario], 
+    [vw_reserva_locatario].[tb_locatario_id_locatario] AS [tb_locatario_id_locatario], 
     [vw_reserva_locatario].[ds_titulo] AS [ds_titulo], 
     [vw_reserva_locatario].[dt_reserva] AS [dt_reserva]
     FROM [dbo].[vw_reserva_locatario] AS [vw_reserva_locatario]</DefiningQuery>
@@ -814,20 +824,26 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva_locatario' does not ha
         </EntityType>
         <EntityType Name="vw_reserva_aluno">
           <Key>
+            <PropertyRef Name="id_reserva" />
             <PropertyRef Name="ds_titulo" />
             <PropertyRef Name="dt_reserva" />
           </Key>
+          <Property Name="id_reserva" Type="Int32" Nullable="false" />
           <Property Name="nm_aluno" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="tb_turma_aluno_id_turma_aluno" Type="Int32" />
           <Property Name="ds_titulo" Type="String" Nullable="false" MaxLength="90" FixedLength="false" Unicode="false" />
           <Property Name="dt_reserva" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
         <EntityType Name="vw_reserva_locatario">
           <Key>
+            <PropertyRef Name="id_reserva" />
             <PropertyRef Name="nm_locatario" />
             <PropertyRef Name="ds_titulo" />
             <PropertyRef Name="dt_reserva" />
           </Key>
+          <Property Name="id_reserva" Type="Int32" Nullable="false" />
           <Property Name="nm_locatario" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="tb_locatario_id_locatario" Type="Int32" />
           <Property Name="ds_titulo" Type="String" Nullable="false" MaxLength="90" FixedLength="false" Unicode="false" />
           <Property Name="dt_reserva" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
@@ -1210,7 +1226,9 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva_locatario' does not ha
               <MappingFragment StoreEntitySet="vw_reserva_aluno">
                 <ScalarProperty Name="dt_reserva" ColumnName="dt_reserva" />
                 <ScalarProperty Name="ds_titulo" ColumnName="ds_titulo" />
+                <ScalarProperty Name="tb_turma_aluno_id_turma_aluno" ColumnName="tb_turma_aluno_id_turma_aluno" />
                 <ScalarProperty Name="nm_aluno" ColumnName="nm_aluno" />
+                <ScalarProperty Name="id_reserva" ColumnName="id_reserva" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1219,7 +1237,9 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva_locatario' does not ha
               <MappingFragment StoreEntitySet="vw_reserva_locatario">
                 <ScalarProperty Name="dt_reserva" ColumnName="dt_reserva" />
                 <ScalarProperty Name="ds_titulo" ColumnName="ds_titulo" />
+                <ScalarProperty Name="tb_locatario_id_locatario" ColumnName="tb_locatario_id_locatario" />
                 <ScalarProperty Name="nm_locatario" ColumnName="nm_locatario" />
+                <ScalarProperty Name="id_reserva" ColumnName="id_reserva" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

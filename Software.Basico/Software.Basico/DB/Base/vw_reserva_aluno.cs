@@ -14,7 +14,9 @@ namespace Software.Basico.DB.Base
     
     public partial class vw_reserva_aluno
     {
+        public int id_reserva { get; set; }
         public string nm_aluno { get; set; }
+        public Nullable<int> tb_turma_aluno_id_turma_aluno { get; set; }
         public string ds_titulo { get; set; }
         public System.DateTime dt_reserva { get; set; }
     }

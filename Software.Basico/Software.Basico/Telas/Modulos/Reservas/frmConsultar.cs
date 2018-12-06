@@ -65,11 +65,9 @@ namespace Software.Basico.Telas.Modulos.Reservas
             
             
             btnnovareserva1.BackColor = Tema.Segundaria;
-            btnalterardados1.BackColor = Tema.Segundaria;
             btnremover1.BackColor = Tema.Segundaria;
 
-            btnnovareserva1.ForeColor = Tema.Texto;
-            btnalterardados1.ForeColor = Tema.Texto;
+            btnnovareserva1.ForeColor = Tema.Texto;           
             btnremover1.ForeColor = Tema.Texto;
         }
 
@@ -98,7 +96,7 @@ namespace Software.Basico.Telas.Modulos.Reservas
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-
+            RemoverLocatario();
         }
 
         private void bntconsultar_Click(object sender, EventArgs e)
@@ -129,13 +127,27 @@ namespace Software.Basico.Telas.Modulos.Reservas
 
         }
 
-        private void Remover()
+        private void RemoverLocatario()
         {
             vw_reserva_locatario removerlocatario = dgvReserva.CurrentRow.DataBoundItem as vw_reserva_locatario;
             ReservaBusiness reserva = new ReservaBusiness();
-            //7reserva.RemoverDados(removerlocatario.Id)
-
+            reserva.RemoverDados(removerlocatario.id_reserva);
+            CarregarGridLocatario();
+            MessageBox.Show("Remoção realizada com sucesso.", "Biblioteca", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-       
+
+        private void RemoverAluno()
+        {
+            vw_reserva_aluno removeraluno = dgvaluno.CurrentRow.DataBoundItem as vw_reserva_aluno;
+            ReservaBusiness reserva = new ReservaBusiness();
+            reserva.RemoverDados(removeraluno.id_reserva);
+            CarregarGridAluno();
+            MessageBox.Show("Remoção realizada com sucesso.", "Biblioteca", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnremover1_Click(object sender, EventArgs e)
+        {
+            RemoverAluno();
+        }
     }
 }
