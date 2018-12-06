@@ -117,16 +117,17 @@ namespace Software.Basico.Telas.Modulos.Reservas
             ((frmPrincipal)this.ParentForm).CarregarPanel(frmCadastrar);
         }
 
+        private void txtlocatario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == 13)
+            CarregarGridLocatarioParaConsulta();
+
+        }
+
         private void btnAlterar_Click(object sender, EventArgs e)
         {
 
         }
-
-        private void Alterar()
-        {
-            vw_reserva_locatario reservasL = dgvReserva.CurrentRow.DataBoundItem as vw_reserva_locatario;
-
-
-        }
+       
     }
 }

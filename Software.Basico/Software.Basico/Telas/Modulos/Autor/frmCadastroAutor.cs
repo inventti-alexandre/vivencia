@@ -114,6 +114,8 @@ namespace Software.Basico.Telas.Modulos.Autor
             {
                 e.Handled = true;
             }
+            if(e.KeyChar == 13)
+                CadastrarAutor();
         }
 
         private void txtNascionalidade_KeyPress(object sender, KeyPressEventArgs e)
@@ -127,6 +129,10 @@ namespace Software.Basico.Telas.Modulos.Autor
             {
                 e.Handled = true;
             }
+            if (e.KeyChar == 13)
+                CadastrarAutor();
+                
+
         }
 
         private void frmCadastroAutor_Load(object sender, EventArgs e)
@@ -174,6 +180,16 @@ namespace Software.Basico.Telas.Modulos.Autor
         }
 
         private void txtNomeCompleto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAutor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCadastrar_KeyPress(object sender, KeyPressEventArgs e)
         {
 
         }

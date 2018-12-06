@@ -156,6 +156,10 @@ namespace Software.Basico.Telas.Modulos.Genero
                 e.Handled = false;
             else
                 e.Handled = true;
+            if (e.KeyChar == 13)
+               CadastrarGenero();
+               
+
         }
     }
 }

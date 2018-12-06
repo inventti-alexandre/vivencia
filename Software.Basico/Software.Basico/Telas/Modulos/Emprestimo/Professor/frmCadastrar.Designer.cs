@@ -158,6 +158,7 @@
             this.cboLivro.Size = new System.Drawing.Size(234, 25);
             this.cboLivro.TabIndex = 5;
             this.cboLivro.TextChanged += new System.EventHandler(this.cboLivro_TextChanged);
+            this.cboLivro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cboLivro_KeyPress);
             // 
             // label4
             // 
@@ -244,6 +245,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(215, 23);
             this.txtEmail.TabIndex = 5;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // txtGenero
             // 

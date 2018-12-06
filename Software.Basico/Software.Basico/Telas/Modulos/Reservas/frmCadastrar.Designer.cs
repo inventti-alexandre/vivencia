@@ -97,6 +97,7 @@
             this.cbolivro.Size = new System.Drawing.Size(347, 29);
             this.cbolivro.TabIndex = 5;
             this.cbolivro.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
+            this.cbolivro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbolivro_KeyPress);
             // 
             // label4
             // 
@@ -194,7 +195,7 @@
             this.btnconsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnconsultar.Font = new System.Drawing.Font("Century Gothic", 14.75F);
             this.btnconsultar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
-            this.btnconsultar.Location = new System.Drawing.Point(154, 323);
+            this.btnconsultar.Location = new System.Drawing.Point(154, 352);
             this.btnconsultar.Name = "btnconsultar";
             this.btnconsultar.Size = new System.Drawing.Size(128, 32);
             this.btnconsultar.TabIndex = 6;

@@ -253,5 +253,17 @@ namespace Software.Basico.Telas.Modulos.Livros
         {
 
         }
+
+        private void cboCondicao_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboCondicao_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+               CadastrarLivro();
+
+        }
     }
 }

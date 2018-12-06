@@ -70,6 +70,7 @@
             this.btnCadastrar.Text = "Salvar Dados";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            this.btnCadastrar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnCadastrar_KeyPress);
             // 
             // txtNomeCompleto
             // 
@@ -114,6 +115,7 @@
             this.txtAutor.Name = "txtAutor";
             this.txtAutor.Size = new System.Drawing.Size(433, 33);
             this.txtAutor.TabIndex = 2;
+            this.txtAutor.TextChanged += new System.EventHandler(this.txtAutor_TextChanged);
             this.txtAutor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAutor_KeyPress);
             // 
             // label2
