@@ -37,11 +37,6 @@ namespace Software.Basico.DB.Reserva
             db.Entry(reserv).State = EntityState.Deleted;
             db.SaveChanges();
         }
-        public List<vw_reserva> ConsultarReservas()
-        {
-            List<vw_reserva> livList = db.vw_reserva.ToList();
-            return livList;
-        }
         public tb_reserva ConsultarReservaid(int idReserva)
         {
             tb_reserva reversa = db.tb_reserva.Where(x => x.id_reserva == idReserva).ToList().Single();

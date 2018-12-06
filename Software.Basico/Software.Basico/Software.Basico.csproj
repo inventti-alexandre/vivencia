@@ -101,9 +101,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BibliotecaDBAzure.edmx</DependentUpon>
     </Compile>
-    <Compile Include="DB\Base\sysdiagrams.cs">
-      <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
-    </Compile>
     <Compile Include="DB\Base\tb_aluno.cs">
       <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
     </Compile>
@@ -152,7 +149,10 @@
     <Compile Include="DB\Base\vw_Livro_Autor_Genero.cs">
       <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\Base\vw_reserva.cs">
+    <Compile Include="DB\Base\vw_reserva_aluno.cs">
+      <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Base\vw_reserva_locatario.cs">
       <DependentUpon>BibliotecaDBAzure.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Emprestimo\EmprestimoBusiness.cs" />

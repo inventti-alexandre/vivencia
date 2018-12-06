@@ -229,8 +229,8 @@
             this.Controls.Add(this.btnRemover);
             this.Controls.Add(this.txtNomeCompleto);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnCadastrar);
+            this.Controls.Add(this.btnAlterar);
             this.Name = "frmCadastroAutor";
             this.Size = new System.Drawing.Size(915, 500);
             this.Load += new System.EventHandler(this.frmCadastroAutor_Load);

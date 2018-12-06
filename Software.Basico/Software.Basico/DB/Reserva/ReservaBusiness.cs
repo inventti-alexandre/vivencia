@@ -33,11 +33,6 @@ namespace Software.Basico.DB.Reserva
             db.RemoverReserva(idreserva);
         }
 
-        public List<vw_reserva> ConsultarReservas ()
-        {
-            return db.ConsultarReservas();
-        }
-
         public tb_reserva ConsultarPorID (int id)
         {
             return db.ConsultarReservaid(id);

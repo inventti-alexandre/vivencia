@@ -12,9 +12,8 @@ namespace Software.Basico.DB.Base
     using System;
     using System.Collections.Generic;
     
-    public partial class vw_reserva
+    public partial class vw_reserva_aluno
     {
-        public string nm_locatario { get; set; }
         public string nm_aluno { get; set; }
         public string ds_titulo { get; set; }
         public System.DateTime dt_reserva { get; set; }

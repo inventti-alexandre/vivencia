@@ -14,6 +14,12 @@ namespace Software.Basico.DB.Base
     
     public partial class tb_notificacao
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tb_notificacao()
+        {
+            this.tb_emprestimo = new HashSet<tb_emprestimo>();
+        }
+    
         public int id_notificacao { get; set; }
         public bool bt_emailDia { get; set; }
         public bool bt_email5DIa { get; set; }
@@ -22,6 +28,8 @@ namespace Software.Basico.DB.Base
         public Nullable<int> tb_locatario_id_locatario { get; set; }
     
         public virtual tb_aluno_dados tb_aluno_dados { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_emprestimo> tb_emprestimo { get; set; }
         public virtual tb_locatario tb_locatario { get; set; }
     }
 }

@@ -194,7 +194,7 @@ namespace Software.Basico.Telas.Modulos.Reservas
             { 
             SalvarDados();
             }
-            catch(Exception ex)
+            catch(Exception)
             {
                 MessageBox.Show("Ocorreu algum erro, por favor revisar dados.", "Biblioteca", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

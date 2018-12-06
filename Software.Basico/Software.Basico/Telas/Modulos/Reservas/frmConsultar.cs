@@ -24,11 +24,11 @@ namespace Software.Basico.Telas.Modulos.Reservas
         private void CarregarGrid()
         {
             AzureBiblioteca db = new AzureBiblioteca();
-            List<vw_reserva> reservas = db.vw_reserva.ToList();
+            //List<vw_reserva> reservas = db.vw_reserva.ToList();
 
             ReservaBusiness reservaBusiness = new ReservaBusiness();
             dgvReserva.AutoGenerateColumns = false;
-            dgvReserva.DataSource = reservaBusiness.ConsultarReservas();
+            //dgvReserva.DataSource = reservaBusiness.ConsultarReservas();
 
             List<tb_reserva> dto = new List<tb_reserva>();
             dto = db.tb_reserva.ToList();

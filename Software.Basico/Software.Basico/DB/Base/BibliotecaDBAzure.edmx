@@ -5,16 +5,6 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="BibliotecaDBAzure.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
         <EntityType Name="tb_aluno">
           <Key>
             <PropertyRef Name="id_aluno" />
@@ -55,6 +45,7 @@
           <Property Name="dt_devolucao" Type="date" Nullable="false" />
           <Property Name="nm_funcionario" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="bt_devolvido" Type="bit" Nullable="false" />
+          <Property Name="tb_notificacao_id_notificacao" Type="int" />
           <Property Name="tb_livro_id_livro" Type="int" Nullable="false" />
           <Property Name="tb_turma_aluno_id_turma_aluno" Type="int" />
           <Property Name="tb_locatario_id_locatario" Type="int" />
@@ -193,19 +184,29 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_Livro_Autor_Genero' does not h
           <Property Name="nm_genero" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vw_reserva">
+warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva_aluno' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_reserva_aluno">
+          <Key>
+            <PropertyRef Name="ds_titulo" />
+            <PropertyRef Name="dt_reserva" />
+          </Key>
+          <Property Name="nm_aluno" Type="nvarchar" MaxLength="255" />
+          <Property Name="ds_titulo" Type="varchar" MaxLength="90" Nullable="false" />
+          <Property Name="dt_reserva" Type="date" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva_locatario' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_reserva_locatario">
           <Key>
             <PropertyRef Name="nm_locatario" />
             <PropertyRef Name="ds_titulo" />
             <PropertyRef Name="dt_reserva" />
           </Key>
           <Property Name="nm_locatario" Type="varchar" MaxLength="45" Nullable="false" />
-          <Property Name="nm_aluno" Type="nvarchar" MaxLength="255" />
           <Property Name="ds_titulo" Type="varchar" MaxLength="90" Nullable="false" />
           <Property Name="dt_reserva" Type="date" Nullable="false" />
         </EntityType>
-        <Association Name="FK__tb_aluno___tb_al__68487DD7">
+        <Association Name="FK__tb_aluno___tb_al__6FE99F9F">
           <End Role="tb_aluno" Type="Self.tb_aluno" Multiplicity="0..1" />
           <End Role="tb_aluno_dados" Type="Self.tb_aluno_dados" Multiplicity="*" />
           <ReferentialConstraint>
@@ -229,7 +230,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_empres__tb_lo__71D1E811">
+        <Association Name="FK__tb_empres__tb_lo__72C60C4A">
           <End Role="tb_locatario" Type="Self.tb_locatario" Multiplicity="0..1" />
           <End Role="tb_emprestimo" Type="Self.tb_emprestimo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -241,7 +242,19 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_empres__tb_tu__72C60C4A">
+        <Association Name="FK__tb_empres__tb_no__71D1E811">
+          <End Role="tb_notificacao" Type="Self.tb_notificacao" Multiplicity="0..1" />
+          <End Role="tb_emprestimo" Type="Self.tb_emprestimo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_notificacao">
+              <PropertyRef Name="id_notificacao" />
+            </Principal>
+            <Dependent Role="tb_emprestimo">
+              <PropertyRef Name="tb_notificacao_id_notificacao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_empres__tb_tu__73BA3083">
           <End Role="tb_turma_aluno" Type="Self.tb_turma_aluno" Multiplicity="0..1" />
           <End Role="tb_emprestimo" Type="Self.tb_emprestimo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -253,7 +266,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_estoqu__tb_li__73BA3083">
+        <Association Name="FK__tb_estoqu__tb_li__74AE54BC">
           <End Role="tb_livro" Type="Self.tb_livro" Multiplicity="1" />
           <End Role="tb_estoque" Type="Self.tb_estoque" Multiplicity="*" />
           <ReferentialConstraint>
@@ -265,7 +278,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_livro__tb_aut__74AE54BC">
+        <Association Name="FK__tb_livro__tb_aut__75A278F5">
           <End Role="tb_autor" Type="Self.tb_autor" Multiplicity="1" />
           <End Role="tb_livro" Type="Self.tb_livro" Multiplicity="*" />
           <ReferentialConstraint>
@@ -277,7 +290,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_livro__tb_gen__75A278F5">
+        <Association Name="FK__tb_livro__tb_gen__76969D2E">
           <End Role="tb_genero" Type="Self.tb_genero" Multiplicity="1" />
           <End Role="tb_livro" Type="Self.tb_livro" Multiplicity="*" />
           <ReferentialConstraint>
@@ -289,7 +302,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_notifi__tb_al__693CA210">
+        <Association Name="FK__tb_notifi__tb_al__778AC167">
           <End Role="tb_aluno_dados" Type="Self.tb_aluno_dados" Multiplicity="0..1" />
           <End Role="tb_notificacao" Type="Self.tb_notificacao" Multiplicity="*" />
           <ReferentialConstraint>
@@ -301,7 +314,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_notifi__tb_lo__6A30C649">
+        <Association Name="FK__tb_notifi__tb_lo__787EE5A0">
           <End Role="tb_locatario" Type="Self.tb_locatario" Multiplicity="0..1" />
           <End Role="tb_notificacao" Type="Self.tb_notificacao" Multiplicity="*" />
           <ReferentialConstraint>
@@ -313,7 +326,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_reserv__tb_li__76969D2E">
+        <Association Name="FK__tb_reserv__tb_li__797309D9">
           <End Role="tb_livro" Type="Self.tb_livro" Multiplicity="1" />
           <End Role="tb_reserva" Type="Self.tb_reserva" Multiplicity="*" />
           <ReferentialConstraint>
@@ -325,7 +338,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_reserv__tb_lo__778AC167">
+        <Association Name="FK__tb_reserv__tb_lo__7A672E12">
           <End Role="tb_locatario" Type="Self.tb_locatario" Multiplicity="0..1" />
           <End Role="tb_reserva" Type="Self.tb_reserva" Multiplicity="*" />
           <ReferentialConstraint>
@@ -337,7 +350,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_reserv__tb_tu__787EE5A0">
+        <Association Name="FK__tb_reserv__tb_tu__7B5B524B">
           <End Role="tb_turma_aluno" Type="Self.tb_turma_aluno" Multiplicity="0..1" />
           <End Role="tb_reserva" Type="Self.tb_reserva" Multiplicity="*" />
           <ReferentialConstraint>
@@ -386,7 +399,6 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="BibliotecaDBAzureStoreContainer">
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_aluno" EntityType="Self.tb_aluno" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_aluno_dados" EntityType="Self.tb_aluno_dados" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_autor" EntityType="Self.tb_autor" Schema="dbo" store:Type="Tables" />
@@ -429,15 +441,21 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
     [vw_Livro_Autor_Genero].[nm_genero] AS [nm_genero]
     FROM [dbo].[vw_Livro_Autor_Genero] AS [vw_Livro_Autor_Genero]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="vw_reserva" EntityType="Self.vw_reserva" store:Type="Views" store:Schema="dbo">
+          <EntitySet Name="vw_reserva_aluno" EntityType="Self.vw_reserva_aluno" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vw_reserva].[nm_locatario] AS [nm_locatario], 
-    [vw_reserva].[nm_aluno] AS [nm_aluno], 
-    [vw_reserva].[ds_titulo] AS [ds_titulo], 
-    [vw_reserva].[dt_reserva] AS [dt_reserva]
-    FROM [dbo].[vw_reserva] AS [vw_reserva]</DefiningQuery>
+    [vw_reserva_aluno].[nm_aluno] AS [nm_aluno], 
+    [vw_reserva_aluno].[ds_titulo] AS [ds_titulo], 
+    [vw_reserva_aluno].[dt_reserva] AS [dt_reserva]
+    FROM [dbo].[vw_reserva_aluno] AS [vw_reserva_aluno]</DefiningQuery>
           </EntitySet>
-          <AssociationSet Name="FK__tb_aluno___tb_al__68487DD7" Association="Self.FK__tb_aluno___tb_al__68487DD7">
+          <EntitySet Name="vw_reserva_locatario" EntityType="Self.vw_reserva_locatario" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_reserva_locatario].[nm_locatario] AS [nm_locatario], 
+    [vw_reserva_locatario].[ds_titulo] AS [ds_titulo], 
+    [vw_reserva_locatario].[dt_reserva] AS [dt_reserva]
+    FROM [dbo].[vw_reserva_locatario] AS [vw_reserva_locatario]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__tb_aluno___tb_al__6FE99F9F" Association="Self.FK__tb_aluno___tb_al__6FE99F9F">
             <End Role="tb_aluno" EntitySet="tb_aluno" />
             <End Role="tb_aluno_dados" EntitySet="tb_aluno_dados" />
           </AssociationSet>
@@ -445,43 +463,47 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
             <End Role="tb_livro" EntitySet="tb_livro" />
             <End Role="tb_emprestimo" EntitySet="tb_emprestimo" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_empres__tb_lo__71D1E811" Association="Self.FK__tb_empres__tb_lo__71D1E811">
+          <AssociationSet Name="FK__tb_empres__tb_lo__72C60C4A" Association="Self.FK__tb_empres__tb_lo__72C60C4A">
             <End Role="tb_locatario" EntitySet="tb_locatario" />
             <End Role="tb_emprestimo" EntitySet="tb_emprestimo" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_empres__tb_tu__72C60C4A" Association="Self.FK__tb_empres__tb_tu__72C60C4A">
+          <AssociationSet Name="FK__tb_empres__tb_no__71D1E811" Association="Self.FK__tb_empres__tb_no__71D1E811">
+            <End Role="tb_notificacao" EntitySet="tb_notificacao" />
+            <End Role="tb_emprestimo" EntitySet="tb_emprestimo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_empres__tb_tu__73BA3083" Association="Self.FK__tb_empres__tb_tu__73BA3083">
             <End Role="tb_turma_aluno" EntitySet="tb_turma_aluno" />
             <End Role="tb_emprestimo" EntitySet="tb_emprestimo" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_estoqu__tb_li__73BA3083" Association="Self.FK__tb_estoqu__tb_li__73BA3083">
+          <AssociationSet Name="FK__tb_estoqu__tb_li__74AE54BC" Association="Self.FK__tb_estoqu__tb_li__74AE54BC">
             <End Role="tb_livro" EntitySet="tb_livro" />
             <End Role="tb_estoque" EntitySet="tb_estoque" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_livro__tb_aut__74AE54BC" Association="Self.FK__tb_livro__tb_aut__74AE54BC">
+          <AssociationSet Name="FK__tb_livro__tb_aut__75A278F5" Association="Self.FK__tb_livro__tb_aut__75A278F5">
             <End Role="tb_autor" EntitySet="tb_autor" />
             <End Role="tb_livro" EntitySet="tb_livro" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_livro__tb_gen__75A278F5" Association="Self.FK__tb_livro__tb_gen__75A278F5">
+          <AssociationSet Name="FK__tb_livro__tb_gen__76969D2E" Association="Self.FK__tb_livro__tb_gen__76969D2E">
             <End Role="tb_genero" EntitySet="tb_genero" />
             <End Role="tb_livro" EntitySet="tb_livro" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_notifi__tb_al__693CA210" Association="Self.FK__tb_notifi__tb_al__693CA210">
+          <AssociationSet Name="FK__tb_notifi__tb_al__778AC167" Association="Self.FK__tb_notifi__tb_al__778AC167">
             <End Role="tb_aluno_dados" EntitySet="tb_aluno_dados" />
             <End Role="tb_notificacao" EntitySet="tb_notificacao" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_notifi__tb_lo__6A30C649" Association="Self.FK__tb_notifi__tb_lo__6A30C649">
+          <AssociationSet Name="FK__tb_notifi__tb_lo__787EE5A0" Association="Self.FK__tb_notifi__tb_lo__787EE5A0">
             <End Role="tb_locatario" EntitySet="tb_locatario" />
             <End Role="tb_notificacao" EntitySet="tb_notificacao" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_reserv__tb_li__76969D2E" Association="Self.FK__tb_reserv__tb_li__76969D2E">
+          <AssociationSet Name="FK__tb_reserv__tb_li__797309D9" Association="Self.FK__tb_reserv__tb_li__797309D9">
             <End Role="tb_livro" EntitySet="tb_livro" />
             <End Role="tb_reserva" EntitySet="tb_reserva" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_reserv__tb_lo__778AC167" Association="Self.FK__tb_reserv__tb_lo__778AC167">
+          <AssociationSet Name="FK__tb_reserv__tb_lo__7A672E12" Association="Self.FK__tb_reserv__tb_lo__7A672E12">
             <End Role="tb_locatario" EntitySet="tb_locatario" />
             <End Role="tb_reserva" EntitySet="tb_reserva" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_reserv__tb_tu__787EE5A0" Association="Self.FK__tb_reserv__tb_tu__787EE5A0">
+          <AssociationSet Name="FK__tb_reserv__tb_tu__7B5B524B" Association="Self.FK__tb_reserv__tb_tu__7B5B524B">
             <End Role="tb_turma_aluno" EntitySet="tb_turma_aluno" />
             <End Role="tb_reserva" EntitySet="tb_reserva" />
           </AssociationSet>
@@ -503,7 +525,6 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
     <edmx:ConceptualModels>
       <Schema Namespace="BibliotecaDBAzure" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="AzureBiblioteca" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="sysdiagrams" EntityType="BibliotecaDBAzure.sysdiagrams" />
           <EntitySet Name="tb_aluno" EntityType="BibliotecaDBAzure.tb_aluno" />
           <EntitySet Name="tb_aluno_dados" EntityType="BibliotecaDBAzure.tb_aluno_dados" />
           <EntitySet Name="tb_autor" EntityType="BibliotecaDBAzure.tb_autor" />
@@ -517,9 +538,12 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
           <EntitySet Name="tb_reserva" EntityType="BibliotecaDBAzure.tb_reserva" />
           <EntitySet Name="tb_turma" EntityType="BibliotecaDBAzure.tb_turma" />
           <EntitySet Name="tb_turma_aluno" EntityType="BibliotecaDBAzure.tb_turma_aluno" />
+          <EntitySet Name="vw_emprestimo_aluno" EntityType="BibliotecaDBAzure.vw_emprestimo_aluno" />
+          <EntitySet Name="vw_emprestimo_locatario" EntityType="BibliotecaDBAzure.vw_emprestimo_locatario" />
           <EntitySet Name="vw_Livro_Autor_Genero" EntityType="BibliotecaDBAzure.vw_Livro_Autor_Genero" />
-          <EntitySet Name="vw_reserva" EntityType="BibliotecaDBAzure.vw_reserva" />
-          <AssociationSet Name="FK__tb_aluno___tb_al__68487DD7" Association="BibliotecaDBAzure.FK__tb_aluno___tb_al__68487DD7">
+          <EntitySet Name="vw_reserva_aluno" EntityType="BibliotecaDBAzure.vw_reserva_aluno" />
+          <EntitySet Name="vw_reserva_locatario" EntityType="BibliotecaDBAzure.vw_reserva_locatario" />
+          <AssociationSet Name="FK__tb_aluno___tb_al__6FE99F9F" Association="BibliotecaDBAzure.FK__tb_aluno___tb_al__6FE99F9F">
             <End Role="tb_aluno" EntitySet="tb_aluno" />
             <End Role="tb_aluno_dados" EntitySet="tb_aluno_dados" />
           </AssociationSet>
@@ -527,11 +551,11 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
             <End Role="tb_aluno" EntitySet="tb_aluno" />
             <End Role="tb_turma_aluno" EntitySet="tb_turma_aluno" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_notifi__tb_al__693CA210" Association="BibliotecaDBAzure.FK__tb_notifi__tb_al__693CA210">
+          <AssociationSet Name="FK__tb_notifi__tb_al__778AC167" Association="BibliotecaDBAzure.FK__tb_notifi__tb_al__778AC167">
             <End Role="tb_aluno_dados" EntitySet="tb_aluno_dados" />
             <End Role="tb_notificacao" EntitySet="tb_notificacao" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_livro__tb_aut__74AE54BC" Association="BibliotecaDBAzure.FK__tb_livro__tb_aut__74AE54BC">
+          <AssociationSet Name="FK__tb_livro__tb_aut__75A278F5" Association="BibliotecaDBAzure.FK__tb_livro__tb_aut__75A278F5">
             <End Role="tb_autor" EntitySet="tb_autor" />
             <End Role="tb_livro" EntitySet="tb_livro" />
           </AssociationSet>
@@ -543,35 +567,39 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
             <End Role="tb_livro" EntitySet="tb_livro" />
             <End Role="tb_emprestimo" EntitySet="tb_emprestimo" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_empres__tb_lo__71D1E811" Association="BibliotecaDBAzure.FK__tb_empres__tb_lo__71D1E811">
+          <AssociationSet Name="FK__tb_empres__tb_lo__72C60C4A" Association="BibliotecaDBAzure.FK__tb_empres__tb_lo__72C60C4A">
             <End Role="tb_locatario" EntitySet="tb_locatario" />
             <End Role="tb_emprestimo" EntitySet="tb_emprestimo" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_empres__tb_tu__72C60C4A" Association="BibliotecaDBAzure.FK__tb_empres__tb_tu__72C60C4A">
+          <AssociationSet Name="FK__tb_empres__tb_no__71D1E811" Association="BibliotecaDBAzure.FK__tb_empres__tb_no__71D1E811">
+            <End Role="tb_notificacao" EntitySet="tb_notificacao" />
+            <End Role="tb_emprestimo" EntitySet="tb_emprestimo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tb_empres__tb_tu__73BA3083" Association="BibliotecaDBAzure.FK__tb_empres__tb_tu__73BA3083">
             <End Role="tb_turma_aluno" EntitySet="tb_turma_aluno" />
             <End Role="tb_emprestimo" EntitySet="tb_emprestimo" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_estoqu__tb_li__73BA3083" Association="BibliotecaDBAzure.FK__tb_estoqu__tb_li__73BA3083">
+          <AssociationSet Name="FK__tb_estoqu__tb_li__74AE54BC" Association="BibliotecaDBAzure.FK__tb_estoqu__tb_li__74AE54BC">
             <End Role="tb_livro" EntitySet="tb_livro" />
             <End Role="tb_estoque" EntitySet="tb_estoque" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_livro__tb_gen__75A278F5" Association="BibliotecaDBAzure.FK__tb_livro__tb_gen__75A278F5">
+          <AssociationSet Name="FK__tb_livro__tb_gen__76969D2E" Association="BibliotecaDBAzure.FK__tb_livro__tb_gen__76969D2E">
             <End Role="tb_genero" EntitySet="tb_genero" />
             <End Role="tb_livro" EntitySet="tb_livro" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_reserv__tb_li__76969D2E" Association="BibliotecaDBAzure.FK__tb_reserv__tb_li__76969D2E">
+          <AssociationSet Name="FK__tb_reserv__tb_li__797309D9" Association="BibliotecaDBAzure.FK__tb_reserv__tb_li__797309D9">
             <End Role="tb_livro" EntitySet="tb_livro" />
             <End Role="tb_reserva" EntitySet="tb_reserva" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_notifi__tb_lo__6A30C649" Association="BibliotecaDBAzure.FK__tb_notifi__tb_lo__6A30C649">
+          <AssociationSet Name="FK__tb_notifi__tb_lo__787EE5A0" Association="BibliotecaDBAzure.FK__tb_notifi__tb_lo__787EE5A0">
             <End Role="tb_locatario" EntitySet="tb_locatario" />
             <End Role="tb_notificacao" EntitySet="tb_notificacao" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_reserv__tb_lo__778AC167" Association="BibliotecaDBAzure.FK__tb_reserv__tb_lo__778AC167">
+          <AssociationSet Name="FK__tb_reserv__tb_lo__7A672E12" Association="BibliotecaDBAzure.FK__tb_reserv__tb_lo__7A672E12">
             <End Role="tb_locatario" EntitySet="tb_locatario" />
             <End Role="tb_reserva" EntitySet="tb_reserva" />
           </AssociationSet>
-          <AssociationSet Name="FK__tb_reserv__tb_tu__787EE5A0" Association="BibliotecaDBAzure.FK__tb_reserv__tb_tu__787EE5A0">
+          <AssociationSet Name="FK__tb_reserv__tb_tu__7B5B524B" Association="BibliotecaDBAzure.FK__tb_reserv__tb_tu__7B5B524B">
             <End Role="tb_turma_aluno" EntitySet="tb_turma_aluno" />
             <End Role="tb_reserva" EntitySet="tb_reserva" />
           </AssociationSet>
@@ -579,26 +607,14 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
             <End Role="tb_turma" EntitySet="tb_turma" />
             <End Role="tb_turma_aluno" EntitySet="tb_turma_aluno" />
           </AssociationSet>
-          <EntitySet Name="vw_emprestimo_aluno" EntityType="BibliotecaDBAzure.vw_emprestimo_aluno" />
-          <EntitySet Name="vw_emprestimo_locatario" EntityType="BibliotecaDBAzure.vw_emprestimo_locatario" />
         </EntityContainer>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
         <EntityType Name="tb_aluno">
           <Key>
             <PropertyRef Name="id_aluno" />
           </Key>
           <Property Name="id_aluno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nm_aluno" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="tb_aluno_dados" Relationship="BibliotecaDBAzure.FK__tb_aluno___tb_al__68487DD7" FromRole="tb_aluno" ToRole="tb_aluno_dados" />
+          <NavigationProperty Name="tb_aluno_dados" Relationship="BibliotecaDBAzure.FK__tb_aluno___tb_al__6FE99F9F" FromRole="tb_aluno" ToRole="tb_aluno_dados" />
           <NavigationProperty Name="tb_turma_aluno" Relationship="BibliotecaDBAzure.fk_aluno" FromRole="tb_aluno" ToRole="tb_turma_aluno" />
         </EntityType>
         <EntityType Name="tb_aluno_dados">
@@ -608,8 +624,8 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
           <Property Name="id_aluno_dados" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ds_email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="tb_aluno_id_aluno" Type="Int32" />
-          <NavigationProperty Name="tb_aluno" Relationship="BibliotecaDBAzure.FK__tb_aluno___tb_al__68487DD7" FromRole="tb_aluno_dados" ToRole="tb_aluno" />
-          <NavigationProperty Name="tb_notificacao" Relationship="BibliotecaDBAzure.FK__tb_notifi__tb_al__693CA210" FromRole="tb_aluno_dados" ToRole="tb_notificacao" />
+          <NavigationProperty Name="tb_aluno" Relationship="BibliotecaDBAzure.FK__tb_aluno___tb_al__6FE99F9F" FromRole="tb_aluno_dados" ToRole="tb_aluno" />
+          <NavigationProperty Name="tb_notificacao" Relationship="BibliotecaDBAzure.FK__tb_notifi__tb_al__778AC167" FromRole="tb_aluno_dados" ToRole="tb_notificacao" />
         </EntityType>
         <EntityType Name="tb_autor">
           <Key>
@@ -619,7 +635,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
           <Property Name="nm_autor" Type="String" Nullable="false" MaxLength="90" FixedLength="false" Unicode="false" />
           <Property Name="nm_nomeCompleto" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="ds_nacionalidade" Type="String" MaxLength="90" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tb_livro" Relationship="BibliotecaDBAzure.FK__tb_livro__tb_aut__74AE54BC" FromRole="tb_autor" ToRole="tb_livro" />
+          <NavigationProperty Name="tb_livro" Relationship="BibliotecaDBAzure.FK__tb_livro__tb_aut__75A278F5" FromRole="tb_autor" ToRole="tb_livro" />
         </EntityType>
         <EntityType Name="tb_Curso">
           <Key>
@@ -638,12 +654,14 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
           <Property Name="dt_devolucao" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="nm_funcionario" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="bt_devolvido" Type="Boolean" Nullable="false" />
+          <Property Name="tb_notificacao_id_notificacao" Type="Int32" />
           <Property Name="tb_livro_id_livro" Type="Int32" Nullable="false" />
           <Property Name="tb_turma_aluno_id_turma_aluno" Type="Int32" />
           <Property Name="tb_locatario_id_locatario" Type="Int32" />
           <NavigationProperty Name="tb_livro" Relationship="BibliotecaDBAzure.FK__tb_empres__tb_li__70DDC3D8" FromRole="tb_emprestimo" ToRole="tb_livro" />
-          <NavigationProperty Name="tb_locatario" Relationship="BibliotecaDBAzure.FK__tb_empres__tb_lo__71D1E811" FromRole="tb_emprestimo" ToRole="tb_locatario" />
-          <NavigationProperty Name="tb_turma_aluno" Relationship="BibliotecaDBAzure.FK__tb_empres__tb_tu__72C60C4A" FromRole="tb_emprestimo" ToRole="tb_turma_aluno" />
+          <NavigationProperty Name="tb_locatario" Relationship="BibliotecaDBAzure.FK__tb_empres__tb_lo__72C60C4A" FromRole="tb_emprestimo" ToRole="tb_locatario" />
+          <NavigationProperty Name="tb_notificacao" Relationship="BibliotecaDBAzure.FK__tb_empres__tb_no__71D1E811" FromRole="tb_emprestimo" ToRole="tb_notificacao" />
+          <NavigationProperty Name="tb_turma_aluno" Relationship="BibliotecaDBAzure.FK__tb_empres__tb_tu__73BA3083" FromRole="tb_emprestimo" ToRole="tb_turma_aluno" />
         </EntityType>
         <EntityType Name="tb_estoque">
           <Key>
@@ -652,7 +670,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
           <Property Name="id_estoque" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="qtd_livro" Type="Int32" Nullable="false" />
           <Property Name="tb_livro_id_livro" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tb_livro" Relationship="BibliotecaDBAzure.FK__tb_estoqu__tb_li__73BA3083" FromRole="tb_estoque" ToRole="tb_livro" />
+          <NavigationProperty Name="tb_livro" Relationship="BibliotecaDBAzure.FK__tb_estoqu__tb_li__74AE54BC" FromRole="tb_estoque" ToRole="tb_livro" />
         </EntityType>
         <EntityType Name="tb_genero">
           <Key>
@@ -660,7 +678,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
           </Key>
           <Property Name="id_genero" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nm_genero" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tb_livro" Relationship="BibliotecaDBAzure.FK__tb_livro__tb_gen__75A278F5" FromRole="tb_genero" ToRole="tb_livro" />
+          <NavigationProperty Name="tb_livro" Relationship="BibliotecaDBAzure.FK__tb_livro__tb_gen__76969D2E" FromRole="tb_genero" ToRole="tb_livro" />
         </EntityType>
         <EntityType Name="tb_livro">
           <Key>
@@ -679,11 +697,11 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
           <Property Name="img_Capa" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="tb_genero_id_genero" Type="Int32" Nullable="false" />
           <Property Name="tb_autor_id_autor" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tb_autor" Relationship="BibliotecaDBAzure.FK__tb_livro__tb_aut__74AE54BC" FromRole="tb_livro" ToRole="tb_autor" />
+          <NavigationProperty Name="tb_autor" Relationship="BibliotecaDBAzure.FK__tb_livro__tb_aut__75A278F5" FromRole="tb_livro" ToRole="tb_autor" />
           <NavigationProperty Name="tb_emprestimo" Relationship="BibliotecaDBAzure.FK__tb_empres__tb_li__70DDC3D8" FromRole="tb_livro" ToRole="tb_emprestimo" />
-          <NavigationProperty Name="tb_estoque" Relationship="BibliotecaDBAzure.FK__tb_estoqu__tb_li__73BA3083" FromRole="tb_livro" ToRole="tb_estoque" />
-          <NavigationProperty Name="tb_genero" Relationship="BibliotecaDBAzure.FK__tb_livro__tb_gen__75A278F5" FromRole="tb_livro" ToRole="tb_genero" />
-          <NavigationProperty Name="tb_reserva" Relationship="BibliotecaDBAzure.FK__tb_reserv__tb_li__76969D2E" FromRole="tb_livro" ToRole="tb_reserva" />
+          <NavigationProperty Name="tb_estoque" Relationship="BibliotecaDBAzure.FK__tb_estoqu__tb_li__74AE54BC" FromRole="tb_livro" ToRole="tb_estoque" />
+          <NavigationProperty Name="tb_genero" Relationship="BibliotecaDBAzure.FK__tb_livro__tb_gen__76969D2E" FromRole="tb_livro" ToRole="tb_genero" />
+          <NavigationProperty Name="tb_reserva" Relationship="BibliotecaDBAzure.FK__tb_reserv__tb_li__797309D9" FromRole="tb_livro" ToRole="tb_reserva" />
         </EntityType>
         <EntityType Name="tb_locatario">
           <Key>
@@ -694,9 +712,9 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
           <Property Name="nm_locatario" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="nu_celular" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="ds_email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tb_emprestimo" Relationship="BibliotecaDBAzure.FK__tb_empres__tb_lo__71D1E811" FromRole="tb_locatario" ToRole="tb_emprestimo" />
-          <NavigationProperty Name="tb_notificacao" Relationship="BibliotecaDBAzure.FK__tb_notifi__tb_lo__6A30C649" FromRole="tb_locatario" ToRole="tb_notificacao" />
-          <NavigationProperty Name="tb_reserva" Relationship="BibliotecaDBAzure.FK__tb_reserv__tb_lo__778AC167" FromRole="tb_locatario" ToRole="tb_reserva" />
+          <NavigationProperty Name="tb_emprestimo" Relationship="BibliotecaDBAzure.FK__tb_empres__tb_lo__72C60C4A" FromRole="tb_locatario" ToRole="tb_emprestimo" />
+          <NavigationProperty Name="tb_notificacao" Relationship="BibliotecaDBAzure.FK__tb_notifi__tb_lo__787EE5A0" FromRole="tb_locatario" ToRole="tb_notificacao" />
+          <NavigationProperty Name="tb_reserva" Relationship="BibliotecaDBAzure.FK__tb_reserv__tb_lo__7A672E12" FromRole="tb_locatario" ToRole="tb_reserva" />
         </EntityType>
         <EntityType Name="tb_notificacao">
           <Key>
@@ -708,8 +726,9 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
           <Property Name="bt_emailAtrasado" Type="Boolean" Nullable="false" />
           <Property Name="tb_aluno_dados_id_aluno_dados" Type="Int32" />
           <Property Name="tb_locatario_id_locatario" Type="Int32" />
-          <NavigationProperty Name="tb_aluno_dados" Relationship="BibliotecaDBAzure.FK__tb_notifi__tb_al__693CA210" FromRole="tb_notificacao" ToRole="tb_aluno_dados" />
-          <NavigationProperty Name="tb_locatario" Relationship="BibliotecaDBAzure.FK__tb_notifi__tb_lo__6A30C649" FromRole="tb_notificacao" ToRole="tb_locatario" />
+          <NavigationProperty Name="tb_aluno_dados" Relationship="BibliotecaDBAzure.FK__tb_notifi__tb_al__778AC167" FromRole="tb_notificacao" ToRole="tb_aluno_dados" />
+          <NavigationProperty Name="tb_emprestimo" Relationship="BibliotecaDBAzure.FK__tb_empres__tb_no__71D1E811" FromRole="tb_notificacao" ToRole="tb_emprestimo" />
+          <NavigationProperty Name="tb_locatario" Relationship="BibliotecaDBAzure.FK__tb_notifi__tb_lo__787EE5A0" FromRole="tb_notificacao" ToRole="tb_locatario" />
         </EntityType>
         <EntityType Name="tb_reserva">
           <Key>
@@ -720,9 +739,9 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
           <Property Name="tb_livro_id_livro" Type="Int32" Nullable="false" />
           <Property Name="tb_turma_aluno_id_turma_aluno" Type="Int32" />
           <Property Name="tb_locatario_id_locatario" Type="Int32" />
-          <NavigationProperty Name="tb_livro" Relationship="BibliotecaDBAzure.FK__tb_reserv__tb_li__76969D2E" FromRole="tb_reserva" ToRole="tb_livro" />
-          <NavigationProperty Name="tb_locatario" Relationship="BibliotecaDBAzure.FK__tb_reserv__tb_lo__778AC167" FromRole="tb_reserva" ToRole="tb_locatario" />
-          <NavigationProperty Name="tb_turma_aluno" Relationship="BibliotecaDBAzure.FK__tb_reserv__tb_tu__787EE5A0" FromRole="tb_reserva" ToRole="tb_turma_aluno" />
+          <NavigationProperty Name="tb_livro" Relationship="BibliotecaDBAzure.FK__tb_reserv__tb_li__797309D9" FromRole="tb_reserva" ToRole="tb_livro" />
+          <NavigationProperty Name="tb_locatario" Relationship="BibliotecaDBAzure.FK__tb_reserv__tb_lo__7A672E12" FromRole="tb_reserva" ToRole="tb_locatario" />
+          <NavigationProperty Name="tb_turma_aluno" Relationship="BibliotecaDBAzure.FK__tb_reserv__tb_tu__7B5B524B" FromRole="tb_reserva" ToRole="tb_turma_aluno" />
         </EntityType>
         <EntityType Name="tb_turma">
           <Key>
@@ -745,9 +764,40 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
           <Property Name="nr_chamada" Type="Int32" />
           <Property Name="cd_ra" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="tb_aluno" Relationship="BibliotecaDBAzure.fk_aluno" FromRole="tb_turma_aluno" ToRole="tb_aluno" />
-          <NavigationProperty Name="tb_emprestimo" Relationship="BibliotecaDBAzure.FK__tb_empres__tb_tu__72C60C4A" FromRole="tb_turma_aluno" ToRole="tb_emprestimo" />
-          <NavigationProperty Name="tb_reserva" Relationship="BibliotecaDBAzure.FK__tb_reserv__tb_tu__787EE5A0" FromRole="tb_turma_aluno" ToRole="tb_reserva" />
+          <NavigationProperty Name="tb_emprestimo" Relationship="BibliotecaDBAzure.FK__tb_empres__tb_tu__73BA3083" FromRole="tb_turma_aluno" ToRole="tb_emprestimo" />
+          <NavigationProperty Name="tb_reserva" Relationship="BibliotecaDBAzure.FK__tb_reserv__tb_tu__7B5B524B" FromRole="tb_turma_aluno" ToRole="tb_reserva" />
           <NavigationProperty Name="tb_turma" Relationship="BibliotecaDBAzure.fk_turma" FromRole="tb_turma_aluno" ToRole="tb_turma" />
+        </EntityType>
+        <EntityType Name="vw_emprestimo_aluno">
+          <Key>
+            <PropertyRef Name="id_emprestimo" />
+            <PropertyRef Name="dt_emprestimo" />
+            <PropertyRef Name="dt_devolucao" />
+            <PropertyRef Name="bt_devolvido" />
+            <PropertyRef Name="ds_titulo" />
+          </Key>
+          <Property Name="id_emprestimo" Type="Int32" Nullable="false" />
+          <Property Name="dt_emprestimo" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="dt_devolucao" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="bt_devolvido" Type="Boolean" Nullable="false" />
+          <Property Name="ds_titulo" Type="String" Nullable="false" MaxLength="90" FixedLength="false" Unicode="false" />
+          <Property Name="nm_aluno" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vw_emprestimo_locatario">
+          <Key>
+            <PropertyRef Name="id_emprestimo" />
+            <PropertyRef Name="dt_emprestimo" />
+            <PropertyRef Name="dt_devolucao" />
+            <PropertyRef Name="bt_devolvido" />
+            <PropertyRef Name="ds_titulo" />
+            <PropertyRef Name="nm_locatario" />
+          </Key>
+          <Property Name="id_emprestimo" Type="Int32" Nullable="false" />
+          <Property Name="dt_emprestimo" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="dt_devolucao" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="bt_devolvido" Type="Boolean" Nullable="false" />
+          <Property Name="ds_titulo" Type="String" Nullable="false" MaxLength="90" FixedLength="false" Unicode="false" />
+          <Property Name="nm_locatario" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="vw_Livro_Autor_Genero">
           <Key>
@@ -762,18 +812,26 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
           <Property Name="nm_autor" Type="String" Nullable="false" MaxLength="90" FixedLength="false" Unicode="false" />
           <Property Name="nm_genero" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="vw_reserva">
+        <EntityType Name="vw_reserva_aluno">
+          <Key>
+            <PropertyRef Name="ds_titulo" />
+            <PropertyRef Name="dt_reserva" />
+          </Key>
+          <Property Name="nm_aluno" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ds_titulo" Type="String" Nullable="false" MaxLength="90" FixedLength="false" Unicode="false" />
+          <Property Name="dt_reserva" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="vw_reserva_locatario">
           <Key>
             <PropertyRef Name="nm_locatario" />
             <PropertyRef Name="ds_titulo" />
             <PropertyRef Name="dt_reserva" />
           </Key>
           <Property Name="nm_locatario" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="nm_aluno" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="ds_titulo" Type="String" Nullable="false" MaxLength="90" FixedLength="false" Unicode="false" />
           <Property Name="dt_reserva" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
-        <Association Name="FK__tb_aluno___tb_al__68487DD7">
+        <Association Name="FK__tb_aluno___tb_al__6FE99F9F">
           <End Type="BibliotecaDBAzure.tb_aluno" Role="tb_aluno" Multiplicity="0..1" />
           <End Type="BibliotecaDBAzure.tb_aluno_dados" Role="tb_aluno_dados" Multiplicity="*" />
           <ReferentialConstraint>
@@ -797,7 +855,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_notifi__tb_al__693CA210">
+        <Association Name="FK__tb_notifi__tb_al__778AC167">
           <End Type="BibliotecaDBAzure.tb_aluno_dados" Role="tb_aluno_dados" Multiplicity="0..1" />
           <End Type="BibliotecaDBAzure.tb_notificacao" Role="tb_notificacao" Multiplicity="*" />
           <ReferentialConstraint>
@@ -809,7 +867,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_livro__tb_aut__74AE54BC">
+        <Association Name="FK__tb_livro__tb_aut__75A278F5">
           <End Type="BibliotecaDBAzure.tb_autor" Role="tb_autor" Multiplicity="1" />
           <End Type="BibliotecaDBAzure.tb_livro" Role="tb_livro" Multiplicity="*" />
           <ReferentialConstraint>
@@ -845,7 +903,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_empres__tb_lo__71D1E811">
+        <Association Name="FK__tb_empres__tb_lo__72C60C4A">
           <End Type="BibliotecaDBAzure.tb_locatario" Role="tb_locatario" Multiplicity="0..1" />
           <End Type="BibliotecaDBAzure.tb_emprestimo" Role="tb_emprestimo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -857,7 +915,19 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_empres__tb_tu__72C60C4A">
+        <Association Name="FK__tb_empres__tb_no__71D1E811">
+          <End Type="BibliotecaDBAzure.tb_notificacao" Role="tb_notificacao" Multiplicity="0..1" />
+          <End Type="BibliotecaDBAzure.tb_emprestimo" Role="tb_emprestimo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_notificacao">
+              <PropertyRef Name="id_notificacao" />
+            </Principal>
+            <Dependent Role="tb_emprestimo">
+              <PropertyRef Name="tb_notificacao_id_notificacao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tb_empres__tb_tu__73BA3083">
           <End Type="BibliotecaDBAzure.tb_turma_aluno" Role="tb_turma_aluno" Multiplicity="0..1" />
           <End Type="BibliotecaDBAzure.tb_emprestimo" Role="tb_emprestimo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -869,7 +939,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_estoqu__tb_li__73BA3083">
+        <Association Name="FK__tb_estoqu__tb_li__74AE54BC">
           <End Type="BibliotecaDBAzure.tb_livro" Role="tb_livro" Multiplicity="1" />
           <End Type="BibliotecaDBAzure.tb_estoque" Role="tb_estoque" Multiplicity="*" />
           <ReferentialConstraint>
@@ -881,7 +951,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_livro__tb_gen__75A278F5">
+        <Association Name="FK__tb_livro__tb_gen__76969D2E">
           <End Type="BibliotecaDBAzure.tb_genero" Role="tb_genero" Multiplicity="1" />
           <End Type="BibliotecaDBAzure.tb_livro" Role="tb_livro" Multiplicity="*" />
           <ReferentialConstraint>
@@ -893,7 +963,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_reserv__tb_li__76969D2E">
+        <Association Name="FK__tb_reserv__tb_li__797309D9">
           <End Type="BibliotecaDBAzure.tb_livro" Role="tb_livro" Multiplicity="1" />
           <End Type="BibliotecaDBAzure.tb_reserva" Role="tb_reserva" Multiplicity="*" />
           <ReferentialConstraint>
@@ -905,7 +975,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_notifi__tb_lo__6A30C649">
+        <Association Name="FK__tb_notifi__tb_lo__787EE5A0">
           <End Type="BibliotecaDBAzure.tb_locatario" Role="tb_locatario" Multiplicity="0..1" />
           <End Type="BibliotecaDBAzure.tb_notificacao" Role="tb_notificacao" Multiplicity="*" />
           <ReferentialConstraint>
@@ -917,7 +987,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_reserv__tb_lo__778AC167">
+        <Association Name="FK__tb_reserv__tb_lo__7A672E12">
           <End Type="BibliotecaDBAzure.tb_locatario" Role="tb_locatario" Multiplicity="0..1" />
           <End Type="BibliotecaDBAzure.tb_reserva" Role="tb_reserva" Multiplicity="*" />
           <ReferentialConstraint>
@@ -929,7 +999,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tb_reserv__tb_tu__787EE5A0">
+        <Association Name="FK__tb_reserv__tb_tu__7B5B524B">
           <End Type="BibliotecaDBAzure.tb_turma_aluno" Role="tb_turma_aluno" Multiplicity="0..1" />
           <End Type="BibliotecaDBAzure.tb_reserva" Role="tb_reserva" Multiplicity="*" />
           <ReferentialConstraint>
@@ -953,54 +1023,12 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="vw_emprestimo_aluno">
-          <Key>
-            <PropertyRef Name="id_emprestimo" />
-            <PropertyRef Name="dt_emprestimo" />
-            <PropertyRef Name="dt_devolucao" />
-            <PropertyRef Name="bt_devolvido" />
-            <PropertyRef Name="ds_titulo" />
-          </Key>
-          <Property Name="id_emprestimo" Type="Int32" Nullable="false" />
-          <Property Name="dt_emprestimo" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="dt_devolucao" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="bt_devolvido" Type="Boolean" Nullable="false" />
-          <Property Name="ds_titulo" Type="String" Nullable="false" MaxLength="90" FixedLength="false" Unicode="false" />
-          <Property Name="nm_aluno" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="vw_emprestimo_locatario">
-          <Key>
-            <PropertyRef Name="id_emprestimo" />
-            <PropertyRef Name="dt_emprestimo" />
-            <PropertyRef Name="dt_devolucao" />
-            <PropertyRef Name="bt_devolvido" />
-            <PropertyRef Name="ds_titulo" />
-            <PropertyRef Name="nm_locatario" />
-          </Key>
-          <Property Name="id_emprestimo" Type="Int32" Nullable="false" />
-          <Property Name="dt_emprestimo" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="dt_devolucao" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="bt_devolvido" Type="Boolean" Nullable="false" />
-          <Property Name="ds_titulo" Type="String" Nullable="false" MaxLength="90" FixedLength="false" Unicode="false" />
-          <Property Name="nm_locatario" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
-        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="BibliotecaDBAzureStoreContainer" CdmEntityContainer="AzureBiblioteca">
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="BibliotecaDBAzure.sysdiagrams">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="definition" ColumnName="definition" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="name" ColumnName="name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="tb_aluno">
             <EntityTypeMapping TypeName="BibliotecaDBAzure.tb_aluno">
               <MappingFragment StoreEntitySet="tb_aluno">
@@ -1042,6 +1070,7 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
                 <ScalarProperty Name="tb_locatario_id_locatario" ColumnName="tb_locatario_id_locatario" />
                 <ScalarProperty Name="tb_turma_aluno_id_turma_aluno" ColumnName="tb_turma_aluno_id_turma_aluno" />
                 <ScalarProperty Name="tb_livro_id_livro" ColumnName="tb_livro_id_livro" />
+                <ScalarProperty Name="tb_notificacao_id_notificacao" ColumnName="tb_notificacao_id_notificacao" />
                 <ScalarProperty Name="bt_devolvido" ColumnName="bt_devolvido" />
                 <ScalarProperty Name="nm_funcionario" ColumnName="nm_funcionario" />
                 <ScalarProperty Name="dt_devolucao" ColumnName="dt_devolucao" />
@@ -1141,27 +1170,6 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="vw_Livro_Autor_Genero">
-            <EntityTypeMapping TypeName="BibliotecaDBAzure.vw_Livro_Autor_Genero">
-              <MappingFragment StoreEntitySet="vw_Livro_Autor_Genero">
-                <ScalarProperty Name="nm_genero" ColumnName="nm_genero" />
-                <ScalarProperty Name="nm_autor" ColumnName="nm_autor" />
-                <ScalarProperty Name="ds_palavrasChaves" ColumnName="ds_palavrasChaves" />
-                <ScalarProperty Name="ds_titulo" ColumnName="ds_titulo" />
-                <ScalarProperty Name="id_livro" ColumnName="id_livro" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vw_reserva">
-            <EntityTypeMapping TypeName="BibliotecaDBAzure.vw_reserva">
-              <MappingFragment StoreEntitySet="vw_reserva">
-                <ScalarProperty Name="dt_reserva" ColumnName="dt_reserva" />
-                <ScalarProperty Name="ds_titulo" ColumnName="ds_titulo" />
-                <ScalarProperty Name="nm_aluno" ColumnName="nm_aluno" />
-                <ScalarProperty Name="nm_locatario" ColumnName="nm_locatario" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="vw_emprestimo_aluno">
             <EntityTypeMapping TypeName="BibliotecaDBAzure.vw_emprestimo_aluno">
               <MappingFragment StoreEntitySet="vw_emprestimo_aluno">
@@ -1183,6 +1191,35 @@ warning 6002: The table/view 'BibliotecaDB.dbo.vw_reserva' does not have a prima
                 <ScalarProperty Name="dt_devolucao" ColumnName="dt_devolucao" />
                 <ScalarProperty Name="dt_emprestimo" ColumnName="dt_emprestimo" />
                 <ScalarProperty Name="id_emprestimo" ColumnName="id_emprestimo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_Livro_Autor_Genero">
+            <EntityTypeMapping TypeName="BibliotecaDBAzure.vw_Livro_Autor_Genero">
+              <MappingFragment StoreEntitySet="vw_Livro_Autor_Genero">
+                <ScalarProperty Name="nm_genero" ColumnName="nm_genero" />
+                <ScalarProperty Name="nm_autor" ColumnName="nm_autor" />
+                <ScalarProperty Name="ds_palavrasChaves" ColumnName="ds_palavrasChaves" />
+                <ScalarProperty Name="ds_titulo" ColumnName="ds_titulo" />
+                <ScalarProperty Name="id_livro" ColumnName="id_livro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_reserva_aluno">
+            <EntityTypeMapping TypeName="BibliotecaDBAzure.vw_reserva_aluno">
+              <MappingFragment StoreEntitySet="vw_reserva_aluno">
+                <ScalarProperty Name="dt_reserva" ColumnName="dt_reserva" />
+                <ScalarProperty Name="ds_titulo" ColumnName="ds_titulo" />
+                <ScalarProperty Name="nm_aluno" ColumnName="nm_aluno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_reserva_locatario">
+            <EntityTypeMapping TypeName="BibliotecaDBAzure.vw_reserva_locatario">
+              <MappingFragment StoreEntitySet="vw_reserva_locatario">
+                <ScalarProperty Name="dt_reserva" ColumnName="dt_reserva" />
+                <ScalarProperty Name="ds_titulo" ColumnName="ds_titulo" />
+                <ScalarProperty Name="nm_locatario" ColumnName="nm_locatario" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
