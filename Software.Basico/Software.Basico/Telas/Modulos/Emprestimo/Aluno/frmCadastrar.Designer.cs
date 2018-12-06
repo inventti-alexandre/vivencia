@@ -398,7 +398,6 @@
             this.Controls.Add(this.chkDevolvido);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtTurma);
             this.Controls.Add(this.label10);
@@ -427,6 +426,7 @@
             this.Controls.Add(this.pnTop);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAlterar);
+            this.Controls.Add(this.btnCadastrar);
             this.Name = "frmCadastrar";
             this.Size = new System.Drawing.Size(915, 500);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
