@@ -61,6 +61,12 @@ namespace Software.Basico.DB.Reserva
             return dto;
         }
 
+        public List<vw_reserva_locatario> ConsultarPornomedoLivroLocatario(string NomeLivro)
+        {
+            List<vw_reserva_locatario> dto = db.vw_reserva_locatario.Where(x => x.ds_titulo.Contains(NomeLivro)).ToList();
+            return dto;
+        }
+
         public List<vw_reserva_aluno> ListaReservadoAluno ()
         {
             List<vw_reserva_aluno> dto = db.vw_reserva_aluno.ToList();
@@ -73,6 +79,12 @@ namespace Software.Basico.DB.Reserva
             return dto;
         }
 
-        
+        public List<vw_reserva_aluno> ConsultarporNomedoLivroAluno(string NomeLivro)
+        {
+            List<vw_reserva_aluno> dto = db.vw_reserva_aluno.Where(x => x.ds_titulo.Contains(NomeLivro)).ToList();
+            return dto;
+        }
+
+
     }
 }

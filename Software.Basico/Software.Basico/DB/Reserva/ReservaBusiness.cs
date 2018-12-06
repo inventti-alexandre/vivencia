@@ -58,6 +58,11 @@ namespace Software.Basico.DB.Reserva
             return db.ConsultarReservadoLocatarioPorNome(nome);
         }
 
+        public List<vw_reserva_locatario> ConsultarPornomedoLivroLocatario(string nomelivro)
+        {
+            return db.ConsultarPornomedoLivroLocatario(nomelivro);
+        }
+
         public List<vw_reserva_aluno> ListaReservadoAluno()
         {
             List<vw_reserva_aluno> dto = db.ListaReservadoAluno();
@@ -67,6 +72,12 @@ namespace Software.Basico.DB.Reserva
         public List<vw_reserva_aluno> ConsultarReservadoLocatarioPorNomeAluno(string NomeAluno)
         {
             List<vw_reserva_aluno> dto = db.ConsultarReservadoLocatarioPorNomeAluno(NomeAluno);
+            return dto;
+        }
+
+        public List<vw_reserva_aluno> ConsultarPornomedoLivroAluno(string NomeLivro)
+        {
+            List<vw_reserva_aluno> dto = db.ConsultarporNomedoLivroAluno(NomeLivro);
             return dto;
         }
 

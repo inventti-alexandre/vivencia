@@ -149,5 +149,45 @@ namespace Software.Basico.Telas.Modulos.Reservas
         {
             RemoverAluno();
         }
+
+        private void CarregarGridpornomedoLivroLocatario()
+        {
+            ReservaBusiness reservaBusiness = new ReservaBusiness();
+            dgvReserva.AutoGenerateColumns = false;
+            dgvReserva.DataSource = reservaBusiness.ConsultarPornomedoLivroLocatario(txtnomelivro.Text);
+            txtnomelivro.Text = string.Empty;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CarregarGridpornomedoLivroLocatario();
+        }
+
+        private void txtnomelivro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+                CarregarGridpornomedoLivroLocatario();
+            
+        }
+
+        private void CarregarGridpornomeLivroAluno()
+        {
+            ReservaBusiness reservaBusiness = new ReservaBusiness();
+            dgvaluno.AutoGenerateColumns = false;
+            dgvaluno.DataSource = reservaBusiness.ConsultarPornomedoLivroAluno(txtlivroaluno.Text);
+            txtfiltraraluno.Text = string.Empty;
+        }
+
+        private void btnlivroaluno_Click(object sender, EventArgs e)
+        {
+            CarregarGridpornomeLivroAluno();
+        }
+
+        private void txtlivroaluno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+                CarregarGridpornomeLivroAluno();
+           
+        }
     }
 }
