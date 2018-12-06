@@ -243,7 +243,7 @@ namespace Software.Basico.Telas.Modulos.Reservas
 
             }
             ReservaBusiness reserva = new ReservaBusiness();
-            reserva.AlterarReserva(dto,int idreserva);
+            
         }
 
         private void Segunranca()
@@ -261,6 +261,8 @@ namespace Software.Basico.Telas.Modulos.Reservas
                 ActionC();
 
         }
+
+       
        
     }
 }

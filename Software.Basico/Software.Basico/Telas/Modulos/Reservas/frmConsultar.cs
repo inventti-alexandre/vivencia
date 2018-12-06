@@ -56,13 +56,13 @@ namespace Software.Basico.Telas.Modulos.Reservas
         {
             panel1.BackColor = Tema.Primaria;
 
-            btnAlterar.BackColor = Tema.Segundaria;
+           
             btnCancelar.BackColor = Tema.Segundaria;
             btnNova.BackColor = Tema.Segundaria;
 
             btnNova.ForeColor =     Tema.Texto;
             btnCancelar.ForeColor = Tema.Texto;
-            btnAlterar.ForeColor =  Tema.Texto;
+            
             
             btnnovareserva1.BackColor = Tema.Segundaria;
             btnalterardados1.BackColor = Tema.Segundaria;
@@ -126,6 +126,14 @@ namespace Software.Basico.Telas.Modulos.Reservas
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void Remover()
+        {
+            vw_reserva_locatario removerlocatario = dgvReserva.CurrentRow.DataBoundItem as vw_reserva_locatario;
+            ReservaBusiness reserva = new ReservaBusiness();
+            //7reserva.RemoverDados(removerlocatario.Id)
 
         }
        

@@ -72,5 +72,7 @@ namespace Software.Basico.DB.Reserva
             List<vw_reserva_aluno> dto = db.vw_reserva_aluno.Where(x => x.nm_aluno.Contains(NomeAluno)).ToList();
             return dto;
         }
+
+        
     }
 }
