@@ -18,7 +18,12 @@ namespace Software.Basico.DB.Reserva
                 throw new ArgumentException("Por favor Escolha um livro.");
             }
 
- 
+            if (dto.tb_turma_aluno_id_turma_aluno == null|| dto.tb_locatario_id_locatario == null)
+            {
+                throw new ArgumentException("Por favor identifique para quem a reserva será feita.");
+            }
+
+
             db.CadastrarReserva(dto);
 
         }
@@ -41,6 +46,28 @@ namespace Software.Basico.DB.Reserva
         public tb_reserva ConsultarPorNome(int nome)
         {
             return db.ConsultarReservaPorNome(nome);
+        }
+
+        public List<vw_reserva_locatario> ListaReservadoLocatario()
+        {
+            return db.ListaReservadoLocatario();
+        }
+
+        public List<vw_reserva_locatario> ConsultarReservadoLocatarioPorNome(string nome)
+        {
+            return db.ConsultarReservadoLocatarioPorNome(nome);
+        }
+
+        public List<vw_reserva_aluno> ListaReservadoAluno()
+        {
+            List<vw_reserva_aluno> dto = db.ListaReservadoAluno();
+            return dto;
+        }
+
+        public List<vw_reserva_aluno> ConsultarReservadoLocatarioPorNomeAluno(string NomeAluno)
+        {
+            List<vw_reserva_aluno> dto = db.ConsultarReservadoLocatarioPorNomeAluno(NomeAluno);
+            return dto;
         }
 
     }

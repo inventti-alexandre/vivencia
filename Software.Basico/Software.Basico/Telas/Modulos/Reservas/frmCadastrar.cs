@@ -22,6 +22,7 @@ namespace Software.Basico.Telas.Modulos.Reservas
             TemaTela();
             rdnlocatorio.Checked = true;
             CarregarCombo();
+            Segunranca();
         }
         int idlocatario;
         int idaluno;
@@ -133,6 +134,7 @@ namespace Software.Basico.Telas.Modulos.Reservas
                     ConsultarLocatario();
                 }
                 else
+                    // se eu tiver preenchido o CPF ñ posso pesquisar aluno rever o código
                     ConsultarAluno();            
             }
             catch(Exception ex)
@@ -147,6 +149,7 @@ namespace Software.Basico.Telas.Modulos.Reservas
             {
                 mktCPF.Enabled = true;
                 txtaluno.Enabled = false;
+                //txtaluno.Text = string.Empty;
             }
         }
 
@@ -156,6 +159,7 @@ namespace Software.Basico.Telas.Modulos.Reservas
             {
                 txtaluno.Enabled = true;
                 mktCPF.Enabled = false;
+                //mktCPF.Text = string.Empty;
             }
         }
 
@@ -194,10 +198,19 @@ namespace Software.Basico.Telas.Modulos.Reservas
             { 
             SalvarDados();
             }
-            catch(Exception)
+            catch(Exception ex)
             {
-                MessageBox.Show("Ocorreu algum erro, por favor revisar dados.", "Biblioteca", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Biblioteca", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void Segunranca()
+        {
+            //if (lblAluno.Text== "Aluno" || lblLocatario.Text== "Locatário")
+            //{
+            //    btnCadastrar.Enabled = false;
+                
+            //}
         }
     }
 }

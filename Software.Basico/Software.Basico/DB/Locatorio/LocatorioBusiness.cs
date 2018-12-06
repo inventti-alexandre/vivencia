@@ -39,8 +39,12 @@ namespace Software.Basico.DB.Locatorio
 
         public tb_locatario ListarPOrCPFLocatario(string cpf)
         {
-            //CPF cpfvalidar = new CPF();
-            //cpfvalidar.ValidarCPF(cpf);
+            CPF cpfvalidar = new CPF();
+            cpfvalidar.ValidarCPF(cpf);
+
+            if (cpf == string.Empty)
+                throw new ArgumentException("Por favor preencha o campo CPF");
+
             return db.ListarporLocatarioCPF(cpf);
         }
     }

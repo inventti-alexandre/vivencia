@@ -18,22 +18,38 @@ namespace Software.Basico.Telas.Modulos.Reservas
         {
             InitializeComponent();
             TemaTela();
-            CarregarGrid();
+            CarregarGridLocatario();
+            CarregarGridAluno();
         }
 
-        private void CarregarGrid()
-        {
-            AzureBiblioteca db = new AzureBiblioteca();
-            //List<vw_reserva> reservas = db.vw_reserva.ToList();
-
+        private void CarregarGridLocatario()
+        { 
             ReservaBusiness reservaBusiness = new ReservaBusiness();
             dgvReserva.AutoGenerateColumns = false;
-            //dgvReserva.DataSource = reservaBusiness.ConsultarReservas();
+            dgvReserva.DataSource = reservaBusiness.ListaReservadoLocatario();
 
-            List<tb_reserva> dto = new List<tb_reserva>();
-            dto = db.tb_reserva.ToList();
-            dgvteste.AutoGenerateColumns = false;
-            dgvteste.DataSource = dto;
+          
+        }
+
+        private void CarregarGridLocatarioParaConsulta()
+        {
+            ReservaBusiness reservaBusiness = new ReservaBusiness();
+            dgvReserva.AutoGenerateColumns = false;
+            dgvReserva.DataSource = reservaBusiness.ConsultarReservadoLocatarioPorNome(txtlocatario.Text);
+        }
+
+        private void CarregarGridAluno()
+        {
+            ReservaBusiness reservaBusiness = new ReservaBusiness();
+            dgvaluno.AutoGenerateColumns = false;
+            dgvaluno.DataSource = reservaBusiness.ListaReservadoAluno();
+        }
+
+        private void CarregarGridAlunoParaConsulta()
+        {
+            ReservaBusiness reservaBusiness = new ReservaBusiness();
+            dgvaluno.AutoGenerateColumns = false;
+            dgvaluno.DataSource = reservaBusiness.ConsultarReservadoLocatarioPorNomeAluno(txtfiltraraluno.Text);
         }
 
         private void TemaTela()
@@ -60,6 +76,32 @@ namespace Software.Basico.Telas.Modulos.Reservas
         }
 
         private void btnNova_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnNova_Click_1(object sender, EventArgs e)
+        {
+            Reservas.frmCadastrar frmCadastrar = new Reservas.frmCadastrar();
+            ((frmPrincipal)this.ParentForm).CarregarPanel(frmCadastrar);
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bntconsultar_Click(object sender, EventArgs e)
+        {
+            CarregarGridLocatarioParaConsulta();
+        }
+
+        private void btnfiltaraluno_Click(object sender, EventArgs e)
+        {
+            CarregarGridAlunoParaConsulta();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
         {
             Reservas.frmCadastrar frmCadastrar = new Reservas.frmCadastrar();
             ((frmPrincipal)this.ParentForm).CarregarPanel(frmCadastrar);

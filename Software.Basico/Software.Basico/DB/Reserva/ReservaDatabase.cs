@@ -48,5 +48,29 @@ namespace Software.Basico.DB.Reserva
             tb_reserva reservas = db.tb_reserva.Where(x => x.tb_locatario_id_locatario == Nmnome).ToList().Single();
             return reservas;
         }
+
+        public List<vw_reserva_locatario> ListaReservadoLocatario ()
+        {
+            List<vw_reserva_locatario> dto = db.vw_reserva_locatario.ToList();
+            return dto;
+        }
+
+        public List<vw_reserva_locatario> ConsultarReservadoLocatarioPorNome(string NomeLocatario)
+        {
+            List<vw_reserva_locatario> dto = db.vw_reserva_locatario.Where(x => x.nm_locatario.Contains(NomeLocatario)).ToList();
+            return dto;
+        }
+
+        public List<vw_reserva_aluno> ListaReservadoAluno ()
+        {
+            List<vw_reserva_aluno> dto = db.vw_reserva_aluno.ToList();
+            return dto;
+        }
+
+        public List<vw_reserva_aluno> ConsultarReservadoLocatarioPorNomeAluno(string NomeAluno)
+        {
+            List<vw_reserva_aluno> dto = db.vw_reserva_aluno.Where(x => x.nm_aluno.Contains(NomeAluno)).ToList();
+            return dto;
+        }
     }
 }
