@@ -198,15 +198,44 @@ namespace Software.Basico.Telas.Modulos.Reservas
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
+            ActionC();
+            
+        }
+        private void ActionC()
+        {
             try
-            { 
-            SalvarDados();
-             MessageBox.Show("Reserva realizada com sucesso.", "Biblioteca", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            {
+                SalvarDados();
+                MessageBox.Show("Reserva realizada com sucesso.", "Biblioteca", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Biblioteca", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        private void AlterarDados()
+        {
+            tb_reserva dto = new tb_reserva();
+
+            if (rdnaluno.Checked == true)
+            {
+                tb_livro livro = cbolivro.SelectedItem as tb_livro;
+                dto.tb_livro_id_livro = livro.id_livro;
+                dto.tb_turma_aluno_id_turma_aluno = idaluno;
+                dto.dt_reserva = DateTime.Now;
+            }
+
+            if (rdnlocatorio.Checked == true)
+            {
+                tb_livro livro = cbolivro.SelectedItem as tb_livro;
+                dto.tb_livro_id_livro = livro.id_livro;
+                dto.tb_locatario_id_locatario = idlocatario;
+                dto.dt_reserva = DateTime.Now;
+
+
+            }
+            ReservaBusiness reserva = new ReservaBusiness();
+            reserva.AlterarReserva(dto,int idreserva);
         }
 
         private void Segunranca()
@@ -217,5 +246,13 @@ namespace Software.Basico.Telas.Modulos.Reservas
                 
             //}
         }
+
+        private void cbolivro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == 13)
+                ActionC();
+
+        }
+       
     }
 }

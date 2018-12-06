@@ -79,5 +79,10 @@ namespace Software.Basico.Telas.Modulos.Estoque
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

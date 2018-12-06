@@ -116,5 +116,18 @@ namespace Software.Basico.Telas.Modulos.Reservas
             Reservas.frmCadastrar frmCadastrar = new Reservas.frmCadastrar();
             ((frmPrincipal)this.ParentForm).CarregarPanel(frmCadastrar);
         }
+
+        private void txtlocatario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == 13)
+            CarregarGridLocatarioParaConsulta();
+
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+
+        }
+       
     }
 }

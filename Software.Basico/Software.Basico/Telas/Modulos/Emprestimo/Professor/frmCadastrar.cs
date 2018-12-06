@@ -220,6 +220,18 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Professor
             else
                 e.Handled = true;
         }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboLivro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+               AlterarEmprestimo();
+
+        }
     }     
  }
 

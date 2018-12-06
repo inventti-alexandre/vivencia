@@ -110,5 +110,24 @@ namespace Software.Basico.Telas.Modulos.Livros
             if(book.img_Capa != null)
                 imgLivro.Image = ImagemPlugin.ConverterParaImagem(book.img_Capa);
         }
+
+        private void txtTitulo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+                CarregarGrid();
+
+        }
+
+        private void txtAutor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+                CarregarGrid();
+        }
+
+        private void txtPalavraChave_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+                CarregarGrid();
+        }
     }
 }

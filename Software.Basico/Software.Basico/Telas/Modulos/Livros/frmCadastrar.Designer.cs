@@ -224,6 +224,8 @@
             this.cboCondicao.Name = "cboCondicao";
             this.cboCondicao.Size = new System.Drawing.Size(224, 25);
             this.cboCondicao.TabIndex = 14;
+            this.cboCondicao.SelectedIndexChanged += new System.EventHandler(this.cboCondicao_SelectedIndexChanged);
+            this.cboCondicao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cboCondicao_KeyPress);
             // 
             // lblAutor
             // 
