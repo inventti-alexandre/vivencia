@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Software.Basico.DB.Locatorio;
 using Software.Basico.DB.Base;
 using Software.Basico.DB.Reserva;
+using Blibioteca.Developers.Validacao.ER;
 
 namespace Software.Basico.Telas.Modulos.Reservas
 {
@@ -25,6 +26,7 @@ namespace Software.Basico.Telas.Modulos.Reservas
         int idlocatario;
         int idaluno;
         AzureBiblioteca db = new AzureBiblioteca();
+        ValidarNumero validar = new ValidarNumero();
         private void TemaTela()
         {
             panel1.BackColor = Tema.Primaria;
@@ -124,8 +126,19 @@ namespace Software.Basico.Telas.Modulos.Reservas
 
         private void btnconsultar_Click(object sender, EventArgs e)
         {
-            ConsultarAluno();
-            ConsultarLocatario();
+            try { 
+                validar.ValidarRA(txtaluno.Text);
+                if (mktCPF.Text != "   .   .   -")
+                {
+                    ConsultarLocatario();
+                }
+                else
+                    ConsultarAluno();            
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Biblioteca", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void rdnlocatorio_CheckedChanged(object sender, EventArgs e)
@@ -148,9 +161,12 @@ namespace Software.Basico.Telas.Modulos.Reservas
 
         private void SalvarDados()
         {
+           
             tb_reserva dto = new tb_reserva();
+                
             if (rdnaluno.Checked == true)
             { 
+
             tb_livro livro = cbolivro.SelectedItem as tb_livro;
             dto.tb_livro_id_livro = livro.id_livro;
             //dto.tb_locatario_id_locatario = idlocatario;
@@ -169,11 +185,19 @@ namespace Software.Basico.Telas.Modulos.Reservas
 
             ReservaBusiness reserva = new ReservaBusiness();
             reserva.SalvarReserva(dto);
+           
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
+            try
+            { 
             SalvarDados();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ocorreu algum erro, por favor revisar dados.", "Biblioteca", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

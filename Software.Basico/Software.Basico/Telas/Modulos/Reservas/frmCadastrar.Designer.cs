@@ -89,6 +89,7 @@
             // 
             // cbolivro
             // 
+            this.cbolivro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbolivro.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbolivro.FormattingEnabled = true;
             this.cbolivro.Location = new System.Drawing.Point(154, 288);
@@ -150,6 +151,7 @@
             // 
             this.txtaluno.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtaluno.Location = new System.Drawing.Point(154, 239);
+            this.txtaluno.MaxLength = 20;
             this.txtaluno.Name = "txtaluno";
             this.txtaluno.Size = new System.Drawing.Size(347, 27);
             this.txtaluno.TabIndex = 129;

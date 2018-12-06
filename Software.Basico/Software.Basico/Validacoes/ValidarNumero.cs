@@ -80,5 +80,13 @@ namespace Blibioteca.Developers.Validacao.ER
                     throw new ArgumentException("O telefone é invalido!");
             }
         }
+
+        public void ValidarRA (string RA)
+        {
+            Regex regra1 = new Regex(@"[a-zA-Z,{0,9}]");
+            if (regra1.IsMatch(RA) == false)
+                throw new ArgumentException("RA invalido.");
+            
+        }
     }
 }

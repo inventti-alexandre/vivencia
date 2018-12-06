@@ -1,4 +1,5 @@
-﻿using Software.Basico.DB.Base;
+﻿using Blibioteca.Developers.Validacao;
+using Software.Basico.DB.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,6 +39,8 @@ namespace Software.Basico.DB.Locatorio
 
         public tb_locatario ListarPOrCPFLocatario(string cpf)
         {
+            //CPF cpfvalidar = new CPF();
+            //cpfvalidar.ValidarCPF(cpf);
             return db.ListarporLocatarioCPF(cpf);
         }
     }
