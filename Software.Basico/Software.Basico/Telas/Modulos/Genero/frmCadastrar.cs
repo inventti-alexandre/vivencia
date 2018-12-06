@@ -141,8 +141,12 @@ namespace Software.Basico.Telas.Modulos.Genero
 
             catch (Exception ex)
             {
-                MessageBox.Show($"Ocorreu um erro nhao identificado: {ex.Message}", "Biblioteca",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (ex.HResult == -2146233087)
+                     MessageBox.Show($"Impossivel remover um gênero que está em uso!", "Biblioteca",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                    MessageBox.Show($"Ocorreu um erro nhao identificado: {ex.Message}", "Biblioteca",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
