@@ -28,8 +28,10 @@ namespace Software.Basico.Telas.Modulos.Reservas
         int idaluno;
         AzureBiblioteca db = new AzureBiblioteca();
         ValidarNumero validar = new ValidarNumero();
+        
         private void TemaTela()
         {
+
             panel1.BackColor = Tema.Primaria;
 
             btnCadastrar.BackColor = Tema.Segundaria;
@@ -105,23 +107,38 @@ namespace Software.Basico.Telas.Modulos.Reservas
 
         private void ConsultarLocatario()
         {
-            if(mktCPF.Text !="   .   .   -")
-            { 
-            LocatorioBusiness locatorio = new LocatorioBusiness();
-            tb_locatario dto = locatorio.ListarPOrCPFLocatario(mktCPF.Text);
-            lblLocatario.Text = dto.nm_locatario;
-            idlocatario = dto.id_locatario;
+            if (rdnlocatorio.Checked == true)
+            {
+                if (mktCPF.Text != "   .   .   -")
+                {
+                    LocatorioBusiness locatorio = new LocatorioBusiness();
+                    tb_locatario dto = locatorio.ListarPOrCPFLocatario(mktCPF.Text);
+                    lblLocatario.Text = dto.nm_locatario;
+                    idlocatario = dto.id_locatario;
+                }
             }
         }
 
         private void ConsultarAluno()
         {
-            if(txtaluno!=null)
-            { 
-            
-            tb_turma_aluno aluno = db.tb_turma_aluno.Where(x => x.cd_ra == txtaluno.Text).ToList().Single();
-            lblAluno.Text = aluno.tb_aluno.nm_aluno;
-            idaluno = aluno.tb_aluno.id_aluno;
+            if (rdnaluno.Checked == true)
+            {
+                if (txtaluno != null)
+                {
+                    validar.ValidarRA(txtaluno.Text);
+                    try
+                    { 
+                        tb_turma_aluno aluno = db.tb_turma_aluno.Where(x => x.cd_ra == txtaluno.Text).ToList().Single();
+                        lblAluno.Text = aluno.tb_aluno.nm_aluno;
+                        idaluno = aluno.tb_aluno.id_aluno;
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Esse RA é invalido.", "Biblioteca", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
+                    
+                }
             }
         }
         private void CarregarCombo()
@@ -135,19 +152,14 @@ namespace Software.Basico.Telas.Modulos.Reservas
 
         private void btnconsultar_Click(object sender, EventArgs e)
         {
-            try { 
+            try
+            {
+                ConsultarLocatario();
+            //mktCPF.Text = string.Empty;
+              
+             ConsultarAluno();
+                //txtaluno.Text = string.Empty;
 
-                validar.ValidarRA(txtaluno.Text);
-               if(rdnlocatorio.Checked == true) { 
-                    ConsultarLocatario();
-                    mktCPF.Text = string.Empty;
-
-                }
-                if (rdnaluno.Checked == true)
-                { 
-                ConsultarAluno();
-                    txtaluno.Text = string.Empty;
-                }
             }
             catch (Exception ex)
             {
@@ -162,6 +174,7 @@ namespace Software.Basico.Telas.Modulos.Reservas
                 mktCPF.Enabled = true;
                 txtaluno.Enabled = false;
                 
+                
             }
         }
 
@@ -175,20 +188,9 @@ namespace Software.Basico.Telas.Modulos.Reservas
             }
         }
 
-        private void SalvarDados()
+        private void SalvarDadosLocatario()
         {
-           
-            tb_reserva dto = new tb_reserva();
-                
-            if (rdnaluno.Checked == true)
-            { 
-
-            tb_livro livro = cbolivro.SelectedItem as tb_livro;
-            dto.tb_livro_id_livro = livro.id_livro;
-            //dto.tb_locatario_id_locatario = idlocatario;
-            dto.tb_turma_aluno_id_turma_aluno = idaluno;
-            dto.dt_reserva = DateTime.Now;
-            }
+           tb_reserva dto = new tb_reserva();
 
             if(rdnlocatorio.Checked==true)
             {
@@ -197,11 +199,30 @@ namespace Software.Basico.Telas.Modulos.Reservas
                 dto.tb_locatario_id_locatario = idlocatario;
                // dto.tb_turma_aluno_id_turma_aluno = idaluno;
                 dto.dt_reserva = DateTime.Now;
+                ReservaBusiness reserva = new ReservaBusiness();
+                reserva.SalvarReserva(dto);
             }
 
-            ReservaBusiness reserva = new ReservaBusiness();
-            reserva.SalvarReserva(dto);
+            
            
+        }
+
+        private void SalvarDadosAlunos()
+        {
+            tb_reserva dto = new tb_reserva();
+            if (rdnaluno.Checked == true)
+            {
+
+                tb_livro livro = cbolivro.SelectedItem as tb_livro;
+                dto.tb_livro_id_livro = livro.id_livro;
+                //dto.tb_locatario_id_locatario = idlocatario;
+                dto.tb_turma_aluno_id_turma_aluno = idaluno;
+                dto.dt_reserva = DateTime.Now;
+                ReservaBusiness reserva = new ReservaBusiness();
+                reserva.SalvarReserva(dto);
+            }
+
+            
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -213,38 +234,16 @@ namespace Software.Basico.Telas.Modulos.Reservas
         {
             try
             {
-                SalvarDados();
-                MessageBox.Show("Reserva realizada com sucesso.", "Biblioteca", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                SalvarDadosAlunos();
+                SalvarDadosLocatario();
+                MessageBox.Show("Reserva realizada com sucesso.", "Biblioteca", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Biblioteca", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-        private void AlterarDados()
-        {
-            tb_reserva dto = new tb_reserva();
-
-            if (rdnaluno.Checked == true)
-            {
-                tb_livro livro = cbolivro.SelectedItem as tb_livro;
-                dto.tb_livro_id_livro = livro.id_livro;
-                dto.tb_turma_aluno_id_turma_aluno = idaluno;
-                dto.dt_reserva = DateTime.Now;
-            }
-
-            if (rdnlocatorio.Checked == true)
-            {
-                tb_livro livro = cbolivro.SelectedItem as tb_livro;
-                dto.tb_livro_id_livro = livro.id_livro;
-                dto.tb_locatario_id_locatario = idlocatario;
-                dto.dt_reserva = DateTime.Now;
-
-
-            }
-            ReservaBusiness reserva = new ReservaBusiness();
-            
-        }
+}
+  
 
         private void Segunranca()
         {

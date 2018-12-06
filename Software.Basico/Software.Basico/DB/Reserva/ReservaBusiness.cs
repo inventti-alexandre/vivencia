@@ -18,7 +18,7 @@ namespace Software.Basico.DB.Reserva
                 throw new ArgumentException("Por favor Escolha um livro.");
             }
 
-            if (dto.tb_turma_aluno_id_turma_aluno == null|| dto.tb_locatario_id_locatario == null)
+            if (dto.tb_turma_aluno_id_turma_aluno == 0|| dto.tb_locatario_id_locatario ==0)
             {
                 throw new ArgumentException("Por favor identifique para quem a reserva será feita.");
             }

@@ -12,6 +12,8 @@ namespace Software.Basico.DB.Locatorio
     {
         LocatorioDatabase db = new LocatorioDatabase();
 
+
+
         public void CadastrarLocatario(tb_locatario dto)
         {
             db.CadastrarLocatorio(dto);
@@ -44,6 +46,11 @@ namespace Software.Basico.DB.Locatorio
 
             if (cpf == string.Empty)
                 throw new ArgumentException("Por favor preencha o campo CPF");
+
+            if (cpf == "   .   .   -")
+            {
+                throw new ArgumentException("Por favor preencha o campo CPF");
+            }
 
             return db.ListarporLocatarioCPF(cpf);
         }
