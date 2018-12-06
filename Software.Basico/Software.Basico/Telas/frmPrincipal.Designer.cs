@@ -175,6 +175,7 @@
             this.btnReservas.Text = "          Reservas";
             this.btnReservas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReservas.UseVisualStyleBackColor = true;
+            this.btnReservas.Visible = false;
             this.btnReservas.Click += new System.EventHandler(this.btnReservas_Click);
             this.btnReservas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnReservas_MouseMove);
             // 

@@ -20,6 +20,7 @@ namespace Software.Basico.Telas.Modulos.Livros
         {
             InitializeComponent();
             TemaTela();
+            CarregarGrid();
         }
 
         private void TemaTela()
@@ -106,7 +107,8 @@ namespace Software.Basico.Telas.Modulos.Livros
             AzureBiblioteca db = new AzureBiblioteca();
             tb_livro book = db.tb_livro.Where(x => x.id_livro == livro.id_livro).ToList().Single();
 
-            imgLivro.Image = ImagemPlugin.ConverterParaImagem(book.img_Capa);
+            if(book.img_Capa != null)
+                imgLivro.Image = ImagemPlugin.ConverterParaImagem(book.img_Capa);
         }
     }
 }

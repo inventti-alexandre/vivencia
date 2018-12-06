@@ -15,7 +15,7 @@ namespace Software.Basico.DB.Genero
         public void CadastrarGenero(tb_genero dto)
         {
 
-            if (dto == null)
+            if (dto.nm_genero == null)
             {
                 throw new ArgumentException("Esse campo Não pode ser Nulo");
             }

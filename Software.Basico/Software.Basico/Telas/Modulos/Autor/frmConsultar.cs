@@ -18,6 +18,7 @@ namespace Software.Basico.Telas.Modulos.Autor
         {
             InitializeComponent();
             TemaTela();
+            CarregarGrid();
         }
 
         private void TemaTela()
@@ -85,10 +86,14 @@ namespace Software.Basico.Telas.Modulos.Autor
                 business.RemoverAutor(Autor.id_autor);
                 CarregarGrid();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show($"Você deve selecionar um autor para remover!", "Biblioteca",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if(ex.Message.Contains("An error occurred while updating the entries. See the inner exception for details."))
+                    MessageBox.Show($"Este autor está ligado a um livro,\ne por isso não pode ser apagado!", "Biblioteca",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                    MessageBox.Show($"Você deve selecionar um autor para remover!", "Biblioteca",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
