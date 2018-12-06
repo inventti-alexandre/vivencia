@@ -72,7 +72,7 @@
             this.btnCadastrar.Location = new System.Drawing.Point(594, 406);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(216, 32);
-            this.btnCadastrar.TabIndex = 89;
+            this.btnCadastrar.TabIndex = 12;
             this.btnCadastrar.Text = "Salvar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
@@ -86,7 +86,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(594, 444);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(216, 32);
-            this.btnCancelar.TabIndex = 90;
+            this.btnCancelar.TabIndex = 13;
             this.btnCancelar.Text = "Limpar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -97,7 +97,7 @@
             this.txtGenero.Location = new System.Drawing.Point(679, 299);
             this.txtGenero.Name = "txtGenero";
             this.txtGenero.Size = new System.Drawing.Size(131, 23);
-            this.txtGenero.TabIndex = 87;
+            this.txtGenero.TabIndex = 8;
             this.txtGenero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TravarTexto_KeyPress);
             // 
             // label9
@@ -126,7 +126,7 @@
             this.txtEditora.Location = new System.Drawing.Point(532, 299);
             this.txtEditora.Name = "txtEditora";
             this.txtEditora.Size = new System.Drawing.Size(131, 23);
-            this.txtEditora.TabIndex = 86;
+            this.txtEditora.TabIndex = 7;
             this.txtEditora.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TravarTexto_KeyPress);
             // 
             // label7
@@ -157,7 +157,7 @@
             this.cboLivro.Location = new System.Drawing.Point(108, 298);
             this.cboLivro.Name = "cboLivro";
             this.cboLivro.Size = new System.Drawing.Size(261, 25);
-            this.cboLivro.TabIndex = 84;
+            this.cboLivro.TabIndex = 5;
             this.cboLivro.TextChanged += new System.EventHandler(this.cboLivro_TextChanged);
             // 
             // txtAutor
@@ -166,7 +166,7 @@
             this.txtAutor.Location = new System.Drawing.Point(385, 299);
             this.txtAutor.Name = "txtAutor";
             this.txtAutor.Size = new System.Drawing.Size(131, 23);
-            this.txtAutor.TabIndex = 85;
+            this.txtAutor.TabIndex = 6;
             this.txtAutor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TravarTexto_KeyPress);
             // 
             // label4
@@ -185,7 +185,7 @@
             this.dtpDevolucao.Location = new System.Drawing.Point(108, 370);
             this.dtpDevolucao.Name = "dtpDevolucao";
             this.dtpDevolucao.Size = new System.Drawing.Size(289, 23);
-            this.dtpDevolucao.TabIndex = 88;
+            this.dtpDevolucao.TabIndex = 9;
             // 
             // pnTop
             // 
@@ -222,7 +222,7 @@
             this.txtRA.MaxLength = 9;
             this.txtRA.Name = "txtRA";
             this.txtRA.Size = new System.Drawing.Size(148, 23);
-            this.txtRA.TabIndex = 85;
+            this.txtRA.TabIndex = 1;
             this.txtRA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRA_KeyPress);
             // 
             // label5
@@ -251,7 +251,7 @@
             this.txtN.Location = new System.Drawing.Point(532, 226);
             this.txtN.Name = "txtN";
             this.txtN.Size = new System.Drawing.Size(131, 23);
-            this.txtN.TabIndex = 86;
+            this.txtN.TabIndex = 3;
             this.txtN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TravarTexto_KeyPress);
             // 
@@ -271,7 +271,7 @@
             this.txtTurma.Location = new System.Drawing.Point(679, 226);
             this.txtTurma.Name = "txtTurma";
             this.txtTurma.Size = new System.Drawing.Size(131, 23);
-            this.txtTurma.TabIndex = 87;
+            this.txtTurma.TabIndex = 4;
             this.txtTurma.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTurma.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TravarTexto_KeyPress);
             // 
@@ -281,7 +281,7 @@
             this.txtAluno.Location = new System.Drawing.Point(276, 226);
             this.txtAluno.Name = "txtAluno";
             this.txtAluno.Size = new System.Drawing.Size(240, 23);
-            this.txtAluno.TabIndex = 86;
+            this.txtAluno.TabIndex = 2;
             this.txtAluno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TravarTexto_KeyPress);
             // 
             // pictureBox1
@@ -312,7 +312,8 @@
             this.txtEmail.MaxLength = 150;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(387, 23);
-            this.txtEmail.TabIndex = 86;
+            this.txtEmail.TabIndex = 11;
+            this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmail_KeyPress);
             // 
             // label12
             // 
@@ -331,7 +332,7 @@
             this.txtFuncionario.MaxLength = 90;
             this.txtFuncionario.Name = "txtFuncionario";
             this.txtFuncionario.Size = new System.Drawing.Size(148, 23);
-            this.txtFuncionario.TabIndex = 85;
+            this.txtFuncionario.TabIndex = 0;
             this.txtFuncionario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFuncionario_KeyPress);
             // 
             // btnAlterar
@@ -343,7 +344,7 @@
             this.btnAlterar.Location = new System.Drawing.Point(594, 406);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(216, 32);
-            this.btnAlterar.TabIndex = 89;
+            this.btnAlterar.TabIndex = 12;
             this.btnAlterar.Text = "Salvar";
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Visible = false;
@@ -355,7 +356,7 @@
             this.dtpEmprestimo.Location = new System.Drawing.Point(108, 427);
             this.dtpEmprestimo.Name = "dtpEmprestimo";
             this.dtpEmprestimo.Size = new System.Drawing.Size(289, 23);
-            this.dtpEmprestimo.TabIndex = 88;
+            this.dtpEmprestimo.TabIndex = 10;
             this.dtpEmprestimo.Visible = false;
             // 
             // label13
@@ -375,7 +376,7 @@
             this.chkDevolvido.Location = new System.Drawing.Point(475, 446);
             this.chkDevolvido.Name = "chkDevolvido";
             this.chkDevolvido.Size = new System.Drawing.Size(15, 14);
-            this.chkDevolvido.TabIndex = 131;
+            this.chkDevolvido.TabIndex = 12;
             this.chkDevolvido.UseVisualStyleBackColor = true;
             this.chkDevolvido.Visible = false;
             // 
@@ -397,7 +398,6 @@
             this.Controls.Add(this.chkDevolvido);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtTurma);
@@ -426,6 +426,7 @@
             this.Controls.Add(this.dtpDevolucao);
             this.Controls.Add(this.pnTop);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnAlterar);
             this.Name = "frmCadastrar";
             this.Size = new System.Drawing.Size(915, 500);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

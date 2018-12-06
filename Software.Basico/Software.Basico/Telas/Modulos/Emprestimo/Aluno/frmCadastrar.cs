@@ -18,6 +18,7 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Aluno
         public frmCadastrar()
         {
             InitializeComponent();
+            txtFuncionario.Focus();
             TemaTela();
             CarregarCombo();
         }
@@ -100,6 +101,11 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Aluno
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            ActionC();
+        }
+
+        private void ActionC()
         {
             try
             {
@@ -226,6 +232,12 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Aluno
                 e.Handled = false;
             else
                 e.Handled = true;
+        }
+
+        private void txtEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+                ActionC();
         }
 
         private void AlterarEmprestimo()

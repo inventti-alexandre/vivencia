@@ -104,5 +104,17 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Aluno
                     MessageBox.Show("Selecione um emprestimo!", "Biblioteca", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void txtTitulo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+                CarregarGrid();
+        }
+
+        private void txtAluno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+                CarregarGrid();
+        }
     }
 }
