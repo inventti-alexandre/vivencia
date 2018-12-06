@@ -23,6 +23,12 @@ namespace Software.Basico.Telas
             ScreenFrmHome();
             Clima();
             Sininho();
+            CarregarData();
+        }
+
+        private void CarregarData()
+        {
+            lblDate.Text = DateTime.Today.ToLongDateString();
         }
 
         private void Sininho()

@@ -58,6 +58,7 @@
             this.lblHorario = new System.Windows.Forms.Label();
             this.timerHora = new System.Windows.Forms.Timer(this.components);
             this.btnSininho = new System.Windows.Forms.Button();
+            this.lblDate = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo2)).BeginInit();
@@ -428,6 +429,17 @@
             this.btnSininho.UseVisualStyleBackColor = true;
             this.btnSininho.Click += new System.EventHandler(this.btnSininho_Click);
             // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Font = new System.Drawing.Font("Century Gothic", 18F);
+            this.lblDate.Location = new System.Drawing.Point(518, 112);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(442, 30);
+            this.lblDate.TabIndex = 4;
+            this.lblDate.Text = "quinta-feira, 6 de dezembro de 2018";
+            this.lblDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -440,6 +452,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnSininho);
             this.Controls.Add(this.button5);
+            this.Controls.Add(this.lblDate);
             this.Controls.Add(this.lblHorario);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -487,5 +500,6 @@
         private System.Windows.Forms.Label lblHorario;
         private System.Windows.Forms.Timer timerHora;
         private System.Windows.Forms.Button btnSininho;
+        private System.Windows.Forms.Label lblDate;
     }
 }

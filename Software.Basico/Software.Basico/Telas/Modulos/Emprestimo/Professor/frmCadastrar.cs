@@ -166,8 +166,7 @@ namespace Software.Basico.Telas.Modulos.Emprestimo.Professor
             catch (Exception ex)
             {
                 if (ex.Message.Contains("A sequência não contém elementos"))
-                    MessageBox.Show($"CPF ainda não cadastrado", "Biblioteca",
-                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
                 else
                     MessageBox.Show($"Ocorreu um erro não identificado: {ex.Message}", "Biblioteca",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);

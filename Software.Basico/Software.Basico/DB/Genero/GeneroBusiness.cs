@@ -16,7 +16,7 @@ namespace Software.Basico.DB.Genero
         public void CadastrarGenero(tb_genero dto)
         {
             validar.ValidarNome(dto.nm_genero);
-            if (dto.nm_genero == null)
+            if (dto.nm_genero == null || dto.nm_genero.Trim() == string.Empty)
             {
                 throw new ArgumentException("Esse campo Não pode ser Nulo");
             }

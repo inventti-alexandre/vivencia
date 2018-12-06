@@ -33,6 +33,7 @@ namespace Software.Basico.DB.Emprestimo
                 CriarNotificacao(data, email);
 
                 dto.tb_turma_aluno_id_turma_aluno = data.id_aluno;
+                dto.tb_notificacao_id_notificacao = idNot;
                 EmprestimoDB.CadastroNovoEmprestimo(dto);
             }
             catch (ArgumentException ex)
@@ -47,6 +48,8 @@ namespace Software.Basico.DB.Emprestimo
             }
         }
 
+        int idNot;
+
         private void CriarNotificacao(tb_turma_aluno data, string email)
         {
             AzureBiblioteca db = new AzureBiblioteca();
@@ -54,26 +57,47 @@ namespace Software.Basico.DB.Emprestimo
             try
             {
                 dados = db.tb_aluno_dados.Where(x => x.tb_aluno_id_aluno == data.id_aluno).ToList().Single();
-            }
-            catch (Exception)
-            {
-                tb_aluno_dados ad = new tb_aluno_dados();
-                ad.ds_email = email;
-                ad.tb_aluno_id_aluno = data.id_aluno;
-
-                db.tb_aluno_dados.Add(ad);
-                int id = db.SaveChanges();
 
                 tb_notificacao not = new tb_notificacao();
                 not.bt_email5DIa = false;
                 not.bt_emailAtrasado = false;
                 not.bt_emailDia = false;
-                not.tb_aluno_dados_id_aluno_dados = id;
+                not.tb_aluno_dados_id_aluno_dados = dados.id_aluno_dados;
 
                 db.tb_notificacao.Add(not);
                 db.SaveChanges();
 
-                return;
+                tb_notificacao idN = db.tb_notificacao.OrderByDescending(o => o.id_notificacao).First();
+
+                idNot = idN.id_notificacao;
+            }
+            catch (Exception ex)
+            {
+                if (ex.HResult == -2146233079)
+                {
+                    tb_aluno_dados ad = new tb_aluno_dados();
+                    ad.ds_email = email;
+                    ad.tb_aluno_id_aluno = data.id_aluno;
+
+                    db.tb_aluno_dados.Add(ad);
+                    db.SaveChanges();
+
+                    tb_aluno_dados id = db.tb_aluno_dados.OrderByDescending(o => o.id_aluno_dados).First();
+
+                    tb_notificacao not = new tb_notificacao();
+                    not.bt_email5DIa = false;
+                    not.bt_emailAtrasado = false;
+                    not.bt_emailDia = false;
+                    not.tb_aluno_dados_id_aluno_dados = id.id_aluno_dados;
+
+                    db.tb_notificacao.Add(not);
+                    db.SaveChanges();
+
+                    tb_notificacao idN = db.tb_notificacao.OrderByDescending(o => o.id_notificacao).First();
+
+                    idNot = idN.id_notificacao;
+                    return; 
+                }
             }
         }
 
