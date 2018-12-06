@@ -182,7 +182,7 @@
             this.btnImg.Margin = new System.Windows.Forms.Padding(0);
             this.btnImg.Name = "btnImg";
             this.btnImg.Size = new System.Drawing.Size(28, 28);
-            this.btnImg.TabIndex = 93;
+            this.btnImg.TabIndex = 3;
             this.btnImg.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnImg.UseVisualStyleBackColor = true;
             this.btnImg.Click += new System.EventHandler(this.btnImg_Click);
@@ -223,7 +223,7 @@
             this.cboCondicao.Location = new System.Drawing.Point(615, 291);
             this.cboCondicao.Name = "cboCondicao";
             this.cboCondicao.Size = new System.Drawing.Size(224, 25);
-            this.cboCondicao.TabIndex = 11;
+            this.cboCondicao.TabIndex = 14;
             // 
             // lblAutor
             // 
@@ -275,7 +275,7 @@
             this.cboGenero.Location = new System.Drawing.Point(373, 291);
             this.cboGenero.Name = "cboGenero";
             this.cboGenero.Size = new System.Drawing.Size(189, 25);
-            this.cboGenero.TabIndex = 10;
+            this.cboGenero.TabIndex = 12;
             // 
             // cboAutor
             // 
@@ -285,7 +285,7 @@
             this.cboAutor.Location = new System.Drawing.Point(373, 241);
             this.cboAutor.Name = "cboAutor";
             this.cboAutor.Size = new System.Drawing.Size(189, 25);
-            this.cboAutor.TabIndex = 8;
+            this.cboAutor.TabIndex = 9;
             // 
             // lblpalavraschave
             // 
@@ -303,7 +303,7 @@
             this.txtPalavrasChaves.Location = new System.Drawing.Point(373, 193);
             this.txtPalavrasChaves.Name = "txtPalavrasChaves";
             this.txtPalavrasChaves.Size = new System.Drawing.Size(220, 23);
-            this.txtPalavrasChaves.TabIndex = 6;
+            this.txtPalavrasChaves.TabIndex = 7;
             this.txtPalavrasChaves.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPalavrasChaves_KeyPress);
             // 
             // lblvolume
@@ -323,7 +323,7 @@
             this.txtVolume_controle_de_livros.MaxLength = 3;
             this.txtVolume_controle_de_livros.Name = "txtVolume_controle_de_livros";
             this.txtVolume_controle_de_livros.Size = new System.Drawing.Size(137, 23);
-            this.txtVolume_controle_de_livros.TabIndex = 4;
+            this.txtVolume_controle_de_livros.TabIndex = 5;
             this.txtVolume_controle_de_livros.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_Numb);
             // 
             // lblCondicoes
@@ -352,7 +352,7 @@
             this.txtIdioma.Location = new System.Drawing.Point(698, 145);
             this.txtIdioma.Name = "txtIdioma";
             this.txtIdioma.Size = new System.Drawing.Size(141, 23);
-            this.txtIdioma.TabIndex = 5;
+            this.txtIdioma.TabIndex = 6;
             this.txtIdioma.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdioma_KeyPress);
             // 
             // lblisbn
@@ -371,7 +371,7 @@
             this.txtISBN.Location = new System.Drawing.Point(615, 193);
             this.txtISBN.Name = "txtISBN";
             this.txtISBN.Size = new System.Drawing.Size(224, 23);
-            this.txtISBN.TabIndex = 7;
+            this.txtISBN.TabIndex = 8;
             this.txtISBN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_Numb);
             // 
             // lblTipo
@@ -393,7 +393,7 @@
             this.btnCadastrar.Location = new System.Drawing.Point(438, 383);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(342, 32);
-            this.btnCadastrar.TabIndex = 12;
+            this.btnCadastrar.TabIndex = 15;
             this.btnCadastrar.Text = "Salvar Dados";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
@@ -404,7 +404,7 @@
             this.txtEditora_Contrle_de_Estoque.Location = new System.Drawing.Point(615, 243);
             this.txtEditora_Contrle_de_Estoque.Name = "txtEditora_Contrle_de_Estoque";
             this.txtEditora_Contrle_de_Estoque.Size = new System.Drawing.Size(224, 23);
-            this.txtEditora_Contrle_de_Estoque.TabIndex = 7;
+            this.txtEditora_Contrle_de_Estoque.TabIndex = 11;
             this.txtEditora_Contrle_de_Estoque.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_Text);
             // 
             // btnAddGenero
@@ -420,7 +420,7 @@
             this.btnAddGenero.Margin = new System.Windows.Forms.Padding(0);
             this.btnAddGenero.Name = "btnAddGenero";
             this.btnAddGenero.Size = new System.Drawing.Size(28, 28);
-            this.btnAddGenero.TabIndex = 93;
+            this.btnAddGenero.TabIndex = 13;
             this.btnAddGenero.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddGenero.UseVisualStyleBackColor = true;
             this.btnAddGenero.Click += new System.EventHandler(this.btnAddGenero_Click);
@@ -438,7 +438,7 @@
             this.btnAddAutor.Margin = new System.Windows.Forms.Padding(0);
             this.btnAddAutor.Name = "btnAddAutor";
             this.btnAddAutor.Size = new System.Drawing.Size(28, 28);
-            this.btnAddAutor.TabIndex = 93;
+            this.btnAddAutor.TabIndex = 10;
             this.btnAddAutor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddAutor.UseVisualStyleBackColor = true;
             this.btnAddAutor.Click += new System.EventHandler(this.btnAddAutor_Click);
@@ -455,7 +455,7 @@
             this.cboTipo.Location = new System.Drawing.Point(373, 145);
             this.cboTipo.Name = "cboTipo";
             this.cboTipo.Size = new System.Drawing.Size(170, 25);
-            this.cboTipo.TabIndex = 11;
+            this.cboTipo.TabIndex = 4;
             // 
             // btnAlterar
             // 

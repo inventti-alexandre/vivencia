@@ -52,7 +52,7 @@
             this.btnProfessor.Location = new System.Drawing.Point(455, 88);
             this.btnProfessor.Name = "btnProfessor";
             this.btnProfessor.Size = new System.Drawing.Size(414, 324);
-            this.btnProfessor.TabIndex = 51;
+            this.btnProfessor.TabIndex = 2;
             this.btnProfessor.Text = "Professor";
             this.btnProfessor.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnProfessor.UseVisualStyleBackColor = true;
@@ -70,7 +70,7 @@
             this.btnAluno.Location = new System.Drawing.Point(45, 88);
             this.btnAluno.Name = "btnAluno";
             this.btnAluno.Size = new System.Drawing.Size(414, 324);
-            this.btnAluno.TabIndex = 52;
+            this.btnAluno.TabIndex = 1;
             this.btnAluno.Text = "Aluno";
             this.btnAluno.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAluno.UseVisualStyleBackColor = true;

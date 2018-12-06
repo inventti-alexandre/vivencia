@@ -418,15 +418,14 @@
             this.btnSininho.FlatAppearance.BorderSize = 0;
             this.btnSininho.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSininho.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSininho.Image = global::Software.Basico.Properties.Resources.bell_icon_34488;
             this.btnSininho.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSininho.Location = new System.Drawing.Point(1056, 20);
+            this.btnSininho.Location = new System.Drawing.Point(1068, 22);
             this.btnSininho.Name = "btnSininho";
             this.btnSininho.Size = new System.Drawing.Size(40, 41);
             this.btnSininho.TabIndex = 3;
+            this.btnSininho.Text = "____";
             this.btnSininho.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSininho.UseVisualStyleBackColor = true;
-            this.btnSininho.Visible = false;
             this.btnSininho.Click += new System.EventHandler(this.btnSininho_Click);
             // 
             // frmPrincipal

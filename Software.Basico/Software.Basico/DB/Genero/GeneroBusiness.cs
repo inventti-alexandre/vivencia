@@ -1,4 +1,5 @@
-﻿using Software.Basico.DB.Autor;
+﻿using Blibioteca.Developers.Validacao.ER;
+using Software.Basico.DB.Autor;
 using Software.Basico.DB.Base;
 using System;
 using System.Collections.Generic;
@@ -11,10 +12,10 @@ namespace Software.Basico.DB.Genero
     class GeneroBusiness
     {
         GeneroDatabase db = new GeneroDatabase();
-
+        ValidarTexto validar = new ValidarTexto();
         public void CadastrarGenero(tb_genero dto)
         {
-
+            validar.ValidarNome(dto.nm_genero);
             if (dto.nm_genero == null)
             {
                 throw new ArgumentException("Esse campo Não pode ser Nulo");

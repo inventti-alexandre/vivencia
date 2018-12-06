@@ -130,7 +130,7 @@
             this.btnAlterar.Location = new System.Drawing.Point(327, 425);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(120, 32);
-            this.btnAlterar.TabIndex = 5;
+            this.btnAlterar.TabIndex = 4;
             this.btnAlterar.Text = "Visualizar";
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
@@ -144,7 +144,7 @@
             this.btnCadastrar.Location = new System.Drawing.Point(619, 425);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(120, 32);
-            this.btnCadastrar.TabIndex = 7;
+            this.btnCadastrar.TabIndex = 6;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
@@ -158,7 +158,7 @@
             this.btnListar.Location = new System.Drawing.Point(473, 425);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(120, 32);
-            this.btnListar.TabIndex = 6;
+            this.btnListar.TabIndex = 5;
             this.btnListar.Text = "Listar";
             this.btnListar.UseVisualStyleBackColor = true;
             this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
@@ -172,7 +172,7 @@
             this.btnRemover.Location = new System.Drawing.Point(765, 425);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(120, 32);
-            this.btnRemover.TabIndex = 8;
+            this.btnRemover.TabIndex = 7;
             this.btnRemover.Text = "Remover";
             this.btnRemover.UseVisualStyleBackColor = true;
             this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);

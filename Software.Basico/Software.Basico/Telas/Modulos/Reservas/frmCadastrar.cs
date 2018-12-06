@@ -128,16 +128,20 @@ namespace Software.Basico.Telas.Modulos.Reservas
         private void btnconsultar_Click(object sender, EventArgs e)
         {
             try { 
+
                 validar.ValidarRA(txtaluno.Text);
-                if (mktCPF.Text != "   .   .   -")
-                {
+               if(rdnlocatorio.Checked == true) { 
                     ConsultarLocatario();
+                    mktCPF.Text = string.Empty;
+
                 }
-                else
-                    // se eu tiver preenchido o CPF ñ posso pesquisar aluno rever o código
-                    ConsultarAluno();            
+                if (rdnaluno.Checked == true)
+                { 
+                ConsultarAluno();
+                    txtaluno.Text = string.Empty;
+                }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Biblioteca", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -149,7 +153,7 @@ namespace Software.Basico.Telas.Modulos.Reservas
             {
                 mktCPF.Enabled = true;
                 txtaluno.Enabled = false;
-                //txtaluno.Text = string.Empty;
+                
             }
         }
 
@@ -159,7 +163,7 @@ namespace Software.Basico.Telas.Modulos.Reservas
             {
                 txtaluno.Enabled = true;
                 mktCPF.Enabled = false;
-                //mktCPF.Text = string.Empty;
+               
             }
         }
 
@@ -197,6 +201,7 @@ namespace Software.Basico.Telas.Modulos.Reservas
             try
             { 
             SalvarDados();
+             MessageBox.Show("Reserva realizada com sucesso.", "Biblioteca", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch(Exception ex)
             {

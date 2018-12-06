@@ -267,13 +267,7 @@ namespace Software.Basico.Telas
 
         private void btnSininho_Click(object sender, EventArgs e)
         {
-            frmGerEmail frm = new frmGerEmail();
-            this.Hide();
-            frm.ShowDialog();
-            Show();
-
-            if (Program.notificacaoEmail == false)
-                btnSininho.Visible = false;
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
