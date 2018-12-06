@@ -77,7 +77,7 @@
             this.btnEnviarDia.TabIndex = 77;
             this.btnEnviarDia.Text = "Lembrar";
             this.btnEnviarDia.UseVisualStyleBackColor = true;
-            this.btnEnviarDia.Click += new System.EventHandler(this.btnEmailDia_Click);
+            //this.btnEnviarDia.Click += new System.EventHandler(this.btnEmailDia_Click);
             // 
             // lblQntLivrosDia
             // 
@@ -134,7 +134,7 @@
             this.btnEnviar5Dia.TabIndex = 77;
             this.btnEnviar5Dia.Text = "Lembrar";
             this.btnEnviar5Dia.UseVisualStyleBackColor = true;
-            this.btnEnviar5Dia.Click += new System.EventHandler(this.btnEnviar5Dia_Click);
+            //this.btnEnviar5Dia.Click += new System.EventHandler(this.btnEnviar5Dia_Click);
             // 
             // lblLivro5Dias
             // 
@@ -191,7 +191,7 @@
             this.btnEnviarAtrasado.TabIndex = 77;
             this.btnEnviarAtrasado.Text = "Lembrar";
             this.btnEnviarAtrasado.UseVisualStyleBackColor = true;
-            this.btnEnviarAtrasado.Click += new System.EventHandler(this.btnEnviarAtrasado_Click);
+            //this.btnEnviarAtrasado.Click += new System.EventHandler(this.btnEnviarAtrasado_Click);
             // 
             // lblLivroAtrasado
             // 
@@ -256,7 +256,7 @@
             this.btnClose.TabIndex = 78;
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            //this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmGerEmail
             // 
