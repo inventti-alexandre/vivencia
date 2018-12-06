@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnlivrolocatario = new System.Windows.Forms.Button();
+            this.txtnomelivro = new System.Windows.Forms.TextBox();
             this.bntconsultar = new System.Windows.Forms.Button();
             this.txtlocatario = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -45,6 +47,8 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnlivroaluno = new System.Windows.Forms.Button();
+            this.txtlivroaluno = new System.Windows.Forms.TextBox();
             this.btnfiltaraluno = new System.Windows.Forms.Button();
             this.txtfiltraraluno = new System.Windows.Forms.TextBox();
             this.btnremover1 = new System.Windows.Forms.Button();
@@ -81,6 +85,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnlivrolocatario);
+            this.tabPage1.Controls.Add(this.txtnomelivro);
             this.tabPage1.Controls.Add(this.bntconsultar);
             this.tabPage1.Controls.Add(this.txtlocatario);
             this.tabPage1.Controls.Add(this.btnCancelar);
@@ -95,6 +101,31 @@
             this.tabPage1.Text = "Consultar Locatário";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btnlivrolocatario
+            // 
+            this.btnlivrolocatario.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnlivrolocatario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnlivrolocatario.Font = new System.Drawing.Font("Century Gothic", 14.75F);
+            this.btnlivrolocatario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
+            this.btnlivrolocatario.Location = new System.Drawing.Point(607, 129);
+            this.btnlivrolocatario.Name = "btnlivrolocatario";
+            this.btnlivrolocatario.Size = new System.Drawing.Size(190, 32);
+            this.btnlivrolocatario.TabIndex = 4;
+            this.btnlivrolocatario.Text = "Filtrar Livro";
+            this.btnlivrolocatario.UseVisualStyleBackColor = true;
+            this.btnlivrolocatario.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txtnomelivro
+            // 
+            this.txtnomelivro.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtnomelivro.Location = new System.Drawing.Point(108, 129);
+            this.txtnomelivro.MaxLength = 150;
+            this.txtnomelivro.Multiline = true;
+            this.txtnomelivro.Name = "txtnomelivro";
+            this.txtnomelivro.Size = new System.Drawing.Size(493, 32);
+            this.txtnomelivro.TabIndex = 3;
+            this.txtnomelivro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnomelivro_KeyPress);
+            // 
             // bntconsultar
             // 
             this.bntconsultar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -104,8 +135,8 @@
             this.bntconsultar.Location = new System.Drawing.Point(607, 76);
             this.bntconsultar.Name = "bntconsultar";
             this.bntconsultar.Size = new System.Drawing.Size(190, 32);
-            this.bntconsultar.TabIndex = 138;
-            this.bntconsultar.Text = "Filtrar";
+            this.bntconsultar.TabIndex = 2;
+            this.bntconsultar.Text = "Filtrar Locatário";
             this.bntconsultar.UseVisualStyleBackColor = true;
             this.bntconsultar.Click += new System.EventHandler(this.bntconsultar_Click);
             // 
@@ -117,7 +148,7 @@
             this.txtlocatario.Multiline = true;
             this.txtlocatario.Name = "txtlocatario";
             this.txtlocatario.Size = new System.Drawing.Size(493, 32);
-            this.txtlocatario.TabIndex = 137;
+            this.txtlocatario.TabIndex = 1;
             this.txtlocatario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtlocatario_KeyPress);
             // 
             // btnCancelar
@@ -129,7 +160,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(607, 418);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(190, 32);
-            this.btnCancelar.TabIndex = 136;
+            this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Remover";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -143,7 +174,7 @@
             this.btnNova.Location = new System.Drawing.Point(108, 418);
             this.btnNova.Name = "btnNova";
             this.btnNova.Size = new System.Drawing.Size(190, 32);
-            this.btnNova.TabIndex = 134;
+            this.btnNova.TabIndex = 5;
             this.btnNova.Text = "Nova Reserva";
             this.btnNova.UseVisualStyleBackColor = true;
             this.btnNova.Click += new System.EventHandler(this.btnNova_Click_1);
@@ -157,14 +188,14 @@
             this.dgvReserva.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvReserva.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenVertical;
             this.dgvReserva.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvReserva.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvReserva.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvReserva.ColumnHeadersHeight = 45;
             this.dgvReserva.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvReserva.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -172,20 +203,20 @@
             this.Column3,
             this.Column4});
             this.dgvReserva.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvReserva.Location = new System.Drawing.Point(108, 114);
+            this.dgvReserva.Location = new System.Drawing.Point(108, 178);
             this.dgvReserva.MultiSelect = false;
             this.dgvReserva.Name = "dgvReserva";
             this.dgvReserva.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvReserva.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvReserva.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvReserva.RowHeadersVisible = false;
-            this.dgvReserva.Size = new System.Drawing.Size(689, 298);
+            this.dgvReserva.Size = new System.Drawing.Size(689, 234);
             this.dgvReserva.TabIndex = 132;
             // 
             // Column1
@@ -221,6 +252,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnlivroaluno);
+            this.tabPage2.Controls.Add(this.txtlivroaluno);
             this.tabPage2.Controls.Add(this.btnfiltaraluno);
             this.tabPage2.Controls.Add(this.txtfiltraraluno);
             this.tabPage2.Controls.Add(this.btnremover1);
@@ -235,6 +268,31 @@
             this.tabPage2.Text = "Consultar Aluno";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // btnlivroaluno
+            // 
+            this.btnlivroaluno.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnlivroaluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnlivroaluno.Font = new System.Drawing.Font("Century Gothic", 14.75F);
+            this.btnlivroaluno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(33)))), ((int)(((byte)(24)))));
+            this.btnlivroaluno.Location = new System.Drawing.Point(607, 125);
+            this.btnlivroaluno.Name = "btnlivroaluno";
+            this.btnlivroaluno.Size = new System.Drawing.Size(190, 32);
+            this.btnlivroaluno.TabIndex = 4;
+            this.btnlivroaluno.Text = "Filtrar Livro";
+            this.btnlivroaluno.UseVisualStyleBackColor = true;
+            this.btnlivroaluno.Click += new System.EventHandler(this.btnlivroaluno_Click);
+            // 
+            // txtlivroaluno
+            // 
+            this.txtlivroaluno.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtlivroaluno.Location = new System.Drawing.Point(108, 125);
+            this.txtlivroaluno.MaxLength = 150;
+            this.txtlivroaluno.Multiline = true;
+            this.txtlivroaluno.Name = "txtlivroaluno";
+            this.txtlivroaluno.Size = new System.Drawing.Size(493, 32);
+            this.txtlivroaluno.TabIndex = 3;
+            this.txtlivroaluno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtlivroaluno_KeyPress);
+            // 
             // btnfiltaraluno
             // 
             this.btnfiltaraluno.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -244,8 +302,8 @@
             this.btnfiltaraluno.Location = new System.Drawing.Point(607, 76);
             this.btnfiltaraluno.Name = "btnfiltaraluno";
             this.btnfiltaraluno.Size = new System.Drawing.Size(190, 32);
-            this.btnfiltaraluno.TabIndex = 145;
-            this.btnfiltaraluno.Text = "Filtrar";
+            this.btnfiltaraluno.TabIndex = 2;
+            this.btnfiltaraluno.Text = "Filtrar Aluno";
             this.btnfiltaraluno.UseVisualStyleBackColor = true;
             this.btnfiltaraluno.Click += new System.EventHandler(this.btnfiltaraluno_Click);
             // 
@@ -257,7 +315,7 @@
             this.txtfiltraraluno.Multiline = true;
             this.txtfiltraraluno.Name = "txtfiltraraluno";
             this.txtfiltraraluno.Size = new System.Drawing.Size(493, 32);
-            this.txtfiltraraluno.TabIndex = 144;
+            this.txtfiltraraluno.TabIndex = 1;
             // 
             // btnremover1
             // 
@@ -268,7 +326,7 @@
             this.btnremover1.Location = new System.Drawing.Point(610, 418);
             this.btnremover1.Name = "btnremover1";
             this.btnremover1.Size = new System.Drawing.Size(187, 32);
-            this.btnremover1.TabIndex = 143;
+            this.btnremover1.TabIndex = 6;
             this.btnremover1.Text = "Remover";
             this.btnremover1.UseVisualStyleBackColor = true;
             this.btnremover1.Click += new System.EventHandler(this.btnremover1_Click);
@@ -282,7 +340,7 @@
             this.btnnovareserva1.Location = new System.Drawing.Point(108, 418);
             this.btnnovareserva1.Name = "btnnovareserva1";
             this.btnnovareserva1.Size = new System.Drawing.Size(190, 32);
-            this.btnnovareserva1.TabIndex = 141;
+            this.btnnovareserva1.TabIndex = 5;
             this.btnnovareserva1.Text = "Nova Reserva";
             this.btnnovareserva1.UseVisualStyleBackColor = true;
             this.btnnovareserva1.Click += new System.EventHandler(this.button4_Click);
@@ -296,14 +354,14 @@
             this.dgvaluno.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvaluno.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenVertical;
             this.dgvaluno.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvaluno.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvaluno.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvaluno.ColumnHeadersHeight = 45;
             this.dgvaluno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvaluno.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -311,20 +369,20 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             this.dgvaluno.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvaluno.Location = new System.Drawing.Point(108, 114);
+            this.dgvaluno.Location = new System.Drawing.Point(108, 163);
             this.dgvaluno.MultiSelect = false;
             this.dgvaluno.Name = "dgvaluno";
             this.dgvaluno.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvaluno.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvaluno.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvaluno.RowHeadersVisible = false;
-            this.dgvaluno.Size = new System.Drawing.Size(689, 298);
+            this.dgvaluno.Size = new System.Drawing.Size(689, 249);
             this.dgvaluno.TabIndex = 139;
             // 
             // dataGridViewTextBoxColumn1
@@ -402,5 +460,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnlivrolocatario;
+        private System.Windows.Forms.TextBox txtnomelivro;
+        private System.Windows.Forms.Button btnlivroaluno;
+        private System.Windows.Forms.TextBox txtlivroaluno;
     }
 }
